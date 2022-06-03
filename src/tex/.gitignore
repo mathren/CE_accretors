@@ -1,2 +1,6 @@
 # Don't track TeX temporaries
 *latexindent*
+*.aux
+*.bbl
+*.toc
+auto/
