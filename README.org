@@ -1,0 +1,115 @@
+#+Title: Common envelope initiated by the secondaries
+#+author: [[mailto:mrenzo@flatironinstitute.org][Mathieu Renzo]]
+
+#+BEGIN_html
+<p align="center">
+<a href="https://github.com/showyourwork/showyourwork">
+<img width = "450" src="https://raw.githubusercontent.com/showyourwork/.github/main/images/showyourwork.png" alt="showyourwork"/>
+</a>
+<br>
+<br>
+<a href="https://github.com/mathren/CE_accretors/actions/workflows/build.yml">
+<img src="https://github.com/mathren/CE_accretors/actions/workflows/build.yml/badge.svg?branch=main" alt="Article status"/>
+</a>
+<a href="https://github.com/mathren/CE_accretors/raw/main-pdf/arxiv.tar.gz">
+<img src="https://img.shields.io/badge/article-tarball-blue.svg?style=flat" alt="Article tarball"/>
+</a>
+<a href="https://github.com/mathren/CE_accretors/raw/main-pdf/ms.pdf">
+<img src="https://img.shields.io/badge/article-pdf-blue.svg?style=flat" alt="Read the article"/>
+</a>
+</p>
+#+END_html
+
+Access the latest successful build of the manuscript from the badge
+above.
+
+You can see the source in =src/CE_accretors.tex=, which you can edit and
+should be able to compile locally. You can clone the repo and if you
+commit something, for now prepend =[skip ci]= to the commit message to
+prevent GitHub actions from trying to run =make=.
+
+It should be possible to build the article locally on your machine
+with =make=, see below.
+
+** Requirements
+
+*** =make= without figures
+
+    For now the =graphicspath= in =CE_accretors.tex= points to the
+    =src/static= figures, and the =src/figures/*.py= scripts read the
+    data from hardcoded paths to =ceph= and output figures in
+    =src/static/=.
+
+    When I locally run =make= on my workstation, it produces the plots,
+    which for now I push to the repo. This allows anyone to build the
+    pdf with the figures on any machine, since =showyourwork= won't try
+    recreating the figures unless you change the scripts.
+
+    This will be refactored once the data is finalized and uploaded on
+    zenodo.
+
+**** TODO cleanup figures
+
+    - [ ] Refactor scripts in =/src/figures/=.
+    - [ ] change =graphicspath= in =CE_accretors.tex.=
+    - [ ] Remove figures from repo (?)
+
+*** Local build
+
+    Clone this repository and type =make=. This will create a conda
+    environment with all the dependencies and recreate the entire pdf,
+    including the figures.
+
+    (/Well, not at the moment, the data are only on my workstation, so
+    only that machine can produce figures for now/).
+
+    This is achieved by showyourwork using =snakemake=
+    which may need to be [[https://anaconda.org/bioconda/snakemake][installed]], along with [[https://docs.conda.io/projects/conda/en/latest/index.html][conda]] itself.
+
+**** [ =fi_w= ] Build with slow figure making
+
+     The script =grid_ratios.py= is a
+     bit too slow and fails, to increase the waiting time do:
+
+     #+BEGIN_SRC bash
+       make OPTIONS="--latency-wait=600"
+     #+END_SRC
+
+**** [ =t490s= ]
+
+***** Installing conda and =snakemake= on my laptop
+
+      Note that =snakemake= and =mamba= are not listed in =environment.yml=
+      because GitHub actions does not need to download and install these.
+
+      #+BEGIN_SRC bash
+cd CE_accretors
+conda env create -f environment.yml -n CE_accretors
+conda activate CE_accretors
+# install mamba
+conda install -c bioconda -c conda-forge mamba
+# install snakemake using mamba
+mamba install -c bioconda -c conda-forge snakemake
+      #+END_SRC
+
+
+*** MESA stuff
+
+   This project uses =MESA revision 15140=, =SDK= logged in the data.
+
+** Why care about the first mass transfer on future common envelope?
+
+   Most binary evolution scenarios for gravitational wave sources rely
+   on a common envelope (CE) to reduce the separation (exceptions are
+   chemically homogeneous evolution and stable RLOF). The CE is
+   initiated by a star that has previously accreted mass during a RLOF
+   phase.
+
+   We want to study how the previous accretion through RLOF influences
+   the radial evolution and the binding energy of the models. This is
+   because rejuvenation acts on the core-envelope boundary.
+
+** TODO Link to zenodo
+
+    - [ ] Upload data (possibly, use showyourwork to upload
+      intermediate data products needed for paper on zenodo)
