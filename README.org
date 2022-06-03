@@ -23,24 +23,24 @@
 Access the latest successful build of the manuscript from the badge
 above.
 
-You can see the source in =src/CE_accretors.tex=, which you can edit and
+You can see the source in =src/tex/CE_accretors.tex=, which you can edit and
 should be able to compile locally. You can clone the repo and if you
 commit something, for now prepend =[skip ci]= to the commit message to
-prevent GitHub actions from trying to run =make=.
+prevent GitHub actions from trying to run =showyourwork=.
 
 It should be possible to build the article locally on your machine
-with =make=, see below.
+with =showyourwork=, see below.
 
 ** Requirements
 
-*** =make= without figures
+*** Build the article without figures
 
     For now the =graphicspath= in =CE_accretors.tex= points to the
     =src/static= figures, and the =src/figures/*.py= scripts read the
     data from hardcoded paths to =ceph= and output figures in
     =src/static/=.
 
-    When I locally run =make= on my workstation, it produces the plots,
+    When I locally run =showyourwork= on my workstation, it produces the plots,
     which for now I push to the repo. This allows anyone to build the
     pdf with the figures on any machine, since =showyourwork= won't try
     recreating the figures unless you change the scripts.
