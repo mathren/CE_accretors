@@ -8,3 +8,5 @@ to npy
 """
 from MESAreader import getSrcCol
 import paths
+
+src, col = getSrcCol(profil)
