@@ -1,6 +1,15 @@
 #+Title: List of MESA input and output files
 
-These file are used to produce the plots in the manuscript.
+[[https://sandbox.zenodo.org/deposit/1069400][zenodo SANDBOX 1069400]]
+
+These file are used to produce the plots in the manuscript. This
+project uses =MESA version 15140=, =MESA SDK x86_64-linux-20.12.1= (also
+logged in the =*.data= files), which includes the compiler:
+
+#+BEGIN_SRC bash
+gfortran --version
+GNU Fortran (GCC) 10.2.0
+#+END_SRC
 
 ** =./MESA_input= structure
 

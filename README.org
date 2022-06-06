@@ -31,9 +31,42 @@ prevent GitHub actions from trying to run =showyourwork=.
 It should be possible to build the article locally on your machine
 with =showyourwork=, see below.
 
+** TODO migrate to new showyourwork
+
+   This is happening on branch =dev=
+
+*** Zenodo links
+
+     - [ ] Upload data (possibly, use showyourwork to upload
+       intermediate data products needed for paper on zenodo)
+
+**** output file needed for scripts
+
+     SANDBOX: https://sandbox.zenodo.org/deposit/1069400
+
+*** zenodo CE accretors
+   <2022-06-06 Mon 18:14>
+
+   Test the following on one script:
+
+**** TODO test zenodo update
+
+    - upload folder /mnt/home/mrenzo/Projects/CE_accretors/src/data on
+      zenodo sandbox (1)
+    - make the script download, unzip, convert to npy and cache the
+      result on another zenodo sandbox (2)
+    - if it works, convert (1) to zenodo repo and update showyourwork dependencies
+
+**** cleanup figures
+
+    - [ ] Refactor scripts in =/src/figures/=.
+    - [ ] change =graphicspath= in =CE_accretors.tex.=
+    - [ ] Remove figures from repo (?)
+
+
 ** Requirements
 
-*** Build the article without figures
+*** *OUTDATED* Build the article without figures
 
     For now the =graphicspath= in =CE_accretors.tex= points to the
     =src/static= figures, and the =src/figures/*.py= scripts read the
@@ -48,25 +81,7 @@ with =showyourwork=, see below.
     This will be refactored once the data is finalized and uploaded on
     zenodo.
 
-**** TODO cleanup figures
-
-    - [ ] Refactor scripts in =/src/figures/=.
-    - [ ] change =graphicspath= in =CE_accretors.tex.=
-    - [ ] Remove figures from repo (?)
-
-*** Local build
-
-    Clone this repository and type =make=. This will create a conda
-    environment with all the dependencies and recreate the entire pdf,
-    including the figures.
-
-    (/Well, not at the moment, the data are only on my workstation, so
-    only that machine can produce figures for now/).
-
-    This is achieved by showyourwork using =snakemake=
-    which may need to be [[https://anaconda.org/bioconda/snakemake][installed]], along with [[https://docs.conda.io/projects/conda/en/latest/index.html][conda]] itself.
-
-**** [ =fi_w= ] Build with slow figure making
+*** [ =fi_w= ] Build with slow figure making
 
      The script =grid_ratios.py= is a
      bit too slow and fails, to increase the waiting time do:
@@ -74,28 +89,6 @@ with =showyourwork=, see below.
      #+BEGIN_SRC bash
        make OPTIONS="--latency-wait=600"
      #+END_SRC
-
-**** [ =t490s= ]
-
-***** Installing conda and =snakemake= on my laptop
-
-      Note that =snakemake= and =mamba= are not listed in =environment.yml=
-      because GitHub actions does not need to download and install these.
-
-      #+BEGIN_SRC bash
-cd CE_accretors
-conda env create -f environment.yml -n CE_accretors
-conda activate CE_accretors
-# install mamba
-conda install -c bioconda -c conda-forge mamba
-# install snakemake using mamba
-mamba install -c bioconda -c conda-forge snakemake
-      #+END_SRC
-
-
-*** MESA stuff
-
-   This project uses =MESA revision 15140=, =SDK= logged in the data.
 
 ** Why care about the first mass transfer on future common envelope?
 
@@ -108,8 +101,3 @@ mamba install -c bioconda -c conda-forge snakemake
    We want to study how the previous accretion through RLOF influences
    the radial evolution and the binding energy of the models. This is
    because rejuvenation acts on the core-envelope boundary.
-
-** TODO Link to zenodo
-
-    - [ ] Upload data (possibly, use showyourwork to upload
-      intermediate data products needed for paper on zenodo)
