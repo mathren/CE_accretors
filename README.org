@@ -33,7 +33,11 @@ with =showyourwork=, see below.
 
 ** TODO migrate to new showyourwork
 
-   This is happening on branch =dev=
+   This is happening on branch =dev=. To be tested
+   The scripts =convert_MESA_output.py= should create  =src/data/try.npy=.
+   =zenodo_plotter.py= reads it and creates a figure.
+
+   Update =showyourwork.yml=.
 
 *** Zenodo links
 
