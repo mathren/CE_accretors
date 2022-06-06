@@ -40,9 +40,14 @@ with =showyourwork=, see below.
      - [ ] Upload data (possibly, use showyourwork to upload
        intermediate data products needed for paper on zenodo)
 
-**** output file needed for scripts
+**** intermediate processed files:
 
-     SANDBOX: https://sandbox.zenodo.org/deposit/1069400
+     SANDBOX main branch: https://sandbox.zenodo.org/deposit/1069400
+
+
+**** output
+
+     SANDBOX MESA input/output: https://sandbox.zenodo.org/deposit/1069872
 
 *** zenodo CE accretors
    <2022-06-06 Mon 18:14>
