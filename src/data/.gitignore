@@ -2,4 +2,4 @@
 *
 !.gitignore
 !README.org
-!MESA_input/*
+!MESA_input/*/*tar.xz
