@@ -4,8 +4,8 @@ These file are used to produce the plots in the manuscript.
 
 ** =./MESA_input= structure
 
-   This folder contains the =inlists=, =run_star_extras.f90=, and =*.inc=
-   files to reproduce our calculations.
+   Each tarball contains an example MESA work directory to reproduce
+   our calculations.
 
    Please refer to the [[https://docs.mesastar.org/en/latest/][MESA documentation]] and [[https://lists.mesastar.org/mailman/listinfo][mailing list]] for
    support.
