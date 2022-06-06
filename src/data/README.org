@@ -7,7 +7,25 @@ These file are used to produce the plots in the manuscript.
    This folder contains the =inlists=, =run_star_extras.f90=, and =*.inc=
    files to reproduce our calculations.
 
-   Please refer to the [[https://docs.mesastar.org/en/latest/][MESA documentation]] and [[https://lists.mesastar.org/mailman/listinfo][mailing list]] for support.
+   Please refer to the [[https://docs.mesastar.org/en/latest/][MESA documentation]] and [[https://lists.mesastar.org/mailman/listinfo][mailing list]] for
+   support.
+
+   The folder structure mimics the output one (though one template is
+   used for grid).
+
+#+BEGIN_SRC bash
+tree ./MESA_input/
+./MESA_input/
+├── binaries
+│   └── Z_0.0019
+│       └── template.tar.xz
+├── engineered_stars
+│   └── same_core
+│       └── template.tar.xz
+└── single_stars
+    └── Z_0.0019
+        └── template.tar.xz
+#+END_SRC
 
 ** =./MESA_output= structure
 
