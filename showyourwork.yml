@@ -1,2 +1,6 @@
 version: 0.3.0.dev8
 ms_name: CE_accretors
+
+dependencies:
+  src/scripts/zenodo_plotter.py:
+    - src/data/try.npy

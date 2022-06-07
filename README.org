@@ -37,12 +37,7 @@ with =showyourwork=, see below.
    The scripts =convert_MESA_output.py= should create  =src/data/try.npy=.
    =zenodo_plotter.py= reads it and creates a figure.
 
-   Update =showyourwork.yml=.
-
-*** Zenodo links
-
-     - [ ] Upload data (possibly, use showyourwork to upload
-       intermediate data products needed for paper on zenodo)
+   Update =showyourwork.yml= to have a zenodo sandbox input to download.
 
 **** intermediate processed files:
 
