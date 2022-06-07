@@ -3,4 +3,9 @@ ms_name: CE_accretors
 
 dependencies:
   src/scripts/zenodo_plotter.py:
-    - src/data/try.npy
+    - src/data/MESA_input.tar
+
+datasets:
+  10.5072/zenodo.1069872:
+    contents:
+      MESA_input.tar: src/data/MESA_input.tar

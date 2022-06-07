@@ -1,5 +1,7 @@
 rule try:
      output:
-	"src/data/try.npy"
+       "src/data/try.npy"
+     cache:
+        True
      input:
-	"src/scripts/convert_MESA_output.py"
+       "src/scripts/convert_MESA_output.py"

@@ -3,12 +3,15 @@
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 import paths
+import os
 
-# try loading
-data = np.load(paths.data / "PATH_TO_DATAFILE")
+# check if file exists
+if os.path.isfile(paths.data / "try.npy"):
+    print("try.npy file found")
+    print("make dummy fig")
 
-fig = plt.figure()
-gs = gridspec.GridSpec(100, 100)
-ax = fig.add_subplot(gs[:, :])
-ax.plot(np.nan, np.nan, ls="-", c="k", label=r"$^1\mathrm{H}$")
-fig.savefig(paths.figures / "try.pdf")
+    fig = plt.figure()
+    gs = gridspec.GridSpec(100, 100)
+    ax = fig.add_subplot(gs[:, :])
+    ax.plot(np.linspace(0,1,10), np.linspace(0,1,10), ls="-", c="k")
+    fig.savefig(paths.figures / "try.pdf")
