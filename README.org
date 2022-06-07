@@ -14,7 +14,9 @@
 <a href="https://github.com/mathren/CE_accretors/raw/main-pdf/arxiv.tar.gz">
 <img src="https://img.shields.io/badge/article-tarball-blue.svg?style=flat" alt="Article tarball"/>
 </a>
-<a href="https://github.com/mathren/CE_accretors/raw/main-pdf/ms.pdf">
+# <a
+# href="https://github.com/mathren/CE_accretors/raw/main-pdf/CE_accretors.pdf">
+<a href="https://github.com/mathren/CE_accretors/raw/dev-pdf/CE_accretors.pdf">
 <img src="https://img.shields.io/badge/article-pdf-blue.svg?style=flat" alt="Read the article"/>
 </a>
 </p>
