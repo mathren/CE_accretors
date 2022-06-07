@@ -16,7 +16,7 @@ dependencies:
 
 
 datasets:
-  10.5072/zenodo.1070165:
+  10.5072/zenodo.1070242:
     destination: src/data/
     contents:
       history.data:
