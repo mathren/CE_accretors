@@ -1,6 +1,6 @@
 rule try:
   input:
-    "src/data/history.data"
+    "src/data/history.data" #MESA_output.tar"
   output:
     "src/data/try.npy"
   conda:
