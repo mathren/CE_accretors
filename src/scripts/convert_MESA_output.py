@@ -7,13 +7,12 @@ import numpy as np
 import paths
 
 if __name__ == "__main__":
-    input_fname = sys.argv[1]
-    bin_fname = input_fname.replace('.data', '.npy')
-    print("out:", paths.data/bin_fname)
-
+    input_fname = paths.data / "history_try.data"
+    bin_fname = paths.data/"try.npy"
+    print("out:", bin_fname)
     if not os.path.isfile(input_fname):
         sys.exit()
     else:
-        src, col = getSrcCol(input_fname, True, True, paths.data/bin_fname)
-        np.save(paths.data / "try.npy", src)
+        src, col = getSrcCol(input_fname, True, True, bin_fname)
+        np.save(bin_fname, src)
         print("done ", input_fname)

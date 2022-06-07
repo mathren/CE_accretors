@@ -1,11 +1,15 @@
 version: 0.3.0.dev8
+
 ms_name: CE_accretors
 
 dependencies:
   src/scripts/zenodo_plotter.py:
-    - src/data/MESA_input.tar
+    - src/data/try.npy
+  src/scripts/convert_MESA_output.py:
+    - src/scripts/MESAreader.py
 
 datasets:
-  10.5072/zenodo.1069872:
+  10.5072/zenodo.1070165:
+    destination: src/data/
     contents:
-      MESA_input.tar: src/data/MESA_input.tar
+      history.data: src/data/history_try.data

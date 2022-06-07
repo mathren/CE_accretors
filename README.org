@@ -31,11 +31,14 @@ prevent GitHub actions from trying to run =showyourwork=.
 It should be possible to build the article locally on your machine
 with =showyourwork=, see below.
 
-** TODO migrate to new showyourwork
+** TODO Migrate to new showyourwork
 
-   This is happening on branch =dev=. To be tested
+   This is happening on branch =dev=. To be tested.
+
    The scripts =convert_MESA_output.py= should create  =src/data/try.npy=.
    =zenodo_plotter.py= reads it and creates a figure.
+
+   Possibly =convert_MESA_output.py= will also untar the mega-tarball.
 
    Update =showyourwork.yml= to have a zenodo sandbox input to download.
 
