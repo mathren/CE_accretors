@@ -71,6 +71,14 @@ with =showyourwork=, see below.
     - [ ] Remove figures from repo (?)
 
 
+**** Issue to report on =showyourwork=
+
+
+***** Creating cache from branch does not catch the branch name, it uses =[unknown]= as a tag
+
+***** Not possible to cache to a different location?
+
+
 ** Requirements
 
 *** *OUTDATED* Build the article without figures

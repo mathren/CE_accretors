@@ -38,11 +38,12 @@ tree ./MESA_input/
 
 ** =./MESA_output= structure
 
-   This folder contains the following MESA output files used by the
+   This folder is omitted from the git repository, and only present on
+   =zenodo=. It contains the following MESA output files used by the
    scripts to make figures.
 
-   See =showyourwork.yml= for the specific dependencies of each
-   individual figure.
+   See =showyourwork.yml= and the =Snakefile= for the specific
+   dependencies of each individual figure.
 
 #+begin_src bash
 
