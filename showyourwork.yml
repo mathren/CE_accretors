@@ -4,13 +4,12 @@ verbose: True
 
 ms_name: CE_accretors
 
-
 dependencies:
   src/scripts/convert_MESA_output.py:
-    - src/data/MESA_output.tar.gz    # 1.1 Gb
+    - src/data/MESA_output.tar.gz  # 1.1 Gb
     - src/scripts/MESAreader.py
-  src/scripts/zenodo_plotter.py:
-    - src/data/try.npy
+  # src/scripts/zenodo_plotter.py:
+  #   - src/data/try.npy
 
 datasets:
   10.5072/zenodo.1070800: # this will be of the zenodo static dataset

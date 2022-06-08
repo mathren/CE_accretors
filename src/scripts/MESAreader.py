@@ -84,14 +84,16 @@ def reader(myfile, ncols, nhead, fname=None):
 
     """15.04.2016 Mathieu: modified to fit my needs for binary_c as well"""
 
+    """8.06.2022  Mathieu: heavy refactoring"""
+
     # The new binary file will be stored with the same name but with the extention.npy
     if fname == None:
-        mybinfile = str(myfile[:-4]) + ".npy"
+        bin_fname = str(myfile[:-4]) + ".npy"
     else:
-        mybinfile = fname
+        bin_fname = fname
     # Just for fun... time the routine
     start_time = time.time()
-    if not os.path.isfile(mybinfile):  # Check if .databin exists already...
+    if not os.path.isfile(bin_fname):  # Check if .databin exists already...
         print("...    reading ascii file ", myfile)
         print("...    and storing it for you in binary format")
         print("...    patience please, next time will be way faster ")
@@ -103,13 +105,13 @@ def reader(myfile, ncols, nhead, fname=None):
         # Read the first "ncol" columns of the file after skipping "nhead" lines, store in a numpy.array
         data = np.genfromtxt(myfile, skip_header=nhead)  # , usecols=range(ncols))
         # Save the numpy array to file in binary format
-        np.save(mybinfile, data)
+        np.save(bin_fname, data)
         # print "...    That took ", time.time() - start_time, "second"
     else:
-        # print "... Great Binary file exists, reading data directly from ", mybinfile
+        # print "... Great Binary file exists, reading data directly from ", bin_fname
         # If binary file exists load it directly.
-        data = np.load(mybinfile)
-        print("saved npy file at:", mybinfile)
+        data = np.load(bin_fname)
+        print("saved npy file at:", bin_fname)
         # print "   That took ", time.time() - start_time, "second"
     return data
 

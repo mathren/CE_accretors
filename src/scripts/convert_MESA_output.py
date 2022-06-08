@@ -1,4 +1,9 @@
-# to be able to split the conversion to *.npy of MESA output for showyourwork
+"""
+Convert the tarball of the entire MESA output to binary.
+This allows showyourwork to cache the binary results on zenodo sandbox
+for faster reproduction
+"""
+__author__ = "M. Renzo"
 from MESAreader import getSrcCol
 import sys
 import os
@@ -6,30 +11,24 @@ import paths
 import glob
 import tarfile
 
-if not os.path.isfile(paths.data/"MESA_output.tar.gz"):
+if not os.path.isfile(paths.data / "MESA_output.tar.gz"):
     raise FileNotFoundError("MESA output tarball not found! Download from zenodo!")
 else:
-    tarball = tarfile.open(paths.data/"MESA_output.tar.gz","r:gz")
+    tarball = tarfile.open(paths.data / "MESA_output.tar.gz", "r:gz")
     for member in tarball.getmembers():
         # skip folders and only consider *.data files
-        if ".data" not in str(member):
-            pass
+        if ".data" not in str(member): continue
+        # print(member.name)
+        bin_fname = paths.data / str(member.name[:-4]+".npy")
+        if not os.path.isfile(bin_fname):
+            # file does not exist, extract
+            tarball.extractall(path = paths.data, members=[member])
+            src, col = getSrcCol(paths.data / member.name, True, True, bin_fname=bin_fname)
+            # for seeing if all of showyourwork proceeds beyond this script
+            os.system("touch "+str(paths.data / "try.npy"))
         else:
-            # print(member)
-            f = tarball.extractall(member)
-            print(f)
-            src, col = getSrcCol(f, True, True)
-            break
+            print(str(bin_fname)+" found")
+            # for seeing if all of showyourwork proceeds beyond this script
+            os.system("touch "+str(paths.data / "try.npy"))
+        break
     tarball.close()
-
-
-
-# filenames = glob.glob(paths.data /"MESA_output/**/*.data")
-# found = True
-# for f in filenames:
-#     if not os.path.isfile(f):
-#         print("MESA OUTPUT NOT FOUND")
-#         found = False
-#         break
-# if found:
-#     os.system("touch src/data/try.npy")
