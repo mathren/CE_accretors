@@ -4,24 +4,32 @@ import sys
 import os
 import paths
 import glob
+import tarfile
 
-filenames = glob.glob(paths.data /"MESA_output/**/*.data")
-for f in filenames:
-    print(f)
+if not os.path.isfile(paths.data/"MESA_output.tar.gz"):
+    raise FileNotFoundError("MESA output tarball not found! Download from zenodo!")
+else:
+    tarball = tarfile.open(paths.data/"MESA_output.tar.gz","r:gz")
+    for member in tarball.getmembers():
+        # skip folders and only consider *.data files
+        if ".data" not in str(member):
+            pass
+        else:
+            # print(member)
+            f = tarball.extractall(member)
+            print(f)
+            src, col = getSrcCol(f, True, True)
+            break
+    tarball.close()
 
-# input_fname = paths.data / "MESA_output/"
 
 
-
-
-# if not os.path.isfile(input_fname):
-#     print("src/data/history.data NOT FOUND")
-#     sys.exit()
-# else:
-#     src, col = getSrcCol(input_fname, True, True, bin_fname)
-#     # np.save(bin_fname, src)
-#     print("done ", input_fname)
-# # if os.path.isfile(paths.data/"MESA_output.tar"):
-# #     os.system("touch src/data/try.npy")
-# # else:
-# #     print("MESA OUTPUT NOT FOUND")
+# filenames = glob.glob(paths.data /"MESA_output/**/*.data")
+# found = True
+# for f in filenames:
+#     if not os.path.isfile(f):
+#         print("MESA OUTPUT NOT FOUND")
+#         found = False
+#         break
+# if found:
+#     os.system("touch src/data/try.npy")

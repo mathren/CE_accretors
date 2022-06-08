@@ -37,21 +37,12 @@ with =showyourwork=, see below.
 
    This is happening on branch =dev=. To be tested.
 
-   The scripts =convert_MESA_output.py= should create  =src/data/try.npy=.
-   =zenodo_plotter.py= reads it and creates a figure.
+*** Simple test
+    The scripts =convert_MESA_output.py= should create  =src/data/try.npy=.
+    =zenodo_plotter.py= reads it and creates a figure.
 
-   Possibly =convert_MESA_output.py= will also untar the mega-tarball.
+    Possibly =convert_MESA_output.py= will also untar the mega-tarball.
 
-   Update =showyourwork.yml= to have a zenodo sandbox input to download.
-
-**** intermediate processed files:
-
-     SANDBOX main branch: https://sandbox.zenodo.org/deposit/1069400
-
-
-**** output
-
-     SANDBOX MESA input/output: https://sandbox.zenodo.org/deposit/1069872
 
 *** zenodo CE accretors
    <2022-06-06 Mon 18:14>

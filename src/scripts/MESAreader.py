@@ -109,6 +109,7 @@ def reader(myfile, ncols, nhead, fname=None):
         # print "... Great Binary file exists, reading data directly from ", mybinfile
         # If binary file exists load it directly.
         data = np.load(mybinfile)
+        print("saved npy file at:", mybinfile)
         # print "   That took ", time.time() - start_time, "second"
     return data
 

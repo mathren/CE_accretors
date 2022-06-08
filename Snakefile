@@ -1,11 +1,11 @@
 rule try:
   input:
-    "src/data/history.data" #MESA_output.tar"
+    "src/data/MESA_output.tar.gz"
   output:
     "src/data/try.npy"
   conda:
     "environment.yml"
-  cache:
-    True
+  # cache:
+  #   True
   script:
     "src/scripts/convert_MESA_output.py"
