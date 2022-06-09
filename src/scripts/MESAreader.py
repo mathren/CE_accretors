@@ -111,7 +111,6 @@ def reader(myfile, ncols, nhead, fname=None):
         # print "... Great Binary file exists, reading data directly from ", bin_fname
         # If binary file exists load it directly.
         data = np.load(bin_fname)
-        print("saved npy file at:", bin_fname)
         # print "   That took ", time.time() - start_time, "second"
     return data
 
@@ -146,7 +145,7 @@ def getSrcCol(f, clean=True, convert=True, bin_fname=None):
                 break
     # check if binary exists
     if bin_fname == None:
-        bin_fname = str(f[:-4]) + ".npy"
+        bin_fname = str(str(f)[:-4]) + ".npy"
     if os.path.isfile(bin_fname):
         # read the column and binary
         src = reader(f, len(col), 6, bin_fname)

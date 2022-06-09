@@ -23,8 +23,8 @@
 
 %% while waiting to upload the figures on zenodo
 %% TODO: change static/ to figures/ and git rm --cached static/*.pdf
-\graphicspath{{../static/}}
-% \graphicspath{{./figures/}}
+%% \graphicspath{{../static/}}
+\graphicspath{{./figures/}}
 
 \title{Rejuvenated stars are more easily unbound:\\ Stable
   mass transfer impacts the donor of common envelopes  in gravitational wave progenitors}
@@ -32,7 +32,8 @@
 \author[0000-0002-6718-9472]{M.~Renzo}
 \affiliation{Center for Computational Astrophysics, Flatiron Institute, New York, NY 10010, USA}
 
-\author{\todo{others: R.~Farmer, K.~Breivik, E.~Zapartas?}}
+\author{\todo{others: R.~Farmer, K.~Breivik, E.~Zapartas, Y. Gotberg,
+    B. D. Metzger?}}
 % \author[0000-0002-6960-6911]{Y.~G\"otberg}\thanks{Hubble Fellow}
 % \affiliation{The Observatories of the Carnegie Institution for
 %   Science, 813 Santa Barbara Street, Pasadena, CA 91101, USA}
@@ -69,135 +70,133 @@ binaries: accretors} %% check keywords exist
 \label{sec:intro}
 
 %% TO TRY ZENODO UPLOAD
-\begin{figure}[ht!]
-  \script{zenodo_plotter.py}
-  \includegraphics[width=0.4\textwidth]{../tex/figures/try.pdf}
-  \caption{try zenodo sandbox upload}
-  \label{fig:try}
-\end{figure}
-
-
-
-% Common envelope (CE) is an important evolutionary channel for
-% massive isolated binaries to become gravitational-wave (GW) sources. Despite
-% recent debates on its relevance for the progenitors of the most
-% massive binary black holes \citep[e.g.,][]{pavlovskii:2017,
-%   klencki:2020, klencki:2021, vanson:2021, marchant:2021}.
-% CE remains a crucial step in the
-% formation, among many other compact binaries, of cataclysmic variable
-% \citep{paczynski:1976}, double white dwarfs
-% \citep[e.g.,][]{korol:2017, renzo:21gwce, thiele:21}, binary neutron stars
-% \citep[NS, e.g.,][]{vigna-gomez:2018}, merging black hole-neutron stars
-% \citep[e.g.,][]{kruckow:18, broekgaarden:21} and possibly low-mass binary black
-% holes \citep[BH, e.g.,][]{dominik:2012, vanson:2021}.
-
-% In the ``classical scenario'' \citep[e.g.,][]{tutukov:93,belczynski:2016}, a
-% gravitational-wave progenitor system experiences a first mass transfer
-% phase through Roche lobe overflow (RLOF) between two non-compact
-% stars. Subsequently, the initially more massive donor collapses to a
-% compact object without disrupting the binary
-% \citep[e.g.,][]{blaauw:1961,renzo:2019walk}. Only afterwards, as the
-% initially less massive secondary expands, a second mass-transfer phase
-% occurs and is typically dynamically unstable, that is a CE
-% \citep[e.g.,][]{dominik:2012, belczynski:2016, kruckow:18}. This
-% second mass transfer is responsible for the orbital shrinking
-% \citep{paczynski:1976} allowing the system to merge within the age of
-% the Universe. Therefore, in this scenario, the donor star of the CE is
-% the former accretor of the first RLOF \citep[e.g.,][]{klencki:2020,
-%   law-smith:2020, renzo:2021zoph}.
-
-% The first stable RLOF typically occurs during the main sequence of the
-% initially less massive star and accretion modifies its structure
-% \citep[e.g.,][]{neo:1977, packet:1981, blaauw:1993, cantiello:2007,
-%   renzo:2021zoph}. On top of the enrichment of the envelope with
-% CNO-processed material from the donor star core \citep{blaauw:1993,
-%   renzo:2021zoph, el-badry:2022a}, and the substantial spin-up, accretors are expected
-% to adjust their core-size to the new mass in a ``rejuvenation''
-% process \citep[e.g.,][]{neo:1977, hellings:1983, hellings:1984}. The
-% readjustment is driven by  mixing at the boundary between the
-% convective core and the envelope, which refuels the convective region
-% of hydrogen. This mixing also affects the entropy, density, and
-% binding energy profile of the core-envelope boundary (CEB) layer
-% \citep[][]{renzo:2021zoph}, where the density rises and most of the
-% binding energy is accumulated. Consequently, the success or failure
-% of the CE ejection, which is likely decided in the CEB layer
-% \citep[e.g.,][]{ivanova:2013}, may be different depending on whether the CE-donor
-% accreted mass previously or not.
-
-% Here, we use structure and evolution binary models to study
-% the impact of the first RLOF phase on the outcome of possible
-% subsequent CE events. \Secref{sec:methods} describe our \texttt{MESA}
-% calculations, and \Secref{sec:intro_res} presents a proof-of-principle
-% of the effect of core boundary mixing and rotation on the envelope
-% binding energy. In \Secref{sec:bin_models} we compare our accretor
-% models to single stars with the same total post-RLOF mass. We discuss
-% our findings and conclude in
-% \Secref{sec:conclusions}.
-
-% \section{Pre-common envelope evolution}
-% \label{sec:methods}
-
-% We use \texttt{MESA}
-% \citep[version 15140,][]{paxton:2011, paxton:2013, paxton:2015,
-%   paxton:2018, paxton:2011} to compute the evolution of binaries which
-% experience mass transfer after the end of the donor's main sequence,
-% that is case B Roche lobe overflow \citep[RLOF,][]{kippenhahn:1967}.
-% Our setup\footnote{Available at \url{10.5281/zenodo.6600641}.} is similar to
-% \cite{renzo:2021zoph}, except for the
-% metallicity: here we adopt $Z=0.0019\simeq Z_\odot/10$, relevant for
-% the progenitor population of GW events \citep[e.g.,][]{vanson:2021}. Moreover, we apply
-% throughout the star a small amount of mixing with diffusivity
-% \texttt{min\_D\_mix}=100. This improves the numerical stability by
-% smoothing properties across adjacent cells, without introducing
-% significant quantitative variations, and is a typical numerical trick
-% used in asteroseismology calculations (J.~Fuller, private~comm.).
-
-% We adopt initial period $P=100$\,days and chose initial masses
-% $(M_{1}, M_{2}) = (18, 15), (20, 17), (38, 30)\,M_\odot$. We focus on
-% the initially less massive stars, which post-RLOF with our setup
-% described below become
-% $M_2=15\rightarrow 18, 17\rightarrow 20, 30\rightarrow 36\,M_\odot$, roughly\footnote{Whether a
-%   core-collapse results in NS or BH formation, with or without an
-%   associated explosion, cannot be decided solely based on the (total
-%   or core) mass of a star \citep[e.g.,][]{oconnor:11, farmer:16,
-%     patton:20, patton:22, zapartas:21b}. } representative of NS,
-% uncertain core-collapse outcome, and BH progenitors, respectively. Our \texttt{MESA} models
-% assume that the accretion efficiency is limited by rotationally
-% enhanced wind mass loss \citep[e.g.,][]{sravan:2019, wang:2020,
-%   renzo:2021zoph, sen:2022}. However, this may lead to less
-% conservative mass transfer than suggested by observations
-% \citep[e.g.,][]{wang:2021a}.
-
-% To avoid computing the late evolutionary phases of the donors, and
-% focus on the post-RLOF evolution of the accretors, after detachment
-% from the Roche lobe, our simulations artificially separate the
-% stars % \footnote{We turn the stripped donor into a point mass and set
-%   % the period to infinity on the fly through our
-%   % \texttt{run\_star\_extras.f90}.},
-% and continue the evolution of the secondary as a single star until it
-% reaches carbon depletion (defined by central carbon mass fraction
-% $X_\mathrm{c}(^{12}\mathrm{C})<2\times10^{-4} $). We make the routine
-% to detach a \texttt{MESA} binary on-the-fly publicly
-% available\footnote{\url{https://github.com/MESAHub/mesa-contrib/}}.
-% This approach implies that we neglect further binary interactions
-% (e.g., tides, case BB RLOF, \citealt{laplace:2020}), the impact of the
-% core-collapse of the RLOF-donor on the accretor \cite[e.g.,][]{hirai:2018,
-%   ogata:2021} and on the orbit \citep[e.g.,][]{brandt:1995,
-%   kalogera:1996, tauris:1998, renzo:2019walk}.
-
-
-% \begin{figure}[btp]
-%   % TODO: remove hacky path below
-%   % \includegraphics[width=0.5\textwidth]{../tex/figures/engineered_TAMS.pdf}
-%   \includegraphics[width=0.5\textwidth]{engineered_TAMS.pdf}
-%   \caption{TAMS entropy profile of a single 30\,$M_\odot$ star (red)
-%     and engineered models where we artificially modify the
-%     CEB region (gray shaded area). The CEB for a single $30\,M_\odot$
-%     star has a mass of $5.81\,M_\odot$ at TAMS, while the engineered
-%     models span the range $\sim3-9.4\,M_\odot$.}
-%   \label{fig:engineered_TAMS}
-%   % \script{engineered_TAMS.py}
+% \begin{figure}[ht!]
+%   \includegraphics[width=0.4\textwidth]{../tex/figures/try.pdf}
+%   \caption{try zenodo sandbox upload}
+%   \script{zenodo_plotter.py}
+%   \label{fig:try}
 % \end{figure}
+
+
+
+Common envelope (CE) is an important evolutionary channel for
+massive isolated binaries to become gravitational-wave (GW) sources. Despite
+recent debates on its relevance for the progenitors of the most
+massive binary black holes \citep[e.g.,][]{pavlovskii:2017,
+  klencki:2020, klencki:2021, vanson:2021, marchant:2021}.
+CE remains a crucial step in the
+formation, among many other compact binaries, of cataclysmic variable
+\citep{paczynski:1976}, double white dwarfs
+\citep[e.g.,][]{korol:2017, renzo:21gwce, thiele:21}, binary neutron stars
+\citep[NS, e.g.,][]{vigna-gomez:2018}, merging black hole-neutron stars
+\citep[e.g.,][]{kruckow:18, broekgaarden:21} and possibly low-mass binary black
+holes \citep[BH, e.g.,][]{dominik:2012, vanson:2021}.
+
+In the ``classical scenario'' \citep[e.g.,][]{tutukov:93,belczynski:2016}, a
+gravitational-wave progenitor system experiences a first mass transfer
+phase through Roche lobe overflow (RLOF) between two non-compact
+stars. Subsequently, the initially more massive donor collapses to a
+compact object without disrupting the binary
+\citep[e.g.,][]{blaauw:1961,renzo:2019walk}. Only afterwards, as the
+initially less massive secondary expands, a second mass-transfer phase
+occurs and is typically dynamically unstable, that is a CE
+\citep[e.g.,][]{dominik:2012, belczynski:2016, kruckow:18}. This
+second mass transfer is responsible for the orbital shrinking
+\citep{paczynski:1976} allowing the system to merge within the age of
+the Universe. Therefore, in this scenario, the donor star of the CE is
+the former accretor of the first RLOF \citep[e.g.,][]{klencki:2020,
+  law-smith:2020, renzo:2021zoph}.
+
+The first stable RLOF typically occurs during the main sequence of the
+initially less massive star and accretion modifies its structure
+\citep[e.g.,][]{neo:1977, packet:1981, blaauw:1993, cantiello:2007,
+  renzo:2021zoph}. On top of the enrichment of the envelope with
+CNO-processed material from the donor star core \citep{blaauw:1993,
+  renzo:2021zoph, el-badry:2022a}, and the substantial spin-up, accretors are expected
+to adjust their core-size to the new mass in a ``rejuvenation''
+process \citep[e.g.,][]{neo:1977, hellings:1983, hellings:1984}. The
+readjustment is driven by  mixing at the boundary between the
+convective core and the envelope, which refuels the convective region
+of hydrogen. This mixing also affects the entropy, density, and
+binding energy profile of the core-envelope boundary (CEB) layer
+\citep[][]{renzo:2021zoph}, where the density rises and most of the
+binding energy is accumulated. Consequently, the success or failure
+of the CE ejection, which is likely decided in the CEB layer
+\citep[e.g.,][]{ivanova:2013}, may be different depending on whether the CE-donor
+accreted mass previously or not.
+
+Here, we use structure and evolution binary models to study
+the impact of the first RLOF phase on the outcome of possible
+subsequent CE events. \Secref{sec:methods} describe our \texttt{MESA}
+calculations, and \Secref{sec:intro_res} presents a proof-of-principle
+of the effect of core boundary mixing and rotation on the envelope
+binding energy. In \Secref{sec:bin_models} we compare our accretor
+models to single stars with the same total post-RLOF mass. We discuss
+our findings and conclude in
+\Secref{sec:conclusions}.
+
+\section{Pre-common envelope evolution}
+\label{sec:methods}
+
+We use \texttt{MESA}
+\citep[version 15140,][]{paxton:2011, paxton:2013, paxton:2015,
+  paxton:2018, paxton:2011} to compute the evolution of binaries which
+experience mass transfer after the end of the donor's main sequence,
+that is case B Roche lobe overflow \citep[RLOF,][]{kippenhahn:1967}.
+Our setup\footnote{Available at \url{10.5281/zenodo.6600641}.} is similar to
+\cite{renzo:2021zoph}, except for the
+metallicity: here we adopt $Z=0.0019\simeq Z_\odot/10$, relevant for
+the progenitor population of GW events \citep[e.g.,][]{vanson:2021}. Moreover, we apply
+throughout the star a small amount of mixing with diffusivity
+\texttt{min\_D\_mix}=100. This improves the numerical stability by
+smoothing properties across adjacent cells, without introducing
+significant quantitative variations, and is a typical numerical trick
+used in asteroseismology calculations (J.~Fuller, private~comm.).
+
+We adopt initial period $P=100$\,days and chose initial masses
+$(M_{1}, M_{2}) = (18, 15), (20, 17), (38, 30)\,M_\odot$. We focus on
+the initially less massive stars, which post-RLOF with our setup
+described below become
+$M_2=15\rightarrow 18, 17\rightarrow 20, 30\rightarrow 36\,M_\odot$, roughly\footnote{Whether a
+  core-collapse results in NS or BH formation, with or without an
+  associated explosion, cannot be decided solely based on the (total
+  or core) mass of a star \citep[e.g.,][]{oconnor:11, farmer:16,
+    patton:20, patton:22, zapartas:21b}. } representative of NS,
+uncertain core-collapse outcome, and BH progenitors, respectively. Our \texttt{MESA} models
+assume that the accretion efficiency is limited by rotationally
+enhanced wind mass loss \citep[e.g.,][]{sravan:2019, wang:2020,
+  renzo:2021zoph, sen:2022}. However, this may lead to less
+conservative mass transfer than suggested by observations
+\citep[e.g.,][]{wang:2021a}.
+
+To avoid computing the late evolutionary phases of the donors, and
+focus on the post-RLOF evolution of the accretors, after detachment
+from the Roche lobe, our simulations artificially separate the
+stars % \footnote{We turn the stripped donor into a point mass and set
+  % the period to infinity on the fly through our
+  % \texttt{run\_star\_extras.f90}.},
+and continue the evolution of the secondary as a single star until it
+reaches carbon depletion (defined by central carbon mass fraction
+$X_\mathrm{c}(^{12}\mathrm{C})<2\times10^{-4} $). We make the routine
+to detach a \texttt{MESA} binary on-the-fly publicly
+available\footnote{\url{https://github.com/MESAHub/mesa-contrib/}}.
+This approach implies that we neglect further binary interactions
+(e.g., tides, case BB RLOF, \citealt{laplace:2020}), the impact of the
+core-collapse of the RLOF-donor on the accretor \cite[e.g.,][]{hirai:2018,
+  ogata:2021} and on the orbit \citep[e.g.,][]{brandt:1995,
+  kalogera:1996, tauris:1998, renzo:2019walk}.
+
+
+\begin{figure}[btp]
+  \includegraphics[width=0.5\textwidth]{engineered_TAMS.pdf}
+  \caption{TAMS entropy profile of a single 30\,$M_\odot$ star (red)
+    and engineered models where we artificially modify the
+    CEB region (gray shaded area). The CEB for a single $30\,M_\odot$
+    star has a mass of $5.81\,M_\odot$ at TAMS, while the engineered
+    models span the range $\sim3-9.4\,M_\odot$.}
+  \label{fig:engineered_TAMS}
+  \script{engineered_TAMS.py}
+\end{figure}
 
 % To illustrate the physical reason why the first RLOF may influence the
 % envelope structure of the accretor much later on, we also compute

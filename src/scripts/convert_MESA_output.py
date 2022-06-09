@@ -3,7 +3,8 @@ Convert the tarball of the entire MESA output to binary.
 This allows showyourwork to cache the binary results on zenodo sandbox
 for faster reproduction
 """
-__author__ = "M. Renzo"
+
+__author__ = "Mathieu Renzo"
 from MESAreader import getSrcCol
 import sys
 import os
@@ -24,11 +25,6 @@ else:
             # file does not exist, extract
             tarball.extractall(path = paths.data, members=[member])
             src, col = getSrcCol(paths.data / member.name, True, True, bin_fname=bin_fname)
-            # for seeing if all of showyourwork proceeds beyond this script
-            os.system("touch "+str(paths.data / "try.npy"))
         else:
             print(str(bin_fname)+" found")
-            # for seeing if all of showyourwork proceeds beyond this script
-            os.system("touch "+str(paths.data / "try.npy"))
-        break
     tarball.close()

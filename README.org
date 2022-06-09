@@ -14,8 +14,6 @@
 <a href="https://github.com/mathren/CE_accretors/raw/main-pdf/arxiv.tar.gz">
 <img src="https://img.shields.io/badge/article-tarball-blue.svg?style=flat" alt="Article tarball"/>
 </a>
-# <a
-# href="https://github.com/mathren/CE_accretors/raw/main-pdf/CE_accretors.pdf">
 <a href="https://github.com/mathren/CE_accretors/raw/dev-pdf/CE_accretors.pdf">
 <img src="https://img.shields.io/badge/article-pdf-blue.svg?style=flat" alt="Read the article"/>
 </a>
@@ -33,44 +31,33 @@ prevent GitHub actions from trying to run =showyourwork=.
 It should be possible to build the article locally on your machine
 with =showyourwork=, see below.
 
-** TODO Migrate to new showyourwork
+** Migrate to new showyourwork
 
    This is happening on branch =dev=. To be tested.
 
-*** Simple test
+*** DONE Simple test
     The scripts =convert_MESA_output.py= should create  =src/data/try.npy=.
     =zenodo_plotter.py= reads it and creates a figure.
 
-    Possibly =convert_MESA_output.py= will also untar the mega-tarball.
+*** DONE downloading tarball and converting
 
+*** TODO caching of intermediate results
 
-*** zenodo CE accretors
-   <2022-06-06 Mon 18:14>
+    - [ ] modify Snakemake file to have caching
+    - [ ]modify dependencies in =showyourwork.yml= [is this needed?]
+    - [X]modify tex file to include figure
 
-   Test the following on one script:
-
-**** TODO test zenodo update
-
-    - upload folder /mnt/home/mrenzo/Projects/CE_accretors/src/data on
-      zenodo sandbox (1)
-    - make the script download, unzip, convert to npy and cache the
-      result on another zenodo sandbox (2)
-    - if it works, convert (1) to zenodo repo and update showyourwork dependencies
-
-**** cleanup figures
+*** TODO cleanup figures
 
     - [ ] Refactor scripts in =/src/figures/=.
-    - [ ] change =graphicspath= in =CE_accretors.tex.=
+    - [X] change =graphicspath= in =CE_accretors.tex.=
     - [ ] Remove figures from repo (?)
 
 
-**** Issue to report on =showyourwork=
-
-
-***** Creating cache from branch does not catch the branch name, it uses =[unknown]= as a tag
+*** Issue to report on =showyourwork=
 
 ***** Not possible to cache to a different location?
-
+      using =paths.data / "cache"= in python makes everything crash
 
 ** Requirements
 
