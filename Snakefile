@@ -1,4 +1,4 @@
-rule:
+rule npy:
   input:
     "src/data/MESA_output.tar.gz"
   output:

@@ -16,16 +16,15 @@ init_model = paths.data / "MESA_output/engineered_stars/TAMS_models/30_rot0_to_T
 delta_M_bound, M_bound_min, M_bound_max = get_M_boundary(init_model, offset=0.05)
 plot_entropy(init_model, ax, lw=3, ls="-", color="r", zorder=10, label="$30\,M_\odot$")
 plot_XY(init_model, bx, lw=3, color='r', zorder=10)
-
+print(init_model)
 # plot engineered models
 root_grid30 = str(paths.data / "MESA_output/engineered_stars/same_core/grid30/")
 grid_folders = sorted(glob.glob(root_grid30+"/*.*/"))
-print(grid_folders)
-
 colors = plt.cm.viridis(np.linspace(0, 1, len(grid_folders)))
 # plot engineered models
 for f in grid_folders:
-    pfile = f + "/LOGS/profile1.data"
+    pfile = f + "LOGS/profile1.data"
+    print(pfile)
     label = ""  # f.split('/')[-2]
     delta_M_bound, M_bound_max, M_bound_min = get_M_boundary(pfile, offset=0.05)
     ax.axvspan(M_bound_min, M_bound_max, fc="#808080", alpha=0.1, zorder=0)
@@ -34,8 +33,6 @@ for f in grid_folders:
     c = colors[grid_folders.index(f)]
     plot_entropy(pfile, ax, c=c, lw=2)
     plot_XY(pfile, bx, c=c, lw=2)
-
-
 bx.plot(np.nan, np.nan, ls="-", c="k", label=r"$^1\mathrm{H}$")
 bx.plot(np.nan, np.nan, ls="--", c="k", label=r"$^4\mathrm{He}$")
 bx.legend(handletextpad=0.4, handlelength=0.75, columnspacing=0.75, loc="center left")
