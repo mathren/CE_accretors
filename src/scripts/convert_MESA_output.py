@@ -25,6 +25,11 @@ else:
             # file does not exist, extract
             tarball.extractall(path = paths.data, members=[member])
             src, col = getSrcCol(paths.data / member.name, True, True, bin_fname=bin_fname)
+            break
         else:
             print(str(bin_fname)+" found")
     tarball.close()
+    # create file to say we did our job
+    # this can be listed as dependency of every script
+    # to ensure the dataset exists
+    (paths.data / "converted_output_exists").touch()

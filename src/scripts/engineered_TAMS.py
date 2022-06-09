@@ -16,7 +16,6 @@ init_model = paths.data / "MESA_output/engineered_stars/TAMS_models/30_rot0_to_T
 delta_M_bound, M_bound_min, M_bound_max = get_M_boundary(init_model, offset=0.05)
 plot_entropy(init_model, ax, lw=3, ls="-", color="r", zorder=10, label="$30\,M_\odot$")
 plot_XY(init_model, bx, lw=3, color='r', zorder=10)
-print(init_model)
 # plot engineered models
 root_grid30 = str(paths.data / "MESA_output/engineered_stars/same_core/grid30/")
 grid_folders = sorted(glob.glob(root_grid30+"/*.*/"))

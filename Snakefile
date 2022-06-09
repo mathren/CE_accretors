@@ -1,938 +1,943 @@
-rule npy:
-  input:
-    "src/data/MESA_output.tar.gz"
-  output:
-    "src/data/binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS1/history..npy"
-    "src/data/binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS1/history..data"
-    "src/data/binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/history..npy"
-    "src/data/binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/history..data"
-    "src/data/binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/500Rsun..npy"
-    "src/data/binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/500Rsun..data"
-    "src/data/binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/100Rsun..npy"
-    "src/data/binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/100Rsun..data"
-    "src/data/binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/200Rsun..npy"
-    "src/data/binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/200Rsun..data"
-    "src/data/binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/recomputed_TAMS..npy"
-    "src/data/binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/recomputed_TAMS..data"
-    "src/data/binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/300Rsun..npy"
-    "src/data/binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/300Rsun..data"
-    "src/data/binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS1/history..npy"
-    "src/data/binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS1/history..data"
-    "src/data/binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/history..npy"
-    "src/data/binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/history..data"
-    "src/data/binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/500Rsun..npy"
-    "src/data/binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/500Rsun..data"
-    "src/data/binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/100Rsun..npy"
-    "src/data/binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/100Rsun..data"
-    "src/data/binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/200Rsun..npy"
-    "src/data/binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/200Rsun..data"
-    "src/data/binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/recomputed_TAMS..npy"
-    "src/data/binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/recomputed_TAMS..data"
-    "src/data/binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/300Rsun..npy"
-    "src/data/binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/300Rsun..data"
-    "src/data/binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS1/history..npy"
-    "src/data/binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS1/history..data"
-    "src/data/binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/history..npy"
-    "src/data/binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/history..data"
-    "src/data/binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/500Rsun..npy"
-    "src/data/binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/500Rsun..data"
-    "src/data/binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/100Rsun..npy"
-    "src/data/binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/100Rsun..data"
-    "src/data/binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/200Rsun..npy"
-    "src/data/binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/200Rsun..data"
-    "src/data/binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/1000Rsun..npy"
-    "src/data/binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/1000Rsun..data"
-    "src/data/binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/recomputed_TAMS..npy"
-    "src/data/binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/recomputed_TAMS..data"
-    "src/data/binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/300Rsun..npy"
-    "src/data/binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/300Rsun..data"
-    "src/data/single_stars/Z_0.0019/30_rot0.9/LOGS/500Rsun..npy"
-    "src/data/single_stars/Z_0.0019/30_rot0.9/LOGS/500Rsun..data"
-    "src/data/single_stars/Z_0.0019/30_rot0.0/LOGS/500Rsun..npy"
-    "src/data/single_stars/Z_0.0019/30_rot0.0/LOGS/500Rsun..data"
-    "src/data/single_stars/Z_0.0019/30_rot0.4/LOGS/500Rsun..npy"
-    "src/data/single_stars/Z_0.0019/30_rot0.4/LOGS/500Rsun..data"
-    "src/data/single_stars/Z_0.0019/30_rot0.6/LOGS/500Rsun..npy"
-    "src/data/single_stars/Z_0.0019/30_rot0.6/LOGS/500Rsun..data"
-    "src/data/single_stars/Z_0.0019/30_rot0.1/LOGS/500Rsun..npy"
-    "src/data/single_stars/Z_0.0019/30_rot0.1/LOGS/500Rsun..data"
-    "src/data/single_stars/Z_0.0019/30_rot0.5/LOGS/500Rsun..npy"
-    "src/data/single_stars/Z_0.0019/30_rot0.5/LOGS/500Rsun..data"
-    "src/data/single_stars/Z_0.0019/18_rot0.0/LOGS/history..npy"
-    "src/data/single_stars/Z_0.0019/18_rot0.0/LOGS/history..data"
-    "src/data/single_stars/Z_0.0019/18_rot0.0/LOGS/500Rsun..npy"
-    "src/data/single_stars/Z_0.0019/18_rot0.0/LOGS/500Rsun..data"
-    "src/data/single_stars/Z_0.0019/18_rot0.0/LOGS/100Rsun..npy"
-    "src/data/single_stars/Z_0.0019/18_rot0.0/LOGS/100Rsun..data"
-    "src/data/single_stars/Z_0.0019/18_rot0.0/LOGS/200Rsun..npy"
-    "src/data/single_stars/Z_0.0019/18_rot0.0/LOGS/200Rsun..data"
-    "src/data/single_stars/Z_0.0019/18_rot0.0/LOGS/300Rsun..npy"
-    "src/data/single_stars/Z_0.0019/18_rot0.0/LOGS/300Rsun..data"
-    "src/data/single_stars/Z_0.0019/30_rot0.8/LOGS/500Rsun..npy"
-    "src/data/single_stars/Z_0.0019/30_rot0.8/LOGS/500Rsun..data"
-    "src/data/single_stars/Z_0.0019/30_rot0.3/LOGS/500Rsun..npy"
-    "src/data/single_stars/Z_0.0019/30_rot0.3/LOGS/500Rsun..data"
-    "src/data/single_stars/Z_0.0019/30_rot0.7/LOGS/500Rsun..npy"
-    "src/data/single_stars/Z_0.0019/30_rot0.7/LOGS/500Rsun..data"
-    "src/data/single_stars/Z_0.0019/20_rot0.0/LOGS/history..npy"
-    "src/data/single_stars/Z_0.0019/20_rot0.0/LOGS/history..data"
-    "src/data/single_stars/Z_0.0019/20_rot0.0/LOGS/500Rsun..npy"
-    "src/data/single_stars/Z_0.0019/20_rot0.0/LOGS/500Rsun..data"
-    "src/data/single_stars/Z_0.0019/20_rot0.0/LOGS/100Rsun..npy"
-    "src/data/single_stars/Z_0.0019/20_rot0.0/LOGS/100Rsun..data"
-    "src/data/single_stars/Z_0.0019/20_rot0.0/LOGS/200Rsun..npy"
-    "src/data/single_stars/Z_0.0019/20_rot0.0/LOGS/200Rsun..data"
-    "src/data/single_stars/Z_0.0019/20_rot0.0/LOGS/300Rsun..npy"
-    "src/data/single_stars/Z_0.0019/20_rot0.0/LOGS/300Rsun..data"
-    "src/data/single_stars/Z_0.0019/36_rot0.0/LOGS/history..npy"
-    "src/data/single_stars/Z_0.0019/36_rot0.0/LOGS/history..data"
-    "src/data/single_stars/Z_0.0019/36_rot0.0/LOGS/500Rsun..npy"
-    "src/data/single_stars/Z_0.0019/36_rot0.0/LOGS/500Rsun..data"
-    "src/data/single_stars/Z_0.0019/36_rot0.0/LOGS/100Rsun..npy"
-    "src/data/single_stars/Z_0.0019/36_rot0.0/LOGS/100Rsun..data"
-    "src/data/single_stars/Z_0.0019/36_rot0.0/LOGS/200Rsun..npy"
-    "src/data/single_stars/Z_0.0019/36_rot0.0/LOGS/200Rsun..data"
-    "src/data/single_stars/Z_0.0019/36_rot0.0/LOGS/1000Rsun..npy"
-    "src/data/single_stars/Z_0.0019/36_rot0.0/LOGS/1000Rsun..data"
-    "src/data/single_stars/Z_0.0019/36_rot0.0/LOGS/300Rsun..npy"
-    "src/data/single_stars/Z_0.0019/36_rot0.0/LOGS/300Rsun..data"
-    "src/data/single_stars/Z_0.0019/30_rot0.2/LOGS/500Rsun..npy"
-    "src/data/single_stars/Z_0.0019/30_rot0.2/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-1.2/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-1.2/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-1.2/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-1.2/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-1.2/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid36/-1.2/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid36/-1.2/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-1.2/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-1.2/LOGS/1000Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-1.2/LOGS/1000Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-1.2/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-1.2/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/0.8/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/0.8/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/0.8/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/0.8/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/0.8/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid36/0.8/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid36/0.8/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/0.8/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/0.8/LOGS/1000Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/0.8/LOGS/1000Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/0.8/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/0.8/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/2.4/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/2.4/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/2.4/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/2.4/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/2.4/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid36/2.4/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid36/2.4/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/2.4/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/2.4/LOGS/1000Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/2.4/LOGS/1000Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/2.4/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/2.4/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/2.0/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/2.0/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/2.0/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/2.0/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/2.0/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid36/2.0/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid36/2.0/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/2.0/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/2.0/LOGS/1000Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/2.0/LOGS/1000Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/2.0/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/2.0/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-3.6/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-3.6/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-3.6/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-3.6/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-3.6/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid36/-3.6/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid36/-3.6/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-3.6/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-3.6/LOGS/1000Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-3.6/LOGS/1000Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-3.6/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-3.6/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-2.8/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-2.8/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-2.8/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-2.8/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-2.8/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid36/-2.8/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid36/-2.8/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-2.8/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-2.8/LOGS/1000Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-2.8/LOGS/1000Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-2.8/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-2.8/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-0.8/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-0.8/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-0.8/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-0.8/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-0.8/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid36/-0.8/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid36/-0.8/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-0.8/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-0.8/LOGS/1000Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-0.8/LOGS/1000Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-0.8/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-0.8/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/4.0/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/4.0/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/4.0/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/4.0/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/4.0/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid36/4.0/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid36/4.0/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/4.0/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/4.0/LOGS/1000Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/4.0/LOGS/1000Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/4.0/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/4.0/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/3.6/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/3.6/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/3.6/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/3.6/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/3.6/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid36/3.6/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid36/3.6/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/3.6/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/3.6/LOGS/1000Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/3.6/LOGS/1000Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/3.6/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/3.6/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-3.2/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-3.2/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-3.2/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-3.2/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-3.2/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid36/-3.2/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid36/-3.2/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-3.2/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-3.2/LOGS/1000Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-3.2/LOGS/1000Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-3.2/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-3.2/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-2.4/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-2.4/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-2.4/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-2.4/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-2.4/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid36/-2.4/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid36/-2.4/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-2.4/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-2.4/LOGS/1000Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-2.4/LOGS/1000Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-2.4/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-2.4/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/0.4/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/0.4/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/0.4/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/0.4/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/0.4/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid36/0.4/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid36/0.4/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/0.4/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/0.4/LOGS/1000Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/0.4/LOGS/1000Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/0.4/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/0.4/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/0.0/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/0.0/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/0.0/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/0.0/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/0.0/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid36/0.0/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid36/0.0/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/0.0/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/0.0/LOGS/1000Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/0.0/LOGS/1000Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/0.0/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/0.0/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-0.4/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-0.4/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-0.4/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-0.4/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-0.4/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid36/-0.4/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid36/-0.4/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-0.4/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-0.4/LOGS/1000Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-0.4/LOGS/1000Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-0.4/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-0.4/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/1.6/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/1.6/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/1.6/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/1.6/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/1.6/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid36/1.6/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid36/1.6/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/1.6/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/1.6/LOGS/1000Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/1.6/LOGS/1000Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/1.6/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/1.6/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-2.0/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-2.0/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-2.0/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-2.0/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-2.0/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid36/-2.0/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid36/-2.0/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-2.0/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-2.0/LOGS/1000Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-2.0/LOGS/1000Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-2.0/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-2.0/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/3.2/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/3.2/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/3.2/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/3.2/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/3.2/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid36/3.2/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid36/3.2/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/3.2/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/3.2/LOGS/1000Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/3.2/LOGS/1000Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/3.2/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/3.2/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/2.8/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/2.8/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/2.8/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/2.8/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/2.8/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid36/2.8/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid36/2.8/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/2.8/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/2.8/LOGS/1000Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/2.8/LOGS/1000Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/2.8/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/2.8/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-1.6/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-1.6/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-1.6/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-1.6/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-1.6/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid36/-1.6/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid36/-1.6/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-1.6/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-1.6/LOGS/1000Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-1.6/LOGS/1000Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-1.6/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-1.6/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-4.0/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-4.0/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-4.0/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-4.0/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-4.0/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid36/-4.0/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid36/-4.0/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-4.0/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-4.0/LOGS/1000Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-4.0/LOGS/1000Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/-4.0/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/-4.0/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/1.2/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/1.2/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/1.2/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/1.2/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/1.2/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid36/1.2/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid36/1.2/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/1.2/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/1.2/LOGS/1000Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/1.2/LOGS/1000Rsun..data"
-    "src/data/engineered_stars/same_core/grid36/1.2/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid36/1.2/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid30/-1.2/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid30/-1.2/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid30/-1.2/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid30/-1.2/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid30/0.8/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid30/0.8/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid30/0.8/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid30/0.8/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid30/2.4/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid30/2.4/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid30/2.4/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid30/2.4/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid30/2.0/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid30/2.0/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid30/2.0/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid30/2.0/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid30/-3.6/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid30/-3.6/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid30/-3.6/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid30/-3.6/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid30/-2.8/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid30/-2.8/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid30/-2.8/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid30/-2.8/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid30/-0.8/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid30/-0.8/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid30/-0.8/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid30/-0.8/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid30/4.0/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid30/4.0/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid30/4.0/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid30/4.0/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid30/3.6/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid30/3.6/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid30/3.6/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid30/3.6/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid30/-3.2/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid30/-3.2/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid30/-3.2/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid30/-3.2/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid30/-2.4/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid30/-2.4/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid30/-2.4/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid30/-2.4/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid30/0.4/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid30/0.4/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid30/0.4/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid30/0.4/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid30/0.0/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid30/0.0/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid30/0.0/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid30/0.0/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid30/-0.4/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid30/-0.4/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid30/-0.4/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid30/-0.4/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid30/1.6/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid30/1.6/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid30/1.6/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid30/1.6/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid30/-2.0/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid30/-2.0/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid30/-2.0/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid30/-2.0/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid30/3.2/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid30/3.2/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid30/3.2/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid30/3.2/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid30/2.8/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid30/2.8/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid30/2.8/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid30/2.8/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid30/-1.6/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid30/-1.6/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid30/-1.6/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid30/-1.6/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid30/-4.0/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid30/-4.0/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid30/-4.0/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid30/-4.0/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid30/1.2/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid30/1.2/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid30/1.2/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid30/1.2/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid18/-1.2/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-1.2/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/-1.2/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-1.2/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/-1.2/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid18/-1.2/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid18/-1.2/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-1.2/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/-1.2/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-1.2/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/0.8/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/0.8/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/0.8/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/0.8/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/0.8/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid18/0.8/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid18/0.8/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/0.8/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/0.8/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/0.8/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/2.4/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/2.4/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/2.4/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/2.4/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/2.4/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid18/2.4/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid18/2.4/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/2.4/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/2.4/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/2.4/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/2.0/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/2.0/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/2.0/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/2.0/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/2.0/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid18/2.0/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid18/2.0/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/2.0/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/2.0/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/2.0/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/-3.6/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-3.6/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/-3.6/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-3.6/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/-3.6/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid18/-3.6/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid18/-3.6/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-3.6/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/-3.6/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-3.6/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/-2.8/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-2.8/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/-2.8/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-2.8/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/-2.8/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid18/-2.8/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid18/-2.8/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-2.8/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/-2.8/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-2.8/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/-0.8/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-0.8/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/-0.8/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-0.8/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/-0.8/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid18/-0.8/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid18/-0.8/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-0.8/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/-0.8/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-0.8/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/4.0/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/4.0/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/4.0/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/4.0/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/4.0/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid18/4.0/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid18/4.0/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/4.0/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/4.0/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/4.0/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/3.6/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/3.6/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/3.6/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/3.6/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/3.6/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid18/3.6/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid18/3.6/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/3.6/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/3.6/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/3.6/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/-3.2/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-3.2/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/-3.2/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-3.2/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/-3.2/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid18/-3.2/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid18/-3.2/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-3.2/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/-3.2/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-3.2/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/-2.4/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-2.4/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/-2.4/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-2.4/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/-2.4/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid18/-2.4/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid18/-2.4/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-2.4/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/-2.4/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-2.4/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/0.4/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/0.4/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/0.4/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/0.4/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/0.4/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid18/0.4/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid18/0.4/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/0.4/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/0.4/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/0.4/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/0.0/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/0.0/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/0.0/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/0.0/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/0.0/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid18/0.0/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid18/0.0/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/0.0/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/0.0/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/0.0/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/-0.4/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-0.4/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/-0.4/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-0.4/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/-0.4/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid18/-0.4/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid18/-0.4/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-0.4/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/-0.4/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-0.4/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/1.6/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/1.6/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/1.6/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/1.6/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/1.6/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid18/1.6/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid18/1.6/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/1.6/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/1.6/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/1.6/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/-2.0/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-2.0/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/-2.0/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-2.0/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/-2.0/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid18/-2.0/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid18/-2.0/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-2.0/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/-2.0/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-2.0/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/3.2/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/3.2/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/3.2/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/3.2/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/3.2/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid18/3.2/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid18/3.2/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/3.2/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/3.2/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/3.2/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/2.8/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/2.8/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/2.8/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/2.8/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/2.8/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid18/2.8/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid18/2.8/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/2.8/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/2.8/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/2.8/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/-1.6/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-1.6/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/-1.6/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-1.6/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/-1.6/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid18/-1.6/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid18/-1.6/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-1.6/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/-1.6/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/-1.6/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/1.2/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/1.2/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/1.2/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/1.2/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/1.2/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid18/1.2/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid18/1.2/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/1.2/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid18/1.2/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid18/1.2/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid17/-1.2/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid17/-1.2/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid17/0.8/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid17/0.8/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid17/2.4/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid17/2.4/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid17/2.0/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid17/2.0/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid17/-2.8/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid17/-2.8/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid17/-0.8/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid17/-0.8/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid17/4.0/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid17/4.0/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid17/3.6/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid17/3.6/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid17/-3.2/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid17/-3.2/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid17/-2.4/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid17/-2.4/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid17/0.4/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid17/0.4/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid17/0.0/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid17/0.0/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid17/-0.4/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid17/-0.4/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid17/1.6/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid17/1.6/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid17/-2.0/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid17/-2.0/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid17/3.2/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid17/3.2/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid17/2.8/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid17/2.8/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid17/-1.6/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid17/-1.6/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid17/1.2/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid17/1.2/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid20/-1.2/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-1.2/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-1.2/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-1.2/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-1.2/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid20/-1.2/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid20/-1.2/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-1.2/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-1.2/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-1.2/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/0.8/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/0.8/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/0.8/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/0.8/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/0.8/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid20/0.8/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid20/0.8/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/0.8/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/0.8/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/0.8/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/2.4/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/2.4/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/2.4/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/2.4/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/2.4/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid20/2.4/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid20/2.4/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/2.4/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/2.4/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/2.4/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/2.0/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/2.0/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/2.0/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/2.0/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/2.0/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid20/2.0/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid20/2.0/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/2.0/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/2.0/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/2.0/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-3.6/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-3.6/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-3.6/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-3.6/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-3.6/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid20/-3.6/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid20/-3.6/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-3.6/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-3.6/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-3.6/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-2.8/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-2.8/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-2.8/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-2.8/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-2.8/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid20/-2.8/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid20/-2.8/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-2.8/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-2.8/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-2.8/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-0.8/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-0.8/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-0.8/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-0.8/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-0.8/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid20/-0.8/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid20/-0.8/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-0.8/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-0.8/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-0.8/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/4.0/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/4.0/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/4.0/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/4.0/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/4.0/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid20/4.0/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid20/4.0/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/4.0/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/4.0/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/4.0/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/3.6/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/3.6/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/3.6/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/3.6/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/3.6/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid20/3.6/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid20/3.6/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/3.6/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/3.6/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/3.6/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-3.2/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-3.2/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-3.2/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-3.2/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-3.2/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid20/-3.2/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid20/-3.2/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-3.2/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-3.2/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-3.2/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-2.4/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-2.4/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-2.4/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-2.4/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-2.4/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid20/-2.4/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid20/-2.4/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-2.4/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-2.4/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-2.4/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/0.4/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/0.4/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/0.4/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/0.4/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/0.4/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid20/0.4/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid20/0.4/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/0.4/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/0.4/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/0.4/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/0.0/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/0.0/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/0.0/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/0.0/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/0.0/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid20/0.0/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid20/0.0/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/0.0/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/0.0/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/0.0/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-0.4/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-0.4/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-0.4/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-0.4/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-0.4/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid20/-0.4/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid20/-0.4/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-0.4/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-0.4/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-0.4/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/1.6/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/1.6/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/1.6/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/1.6/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/1.6/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid20/1.6/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid20/1.6/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/1.6/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/1.6/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/1.6/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-2.0/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-2.0/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-2.0/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-2.0/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-2.0/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid20/-2.0/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid20/-2.0/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-2.0/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-2.0/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-2.0/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/3.2/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/3.2/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/3.2/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/3.2/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/3.2/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid20/3.2/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid20/3.2/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/3.2/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/3.2/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/3.2/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/2.8/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/2.8/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/2.8/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/2.8/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/2.8/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid20/2.8/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid20/2.8/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/2.8/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/2.8/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/2.8/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-1.6/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-1.6/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-1.6/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-1.6/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-1.6/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid20/-1.6/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid20/-1.6/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-1.6/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-1.6/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-1.6/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-4.0/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-4.0/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-4.0/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-4.0/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-4.0/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid20/-4.0/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid20/-4.0/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-4.0/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/-4.0/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/-4.0/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/1.2/LOGS/500Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/1.2/LOGS/500Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/1.2/LOGS/100Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/1.2/LOGS/100Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/1.2/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid20/1.2/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid20/1.2/LOGS/200Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/1.2/LOGS/200Rsun..data"
-    "src/data/engineered_stars/same_core/grid20/1.2/LOGS/300Rsun..npy"
-    "src/data/engineered_stars/same_core/grid20/1.2/LOGS/300Rsun..data"
-    "src/data/engineered_stars/same_core/grid15/-1.2/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid15/-1.2/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid15/0.8/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid15/0.8/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid15/2.4/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid15/2.4/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid15/2.0/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid15/2.0/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid15/-2.8/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid15/-2.8/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid15/-0.8/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid15/-0.8/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid15/4.0/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid15/4.0/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid15/3.6/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid15/3.6/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid15/-2.4/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid15/-2.4/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid15/0.4/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid15/0.4/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid15/0.0/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid15/0.0/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid15/-0.4/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid15/-0.4/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid15/1.6/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid15/1.6/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid15/-2.0/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid15/-2.0/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid15/3.2/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid15/3.2/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid15/2.8/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid15/2.8/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid15/-1.6/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid15/-1.6/LOGS/profile1..data"
-    "src/data/engineered_stars/same_core/grid15/1.2/LOGS/profile1..npy"
-    "src/data/engineered_stars/same_core/grid15/1.2/LOGS/profile1..data"
-    "src/data/engineered_stars/TAMS_models/30_rot0_to_TAMS/LOGS/TAMS..npy"
-    "src/data/engineered_stars/TAMS_models/30_rot0_to_TAMS/LOGS/TAMS..data"
-    "src/data/engineered_stars/TAMS_models/18_rot0_to_TAMS/LOGS/TAMS..npy"
-    "src/data/engineered_stars/TAMS_models/18_rot0_to_TAMS/LOGS/TAMS..data"
-    "src/data/engineered_stars/TAMS_models/36_rot0_to_TAMS/LOGS/TAMS..npy"
-    "src/data/engineered_stars/TAMS_models/36_rot0_to_TAMS/LOGS/TAMS..data"
-    "src/data/engineered_stars/TAMS_models/15_rot0_to_TAMS/LOGS/TAMS..npy"
-    "src/data/engineered_stars/TAMS_models/15_rot0_to_TAMS/LOGS/TAMS..data"
-    "src/data/engineered_stars/TAMS_models/20_rot0_to_TAMS/LOGS/TAMS..npy"
-    "src/data/engineered_stars/TAMS_models/20_rot0_to_TAMS/LOGS/TAMS..data"
-    "src/data/engineered_stars/TAMS_models/17_rot0_to_TAMS/LOGS/TAMS..npy"
-    "src/data/engineered_stars/TAMS_models/17_rot0_to_TAMS/LOGS/TAMS..data"
-  conda:
-    "environment.yml"
-  cache:
-    True
-  script:
-    "src/scripts/convert_MESA_output.py"
+MESA_output = ["converted_output_exists",]
+    # "binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS1/history..npy",
+    # "binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS1/history..data",
+    # "binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/history..npy",
+    # "binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/history..data",
+    # "binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/500Rsun..npy",
+    # "binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/500Rsun..data",
+    # "binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/100Rsun..npy",
+    # "binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/100Rsun..data",
+    # "binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/200Rsun..npy",
+    # "binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/200Rsun..data",
+    # "binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/recomputed_TAMS..npy",
+    # "binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/recomputed_TAMS..data",
+    # "binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/300Rsun..npy",
+    # "binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/300Rsun..data",
+    # "binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS1/history..npy",
+    # "binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS1/history..data",
+    # "binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/history..npy",
+    # "binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/history..data",
+    # "binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/500Rsun..npy",
+    # "binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/500Rsun..data",
+    # "binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/100Rsun..npy",
+    # "binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/100Rsun..data",
+    # "binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/200Rsun..npy",
+    # "binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/200Rsun..data",
+    # "binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/recomputed_TAMS..npy",
+    # "binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/recomputed_TAMS..data",
+    # "binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/300Rsun..npy",
+    # "binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/300Rsun..data",
+    # "binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS1/history..npy",
+    # "binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS1/history..data",
+    # "binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/history..npy",
+    # "binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/history..data",
+    # "binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/500Rsun..npy",
+    # "binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/500Rsun..data",
+    # "binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/100Rsun..npy",
+    # "binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/100Rsun..data",
+    # "binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/200Rsun..npy",
+    # "binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/200Rsun..data",
+    # "binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/1000Rsun..npy",
+    # "binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/1000Rsun..data",
+    # "binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/recomputed_TAMS..npy",
+    # "binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/recomputed_TAMS..data",
+    # "binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/300Rsun..npy",
+    # "binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/300Rsun..data",
+    # "single_stars/Z_0.0019/30_rot0.9/LOGS/500Rsun..npy",
+    # "single_stars/Z_0.0019/30_rot0.9/LOGS/500Rsun..data",
+    # "single_stars/Z_0.0019/30_rot0.0/LOGS/500Rsun..npy",
+    # "single_stars/Z_0.0019/30_rot0.0/LOGS/500Rsun..data",
+    # "single_stars/Z_0.0019/30_rot0.4/LOGS/500Rsun..npy",
+    # "single_stars/Z_0.0019/30_rot0.4/LOGS/500Rsun..data",
+    # "single_stars/Z_0.0019/30_rot0.6/LOGS/500Rsun..npy",
+    # "single_stars/Z_0.0019/30_rot0.6/LOGS/500Rsun..data",
+    # "single_stars/Z_0.0019/30_rot0.1/LOGS/500Rsun..npy",
+    # "single_stars/Z_0.0019/30_rot0.1/LOGS/500Rsun..data",
+    # "single_stars/Z_0.0019/30_rot0.5/LOGS/500Rsun..npy",
+    # "single_stars/Z_0.0019/30_rot0.5/LOGS/500Rsun..data",
+    # "single_stars/Z_0.0019/18_rot0.0/LOGS/history..npy",
+    # "single_stars/Z_0.0019/18_rot0.0/LOGS/history..data",
+    # "single_stars/Z_0.0019/18_rot0.0/LOGS/500Rsun..npy",
+    # "single_stars/Z_0.0019/18_rot0.0/LOGS/500Rsun..data",
+    # "single_stars/Z_0.0019/18_rot0.0/LOGS/100Rsun..npy",
+    # "single_stars/Z_0.0019/18_rot0.0/LOGS/100Rsun..data",
+    # "single_stars/Z_0.0019/18_rot0.0/LOGS/200Rsun..npy",
+    # "single_stars/Z_0.0019/18_rot0.0/LOGS/200Rsun..data",
+    # "single_stars/Z_0.0019/18_rot0.0/LOGS/300Rsun..npy",
+    # "single_stars/Z_0.0019/18_rot0.0/LOGS/300Rsun..data",
+    # "single_stars/Z_0.0019/30_rot0.8/LOGS/500Rsun..npy",
+    # "single_stars/Z_0.0019/30_rot0.8/LOGS/500Rsun..data",
+    # "single_stars/Z_0.0019/30_rot0.3/LOGS/500Rsun..npy",
+    # "single_stars/Z_0.0019/30_rot0.3/LOGS/500Rsun..data",
+    # "single_stars/Z_0.0019/30_rot0.7/LOGS/500Rsun..npy",
+    # "single_stars/Z_0.0019/30_rot0.7/LOGS/500Rsun..data",
+    # "single_stars/Z_0.0019/20_rot0.0/LOGS/history..npy",
+    # "single_stars/Z_0.0019/20_rot0.0/LOGS/history..data",
+    # "single_stars/Z_0.0019/20_rot0.0/LOGS/500Rsun..npy",
+    # "single_stars/Z_0.0019/20_rot0.0/LOGS/500Rsun..data",
+    # "single_stars/Z_0.0019/20_rot0.0/LOGS/100Rsun..npy",
+    # "single_stars/Z_0.0019/20_rot0.0/LOGS/100Rsun..data",
+    # "single_stars/Z_0.0019/20_rot0.0/LOGS/200Rsun..npy",
+    # "single_stars/Z_0.0019/20_rot0.0/LOGS/200Rsun..data",
+    # "single_stars/Z_0.0019/20_rot0.0/LOGS/300Rsun..npy",
+    # "single_stars/Z_0.0019/20_rot0.0/LOGS/300Rsun..data",
+    # "single_stars/Z_0.0019/36_rot0.0/LOGS/history..npy",
+    # "single_stars/Z_0.0019/36_rot0.0/LOGS/history..data",
+    # "single_stars/Z_0.0019/36_rot0.0/LOGS/500Rsun..npy",
+    # "single_stars/Z_0.0019/36_rot0.0/LOGS/500Rsun..data",
+    # "single_stars/Z_0.0019/36_rot0.0/LOGS/100Rsun..npy",
+    # "single_stars/Z_0.0019/36_rot0.0/LOGS/100Rsun..data",
+    # "single_stars/Z_0.0019/36_rot0.0/LOGS/200Rsun..npy",
+    # "single_stars/Z_0.0019/36_rot0.0/LOGS/200Rsun..data",
+    # "single_stars/Z_0.0019/36_rot0.0/LOGS/1000Rsun..npy",
+    # "single_stars/Z_0.0019/36_rot0.0/LOGS/1000Rsun..data",
+    # "single_stars/Z_0.0019/36_rot0.0/LOGS/300Rsun..npy",
+    # "single_stars/Z_0.0019/36_rot0.0/LOGS/300Rsun..data",
+    # "single_stars/Z_0.0019/30_rot0.2/LOGS/500Rsun..npy",
+    # "single_stars/Z_0.0019/30_rot0.2/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid36/-1.2/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid36/-1.2/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid36/-1.2/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid36/-1.2/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid36/-1.2/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid36/-1.2/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid36/-1.2/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid36/-1.2/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid36/-1.2/LOGS/1000Rsun..npy",
+    # "engineered_stars/same_core/grid36/-1.2/LOGS/1000Rsun..data",
+    # "engineered_stars/same_core/grid36/-1.2/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid36/-1.2/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid36/0.8/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid36/0.8/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid36/0.8/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid36/0.8/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid36/0.8/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid36/0.8/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid36/0.8/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid36/0.8/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid36/0.8/LOGS/1000Rsun..npy",
+    # "engineered_stars/same_core/grid36/0.8/LOGS/1000Rsun..data",
+    # "engineered_stars/same_core/grid36/0.8/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid36/0.8/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid36/2.4/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid36/2.4/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid36/2.4/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid36/2.4/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid36/2.4/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid36/2.4/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid36/2.4/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid36/2.4/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid36/2.4/LOGS/1000Rsun..npy",
+    # "engineered_stars/same_core/grid36/2.4/LOGS/1000Rsun..data",
+    # "engineered_stars/same_core/grid36/2.4/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid36/2.4/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid36/2.0/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid36/2.0/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid36/2.0/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid36/2.0/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid36/2.0/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid36/2.0/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid36/2.0/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid36/2.0/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid36/2.0/LOGS/1000Rsun..npy",
+    # "engineered_stars/same_core/grid36/2.0/LOGS/1000Rsun..data",
+    # "engineered_stars/same_core/grid36/2.0/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid36/2.0/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid36/-3.6/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid36/-3.6/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid36/-3.6/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid36/-3.6/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid36/-3.6/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid36/-3.6/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid36/-3.6/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid36/-3.6/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid36/-3.6/LOGS/1000Rsun..npy",
+    # "engineered_stars/same_core/grid36/-3.6/LOGS/1000Rsun..data",
+    # "engineered_stars/same_core/grid36/-3.6/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid36/-3.6/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid36/-2.8/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid36/-2.8/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid36/-2.8/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid36/-2.8/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid36/-2.8/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid36/-2.8/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid36/-2.8/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid36/-2.8/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid36/-2.8/LOGS/1000Rsun..npy",
+    # "engineered_stars/same_core/grid36/-2.8/LOGS/1000Rsun..data",
+    # "engineered_stars/same_core/grid36/-2.8/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid36/-2.8/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid36/-0.8/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid36/-0.8/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid36/-0.8/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid36/-0.8/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid36/-0.8/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid36/-0.8/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid36/-0.8/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid36/-0.8/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid36/-0.8/LOGS/1000Rsun..npy",
+    # "engineered_stars/same_core/grid36/-0.8/LOGS/1000Rsun..data",
+    # "engineered_stars/same_core/grid36/-0.8/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid36/-0.8/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid36/4.0/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid36/4.0/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid36/4.0/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid36/4.0/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid36/4.0/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid36/4.0/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid36/4.0/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid36/4.0/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid36/4.0/LOGS/1000Rsun..npy",
+    # "engineered_stars/same_core/grid36/4.0/LOGS/1000Rsun..data",
+    # "engineered_stars/same_core/grid36/4.0/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid36/4.0/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid36/3.6/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid36/3.6/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid36/3.6/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid36/3.6/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid36/3.6/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid36/3.6/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid36/3.6/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid36/3.6/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid36/3.6/LOGS/1000Rsun..npy",
+    # "engineered_stars/same_core/grid36/3.6/LOGS/1000Rsun..data",
+    # "engineered_stars/same_core/grid36/3.6/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid36/3.6/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid36/-3.2/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid36/-3.2/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid36/-3.2/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid36/-3.2/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid36/-3.2/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid36/-3.2/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid36/-3.2/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid36/-3.2/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid36/-3.2/LOGS/1000Rsun..npy",
+    # "engineered_stars/same_core/grid36/-3.2/LOGS/1000Rsun..data",
+    # "engineered_stars/same_core/grid36/-3.2/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid36/-3.2/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid36/-2.4/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid36/-2.4/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid36/-2.4/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid36/-2.4/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid36/-2.4/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid36/-2.4/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid36/-2.4/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid36/-2.4/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid36/-2.4/LOGS/1000Rsun..npy",
+    # "engineered_stars/same_core/grid36/-2.4/LOGS/1000Rsun..data",
+    # "engineered_stars/same_core/grid36/-2.4/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid36/-2.4/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid36/0.4/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid36/0.4/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid36/0.4/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid36/0.4/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid36/0.4/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid36/0.4/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid36/0.4/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid36/0.4/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid36/0.4/LOGS/1000Rsun..npy",
+    # "engineered_stars/same_core/grid36/0.4/LOGS/1000Rsun..data",
+    # "engineered_stars/same_core/grid36/0.4/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid36/0.4/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid36/0.0/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid36/0.0/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid36/0.0/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid36/0.0/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid36/0.0/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid36/0.0/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid36/0.0/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid36/0.0/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid36/0.0/LOGS/1000Rsun..npy",
+    # "engineered_stars/same_core/grid36/0.0/LOGS/1000Rsun..data",
+    # "engineered_stars/same_core/grid36/0.0/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid36/0.0/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid36/-0.4/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid36/-0.4/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid36/-0.4/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid36/-0.4/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid36/-0.4/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid36/-0.4/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid36/-0.4/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid36/-0.4/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid36/-0.4/LOGS/1000Rsun..npy",
+    # "engineered_stars/same_core/grid36/-0.4/LOGS/1000Rsun..data",
+    # "engineered_stars/same_core/grid36/-0.4/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid36/-0.4/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid36/1.6/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid36/1.6/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid36/1.6/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid36/1.6/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid36/1.6/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid36/1.6/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid36/1.6/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid36/1.6/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid36/1.6/LOGS/1000Rsun..npy",
+    # "engineered_stars/same_core/grid36/1.6/LOGS/1000Rsun..data",
+    # "engineered_stars/same_core/grid36/1.6/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid36/1.6/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid36/-2.0/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid36/-2.0/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid36/-2.0/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid36/-2.0/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid36/-2.0/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid36/-2.0/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid36/-2.0/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid36/-2.0/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid36/-2.0/LOGS/1000Rsun..npy",
+    # "engineered_stars/same_core/grid36/-2.0/LOGS/1000Rsun..data",
+    # "engineered_stars/same_core/grid36/-2.0/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid36/-2.0/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid36/3.2/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid36/3.2/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid36/3.2/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid36/3.2/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid36/3.2/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid36/3.2/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid36/3.2/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid36/3.2/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid36/3.2/LOGS/1000Rsun..npy",
+    # "engineered_stars/same_core/grid36/3.2/LOGS/1000Rsun..data",
+    # "engineered_stars/same_core/grid36/3.2/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid36/3.2/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid36/2.8/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid36/2.8/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid36/2.8/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid36/2.8/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid36/2.8/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid36/2.8/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid36/2.8/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid36/2.8/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid36/2.8/LOGS/1000Rsun..npy",
+    # "engineered_stars/same_core/grid36/2.8/LOGS/1000Rsun..data",
+    # "engineered_stars/same_core/grid36/2.8/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid36/2.8/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid36/-1.6/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid36/-1.6/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid36/-1.6/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid36/-1.6/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid36/-1.6/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid36/-1.6/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid36/-1.6/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid36/-1.6/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid36/-1.6/LOGS/1000Rsun..npy",
+    # "engineered_stars/same_core/grid36/-1.6/LOGS/1000Rsun..data",
+    # "engineered_stars/same_core/grid36/-1.6/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid36/-1.6/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid36/-4.0/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid36/-4.0/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid36/-4.0/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid36/-4.0/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid36/-4.0/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid36/-4.0/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid36/-4.0/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid36/-4.0/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid36/-4.0/LOGS/1000Rsun..npy",
+    # "engineered_stars/same_core/grid36/-4.0/LOGS/1000Rsun..data",
+    # "engineered_stars/same_core/grid36/-4.0/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid36/-4.0/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid36/1.2/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid36/1.2/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid36/1.2/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid36/1.2/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid36/1.2/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid36/1.2/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid36/1.2/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid36/1.2/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid36/1.2/LOGS/1000Rsun..npy",
+    # "engineered_stars/same_core/grid36/1.2/LOGS/1000Rsun..data",
+    # "engineered_stars/same_core/grid36/1.2/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid36/1.2/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid30/-1.2/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid30/-1.2/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid30/-1.2/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid30/-1.2/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid30/0.8/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid30/0.8/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid30/0.8/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid30/0.8/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid30/2.4/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid30/2.4/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid30/2.4/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid30/2.4/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid30/2.0/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid30/2.0/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid30/2.0/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid30/2.0/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid30/-3.6/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid30/-3.6/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid30/-3.6/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid30/-3.6/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid30/-2.8/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid30/-2.8/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid30/-2.8/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid30/-2.8/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid30/-0.8/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid30/-0.8/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid30/-0.8/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid30/-0.8/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid30/4.0/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid30/4.0/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid30/4.0/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid30/4.0/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid30/3.6/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid30/3.6/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid30/3.6/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid30/3.6/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid30/-3.2/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid30/-3.2/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid30/-3.2/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid30/-3.2/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid30/-2.4/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid30/-2.4/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid30/-2.4/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid30/-2.4/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid30/0.4/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid30/0.4/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid30/0.4/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid30/0.4/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid30/0.0/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid30/0.0/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid30/0.0/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid30/0.0/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid30/-0.4/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid30/-0.4/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid30/-0.4/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid30/-0.4/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid30/1.6/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid30/1.6/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid30/1.6/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid30/1.6/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid30/-2.0/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid30/-2.0/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid30/-2.0/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid30/-2.0/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid30/3.2/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid30/3.2/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid30/3.2/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid30/3.2/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid30/2.8/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid30/2.8/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid30/2.8/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid30/2.8/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid30/-1.6/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid30/-1.6/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid30/-1.6/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid30/-1.6/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid30/-4.0/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid30/-4.0/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid30/-4.0/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid30/-4.0/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid30/1.2/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid30/1.2/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid30/1.2/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid30/1.2/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid18/-1.2/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid18/-1.2/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid18/-1.2/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid18/-1.2/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid18/-1.2/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid18/-1.2/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid18/-1.2/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid18/-1.2/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid18/-1.2/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid18/-1.2/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid18/0.8/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid18/0.8/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid18/0.8/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid18/0.8/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid18/0.8/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid18/0.8/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid18/0.8/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid18/0.8/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid18/0.8/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid18/0.8/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid18/2.4/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid18/2.4/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid18/2.4/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid18/2.4/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid18/2.4/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid18/2.4/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid18/2.4/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid18/2.4/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid18/2.4/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid18/2.4/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid18/2.0/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid18/2.0/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid18/2.0/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid18/2.0/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid18/2.0/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid18/2.0/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid18/2.0/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid18/2.0/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid18/2.0/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid18/2.0/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid18/-3.6/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid18/-3.6/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid18/-3.6/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid18/-3.6/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid18/-3.6/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid18/-3.6/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid18/-3.6/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid18/-3.6/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid18/-3.6/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid18/-3.6/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid18/-2.8/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid18/-2.8/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid18/-2.8/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid18/-2.8/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid18/-2.8/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid18/-2.8/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid18/-2.8/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid18/-2.8/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid18/-2.8/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid18/-2.8/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid18/-0.8/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid18/-0.8/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid18/-0.8/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid18/-0.8/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid18/-0.8/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid18/-0.8/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid18/-0.8/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid18/-0.8/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid18/-0.8/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid18/-0.8/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid18/4.0/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid18/4.0/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid18/4.0/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid18/4.0/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid18/4.0/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid18/4.0/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid18/4.0/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid18/4.0/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid18/4.0/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid18/4.0/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid18/3.6/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid18/3.6/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid18/3.6/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid18/3.6/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid18/3.6/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid18/3.6/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid18/3.6/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid18/3.6/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid18/3.6/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid18/3.6/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid18/-3.2/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid18/-3.2/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid18/-3.2/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid18/-3.2/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid18/-3.2/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid18/-3.2/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid18/-3.2/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid18/-3.2/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid18/-3.2/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid18/-3.2/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid18/-2.4/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid18/-2.4/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid18/-2.4/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid18/-2.4/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid18/-2.4/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid18/-2.4/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid18/-2.4/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid18/-2.4/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid18/-2.4/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid18/-2.4/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid18/0.4/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid18/0.4/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid18/0.4/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid18/0.4/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid18/0.4/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid18/0.4/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid18/0.4/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid18/0.4/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid18/0.4/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid18/0.4/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid18/0.0/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid18/0.0/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid18/0.0/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid18/0.0/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid18/0.0/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid18/0.0/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid18/0.0/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid18/0.0/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid18/0.0/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid18/0.0/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid18/-0.4/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid18/-0.4/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid18/-0.4/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid18/-0.4/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid18/-0.4/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid18/-0.4/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid18/-0.4/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid18/-0.4/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid18/-0.4/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid18/-0.4/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid18/1.6/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid18/1.6/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid18/1.6/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid18/1.6/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid18/1.6/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid18/1.6/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid18/1.6/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid18/1.6/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid18/1.6/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid18/1.6/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid18/-2.0/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid18/-2.0/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid18/-2.0/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid18/-2.0/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid18/-2.0/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid18/-2.0/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid18/-2.0/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid18/-2.0/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid18/-2.0/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid18/-2.0/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid18/3.2/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid18/3.2/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid18/3.2/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid18/3.2/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid18/3.2/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid18/3.2/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid18/3.2/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid18/3.2/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid18/3.2/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid18/3.2/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid18/2.8/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid18/2.8/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid18/2.8/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid18/2.8/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid18/2.8/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid18/2.8/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid18/2.8/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid18/2.8/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid18/2.8/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid18/2.8/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid18/-1.6/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid18/-1.6/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid18/-1.6/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid18/-1.6/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid18/-1.6/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid18/-1.6/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid18/-1.6/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid18/-1.6/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid18/-1.6/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid18/-1.6/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid18/1.2/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid18/1.2/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid18/1.2/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid18/1.2/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid18/1.2/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid18/1.2/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid18/1.2/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid18/1.2/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid18/1.2/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid18/1.2/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid17/-1.2/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid17/-1.2/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid17/0.8/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid17/0.8/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid17/2.4/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid17/2.4/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid17/2.0/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid17/2.0/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid17/-2.8/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid17/-2.8/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid17/-0.8/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid17/-0.8/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid17/4.0/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid17/4.0/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid17/3.6/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid17/3.6/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid17/-3.2/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid17/-3.2/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid17/-2.4/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid17/-2.4/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid17/0.4/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid17/0.4/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid17/0.0/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid17/0.0/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid17/-0.4/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid17/-0.4/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid17/1.6/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid17/1.6/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid17/-2.0/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid17/-2.0/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid17/3.2/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid17/3.2/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid17/2.8/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid17/2.8/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid17/-1.6/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid17/-1.6/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid17/1.2/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid17/1.2/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid20/-1.2/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid20/-1.2/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid20/-1.2/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid20/-1.2/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid20/-1.2/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid20/-1.2/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid20/-1.2/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid20/-1.2/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid20/-1.2/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid20/-1.2/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid20/0.8/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid20/0.8/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid20/0.8/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid20/0.8/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid20/0.8/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid20/0.8/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid20/0.8/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid20/0.8/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid20/0.8/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid20/0.8/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid20/2.4/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid20/2.4/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid20/2.4/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid20/2.4/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid20/2.4/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid20/2.4/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid20/2.4/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid20/2.4/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid20/2.4/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid20/2.4/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid20/2.0/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid20/2.0/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid20/2.0/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid20/2.0/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid20/2.0/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid20/2.0/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid20/2.0/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid20/2.0/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid20/2.0/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid20/2.0/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid20/-3.6/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid20/-3.6/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid20/-3.6/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid20/-3.6/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid20/-3.6/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid20/-3.6/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid20/-3.6/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid20/-3.6/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid20/-3.6/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid20/-3.6/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid20/-2.8/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid20/-2.8/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid20/-2.8/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid20/-2.8/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid20/-2.8/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid20/-2.8/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid20/-2.8/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid20/-2.8/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid20/-2.8/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid20/-2.8/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid20/-0.8/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid20/-0.8/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid20/-0.8/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid20/-0.8/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid20/-0.8/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid20/-0.8/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid20/-0.8/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid20/-0.8/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid20/-0.8/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid20/-0.8/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid20/4.0/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid20/4.0/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid20/4.0/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid20/4.0/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid20/4.0/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid20/4.0/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid20/4.0/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid20/4.0/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid20/4.0/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid20/4.0/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid20/3.6/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid20/3.6/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid20/3.6/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid20/3.6/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid20/3.6/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid20/3.6/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid20/3.6/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid20/3.6/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid20/3.6/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid20/3.6/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid20/-3.2/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid20/-3.2/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid20/-3.2/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid20/-3.2/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid20/-3.2/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid20/-3.2/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid20/-3.2/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid20/-3.2/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid20/-3.2/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid20/-3.2/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid20/-2.4/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid20/-2.4/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid20/-2.4/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid20/-2.4/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid20/-2.4/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid20/-2.4/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid20/-2.4/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid20/-2.4/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid20/-2.4/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid20/-2.4/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid20/0.4/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid20/0.4/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid20/0.4/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid20/0.4/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid20/0.4/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid20/0.4/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid20/0.4/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid20/0.4/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid20/0.4/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid20/0.4/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid20/0.0/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid20/0.0/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid20/0.0/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid20/0.0/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid20/0.0/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid20/0.0/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid20/0.0/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid20/0.0/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid20/0.0/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid20/0.0/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid20/-0.4/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid20/-0.4/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid20/-0.4/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid20/-0.4/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid20/-0.4/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid20/-0.4/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid20/-0.4/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid20/-0.4/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid20/-0.4/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid20/-0.4/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid20/1.6/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid20/1.6/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid20/1.6/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid20/1.6/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid20/1.6/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid20/1.6/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid20/1.6/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid20/1.6/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid20/1.6/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid20/1.6/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid20/-2.0/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid20/-2.0/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid20/-2.0/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid20/-2.0/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid20/-2.0/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid20/-2.0/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid20/-2.0/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid20/-2.0/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid20/-2.0/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid20/-2.0/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid20/3.2/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid20/3.2/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid20/3.2/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid20/3.2/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid20/3.2/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid20/3.2/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid20/3.2/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid20/3.2/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid20/3.2/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid20/3.2/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid20/2.8/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid20/2.8/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid20/2.8/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid20/2.8/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid20/2.8/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid20/2.8/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid20/2.8/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid20/2.8/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid20/2.8/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid20/2.8/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid20/-1.6/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid20/-1.6/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid20/-1.6/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid20/-1.6/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid20/-1.6/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid20/-1.6/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid20/-1.6/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid20/-1.6/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid20/-1.6/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid20/-1.6/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid20/-4.0/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid20/-4.0/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid20/-4.0/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid20/-4.0/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid20/-4.0/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid20/-4.0/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid20/-4.0/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid20/-4.0/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid20/-4.0/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid20/-4.0/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid20/1.2/LOGS/500Rsun..npy",
+    # "engineered_stars/same_core/grid20/1.2/LOGS/500Rsun..data",
+    # "engineered_stars/same_core/grid20/1.2/LOGS/100Rsun..npy",
+    # "engineered_stars/same_core/grid20/1.2/LOGS/100Rsun..data",
+    # "engineered_stars/same_core/grid20/1.2/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid20/1.2/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid20/1.2/LOGS/200Rsun..npy",
+    # "engineered_stars/same_core/grid20/1.2/LOGS/200Rsun..data",
+    # "engineered_stars/same_core/grid20/1.2/LOGS/300Rsun..npy",
+    # "engineered_stars/same_core/grid20/1.2/LOGS/300Rsun..data",
+    # "engineered_stars/same_core/grid15/-1.2/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid15/-1.2/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid15/0.8/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid15/0.8/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid15/2.4/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid15/2.4/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid15/2.0/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid15/2.0/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid15/-2.8/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid15/-2.8/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid15/-0.8/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid15/-0.8/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid15/4.0/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid15/4.0/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid15/3.6/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid15/3.6/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid15/-2.4/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid15/-2.4/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid15/0.4/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid15/0.4/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid15/0.0/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid15/0.0/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid15/-0.4/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid15/-0.4/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid15/1.6/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid15/1.6/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid15/-2.0/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid15/-2.0/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid15/3.2/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid15/3.2/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid15/2.8/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid15/2.8/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid15/-1.6/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid15/-1.6/LOGS/profile1..data",
+    # "engineered_stars/same_core/grid15/1.2/LOGS/profile1..npy",
+    # "engineered_stars/same_core/grid15/1.2/LOGS/profile1..data",
+    # "engineered_stars/TAMS_models/30_rot0_to_TAMS/LOGS/TAMS..npy",
+    # "engineered_stars/TAMS_models/30_rot0_to_TAMS/LOGS/TAMS..data",
+    # "engineered_stars/TAMS_models/18_rot0_to_TAMS/LOGS/TAMS..npy",
+    # "engineered_stars/TAMS_models/18_rot0_to_TAMS/LOGS/TAMS..data",
+    # "engineered_stars/TAMS_models/36_rot0_to_TAMS/LOGS/TAMS..npy",
+    # "engineered_stars/TAMS_models/36_rot0_to_TAMS/LOGS/TAMS..data",
+    # "engineered_stars/TAMS_models/15_rot0_to_TAMS/LOGS/TAMS..npy",
+    # "engineered_stars/TAMS_models/15_rot0_to_TAMS/LOGS/TAMS..data",
+    # "engineered_stars/TAMS_models/20_rot0_to_TAMS/LOGS/TAMS..npy",
+    # "engineered_stars/TAMS_models/20_rot0_to_TAMS/LOGS/TAMS..data",
+    # "engineered_stars/TAMS_models/17_rot0_to_TAMS/LOGS/TAMS..npy",
+    # "engineered_stars/TAMS_models/17_rot0_to_TAMS/LOGS/TAMS..data"]
+
+
+rule converted_output_exists:
+    input:
+        "src/data/MESA_output.tar.gz"
+    output:
+        # multiext("src/data/"+"{dataset}" for dataset in MESA_output)
+        "src/data/converted_output_exists"
+    conda:
+        "environment.yml"
+    cache:
+        True
+    script:
+        "src/scripts/convert_MESA_output.py"
