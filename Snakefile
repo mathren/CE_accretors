@@ -933,8 +933,7 @@ rule converted_output_exists:
     input:
         "src/data/MESA_output.tar.gz"
     output:
-        # multiext("src/data/"+"{dataset}" for dataset in MESA_output)
-        "src/data/converted_output_exists"
+        directory("src/data/MESA_output/")
     conda:
         "environment.yml"
     cache:

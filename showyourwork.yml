@@ -13,7 +13,7 @@ dependencies:
     - src/scripts/lib_engineered.py
     - src/scripts/MESAreader.py
     # input data
-    - src/data/converted_output_exists
+    - src/data/MESA_output/
     # - src/data/MESA_output/engineered_stars/TAMS_models/30_rot0_to_TAMS/LOGS/TAMS.data
     # - src/data/MESA_output/engineered_stars/TAMS_models/30_rot0_to_TAMS/LOGS/TAMS..npy
     # - src/data/MESA_output/engineered_stars/same_core/grid30/-0.4/LOGS/profile1.data
