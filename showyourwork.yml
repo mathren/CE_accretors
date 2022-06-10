@@ -14,50 +14,30 @@ dependencies:
     - src/scripts/MESAreader.py
     # input data
     - src/data/MESA_output/
-    # - src/data/MESA_output/engineered_stars/TAMS_models/30_rot0_to_TAMS/LOGS/TAMS.data
-    # - src/data/MESA_output/engineered_stars/TAMS_models/30_rot0_to_TAMS/LOGS/TAMS..npy
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/-0.4/LOGS/profile1.data
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/-0.4/LOGS/profile1..npy
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/-0.8/LOGS/profile1.data
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/-0.8/LOGS/profile1..npy
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/-1.2/LOGS/profile1.data
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/-1.2/LOGS/profile1..npy
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/-1.6/LOGS/profile1.data
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/-1.6/LOGS/profile1..npy
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/-2.0/LOGS/profile1.data
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/-2.0/LOGS/profile1..npy
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/-2.4/LOGS/profile1.data
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/-2.4/LOGS/profile1..npy
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/-2.8/LOGS/profile1.data
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/-2.8/LOGS/profile1..npy
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/-3.2/LOGS/profile1.data
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/-3.2/LOGS/profile1..npy
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/-3.6/LOGS/profile1.data
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/-3.6/LOGS/profile1..npy
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/-4.0/LOGS/profile1.data
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/-4.0/LOGS/profile1..npy
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/0.0/LOGS/profile1.data
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/0.0/LOGS/profile1..npy
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/0.4/LOGS/profile1.data
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/0.4/LOGS/profile1..npy
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/0.8/LOGS/profile1.data
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/0.8/LOGS/profile1..npy
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/1.2/LOGS/profile1.data
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/1.2/LOGS/profile1..npy
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/1.6/LOGS/profile1.data
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/1.6/LOGS/profile1..npy
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/2.0/LOGS/profile1.data
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/2.0/LOGS/profile1..npy
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/2.4/LOGS/profile1.data
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/2.4/LOGS/profile1..npy
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/2.8/LOGS/profile1.data
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/2.8/LOGS/profile1..npy
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/3.2/LOGS/profile1.data
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/3.2/LOGS/profile1..npy
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/3.6/LOGS/profile1.data
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/3.6/LOGS/profile1..npy
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/4.0/LOGS/profile1.data
-    # - src/data/MESA_output/engineered_stars/same_core/grid30/4.0/LOGS/profile1..npy
+  src/scripts/toy_models_example.py:
+    - src/scripts/lib_plot_bin.py
+    - src/scripts/lib_engineered.py
+    - src/scripts/MESAreader.py
+    # input data            #   -- list token file as dependence
+    - src/data/MESA_output/ #    - src/data/converted_output_exists
+  src/scripts/rotation_models_example.py:
+    - src/scripts/lib_plot_bin.py
+    - src/scripts/lib_engineered.py
+    - src/scripts/MESAreader.py
+    # input data            #   -- list token file as dependence
+    - src/data/MESA_output/ #    - src/data/converted_output_exists
+  src/scripts/HRD.py:
+    - src/scripts/lib_plot_bin.py
+    - src/scripts/lib_engineered.py
+    - src/scripts/MESAreader.py
+    # input data            #   -- list token file as dependence
+    - src/data/MESA_output/ #    - src/data/converted_output_exists
+  src/scripts/TAMS_profiles.py:
+    - src/scripts/lib_plot_bin.py
+    - src/scripts/lib_engineered.py
+    - src/scripts/MESAreader.py
+    # input data            #   -- list token file as dependence
+    - src/data/MESA_output/ #    - src/data/converted_output_exists
 
 
 datasets:
