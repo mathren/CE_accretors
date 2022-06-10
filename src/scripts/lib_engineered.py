@@ -326,6 +326,7 @@ def plot_XY(pfile, ax, **plot_kwargs):
 
 def plot_s_h_he(init_model, grid_folders, accretor, ax_top, ax_bottom):
     """ helper function for fig. 5 """
+
     colors = plt.cm.viridis(np.linspace(0, 1, len(grid_folders)))
 
     delta_M_bound, M_bound_min, M_bound_max = get_M_boundary(init_model)

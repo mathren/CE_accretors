@@ -737,38 +737,32 @@ mass in a previous stable mass transfer phase (see also \Figref{fig:lambda_grid}
 \end{figure*}
 
 
-% \section{Common envelope $\lambda_\mathrm{CE}$}
-% \label{sec:pop_synth_app}
+\section{Common envelope $\lambda_\mathrm{CE}$}
+\label{sec:pop_synth_app}
 
-% \cite{dekool:1990} introduced a binding energy parameter
-% $\lambda_\mathrm{CE}$ to account for the internal structure of the
-% stars when calculating the post-CE orbit using energy conservation:
-% \begin{equation}
-%   \label{eq:lambda}
-%   \lambda_\mathrm{CE} \equiv \lambda_\mathrm{CE}(m) = (GM(M-m)/R)/BE(m, \alpha_\mathrm{th}=1.0) \ \ ,
-% \end{equation}
-% where again the Lagrangian mass coordinate $m$ can be interpreted as a
-% variable core mass \citep[see also][]{demarco:11, ivanova:2013}. We show
-% in \Figref{fig:lambda_grid} the $\lambda_\mathrm{CE}$ profiles for our models.
+\cite{dekool:1990} introduced a binding energy parameter
+$\lambda_\mathrm{CE}$ to account for the internal structure of the
+stars when calculating the post-CE orbit using energy conservation:
+\begin{equation}
+  \label{eq:lambda}
+  \lambda_\mathrm{CE} \equiv \lambda_\mathrm{CE}(m) = (GM(M-m)/R)/BE(m, \alpha_\mathrm{th}=1.0) \ \ ,
+\end{equation}
+where again the Lagrangian mass coordinate $m$ can be interpreted as a
+variable core mass \citep[see also][]{demarco:11, ivanova:2013}. We show
+in \Figref{fig:lambda_grid} the $\lambda_\mathrm{CE}$ profiles for our models.
 
-% \begin{figure*}[htbp]
-%   \centering
-%   \includegraphics[width=\textwidth]{lambda_grid.pdf}
-%   \caption{Profile of the binding energy parameter
-%     $\lambda_\mathrm{CE}$ as a function of mass coordinate for
-%     accretors (orange), single stars (red), and our engineered stars
-%     (other colors) at selected total radii. The vertical dashed lines
-%     mark $M_\mathrm{He}$, that is the outermost location where
-%     $X<0.01$ and $Y>0.1$.}
-%   \label{fig:lambda_grid}
-% \end{figure*}
-
-
-
-
-
-
-
+\begin{figure*}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{lambda_grid.pdf}
+  \caption{Profile of the binding energy parameter
+    $\lambda_\mathrm{CE}$ as a function of mass coordinate for
+    accretors (orange), single stars (red), and our engineered stars
+    (other colors) at selected total radii. The vertical dashed lines
+    mark $M_\mathrm{He}$, that is the outermost location where
+    $X<0.01$ and $Y>0.1$.}
+  \label{fig:lambda_grid}
+  \script{lambda_grid.py}
+\end{figure*}
 
 \bibliographystyle{aasjournal}
 \bibliography{./CE_accretors.bib}
