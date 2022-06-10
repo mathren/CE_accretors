@@ -26,10 +26,22 @@ above.
 You can see the source in =src/tex/CE_accretors.tex=, which you can edit
 and should be able to compile locally.
 
-** Migrate to new showyourwork
+** Why care about the first mass transfer on future common envelope?
+
+   Most binary evolution scenarios for gravitational wave sources rely
+   on a common envelope (CE) to reduce the separation (exceptions are
+   chemically homogeneous evolution and stable RLOF). The CE is
+   initiated by a star that has previously accreted mass during a RLOF
+   phase.
+
+   We want to study how the previous accretion through RLOF influences
+   the radial evolution and the binding energy of the models. This is
+   because rejuvenation acts on the core-envelope boundary.
+
+** Migration to new showyourwork
 
    On =fi_w= excluding time to download the tarball from zenodo, but
-   doing all the processing to intermediate results:
+   doing all the processing to intermediate results and upload on cache:
 
 #+BEGIN_SRC bash
    real    30m13.209s
@@ -60,30 +72,10 @@ and should be able to compile locally.
 *** Issue to report on =showyourwork=
 ***** =./showyourwork/cache/= becomes pretty huge pretty fast: clean-up?
 
-** TODO How to reproduce the engineered models
+
+** TODO Document How to reproduce the engineered models
 
    - [ ] save in repo
      =/ssh:fi_w:/mnt/home/mrenzo/Templates/binary_mesa/simplified_profile=
      this contains modified inputs and template
    - [ ] document this
-
-*** [ =fi_w= ] Build with slow figure making
-
-     The script =grid_ratios.py= is a
-     bit too slow and fails, to increase the waiting time do:
-
-     #+BEGIN_SRC bash
-       make OPTIONS="--latency-wait=600"
-     #+END_SRC
-
-** Why care about the first mass transfer on future common envelope?
-
-   Most binary evolution scenarios for gravitational wave sources rely
-   on a common envelope (CE) to reduce the separation (exceptions are
-   chemically homogeneous evolution and stable RLOF). The CE is
-   initiated by a star that has previously accreted mass during a RLOF
-   phase.
-
-   We want to study how the previous accretion through RLOF influences
-   the radial evolution and the binding energy of the models. This is
-   because rejuvenation acts on the core-envelope boundary.
