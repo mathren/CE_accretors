@@ -37,12 +37,9 @@ and should be able to compile locally.
    sys     0m59.076s
 #+END_SRC
 
-   This is happening on branch =dev=. To be tested.
-
 *** DONE Simple test
     The scripts =convert_MESA_output.py= should create  =src/data/try.npy=.
     =zenodo_plotter.py= reads it and creates a figure.
-
 *** DONE downloading tarball and converting
 *** DONE cleanup figures
 
@@ -50,16 +47,18 @@ and should be able to compile locally.
     - [X] change =graphicspath= in =CE_accretors.tex.=
     - [X] Remove figures from repo
 
-*** TODO caching of intermediate results
+*** DONE caching of intermediate results
 
-    - [ ] modify Snakemake file to have caching: want the entire folder
-    - [X]modify dependencies in =showyourwork.yml=
-    - [X]modify tex file to include figure
+    - [X] modify Snakemake file to have caching
+    - [X] modify dependencies in =showyourwork.yml=
+    - [X] modify tex file to include figure
+
+*** TODO browsable folders on zenodo
+
+    - [ ] right now the cache on [[https://sandbox.zenodo.org/deposit/1071935][zenodo sandbox]] re-uploads a megafolder
 
 *** Issue to report on =showyourwork=
-
-***** Not possible to cache to a different location?
-      using =paths.data / "cache"= in python makes everything crash
+***** =./showyourwork/cache/= becomes pretty huge pretty fast: clean-up?
 
 ** TODO How to reproduce the engineered models
 
@@ -67,8 +66,6 @@ and should be able to compile locally.
      =/ssh:fi_w:/mnt/home/mrenzo/Templates/binary_mesa/simplified_profile=
      this contains modified inputs and template
    - [ ] document this
-
-
 
 *** [ =fi_w= ] Build with slow figure making
 
