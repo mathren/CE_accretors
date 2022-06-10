@@ -48,6 +48,12 @@ dependencies:
     - src/scripts/MESAreader.py
     # input data            #   -- list token file as dependence
     - src/data/MESA_output/ #    - src/data/converted_output_exists
+  src/scripts/BE_env_R.py:
+    - src/scripts/lib_plot_bin.py
+    - src/scripts/lib_engineered.py
+    - src/scripts/MESAreader.py
+    # input data            #   -- list token file as dependence
+    - src/data/MESA_output/ #    - src/data/converted_output_exists
 
 
 datasets:

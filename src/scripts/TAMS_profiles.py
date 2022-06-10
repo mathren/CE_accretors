@@ -16,30 +16,28 @@ init_model18 = root_TAMS / "18_rot0_to_TAMS/LOGS/TAMS.data"
 init_model20 = root_TAMS / "20_rot0_to_TAMS/LOGS/TAMS.data"
 init_model36 = root_TAMS / "36_rot0_to_TAMS/LOGS/TAMS.data"
 
-root_eng = str(root / "/engineered_stars/same_core/")
-grid_folders18 = sorted(glob.glob(root_eng + "/grid18/*.*/"))
-grid_folders20 = sorted(glob.glob(root_eng + "/grid20/*.*/"))
-# grid_folders30 = sorted(glob.glob(root_eng + "/grid30/*.*/"))
-grid_folders36 = sorted(glob.glob(root_eng + "/grid36/*.*/"))
+root_eng = str(root / "engineered_stars/same_core/")
+grid_folders18 = sorted(glob.glob(root_eng + "/grid18/*.*/LOGS/"))
+grid_folders20 = sorted(glob.glob(root_eng + "/grid20/*.*/LOGS/"))
+grid_folders36 = sorted(glob.glob(root_eng + "/grid36/*.*/LOGS/"))
 
 root_accretors = root / "binaries/Z_0.0019"
 accretor18 = root_accretors / "m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/"
 accretor20 = root_accretors / "m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/"
 accretor30 = root_accretors / "m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/"
 
-
 # make TAMS_profiles plot
-grid_folders1 = str(grid_folders18)
+grid_folders1 = grid_folders18
 init_model1 = str(init_model18)
 accretor1 = str(accretor18)
 nonrot1 = str(nonrot18)
 
-grid_folders2 = str(grid_folders20)
+grid_folders2 = grid_folders20
 init_model2 = str(init_model20)
 accretor2 = str(accretor20)
 nonrot2 = str(nonrot20)
 
-grid_folders3 = str(grid_folders36)
+grid_folders3 = grid_folders36
 init_model3 = str(init_model36)
 accretor3 = str(accretor30)
 nonrot3 = str(nonrot36)

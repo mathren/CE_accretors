@@ -155,7 +155,7 @@ def grid_ratios(fig_name=None):
         ratio = plot_ratio_BE_r(
             pfile_single, pfile_accretor,  ax, alpha_th=alpha_th, color="r", ls="-"
         )
-        print(pfile_single, min(ratio), max(ratio))
+        # print(pfile_single, min(ratio), max(ratio))
     # # 20 Msun
     bx1 = fig.add_subplot(gs[:20, 50:100])
     bx2 = fig.add_subplot(gs[20:40, 50:100])
