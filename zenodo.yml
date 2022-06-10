@@ -1,4 +1,6 @@
 cache:
   dev:
     sandbox: 10.5072/zenodo.1071373
+  main:
+    sandbox: 10.5072/zenodo.1071934
 
