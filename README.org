@@ -14,7 +14,7 @@
 <a href="https://github.com/mathren/CE_accretors/raw/main-pdf/arxiv.tar.gz">
 <img src="https://img.shields.io/badge/article-tarball-blue.svg?style=flat" alt="Article tarball"/>
 </a>
-<a href="https://github.com/mathren/CE_accretors/raw/dev-pdf/CE_accretors.pdf">
+<a href="https://github.com/mathren/CE_accretors/raw/main-pdf/CE_accretors.pdf">
 <img src="https://img.shields.io/badge/article-pdf-blue.svg?style=flat" alt="Read the article"/>
 </a>
 </p>
@@ -23,15 +23,19 @@
 Access the latest successful build of the manuscript from the badge
 above.
 
-You can see the source in =src/tex/CE_accretors.tex=, which you can edit and
-should be able to compile locally. You can clone the repo and if you
-commit something, for now prepend =[skip ci]= to the commit message to
-prevent GitHub actions from trying to run =showyourwork=.
-
-It should be possible to build the article locally on your machine
-with =showyourwork=, see below.
+You can see the source in =src/tex/CE_accretors.tex=, which you can edit
+and should be able to compile locally.
 
 ** Migrate to new showyourwork
+
+   On =fi_w= excluding time to download the tarball from zenodo, but
+   doing all the processing to intermediate results:
+
+#+BEGIN_SRC bash
+   real    30m13.209s
+   user    27m9.104s
+   sys     0m59.076s
+#+END_SRC
 
    This is happening on branch =dev=. To be tested.
 
@@ -40,41 +44,31 @@ with =showyourwork=, see below.
     =zenodo_plotter.py= reads it and creates a figure.
 
 *** DONE downloading tarball and converting
+*** DONE cleanup figures
+
+    - [X] Refactor scripts in =/src/figures/=.
+    - [X] change =graphicspath= in =CE_accretors.tex.=
+    - [X] Remove figures from repo
 
 *** TODO caching of intermediate results
 
-    - [ ] modify Snakemake file to have caching
-    - [ ]modify dependencies in =showyourwork.yml= [is this needed?]
+    - [ ] modify Snakemake file to have caching: want the entire folder
+    - [X]modify dependencies in =showyourwork.yml=
     - [X]modify tex file to include figure
-
-*** TODO cleanup figures
-
-    - [ ] Refactor scripts in =/src/figures/=.
-    - [X] change =graphicspath= in =CE_accretors.tex.=
-    - [ ] Remove figures from repo (?)
-
 
 *** Issue to report on =showyourwork=
 
 ***** Not possible to cache to a different location?
       using =paths.data / "cache"= in python makes everything crash
 
-** Requirements
+** TODO How to reproduce the engineered models
 
-*** *OUTDATED* Build the article without figures
+   - [ ] save in repo
+     =/ssh:fi_w:/mnt/home/mrenzo/Templates/binary_mesa/simplified_profile=
+     this contains modified inputs and template
+   - [ ] document this
 
-    For now the =graphicspath= in =CE_accretors.tex= points to the
-    =src/static= figures, and the =src/figures/*.py= scripts read the
-    data from hardcoded paths to =ceph= and output figures in
-    =src/static/=.
 
-    When I locally run =showyourwork= on my workstation, it produces the plots,
-    which for now I push to the repo. This allows anyone to build the
-    pdf with the figures on any machine, since =showyourwork= won't try
-    recreating the figures unless you change the scripts.
-
-    This will be refactored once the data is finalized and uploaded on
-    zenodo.
 
 *** [ =fi_w= ] Build with slow figure making
 
