@@ -325,6 +325,8 @@ def plot_XY(pfile, ax, **plot_kwargs):
     ax.plot(m, he4, **plot_kwargs)
 
 def plot_s_h_he(init_model, grid_folders, accretor, ax_top, ax_bottom):
+    """ helper function for fig. 5 """
+
     colors = plt.cm.viridis(np.linspace(0, 1, len(grid_folders)))
 
     delta_M_bound, M_bound_min, M_bound_max = get_M_boundary(init_model)
@@ -340,21 +342,18 @@ def plot_s_h_he(init_model, grid_folders, accretor, ax_top, ax_bottom):
     plot_XY(init_model, ax_bottom, lw=3, c="r", zorder=10)
 
     for f in grid_folders:
-        try:
-            pfile = f + "/LOGS/profile1.data"
-            label = ""  # f.split('/')[-2]
-            delta_M_bound, M_bound_min, M_bound_max = get_M_boundary(pfile, offset=0.05)
-            ax_top.axvspan(M_bound_min, M_bound_max, fc="#808080", alpha=0.1, zorder=0)
-            ax_bottom.axvspan(
-                M_bound_min, M_bound_max, fc="#808080", alpha=0.1, zorder=0
-            )
-            # print(f, M_bound_min, M_bound_max)
-            # label = f"{delta_M_bound:.3f}" # f.split('/')[-2]
-            c = colors[grid_folders.index(f)]
-            plot_entropy(pfile, ax_top, c=c, lw=2, label=label)
-            plot_XY(pfile, ax_bottom, c=c, lw=2, label="")
-        except FileNotFoundError:
-            continue
+        pfile = f + "profile1.data"
+        label = ""  # f.split('/')[-2]
+        delta_M_bound, M_bound_min, M_bound_max = get_M_boundary(pfile, offset=0.05)
+        ax_top.axvspan(M_bound_min, M_bound_max, fc="#808080", alpha=0.1, zorder=0)
+        ax_bottom.axvspan(
+            M_bound_min, M_bound_max, fc="#808080", alpha=0.1, zorder=0
+        )
+        # print(f, M_bound_min, M_bound_max)
+        # label = f"{delta_M_bound:.3f}" # f.split('/')[-2]
+        c = colors[grid_folders.index(f)]
+        plot_entropy(pfile, ax_top, c=c, lw=2, label=label)
+        plot_XY(pfile, ax_bottom, c=c, lw=2, label="")
 
     # add accretor
     plot_entropy(

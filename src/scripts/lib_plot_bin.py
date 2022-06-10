@@ -1035,9 +1035,6 @@ def interpolate_BE_env(x1, x2, y2, offset=1.0):
     --------
     y2_interp == y2(x1)
     """
-    # xmin = max(min(x1), min(x2))
-    # xmax = min(max(x1), max(x2))
-    # ind = (x2 >= xmin) & (x2 <= xmax)
     interpolator = interp1d(
         x2, y2 / offset, assume_sorted=True, bounds_error=False, fill_value=np.nan
     )
@@ -1097,32 +1094,17 @@ def plot_lambda_at_one_radius(
     # engineered stars
     for f in grid_folders:
         c = colors[grid_folders.index(f)]
-        try:
-            pfile = glob.glob(f + "/LOGS/" + string)[0]
-        except:
-            print("passing " + f)
-            continue
+        pfile = glob.glob(f + string)[0]
         plot_func(pfile, ax, alpha_th=1, c=c, lw=2, label=f.split("/")[-2])
-        # plot_func(pfile, ax, alpha_th=0, ls='--', c=c) #, label=f.split('/')[-2])
 
     if accretor:
-        try:
-            pfile = glob.glob(accretor + "/" + string)[0]
-            plot_func(pfile, ax, alpha_th=1, c="orange", label="accretor")
-            mhe = get_He_core_mass_from_pfile(pfile)
-            ax.axvline(mhe, 0,1,ls='--', lw=2, c="orange")
-            # plot_func(pfile, ax, alpha_th=0, c="orange", ls='--') #, label=f.split('/')[-2])
-        except:
-            print("passing " + f)
-            pass
+        pfile = glob.glob(accretor + "/" + string)[0]
+        plot_func(pfile, ax, alpha_th=1, c="orange", label="accretor")
+        mhe = get_He_core_mass_from_pfile(pfile)
+        ax.axvline(mhe, 0,1,ls='--', lw=2, c="orange")
 
     if nonrot:
-        try:
-            pfile = glob.glob(nonrot + "/LOGS/" + string)[0]
-            plot_func(pfile, ax, alpha_th=1, c="r", label="single")
-            mhe = get_He_core_mass_from_pfile(pfile)
-            ax.axvline(mhe, 0,1,ls='--', lw=2, c="r")
-            # plot_func(pfile, ax, alpha_th=0, c="r", lw='--') #, label=f.split('/')[-2])
-        except:
-            print("passing " + f)
-            pass
+        pfile = glob.glob(nonrot  + string)[0]
+        plot_func(pfile, ax, alpha_th=1, c="r", label="single")
+        mhe = get_He_core_mass_from_pfile(pfile)
+        ax.axvline(mhe, 0,1,ls='--', lw=2, c="r")

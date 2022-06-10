@@ -1,3 +1,4 @@
+
 \documentclass[twocolumn,twocolappendix,trackchanges]{aastex63}
 \usepackage{amsmath}
 \usepackage{showyourwork}
@@ -21,10 +22,7 @@
 \newcommand{\Lsun}{\ensuremath{\,L_\odot}}
 \begin{document}
 
-%% while waiting to upload the figures on zenodo
-%% TODO: change static/ to figures/ and git rm --cached static/*.pdf
-\graphicspath{{../static/}}
-% \graphicspath{{./figures/}}
+\graphicspath{{./figures/}}
 
 \title{Rejuvenated stars are more easily unbound:\\ Stable
   mass transfer impacts the donor of common envelopes  in gravitational wave progenitors}
@@ -32,7 +30,8 @@
 \author[0000-0002-6718-9472]{M.~Renzo}
 \affiliation{Center for Computational Astrophysics, Flatiron Institute, New York, NY 10010, USA}
 
-\author{\todo{others: R.~Farmer, K.~Breivik, E.~Zapartas?}}
+% \author{\todo{others: R.~Farmer, K.~Breivik, E.~Zapartas, Y. Gotberg,
+%     B. D. Metzger, M. Lau?}}
 % \author[0000-0002-6960-6911]{Y.~G\"otberg}\thanks{Hubble Fellow}
 % \affiliation{The Observatories of the Carnegie Institution for
 %   Science, 813 Santa Barbara Street, Pasadena, CA 91101, USA}
@@ -177,8 +176,11 @@ core-collapse of the RLOF-donor on the accretor \cite[e.g.,][]{hirai:2018,
 
 
 \begin{figure}[btp]
+<<<<<<< HEAD
   % TODO: remove hacky path below
   % \includegraphics[width=0.5\textwidth]{../tex/figures/engineered_TAMS.pdf}
+=======
+>>>>>>> origin/dev
   \includegraphics[width=0.5\textwidth]{engineered_TAMS.pdf}
   \caption{TAMS entropy profile of a single 30\,$M_\odot$ star (red)
     and engineered models where we artificially modify the
@@ -254,6 +256,7 @@ by accretion during the first RLOF.
     entropy profiles at TAMS (when we artificially modify the
     ``engineered'' stars).}
   \label{fig:toy_models_example}
+  \script{toy_models_example.py}
 \end{figure}
 
 
@@ -321,6 +324,7 @@ birth.
   \caption{Same as \Figref{fig:toy_models_example} but comparing
     single stars differing by their initial rotation rate.}
   \label{fig:rotation_models_example}
+  \script{rotation_models_example.py}
 \end{figure}
 
 Rotation has a two main effects: (\emph{i}) mixing can change directly
@@ -392,6 +396,7 @@ main sequence (ZAMS), through RLOF (see \citealt{sravan:2019,
     30\,$M_\odot$ (green), 20 and 17\,$M_\odot$ (orange), 18 and
     15\,$M_\odot$ (blue). \todo{annotate key epochs?}}
   \label{fig:HRD}
+  \script{HRD.py}
 \end{figure}
 
 % Regardless of their mass
@@ -437,6 +442,7 @@ limited. % Moreover, blue-loops are sensitive to
     bands emphasize the CEB region, which is well
     defined at TAMS.}
   \label{fig:TAMS_profiles}
+  \script{TAMS_profiles.py}
 \end{figure*}
 
 \Figref{fig:TAMS_profiles} shows the entropy, H and He mass fraction
@@ -529,6 +535,7 @@ local deviations from this trend can occur for some $r$.
     masses, and vertical gray dashed lines mark the total radius $R$
     of these models.}
   \label{fig:BE_profiles}
+  \script{BE_profiles.py}
 \end{figure*}
 
 \subsection{Ratio of binding energies as a function of mass}
@@ -543,6 +550,7 @@ local deviations from this trend can occur for some $r$.
     first time the models reach the radius indicated on the right and
     by the vertical dashed gray line.}
   \label{fig:grid_ratios}
+  \script{grid_ratios.py}
 \end{figure*}
 
 Because of the large range of $BE$ across the stellar structures, it
@@ -622,6 +630,7 @@ ejected in a CE event.
     accretors might have envelopes easier to unbind in a common
     envelope event.}
   \label{fig:BE_env_R}
+  \script{BE_env_R.py}
 \end{figure}
 
 \section{Discussion \& Conclusions}
@@ -729,7 +738,7 @@ mass in a previous stable mass transfer phase (see also \Figref{fig:lambda_grid}
     bands emphasize the CEB region, which is well
     defined at TAMS.}
   \label{fig:TAMS_profiles_same_initial_mass}
-  % \script{TAMS_profiles_same_initial_mass.py}
+  \script{TAMS_profiles_same_initial_mass.py}
 \end{figure*}
 
 
@@ -757,18 +766,12 @@ in \Figref{fig:lambda_grid} the $\lambda_\mathrm{CE}$ profiles for our models.
     mark $M_\mathrm{He}$, that is the outermost location where
     $X<0.01$ and $Y>0.1$.}
   \label{fig:lambda_grid}
+  \script{lambda_grid.py}
 \end{figure*}
-
-
-
-
-
-
-
 
 \bibliographystyle{aasjournal}
 \bibliography{./CE_accretors.bib}
-% \bibliography{/home/math/Documents/Research/Biblio_papers/bibtex/zotero.bib}
+% % \bibliography{/home/math/Documents/Research/Biblio_papers/bibtex/zotero.bib}
 
 \end{document}
 

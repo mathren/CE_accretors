@@ -84,14 +84,16 @@ def reader(myfile, ncols, nhead, fname=None):
 
     """15.04.2016 Mathieu: modified to fit my needs for binary_c as well"""
 
+    """8.06.2022  Mathieu: heavy refactoring"""
+
     # The new binary file will be stored with the same name but with the extention.npy
     if fname == None:
-        mybinfile = str(myfile[:-4]) + ".npy"
+        bin_fname = str(myfile[:-4]) + ".npy"
     else:
-        mybinfile = fname
+        bin_fname = fname
     # Just for fun... time the routine
     start_time = time.time()
-    if not os.path.isfile(mybinfile):  # Check if .databin exists already...
+    if not os.path.isfile(bin_fname):  # Check if .databin exists already...
         print("...    reading ascii file ", myfile)
         print("...    and storing it for you in binary format")
         print("...    patience please, next time will be way faster ")
@@ -103,17 +105,17 @@ def reader(myfile, ncols, nhead, fname=None):
         # Read the first "ncol" columns of the file after skipping "nhead" lines, store in a numpy.array
         data = np.genfromtxt(myfile, skip_header=nhead)  # , usecols=range(ncols))
         # Save the numpy array to file in binary format
-        np.save(mybinfile, data)
+        np.save(bin_fname, data)
         # print "...    That took ", time.time() - start_time, "second"
     else:
-        # print "... Great Binary file exists, reading data directly from ", mybinfile
+        # print "... Great Binary file exists, reading data directly from ", bin_fname
         # If binary file exists load it directly.
-        data = np.load(mybinfile)
+        data = np.load(bin_fname)
         # print "   That took ", time.time() - start_time, "second"
     return data
 
 
-def getSrcCol(f, clean=True, convert=True, fname=None):
+def getSrcCol(f, clean=True, convert=True, bin_fname=None):
     """
     Read MESA output (history or profiles) and optionally
     save a copy in binary format for faster access later.
@@ -124,16 +126,15 @@ def getSrcCol(f, clean=True, convert=True, fname=None):
               and parsing the output.
     convert: `bool`, if True the file f is saved to
               binary format for faster reading in the future.
-    fname:   `str` name of the binary file if needed
+    bin_fname:   `str` name of the binary file if needed
 
     Returns:
     --------
     src: `np.array`, shape (number of timesteps,
           number of columns), the data
     col: `list`, column names from the header
-
     """
-    print(f)
+    # print(f)
     # TODO: maybe one day I'll update this to be a pandas dataframe
     # should work both for history and profiles
     # read header
@@ -143,16 +144,17 @@ def getSrcCol(f, clean=True, convert=True, fname=None):
                 col = line.split()
                 break
     # check if binary exists
-    mybinfile = str(f[:-4]) + ".npy"
-    if os.path.isfile(mybinfile):
+    if bin_fname == None:
+        bin_fname = str(str(f)[:-4]) + ".npy"
+    if os.path.isfile(bin_fname):
         # read the column and binary
-        src = reader(f, len(col), 6, fname)
+        src = reader(f, len(col), 6, bin_fname)
     else:  # binary file does not exist
         print("... Binary file does not yet exist")
-        if ("history" in f) and clean:
+        if ("history.data" in str(f)) and clean:
             scrub(f)
         if convert:
-            src = reader(f, len(col), 6)
+            src = reader(f, len(col), 6, bin_fname)
         else:
             src = np.genfromtxt(f, skip_header=6)
     return src, col
@@ -284,7 +286,7 @@ def scrub(logName):
     # which is available here: https://zenodo.org/record/2619282
     print("... let me scrub this for you")
     # dirty fix for PPI ejecta files
-    if "ejecta.data" in sys.argv[1]:
+    if "ejecta.data" in str(logName):
         dataStart = 1
     else:
         dataStart = 6

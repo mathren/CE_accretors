@@ -1,2 +1,76 @@
-version: 0.3.0.dev8
+version: 0.3.0.dev9
+
+verbose: True
+
 ms_name: CE_accretors
+
+dependencies:
+  src/scripts/convert_MESA_output.py:
+    - src/data/MESA_output.tar.gz  # 1.1 Gb
+    - src/scripts/MESAreader.py
+  src/scripts/engineered_TAMS.py:
+    - src/scripts/lib_plot_bin.py
+    - src/scripts/lib_engineered.py
+    - src/scripts/MESAreader.py
+    # input data
+    - src/data/MESA_output/
+  src/scripts/toy_models_example.py:
+    - src/scripts/lib_plot_bin.py
+    - src/scripts/lib_engineered.py
+    - src/scripts/MESAreader.py
+    # input data            #   -- list token file as dependence
+    - src/data/MESA_output/ #    - src/data/converted_output_exists
+  src/scripts/rotation_models_example.py:
+    - src/scripts/lib_plot_bin.py
+    - src/scripts/lib_engineered.py
+    - src/scripts/MESAreader.py
+    # input data            #   -- list token file as dependence
+    - src/data/MESA_output/ #    - src/data/converted_output_exists
+  src/scripts/HRD.py:
+    - src/scripts/lib_plot_bin.py
+    - src/scripts/lib_engineered.py
+    - src/scripts/MESAreader.py
+    # input data            #   -- list token file as dependence
+    - src/data/MESA_output/ #    - src/data/converted_output_exists
+  src/scripts/TAMS_profiles.py:
+    - src/scripts/lib_engineered.py
+    - src/scripts/MESAreader.py
+    # input data            #   -- list token file as dependence
+    - src/data/MESA_output/ #    - src/data/converted_output_exists
+  src/scripts/BE_profiles.py:
+    - src/scripts/lib_plot_bin.py
+    - src/scripts/MESAreader.py
+    # input data            #   -- list token file as dependence
+    - src/data/MESA_output/ #    - src/data/converted_output_exists
+  src/scripts/grid_ratios.py:
+    - src/scripts/lib_plot_bin.py
+    - src/scripts/lib_engineered.py
+    - src/scripts/MESAreader.py
+    # input data            #   -- list token file as dependence
+    - src/data/MESA_output/ #    - src/data/converted_output_exists
+  src/scripts/BE_env_R.py:
+    - src/scripts/lib_plot_bin.py
+    - src/scripts/lib_engineered.py
+    - src/scripts/MESAreader.py
+    # input data            #   -- list token file as dependence
+    - src/data/MESA_output/ #    - src/data/converted_output_exists
+  src/scripts/TAMS_profiles_same_initial_mass.py:
+    - src/scripts/lib_plot_bin.py
+    - src/scripts/lib_engineered.py
+    - src/scripts/MESAreader.py
+    # input data            #   -- list token file as dependence
+    - src/data/MESA_output/ #    - src/data/converted_output_exists
+  src/scripts/lambda_grid.py:
+    - src/scripts/lib_plot_bin.py
+    - src/scripts/lib_engineered.py
+    - src/scripts/MESAreader.py
+    # input data            #   -- list token file as dependence
+    - src/data/MESA_output/ #    - src/data/converted_output_exists
+
+
+datasets:
+  # this will be of the zenodo static dataset -- for now sandbox 10.5072/zenodo.1070800
+  10.5072/zenodo.1070800:
+    destination: src/data/
+    contents:
+      MESA_output.tar.gz:
