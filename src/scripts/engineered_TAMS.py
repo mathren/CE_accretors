@@ -23,7 +23,6 @@ colors = plt.cm.viridis(np.linspace(0, 1, len(grid_folders)))
 # plot engineered models
 for f in grid_folders:
     pfile = f + "LOGS/profile1.data"
-    print(pfile)
     label = ""  # f.split('/')[-2]
     delta_M_bound, M_bound_max, M_bound_min = get_M_boundary(pfile, offset=0.05)
     ax.axvspan(M_bound_min, M_bound_max, fc="#808080", alpha=0.1, zorder=0)
