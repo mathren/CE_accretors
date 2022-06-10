@@ -1,3 +1,4 @@
+
 \documentclass[twocolumn,twocolappendix,trackchanges]{aastex63}
 \usepackage{amsmath}
 \usepackage{showyourwork}
@@ -517,99 +518,101 @@ single stars (red), and their profiles are qualitatively closer to the
 engineered models with the steepest core (dark green curves), although
 local deviations from this trend can occur for some $r$.
 
-% \begin{figure*}[hbtp]
-%   \includegraphics[width=\textwidth]{BE_profiles.pdf}
-%   \caption{Binding energy profile at fixed radii (right y-axis) as a
-%     function of radial mass coordinate. We only show profiles with
-%     $\alpha_\mathrm{th}=1$, that is accounting for the internal energy
-%     content of the star. Orange, red, and other colors show
-%     respectively the accretor models, single stars of same post-RLOF
-%     total mass, and engineered models with varying CEB steepness.
-%     Titles indicates the pre-RLOF and approximate post-RLOF accretor
-%     masses, and vertical gray dashed lines mark the total radius $R$
-%     of these models.}
-%   \label{fig:BE_profiles}
-% \end{figure*}
+\begin{figure*}[hbtp]
+  \includegraphics[width=\textwidth]{BE_profiles.pdf}
+  \caption{Binding energy profile at fixed radii (right y-axis) as a
+    function of radial mass coordinate. We only show profiles with
+    $\alpha_\mathrm{th}=1$, that is accounting for the internal energy
+    content of the star. Orange, red, and other colors show
+    respectively the accretor models, single stars of same post-RLOF
+    total mass, and engineered models with varying CEB steepness.
+    Titles indicates the pre-RLOF and approximate post-RLOF accretor
+    masses, and vertical gray dashed lines mark the total radius $R$
+    of these models.}
+  \label{fig:BE_profiles}
+  \script{BE_profiles.py}
+\end{figure*}
 
-% \subsection{Ratio of binding energies as a function of mass}
+\subsection{Ratio of binding energies as a function of mass}
 
-% \begin{figure*}[htbp]
-%   \includegraphics[width=\textwidth]{grid_ratios.pdf}
-%   \caption{Ratios of the binding energy profiles (including internal
-%     energy) of the accretor stars divided stars of the same total mass
-%     post-RLOF. The red solid lines show the ratio to a non-rotating
-%     single star, while the other colors show the ratio to
-%     ``engineered'' star (see text). Each panel shows the ratios at the
-%     first time the models reach the radius indicated on the right and
-%     by the vertical dashed gray line.}
-%   \label{fig:grid_ratios}
-% \end{figure*}
+\begin{figure*}[htbp]
+  \includegraphics[width=\textwidth]{grid_ratios.pdf}
+  \caption{Ratios of the binding energy profiles (including internal
+    energy) of the accretor stars divided stars of the same total mass
+    post-RLOF. The red solid lines show the ratio to a non-rotating
+    single star, while the other colors show the ratio to
+    ``engineered'' star (see text). Each panel shows the ratios at the
+    first time the models reach the radius indicated on the right and
+    by the vertical dashed gray line.}
+  \label{fig:grid_ratios}
+  \script{grid_ratios.py}
+\end{figure*}
 
-% Because of the large range of $BE$ across the stellar structures, it
-% is hard to appreciate the magnitude of the effect of RLOF-driven
-% rejuvenation on the structure of the stars in
-% \Figref{fig:BE_profiles}. Figure~\ref{fig:grid_ratios} presents the
-% ratio of the local binding energies of our accretor models divided the
-% local binding energy of comparison single stars, as a function of
-% radius. To compute the ratio, we interpolate linearly the single star
-% models on the mesh of our accretor, using the fractional Lagrangian
-% mass coordinate $m/M$ as independent coordinate. % , and we
-% % exclude the (small) mass regions where extrapolation would be needed
-% % due to the different total mass of the stars.
-% We calculate these ratio
-% when both the stars reach for the first time radii
-% $R=100, 200, 300, 500, 1000\,R_\odot$ (see vertical gray dashed
-% lines), corresponding to the assumed Roche lobe radius of the donor at
-% the onset of the CE.
+Because of the large range of $BE$ across the stellar structures, it
+is hard to appreciate the magnitude of the effect of RLOF-driven
+rejuvenation on the structure of the stars in
+\Figref{fig:BE_profiles}. Figure~\ref{fig:grid_ratios} presents the
+ratio of the local binding energies of our accretor models divided the
+local binding energy of comparison single stars, as a function of
+radius. To compute the ratio, we interpolate linearly the single star
+models on the mesh of our accretor, using the fractional Lagrangian
+mass coordinate $m/M$ as independent coordinate. % , and we
+% exclude the (small) mass regions where extrapolation would be needed
+% due to the different total mass of the stars.
+We calculate these ratio
+when both the stars reach for the first time radii
+$R=100, 200, 300, 500, 1000\,R_\odot$ (see vertical gray dashed
+lines), corresponding to the assumed Roche lobe radius of the donor at
+the onset of the CE.
 
-% In each panel, radial coordinates $r$ for which the lines in
-% \Figref{fig:grid_ratios} are below one correspond to radii at which
-% the accretor models are less bound than the comparison single
-% star or engineered model. In other words, it would take less energy to
-% eject the outer layers of the envelope of the accretors down to such
-% $r$. All of our accretor models, regardless of them being NS or BH
-% progenitor, and regardless of their evolutionary phase, produce
-% envelope structures ($r\gtrsim 10^{10}\,\mathrm{cm}$) that are less
-% bound than the corresponding non-rotating single star models (red),
-% and which are qualitatively more similar to the darker lines
-% representing engineered models with steeper CEB profiles.
+In each panel, radial coordinates $r$ for which the lines in
+\Figref{fig:grid_ratios} are below one correspond to radii at which
+the accretor models are less bound than the comparison single
+star or engineered model. In other words, it would take less energy to
+eject the outer layers of the envelope of the accretors down to such
+$r$. All of our accretor models, regardless of them being NS or BH
+progenitor, and regardless of their evolutionary phase, produce
+envelope structures ($r\gtrsim 10^{10}\,\mathrm{cm}$) that are less
+bound than the corresponding non-rotating single star models (red),
+and which are qualitatively more similar to the darker lines
+representing engineered models with steeper CEB profiles.
 
-% The minimum ratio of binding energies occur roughly at the inner edge
-% of the the CEB layer in \Figref{fig:grid_ratios}. Considering the
-% ratio to single stars (red lines), the minima range between 0.56-0.07;
-% 0.58-0.08; and 0.51-0.04 from our least to most massive binary. In
-% other words, at the radius where the difference between accretors and
-% single stars models is largest, which is also the location where the
-% outcome of a common envelope is likely to be decided \citep[e.g.,][]{ivanova:2013}, the accretor's
-% binding energy is roughly between $\sim{}50-\mathrm{few}\%$ of the
-% binding energy of a single star. Regardless of the mass, the larger
-% the outer radius the smaller the minimum of the ratio of binding
-% energies: the differences caused by RLOF accretion and rejuvenation of
-% the core grows the stars evolve and their core contract.
+The minimum ratio of binding energies occur roughly at the inner edge
+of the the CEB layer in \Figref{fig:grid_ratios}. Considering the
+ratio to single stars (red lines), the minima range between 0.56-0.07;
+0.58-0.08; and 0.51-0.04 from our least to most massive binary. In
+other words, at the radius where the difference between accretors and
+single stars models is largest, which is also the location where the
+outcome of a common envelope is likely to be decided \citep[e.g.,][]{ivanova:2013}, the accretor's
+binding energy is roughly between $\sim{}50-\mathrm{few}\%$ of the
+binding energy of a single star. Regardless of the mass, the larger
+the outer radius the smaller the minimum of the ratio of binding
+energies: the differences caused by RLOF accretion and rejuvenation of
+the core grows the stars evolve and their core contract.
 
-% Defining the He core boundary as the outermost location where $X<0.01$
-% and $Y>0.1$, we can fix $m=M_\mathrm{He}$ in \Eqref{eq:BE} to obtain
-% an integrated binding energy for the envelope:
-% \begin{equation}
-%   \label{eq:BE_env}
-%   BE_\mathrm{env} \equiv BE(m=M_\mathrm{He}, \alpha_{th}=1) \ \ .
-% \end{equation}
-% \Figref{fig:BE_env_R} shows the evolution of this integrated envelope
-% binding energy as a function of the outer radius. Each panel shows one
-% of our binaries, from top to bottom: 36+30\,$M_\odot$,
-% 20+17\,$M_\odot$, 18+15\,$M_\odot$. The dashed lines correspond to
-% single stars with the same total mass as the accretors post-RLOF,
-% while solid lines correspond to the accretors. For each binary, the
-% lower panel shows the ratios of the envelope binding energy of the
-% accretor divided the binding energy of the comparison single star
-% (i.e., the ratio of the solid lines to the dashed lines in the panel
-% above). To compute these ratios, we interpolate our accretor models
-% on the time-grid of the single stars using the central temperature
-% $\log_{10}(T_c/[\mathrm{K}])$ as independent coordinate. In each of
-% the lower panels the ratios are lower than one (marked by the gray
-% dashed lines) at almost all radii, again suggesting that post-RLOF,
-% accretor stars have envelopes that require less energy input to be
-% ejected in a CE event.
+Defining the He core boundary as the outermost location where $X<0.01$
+and $Y>0.1$, we can fix $m=M_\mathrm{He}$ in \Eqref{eq:BE} to obtain
+an integrated binding energy for the envelope:
+\begin{equation}
+  \label{eq:BE_env}
+  BE_\mathrm{env} \equiv BE(m=M_\mathrm{He}, \alpha_{th}=1) \ \ .
+\end{equation}
+\Figref{fig:BE_env_R} shows the evolution of this integrated envelope
+binding energy as a function of the outer radius. Each panel shows one
+of our binaries, from top to bottom: 36+30\,$M_\odot$,
+20+17\,$M_\odot$, 18+15\,$M_\odot$. The dashed lines correspond to
+single stars with the same total mass as the accretors post-RLOF,
+while solid lines correspond to the accretors. For each binary, the
+lower panel shows the ratios of the envelope binding energy of the
+accretor divided the binding energy of the comparison single star
+(i.e., the ratio of the solid lines to the dashed lines in the panel
+above). To compute these ratios, we interpolate our accretor models
+on the time-grid of the single stars using the central temperature
+$\log_{10}(T_c/[\mathrm{K}])$ as independent coordinate. In each of
+the lower panels the ratios are lower than one (marked by the gray
+dashed lines) at almost all radii, again suggesting that post-RLOF,
+accretor stars have envelopes that require less energy input to be
+ejected in a CE event.
 
 % \begin{figure}[tp]
 %   \centering
