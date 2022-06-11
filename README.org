@@ -84,7 +84,6 @@ and should be able to compile locally (more below).
    should work. The first time it will download the data (1.1 Gb) and
    process them, which may take a very long while.
 
-
 ** TODO Document How to reproduce the engineered models
 
    - [ ] save in repo
