@@ -20,23 +20,28 @@
 </p>
 #+END_html
 
+
 Access the latest successful build of the manuscript from the badge
 above.
 
 You can see the source in =src/tex/CE_accretors.tex=, which you can edit
-and should be able to compile locally.
+and should be able to compile locally (more below).
 
 ** Why care about the first mass transfer on future common envelope?
 
    Most binary evolution scenarios for gravitational wave sources rely
    on a common envelope (CE) to reduce the separation (exceptions are
-   chemically homogeneous evolution and stable RLOF). The CE is
-   initiated by a star that has previously accreted mass during a RLOF
-   phase.
+   chemically homogeneous evolution and stable mass transfer
+   channels). The CE is initiated by a star that has previously
+   accreted mass during a stable Roche lobe overflow (RLOF) phase.
 
    We want to study how the previous accretion through RLOF influences
-   the radial evolution and the binding energy of the models. This is
-   because rejuvenation acts on the core-envelope boundary.
+   the radial evolution and the binding energy of the accretor star.
+   This may be different from single stars, because accretion of
+   matter from a companion leads to increase of the convective core
+   mass, rejuvenation, and changes in the density, temperature,
+   entropy, and composition of the star and ultimately its binding
+   energy profile.
 
 ** Migration to new showyourwork
 
@@ -71,7 +76,7 @@ and should be able to compile locally.
 
 *** Issue to report on =showyourwork=
 ***** =./showyourwork/cache/= becomes pretty huge pretty fast: clean-up?
-
+***** double copy in =.showyourwork/cache= and =src/data=?
 
 ** TODO Document How to reproduce the engineered models
 

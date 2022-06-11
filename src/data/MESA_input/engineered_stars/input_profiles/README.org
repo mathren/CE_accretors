@@ -1,0 +1,8 @@
+#+Title: "Engineered" models
+
+These simplified profiles are intended as numerical experiments to
+check trends in the binding energy of RSG envelopes with thickness of
+core-envelope boundary.
+
+These were created with the notebook =make_simplified_chem_profiles.ipynb= starting
+from a non-rotating 20M_{\odot} model at TAMS.
