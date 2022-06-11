@@ -25,7 +25,7 @@ root_TAMS = (
 )
 init_model15 = str(root_TAMS / "15_rot0_to_TAMS/LOGS/TAMS.data")
 init_model17 = str(root_TAMS / "17_rot0_to_TAMS/LOGS/TAMS.data")
-init_model30 = str(root_TAMS / "20_rot0_to_TAMS/LOGS/TAMS.data")
+init_model30 = str(root_TAMS / "30_rot0_to_TAMS/LOGS/TAMS.data")
 
 root_eng = str(root / "engineered_stars/same_core/")
 
