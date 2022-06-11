@@ -91,7 +91,7 @@ def grid_lambdas(
             bx.set_xlabel(r"$m\ [M_\odot]$")
     plot_lambda_at_one_radius(
         bx1,
-        "100Rsun.data",
+        "/100Rsun.data",
         grid_folders=grid_folders2,
         accretor=b2,
         nonrot=nonrot2,
@@ -99,7 +99,7 @@ def grid_lambdas(
     )
     plot_lambda_at_one_radius(
         bx2,
-        "200Rsun.data",
+        "/200Rsun.data",
         grid_folders=grid_folders2,
         accretor=b2,
         nonrot=nonrot2,
@@ -107,7 +107,7 @@ def grid_lambdas(
     )
     plot_lambda_at_one_radius(
         bx3,
-        "300Rsun.data",
+        "/300Rsun.data",
         grid_folders=grid_folders2,
         accretor=b2,
         nonrot=nonrot2,
@@ -139,7 +139,7 @@ def grid_lambdas(
             cx.set_xlabel(r"$m\ [M_\odot]$")
     plot_lambda_at_one_radius(
         cx1,
-        "100Rsun.data",
+        "/100Rsun.data",
         grid_folders=grid_folders3,
         accretor=b3,
         nonrot=nonrot3,
