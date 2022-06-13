@@ -45,15 +45,6 @@ and should be able to compile locally (more below).
 
 ** Migration to new showyourwork
 
-   On =fi_w= excluding time to download the tarball from zenodo, but
-   doing all the processing to intermediate results and upload on cache:
-
-#+BEGIN_SRC bash
-   real    30m13.209s
-   user    27m9.104s
-   sys     0m59.076s
-#+END_SRC
-
 *** DONE Simple test
     The scripts =convert_MESA_output.py= should create  =src/data/try.npy=.
     =zenodo_plotter.py= reads it and creates a figure.
@@ -76,17 +67,19 @@ and should be able to compile locally (more below).
 
 *** Issue to report on =showyourwork=
 ***** =./showyourwork/cache/= becomes pretty huge pretty fast: clean-up?
-***** double copy in =.showyourwork/cache= and =src/data=?
 
 ** Local compilation
 
    You can clone this repository and just run =showyourwork= and it
    should work. The first time it will download the data (1.1 Gb) and
-   process them, which may take a very long while.
+   process them, which may take a very long while (~30min on my
+   workstation excluding the time to download):
 
-** TODO Document How to reproduce the engineered models
 
-   - [ ] save in repo
-     =/ssh:fi_w:/mnt/home/mrenzo/Templates/binary_mesa/simplified_profile=
-     this contains modified inputs and template
-   - [ ] document this
+#+BEGIN_SRC bash
+  > time showyourwork
+  [...]
+  real    30m13.209s
+  user    27m9.104s
+  sys     0m59.076s
+#+END_SRC
