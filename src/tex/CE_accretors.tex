@@ -22,8 +22,8 @@
 
 \graphicspath{{./figures/}}
 
-\title{Rejuvenated stars are more easily unbound:\\ Stable
-  mass transfer impacts the donor of common envelopes  in gravitational wave progenitors}
+\title{Rejuvenated stars are more easily unbound:\\ The first stable
+  mass transfer impacts the donor of common envelopes in gravitational wave progenitors}
 
 \author[0000-0002-6718-9472]{M.~Renzo}
 \affiliation{Center for Computational Astrophysics, Flatiron Institute, New York, NY 10010, USA}
@@ -62,7 +62,7 @@
   Despite their high mass, our accretors also experience extended
   ``blue loops'' , which may have observational consequences for
   low-metallicity stellar populations and asteroseismology. Extending
-  our small grid will be necessary to produce a rapid-population
+  our small grid will be necessary to produce a rapid population
   synthesis algorithm to account for this effect.
 \end{abstract}
 
@@ -82,18 +82,20 @@ formation, among many other compact binaries, of cataclysmic variable
 \citep{paczynski:1976}, double white dwarfs
 \citep[e.g.,][]{zorotovic:2010, korol:2017, kremer:2017, renzo:21gwce,
   thiele:21}, binary neutron stars
-\citep[NS, e.g.,][]{vigna-gomez:2018}, merging black hole-neutron stars
+\citep[NS, e.g.,][]{vigna-gomez:2018, vigna-gomez:2020}, merging black hole-neutron stars
 \citep[e.g.,][]{kruckow:18, broekgaarden:21} and possibly low-mass binary black
 holes \citep[BH, e.g.,][]{dominik:2012, vanson:2021}.
 
 In the ``classical scenario'' for binary BHs and/or NSs
-\citep[e.g.,][]{tutukov:93,belczynski:2016, tauris:2017}, a gravitational-wave
-progenitor system experiences a first dynamically stable mass transfer
+\citep[e.g.,][]{tutukov:93,belczynski:2016, tauris:2017}, the
+progenitor binary % gravitational-wave
+% progenitor system
+experiences a first dynamically stable mass transfer
 phase through Roche lobe overflow (RLOF) between two non-compact
-stars. Subsequently, the initially more massive donor collapses to a
+stars. Subsequently, the initially more massive RLOF-donor collapses to a
 compact object without disrupting the binary
 \citep[e.g.,][]{blaauw:1961,renzo:2019walk}. Only afterwards, as the
-initially less massive secondary expands, a second mass-transfer phase
+initially less massive RLOF-accretor expands, a second mass-transfer phase
 occurs and is typically dynamically unstable, that is a CE
 \citep[e.g.,][]{dominik:2012, belczynski:2016, kruckow:18}. This
 second mass transfer is responsible for the orbital shrinking
@@ -107,27 +109,29 @@ initially less massive star and accretion modifies its structure
 \citep[e.g.,][]{neo:1977, packet:1981, blaauw:1993, cantiello:2007,
   renzo:2021zoph}. On top of the enrichment of the envelope with
 CNO-processed material from the donor star core \citep{blaauw:1993,
-  renzo:2021zoph, el-badry:2022a}, and the substantial spin-up, accretors are expected
-to adjust their core-size to the new mass in a ``rejuvenation''
-process \citep[e.g.,][]{neo:1977, hellings:1983, hellings:1984}. The
-readjustment is driven by  mixing at the boundary between the
-convective core and the envelope, which refuels the convective region
-of hydrogen. This mixing also affects the entropy, density, and
-binding energy profile of the core-envelope boundary (CEB) layer
-\citep[][]{renzo:2021zoph}, where the density rises and most of the
-binding energy is accumulated. Consequently, the success or failure
-of the CE ejection, which is likely decided in the CEB layer
-\citep[e.g.,][]{ivanova:2013}, may be different depending on whether the CE-donor
-accreted mass previously or not.
+  renzo:2021zoph, el-badry:2022a}, and the substantial spin-up,
+accretors are expected to adjust their core-size to the new mass in a
+``rejuvenation'' process \citep[e.g.,][]{neo:1977, hellings:1983,
+  hellings:1984}. The readjustment is driven by mixing at the boundary
+between the convective core and the envelope, which refuels the
+convective region of hydrogen (H). This mixing also affects the entropy,
+density, and binding energy profile of the partially
+hydrogen-depeleted layer above the helium (He) core
+\citep[][]{renzo:2021zoph}, which we refer to as core-envelope
+boundary (CEB) layer. It is in the CEB that the density rises and most of the
+binding energy is accumulated. Consequently, the success or failure of
+the CE ejection, which is likely decided in the CEB layer
+\citep[e.g.,][]{ivanova:2013}, may be different depending on whether
+the CE-donor accreted mass previously or not.
 
-Here, we use structure and evolution binary models to study
-the impact of the first RLOF phase on the outcome of possible
-subsequent CE events. \Secref{sec:methods} describe our \mesa\ calculations, and \Secref{sec:intro_res} presents a proof-of-principle
-of the effect of core boundary mixing and rotation on the envelope
-binding energy. In \Secref{sec:bin_models} we compare our accretor
-models to single stars with the same total post-RLOF mass. We discuss
-our findings and conclude in
-\Secref{sec:conclusions}.
+Here, we use structure and evolution binary models to study the impact
+of the first RLOF phase on the outcome of possible subsequent CE
+events. \Secref{sec:methods} describe our \mesa\ calculations, and
+\Secref{sec:intro_res} presents a proof-of-principle of the effect of
+core boundary mixing and rotation on the envelope binding energy. In
+\Secref{sec:bin_models} we compare our accretor models to single stars
+with the same total post-RLOF mass. We discuss our findings and
+conclude in \Secref{sec:conclusions}.
 
 \section{Pre-common envelope evolution}
 \label{sec:methods}
@@ -149,13 +153,12 @@ used in asteroseismology calculations (J.~Fuller, private~comm.).
 
 We adopt initial period $P=100$\,days and choose initial masses
 $(M_{1}, M_{2}) = (18, 15), (20, 17), (38, 30)\,M_\odot$. We focus on
-the initially less massive stars, which post-RLOF with our setup
-described below become
+the initially less massive stars, which after accretion become
 $M_2=15\rightarrow 18, 17\rightarrow 20, 30\rightarrow 36\,M_\odot$, roughly\footnote{Whether a
   core-collapse results in NS or BH formation, with or without an
   associated explosion, cannot be decided solely based on the (total
   or core) mass of a star \citep[e.g.,][]{oconnor:11, farmer:16,
-    patton:20, patton:22, zapartas:21b}. } representative of NS,
+    patton:20, zapartas:21b, patton:22}. } representative of NS,
 uncertain core-collapse outcome, and BH progenitors, respectively. Our \mesa\ models
 assume that the accretion efficiency is limited by rotationally
 enhanced wind mass loss \citep[e.g.,][]{sravan:2019, wang:2020,
@@ -163,22 +166,21 @@ enhanced wind mass loss \citep[e.g.,][]{sravan:2019, wang:2020,
 conservative mass transfer than suggested by observations
 \citep[e.g.,][]{wang:2021a}.
 
-To avoid computing the late evolutionary phases of the donors, and
-focus on the post-RLOF evolution of the accretors, after detachment
-from the Roche lobe, our simulations artificially separate the
-stars % \footnote{We turn the stripped donor into a point mass and set
-  % the period to infinity on the fly through our
-  % \texttt{run\_star\_extras.f90}.},
-and continue the evolution of the secondary as a single star until it
-reaches carbon depletion (defined by central carbon mass fraction
+We reduce the computing time and complexity by avoiding the late
+evolutionary phases of the RLOF-donors. After the binary detaches from
+the Roche lobe (see discussion in \citealt{renzo:2021zoph}), our
+simulations artificially separate the stars and continue the evolution
+of the accretor as a single star until it reaches carbon depletion
+(defined by central carbon mass fraction
 $X_\mathrm{c}(^{12}\mathrm{C})<2\times10^{-4} $). We make the routine
 to detach a \mesa\ binary on-the-fly publicly
 available\footnote{\url{https://github.com/MESAHub/mesa-contrib/}}.
 This approach implies that we neglect further binary interactions
 (e.g., tides, case BB RLOF, \citealt{laplace:2020}), the impact of the
-core-collapse of the RLOF-donor on the accretor \cite[e.g.,][]{hirai:2018,
-  ogata:2021} and on the orbit \citep[e.g.,][]{brandt:1995,
-  kalogera:1996, tauris:1998, renzo:2019walk}.
+core-collapse of the RLOF-donor on the accretor
+\cite[e.g.,][]{hirai:2018, ogata:2021} and on the orbit
+\citep[e.g.,][]{brandt:1995, kalogera:1996, tauris:1998,
+  renzo:2019walk}.
 
 
 \begin{figure}[btp]
@@ -196,30 +198,27 @@ To illustrate the physical reason why the first RLOF may influence the
 envelope structure of the accretor much later on, we also compute
 comparison single stars with the same setup, and ``engineered'' stars
 which we modify at terminal age main sequence (TAMS, central hydrogen
-mass fraction $X_\mathrm{c}(^1\mathrm{H})<10^{-4}$).
-\Figref{fig:engineered_TAMS} shows an example grid for $30M_\odot$,
-with the gray area highlighting the region where models have been
-modified (corresponding to H mass fraction
+mass fraction $X_\mathrm{c}(^1\mathrm{H})<10^{-4}$) to mimic in an
+oversimplified way the impact of RLOF-driven rejuvenation of the
+accretors.
+
+\Figref{fig:engineered_TAMS} shows an example grid of ``engineered
+stars'' of $30M_\odot$. A gray shaded region highlights where each
+model is modified (corresponding to H mass fraction
 $X_\mathrm{c}(^1\mathrm{H})+0.05<X(^1\mathrm{H})<X_\mathrm{surf}(^1\mathrm{H})-0.05$,
 with $X_c$ and $X_\mathrm{surf}$ the central and surface value of the
-hydrogen mass fraction). More specifically, we modify the CEB specific
-entropy (s), hydrogen (H), and helium (He) profiles. Starting from a
-non-rotating single star at TAMS (e.g., red model in
-\Figref{fig:engineered_TAMS}), we maintain the same inner and outer
-profiles, but impose a linear connection from the outer boundary of
-the H-depleted core to a mass coordinate which we specify as a
-parameter (see \Figref{fig:engineered_TAMS} and
-\Figref{fig:TAMS_profiles}). We let \mesa\ ``relax'' the TAMS
-profiles to the desired entropy and composition profiles, and then
-evolve until either carbon depletion or when these models first exceed
+hydrogen mass fraction), and their overlap produces the shade in
+\Figref{fig:engineered_TAMS}. Starting from a non-rotating single star
+at TAMS (e.g., red model in \Figref{fig:engineered_TAMS}), we modify
+the CEB specific entropy (s), H, and He profiles -- but do not change
+the mass fractions of other elements. Specifically, we keep the same
+inner and outer profiles, but impose a linear connection from the
+outer boundary of the H-depleted core to a mass coordinate which we
+specify as a parameter (see \Figref{fig:engineered_TAMS} and
+\Figref{fig:TAMS_profiles}). We let \mesa\ ``relax'' the TAMS profiles
+to the desired entropy and composition profiles, and then evolve until
+either carbon depletion or when these models first exceed
 $1000\,R_\odot$.
-% where we artificially modify the specific entropy (s), hydrogen (H),
-% and helium (He) profiles (we do not change the other elements mass
-% fractions) at terminal age main sequence (TAMS, central hydrogen mass
-% fraction $X_\mathrm{c}(^1\mathrm{H})<10^{-4}$).
-These ``engineered'' stars with
-artificially imposed CEB structures mimic in an oversimplified way the
-impact of RLOF-driven rejuvenation of the accretors.
 
 We compare the internal structure of accretors to single and
 engineered stars at various radii
@@ -264,7 +263,7 @@ gravitational and binding energy profiles of a $30\,M_\odot$ single
 star (red solid line) to
 ``engineered'' models (see \Secref{sec:methods}), when stars first
 reach radius $R=500\,R_\odot$. We
-define the gravitational binding energy as
+define the binding energy as
 \citep[e.g.,][]{dekool:1990, dewi:2000, lau:2022}:
 \begin{equation}
   \label{eq:BE}
@@ -282,16 +281,18 @@ of the ``core'' surviving a hypothetical CE, to the surface. The
 parameter $0\leq \alpha_\mathrm{th}\leq 1$ is the fraction of internal
 energy (including recombination energy) that can be used to lift the
 shared CE. It is possible that $\alpha_\mathrm{th}$ may not be
-constant during a CE. For $\alpha_\mathrm{th}=0$, \Eqref{eq:BE}
-reduces to $BE(m, \alpha_{\rm th}=0)\equiv -E_\mathrm{grav}(m)$
-(dashed lines in \Figref{fig:toy_models_example}), while
+constant during a CE (e.g., if recombination happens in already
+unbound material it cannot contribute to the CE energetics). For
+$\alpha_\mathrm{th}=0$, \Eqref{eq:BE} give the gravitational binding
+energy (dashed lines in \Figref{fig:toy_models_example}), while
 $\alpha_{\mathrm{th}}=1$ assumes perfectly fine tuned use of all the
-internal energy (solid lines). These two cases bracket the range of possibilities.
+internal energy (solid lines). These two cases bracket the range of
+possibilities.
 
 \Figref{fig:toy_models_example} shows that the gravitational and
 binding energy depend on the structure of the CEB region. In single
 stars, the CEB is determined by the extent of the convective boundary
-mixing and, more importantly, the recession in mass coordinate of the
+mixing and the recession in mass coordinate of the
 convective region. In \Figref{fig:toy_models_example}, lines of
 different colors show a trend with shallower entropy and composition
 profiles at TAMS (lighter curves in \Figref{fig:toy_models_example})
@@ -338,7 +339,7 @@ the combination of centrifugal forces and radiative pressure
 ($\Gamma-\Omega$ limit, \citealt{langer:1998}). One-dimensional stellar
 evolution codes commonly assume that rotation increases the total mass
 loss rate \citep[e.g.,][]{langer:1998, heger:2000} though this may not
-be true throughout the evolution \citep[e.g.,][]{gagnier:2019}.
+always be true throughout the evolution \citep[e.g.,][]{gagnier:2019}.
 
 \Figref{fig:rotation_models_example} shows the gravitational binding
 energy profile of the single $30\,M_\odot$ star of
@@ -360,11 +361,11 @@ mixing, which can result in larger binding energy differences than
 changing the CEB layer at fixed core mass.
 
 
-In accretors in binary systems both the
-effect illustrated in \Figref{fig:toy_models_example} and
+For stars accreting through RLOF in a binary both
+effects illustrated in \Figref{fig:toy_models_example} and
 \Figref{fig:rotation_models_example} act simultaneously, although the
 timing and amplitude of the impact of mixing and rotation can be
-different than for single stars \citep{renzo:2021zoph}.
+different than for single stars \citep[e.g.,][]{renzo:2021zoph}.
 
 \section{Accretors from self-consistent binary models}
 \label{sec:bin_models}
@@ -433,15 +434,15 @@ limited. % Moreover, blue-loops are sensitive to
 
 \begin{figure*}[htbp]
   \centering
-  \includegraphics[width=\textwidth]{TAMS_profiles_same_initial_mass.pdf}
+  \includegraphics[width=\textwidth]{TAMS_profiles.pdf}
   \caption{Specific entropy (top row), H (bottom row, solid lines),
-    and He (bottom row, dashed lines) profiles for non-rotating single
-    stars (red), accretors (orange), and ``engineered'' models of the
-    same total mass as the post-RLOF mass of the accretors. The gray
-    bands emphasize the CEB region, which is well
-    defined at TAMS. \todo{fix}}
-  \label{fig:TAMS_profiles_same_initial_mass}
-  \script{TAMS_profiles_same_initial_mass.py}
+    and He (bottom row, dashed lines) TAMS profiles for non-rotating
+    single stars (red), accretors (orange), and ``engineered'' models
+    of the same total mass as the post-RLOF mass of the accretors. The
+    overlapping gray bands emphasize the CEB region, which is well
+    defined at TAMS.}
+  \label{fig:TAMS_profiles}
+  \script{TAMS_profiles.py}
 \end{figure*}
 
 \Figref{fig:TAMS_profiles} shows the entropy, H and He mass fraction
@@ -732,15 +733,14 @@ mass in a previous stable mass transfer phase (see also \Figref{fig:lambda_grid}
 
 \begin{figure*}[htbp]
   \centering
-  \includegraphics[width=\textwidth]{TAMS_profiles.pdf}
+  \includegraphics[width=\textwidth]{TAMS_profiles_same_initial_mass.pdf}
   \caption{Specific entropy (top row), H (bottom row, solid lines),
-    and He (bottom row, dashed lines) TAMS profiles for non-rotating single
+    and He (bottom row, dashed lines) profiles for non-rotating single
     stars (red), accretors (orange), and ``engineered'' models of the
-    same total mass as the post-RLOF mass of the accretors. The gray
-    bands emphasize the CEB region, which is well
-    defined at TAMS.\todo{check placement}}
-  \label{fig:TAMS_profiles}
-  \script{TAMS_profiles.py}
+    same total mass as the ZAMS mass of the accretors. The overlapping
+    gray bands emphasize the CEB region.}
+  \label{fig:TAMS_profiles_same_initial_mass}
+  \script{TAMS_profiles_same_initial_mass.py}
 \end{figure*}
 
 
