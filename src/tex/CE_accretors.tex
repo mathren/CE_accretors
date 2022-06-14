@@ -33,11 +33,18 @@
 \affiliation{Center for Computational Astrophysics, Flatiron Institute, New York, NY 10010, USA}
 
 \author[0000-0003-3441-7624]{R.~Farmer}
-% R.~Farmer
+\affiliation{Max-Planck-Institut für Astrophysik, Karl-Schwarzschild-Straße 1, 85741 Garching, Germany}
 % E.~Zapartas
 % Y.~Gotberg
-% B.~D. Metzger
-% M. Lau
+\author{M. Lau}
+\affiliation{School of Physics and Astronomy, Monash University,
+  Clayton, Victoria 3800, Australia}
+\affiliation{OzGrav: The ARC Centre of Excellence for Gravitational Wave Discovery, Australia}}
+\affiliation{Center for Computational Astrophysics, Flatiron
+  Institute, New York, NY 10010, USA}
+\author[0000-0002-4670-7509]{B.~D.~Metzger}
+\affiliation{Columbia Astrophysics Laboratory, Columbia University, New York, New York 10027, USA}
+\affiliation{Center for Computational Astrophysics, Flatiron Institute, New York, NY 10010, USA}
 % M. Cantiello
 
 %     \author[0000-0002-6960-6911]{Y.~G\"otberg}\thanks{Hubble Fellow}
@@ -53,8 +60,8 @@
   CE phase is usually the second mass transfer. Thus, the donor star
   of the CE is the product of a previous binary interaction, often a
   stable Roche lobe overflow (RLOF). Because of the accretion of mass,
-  the convective core of the star grows and is ``rejuvenated''. This
-  leads to a steeper core-envelope boundary which decreases
+  the convective core of the accretor star grows and is ``rejuvenated''. This
+  leads to a steeper core-envelope boundary region which decreases
   significantly the envelope binding energy. Comparing accretor models
   from self-consistent binary models to stars evolved as single and
   models where we artificially impose specific core-envelope boundary
@@ -120,8 +127,9 @@ between the convective core and the envelope, which refuels the
 convective region of hydrogen (H). This mixing also affects the
 thermal structure of the layer above the helium (He) core partially
 depleted in H \citep[][]{renzo:2021zoph}, which we refer to as core-envelope
-boundary (CEB) layer. It is in the CEB that the density rises and most of the
-binding energy is accumulated. Consequently, the success or failure of
+boundary (CEB) layer. It is in the CEB that the density rises and most
+of the envelope binding energy is accumulated for the remaining
+stellar lifetime. Consequently, the success or failure of
 the CE ejection, which is likely decided in the CEB layer
 \citep[e.g.,][]{ivanova:2013}, may be different depending on whether
 the CE-donor accreted mass previously or not.
@@ -190,7 +198,7 @@ consequences of the RLOF-donor core-collapse
   \caption{TAMS entropy profile of a single 30\,$M_\odot$ star (red)
     and engineered models where we artificially modify the CEB region
     (gray shaded area partially overlapping for multiple models). The CEB for a
-    single $30\,M_\odot$ star has a mass of $5.81\,M_\odot$ at TAMS,
+    single $30\,M_\odot$ star has a mass thickness of $5.81\,M_\odot$ at TAMS,
     while the engineered models span the range $\sim3-9.4\,M_\odot$.}
   \label{fig:engineered_TAMS}
   \script{engineered_TAMS.py}
@@ -231,7 +239,7 @@ the mass fractions of other elements. Specifically, we keep the same
 inner and outer profiles, but impose a linear connection from the
 outer boundary of the H-depleted core to a mass coordinate which we
 specify as a parameter (see \Figref{fig:engineered_TAMS} and
-\Figref{fig:TAMS_profiles}). We let \mesa\ ``relax'' the TAMS profiles
+\Figref{fig:TAMS_profiles}) \todo{explain why accretors may look like this}. We let \mesa\ ``relax'' the TAMS profiles
 to the desired entropy and composition profiles, and then evolve until
 either carbon depletion or when these models first exceed
 $1000\,R_\odot$.
@@ -253,15 +261,16 @@ by accretion during the first RLOF.
 \begin{figure}[bp]
   \centering
   \includegraphics[width=0.5\textwidth]{toy_models_example.pdf}
-  \caption{The structure of the CEB impacts the envelope gravitational
-    binding energy profile throughout the remaining evolution. Dashed
-    lines show the gravitational contribution only, while solid lines
-    include the contribution of the internal energy. The red lines
-    show a $30\,M_\odot$, non-rotating, $Z=0.0019$ model compared to
-    ``engineered'' models of the same mass, but artificially imposed
-    profile at TAMS (other colors, see text). The top (bottom) axis
-    indicates mass coordinate (radius). We compare the models when
-    they first reach $500\,R_\odot$.}
+  \caption{The structure of the CEB at the end of the main sequence
+    impacts the envelope binding energy profile throughout the
+    remaining evolution. Dashed lines show the gravitational
+    contribution only, while solid lines include the contribution of
+    the internal energy. The red lines show a $30\,M_\odot$,
+    non-rotating, $Z=0.0019$ model compared to ``engineered'' models
+    of the same mass (see \Figref{fig:engineered_TAMS}), but
+    artificially imposed profile at TAMS (other colors, see text). The
+    top (bottom) axis indicates mass coordinate (radius). We compare
+    the models when they first reach $500\,R_\odot$.}
   \label{fig:toy_models_example}
   \script{toy_models_example.py}
 \end{figure}
@@ -272,7 +281,7 @@ gravitational and binding energy profiles of a $30\,M_\odot$ single
 star (red solid line) to
 ``engineered'' models (see \Secref{sec:methods}), when stars first
 reach radius $R=500\,R_\odot$. We
-define the binding energy as
+define the binding energy above mass coordinate $m$ as
 \citep[e.g.,][]{dekool:1990, dewi:2000, lau:2022}:
 \begin{equation}
   \label{eq:BE}
@@ -291,22 +300,23 @@ parameter $0\leq \alpha_\mathrm{th}\leq 1$ is the fraction of internal
 energy (including recombination energy) that can be used to lift the
 shared CE. It is possible that $\alpha_\mathrm{th}$ may not be
 constant during a CE (e.g., if recombination happens in already
-unbound material it cannot contribute to the CE energetics). For
+unbound material it cannot contribute to the CE energetics) or across
+binary systems entering a CE at different evolutionary stages. For
 $\alpha_\mathrm{th}=0$, \Eqref{eq:BE} give the gravitational binding
 energy (dashed lines in \Figref{fig:toy_models_example}), while
 $\alpha_{\mathrm{th}}=1$ assumes perfectly fine tuned use of all the
 internal energy (solid lines). These two cases bracket the range of
-possibilities.
+possible use of internal energy to eject the CE.
 
-\Figref{fig:toy_models_example} shows that the gravitational and
-binding energy depend on the structure of the CEB region. In single
+\Figref{fig:toy_models_example} shows that
+binding energy depends on the structure of the CEB region. In single
 stars, the CEB is determined by the extent of the convective boundary
 mixing and the recession in mass coordinate of the
-convective region. In \Figref{fig:toy_models_example}, lines of
+convective core. In \Figref{fig:toy_models_example}, lines of
 different colors show a trend with shallower entropy and composition
 profiles at TAMS (lighter curves in \Figref{fig:toy_models_example})
-evolving into more gravitationally bound inner envelopes (larger
-binding energy inside $\log(r/\mathrm{cm})\lesssim 11$), and viceversa.
+evolving into more bound inner envelopes (larger
+binding energy inside $\log_{10}(r/\mathrm{cm})\lesssim 11.5$), and viceversa.
 
 \subsection{Rotation}
 \label{sec:rot_examples}
@@ -468,7 +478,9 @@ profiles at TAMS for our accretor models (orange), single non-rotating
 stars (red) and ``engineered'' models of the same mass as the accretor
 post-RLOF. We chose to compare our accretors to models of the same
 total mass, since this quantity appears in the envelope binding energy
-\citep[see \Eqref{eq:BE} and e.g.,][]{dekool:1990, dewi:2000}.
+\citep[see \Eqref{eq:BE} and e.g.,][]{dekool:1990, dewi:2000}, and
+rapid population synthesis codes typically use the total mass as the
+main parameter to construct accretor models.
 Nevertheless, it is not obvious that this is the most relevant
 comparison: for instance, the (helium or carbon-oxygen) core mass is often
 used to determine the final compact object \citep[e.g.,][]{fryer:2012,
@@ -486,7 +498,8 @@ accretors to be steeper than in a star evolving as single, resulting
 in models qualitatively more similar to our engineered models with the
 steeper CEB (darker lines in
 \Figref{fig:toy_models_example}-\ref{fig:rotation_models_example},
-\Figref{fig:TAMS_profiles}-\ref{fig:grid_ratios}, and \Figref{fig:TAMS_profiles_same_initial_mass}-\ref{fig:lambda_grid}). In fact, rejuvenation of the accretor is caused by an
+\Figref{fig:TAMS_profiles}-\ref{fig:grid_ratios}, and
+\Figref{fig:TAMS_profiles_same_initial_mass}-\ref{fig:lambda_grid}). In fact, rejuvenation of the accretor is caused by an
 increase in mass coordinate of the convective core (and consequent
 refueling of H in the core): this is a thermal process related to
 convection and convective boundary mixing. Since the convective
@@ -533,7 +546,7 @@ including the internal energy, i.e. $\alpha_\mathrm{th}=1$) % and gravitational 
 % lines, $\alpha_\mathrm{th}=0$)
 of our accretor models, single stars with initial mass roughly equal
 to the accretors post-RLOF mass, and our engineered models (see also
-\Figref{fig:lambda_grid} for the $\lambda_\mathrm{CE}$ profile) The two
+\Figref{fig:lambda_grid} for the $\lambda_\mathrm{CE}$ profile defined in Appendix~\ref{sec:pop_synth_app}) The two
 lowest mass accretors (left and central column) do not expand to
 $R=1000\, R_\odot$ before carbon depletion. Generally speaking, the
 accretors (orange) have lower binding energies than corresponding
@@ -575,11 +588,12 @@ Because of the large range of $BE$ across the stellar structures, it
 is hard to appreciate the magnitude of the effect of RLOF-driven
 rejuvenation on the structure of the stars in
 \Figref{fig:BE_profiles}. Figure~\ref{fig:grid_ratios} presents the
-ratio of the local binding energies of our accretor models divided the
-local binding energy of comparison single stars, as a function of
-radius. To compute the ratio, we interpolate linearly the single star
-models on the mesh of our accretor, using the fractional Lagrangian
-mass coordinate $m/M$ as independent coordinate. % , and we
+ratio of the local value of the cumulative binding energy from the
+surface of our accretor models divided the
+comparison single stars, as a function of radius. To compute the
+ratio, we interpolate linearly the single star models on the mesh of
+our accretor, using the fractional Lagrangian mass coordinate $m/M$ as
+independent coordinate. % , and we
 % exclude the (small) mass regions where extrapolation would be needed
 % due to the different total mass of the stars.
 We calculate these ratio
@@ -601,7 +615,7 @@ and which are qualitatively more similar to the darker lines
 representing engineered models with steeper CEB profiles.
 
 The minimum ratio of binding energies occur roughly at the inner edge
-of the the CEB layer in \Figref{fig:grid_ratios}. Considering the
+of the CEB layer in \Figref{fig:grid_ratios}. Considering the
 ratio to single stars (red lines), the minima range between 0.56-0.07;
 0.58-0.08; and 0.51-0.04 from our least to most massive binary. In
 other words, at the radius where the difference between accretors and
@@ -705,7 +719,7 @@ Before the onset of the
 dynamical instability in a CE event, a pre-CE thermal timescale phase
 of mass transfer may occur \citep[e.g.,][]{pejcha:17,
   blagorodnova:2021}. This initial phase is usually neglected in
-hydrodynamical simulations and may impact the outer layers of
+hydrodynamical simulations and may impact the envelope structure of
 CE-donors whether they have previously been RLOF-accretors (as in our
 models) or not.
 
@@ -765,7 +779,12 @@ mass in a previous stable mass transfer phase (see also \Figref{fig:lambda_grid}
 \section{Common envelope $\lambda_\mathrm{CE}$}
 \label{sec:pop_synth_app}
 
-\cite{dekool:1990} introduced a binding energy parameter
+\cite{dekool:1990} introduced a binding energy
+parameter\footnote{While \cite{dekool:1990} used
+  $\alpha_\mathrm{CE}=0$, we calculate $\lambda_\mathrm{CE}$ with
+  $\alpha_\mathrm{CE}=1.0$, which provides a best case scenario for
+  the ejection of the CE by harvesting the entire internal energy
+  available in the gas.}
 $\lambda_\mathrm{CE}$ to account for the internal structure of the
 stars when calculating the post-CE orbit using energy conservation:
 \begin{equation}
