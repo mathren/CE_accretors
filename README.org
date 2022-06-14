@@ -68,7 +68,22 @@
 **** =src/data/MESA_input=
 
      The subfolders here contain template MESA work directory used to
-     run our models. See the README there for more information.
+     run our models. Tarball containing the exact template used for
+     the models in the paper are also uploaded on [[https://sandbox.zenodo.org/deposit/1069400][zenodo SANDBOX
+     1069400]].
+
+     This project uses =MESA version 15140=, =MESA SDK
+     x86_64-linux-20.12.1= (also logged in the =*.data= files), which
+     includes the compiler:
+
+     #+BEGIN_SRC bash
+     gfortran --version
+     GNU Fortran (GCC) 10.2.0
+     #+END_SRC
+
+     Please refer to the [[https://docs.mesastar.org/en/latest/][MESA documentation]] and [[https://lists.mesastar.org/mailman/listinfo][mailing list]] for
+     support.
+
 
 ** Local compilation
 

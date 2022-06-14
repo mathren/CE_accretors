@@ -1,48 +1,11 @@
-#+Title: List of MESA input and output files
-
-[[https://sandbox.zenodo.org/deposit/1069400][zenodo SANDBOX 1069400]]
-
-These file are used to produce the plots in the manuscript. This
-project uses =MESA version 15140=, =MESA SDK x86_64-linux-20.12.1= (also
-logged in the =*.data= files), which includes the compiler:
-
-#+BEGIN_SRC bash
-gfortran --version
-GNU Fortran (GCC) 10.2.0
-#+END_SRC
-
-** =./MESA_input= structure
-
-   Each tarball contains an example MESA work directory to reproduce
-   our calculations.
-
-   Please refer to the [[https://docs.mesastar.org/en/latest/][MESA documentation]] and [[https://lists.mesastar.org/mailman/listinfo][mailing list]] for
-   support.
-
-   The folder structure mimics the output one (though one template is
-   used for grid).
-
-#+BEGIN_SRC bash
-tree ./MESA_input/
-./MESA_input/
-├── binaries
-│   └── Z_0.0019
-│       └── template.tar.xz
-├── engineered_stars
-│   └── same_core
-│       └── template.tar.xz
-└── single_stars
-    └── Z_0.0019
-        └── template.tar.xz
-#+END_SRC
-
-** =./MESA_output= structure
+* =./MESA_output= structure
 
    This folder is omitted from the git repository, and only present on
-   =zenodo=. It contains the following MESA output files used by the
-   scripts to make figures.
+   =zenodo=. =showyourwork= will download and process it when needed if
+   you run it locally. It contains the following MESA output files
+   used by the scripts to make figures.
 
-   See =showyourwork.yml= and the =Snakefile= for the specific
+   See also =showyourwork.yml= and the =Snakefile= for the specific
    dependencies of each individual figure.
 
 #+begin_src bash
