@@ -29,7 +29,7 @@ for f in bin_folders:
     plot_HRD(str(LOGS1) + '/history.data', ax=ax, ls='--', lw=2, c=c)
 
 annotate_radii_hrd(ax, [100, 200, 300, 500, 1000])
-ax.set_xlim(xmin=3.6)
+ax.set_xlim(xmin=3.6, xmax=4.75)
 ax.invert_xaxis()
 ax.plot(np.nan, np.nan, c="k", ls='--', lw=2, label="donor")
 ax.plot(np.nan, np.nan, c="k", label="accretor")
