@@ -8,4 +8,24 @@ adaptable to other workflows.
 - =setup_single_stars.py= was used to create the single stars with the
   =TEMPLATE= MESA work directory =../single_stars/template_single=
 - =setup_grid_simplified.py= was used to create the engineered models
-  with the =TEMPLATE= MESA work directory =../engineered_stars/same_core/template_engineered/=
+  with the =TEMPLATE= MESA work directory
+  =../engineered_stars/same_core/template_engineered/= and using the
+  input composition and entropy profile created starting from
+  non-rotating single star models with
+  =../engineered_stars/make_simplified_chem_profiles.ipynb=
+  and saved in =../engineered_stars/input_profiles/=
+
+For each grid of models, these scripts also produce a tarball of the
+exact folder used as =TEMPLATE= at the time of running, which is
+available at the zenodo deposit associated with this repository.
+
+** How to reproduce our MESA run
+
+   To obtain bit-to-bit identical results to those in our paper, we
+   recommend downloading from zenodo the tarball associated to the
+   runs you want to reproduce, insert the input parameters for the
+   specific run within the grid of models computed with that tarball,
+   and run =MESA version 15140=, =MESA SDK x86_64-linux-20.12.1=.
+
+   The files in this repo may evolve in time after publication of the
+   manuscript.
