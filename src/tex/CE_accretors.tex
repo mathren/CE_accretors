@@ -148,7 +148,7 @@ the progenitor population of GW events \citep[e.g.,][]{vanson:2021}. Moreover, w
 throughout the star a small amount of mixing with diffusivity
 \texttt{min\_D\_mix}=100. This improves the numerical stability by
 smoothing properties across adjacent cells, without introducing
-significant quantitative variations, and is a typical numerical trick
+significant quantitative variations, and is a typical numerical technique
 used in asteroseismology calculations (J.~Fuller, private~comm.).
 
 We adopt initial period $P=100$\,days and choose initial masses
@@ -175,10 +175,11 @@ of the accretor as a single star until it reaches carbon depletion
 $X_\mathrm{c}(^{12}\mathrm{C})<2\times10^{-4} $). We make the routine
 to detach a \mesa\ binary on-the-fly publicly
 available\footnote{\url{https://github.com/MESAHub/mesa-contrib/}}.
-This approach implies that we neglect further binary interactions
-(e.g., tides, case BB RLOF, \citealt{laplace:2020}), the impact of the
-core-collapse of the RLOF-donor on the accretor
-\cite[e.g.,][]{hirai:2018, ogata:2021} and on the orbit
+This implies that we neglect further -- possible, but not expected --
+mass transfer episodes (case BB RLOF, \citealt{laplace:2020}) and
+tidal interactions between the stars. We also neglect the impact of
+the core-collapse of the RLOF-donor on the accretor
+\cite[e.g.,][]{hirai:2018, ogata:2021} and on the binary orbit
 \citep[e.g.,][]{brandt:1995, kalogera:1996, tauris:1998,
   renzo:2019walk}.
 
@@ -196,11 +197,11 @@ core-collapse of the RLOF-donor on the accretor
 
 To illustrate the physical reason why the first RLOF may influence the
 envelope structure of the accretor much later on, we also compute
-comparison single stars with the same setup, and ``engineered'' stars
-which we modify at terminal age main sequence (TAMS, central hydrogen
-mass fraction $X_\mathrm{c}(^1\mathrm{H})<10^{-4}$) to mimic in an
-oversimplified way the impact of RLOF-driven rejuvenation of the
-accretors.
+comparison stars. For each mass, we compute non-rotating single stars
+with otherwise identical setup, and ``engineered'' stars which we
+modify at terminal age main sequence (TAMS, central hydrogen mass
+fraction $X_\mathrm{c}(^1\mathrm{H})<10^{-4}$) to mimic the impact of
+rejuvenation of the accretors CEB.
 
 \Figref{fig:engineered_TAMS} shows an example grid of ``engineered
 stars'' of $30M_\odot$. A gray shaded region highlights where each
@@ -251,7 +252,8 @@ by accretion during the first RLOF.
     include the contribution of the internal energy. The red lines
     show a $30\,M_\odot$, non-rotating, $Z=0.0019$ model compared to
     ``engineered'' models of the same mass, but artificially imposed
-    profile at TAMS (other colors, see text). Models are compared when
+    profile at TAMS (other colors, see text). The top (bottom) axis
+    indicates mass coordinate (radius). We compare the models when
     they first reach $500\,R_\odot$.}
   \label{fig:toy_models_example}
   \script{toy_models_example.py}
@@ -453,7 +455,7 @@ post-RLOF. We chose to compare our accretors to models of the same
 total mass, since this quantity appears in the envelope binding energy
 \citep[see \Eqref{eq:BE} and e.g.,][]{dekool:1990, dewi:2000}.
 Nevertheless, it is not obvious that this is the most relevant
-comparison: for instance, the (He or carbon-oxygen) core mass is often
+comparison: for instance, the (helium or carbon-oxygen) core mass is often
 used to determine the final compact object \citep[e.g.,][]{fryer:2012,
   farmer:2019, patton:2021, renzo:2022, fryer:2022}, and comparing models of roughly the same
 core-mass might be more appropriate (but is sensitive to the condition
@@ -594,7 +596,7 @@ binding energy is roughly between $\sim{}50-\mathrm{few}\%$ of the
 binding energy of a single star. Regardless of the mass, the larger
 the outer radius the smaller the minimum of the ratio of binding
 energies: the differences caused by RLOF accretion and rejuvenation of
-the core grows the stars evolve and their core contract.
+the core grows as the stars evolve and their core contract.
 
 Defining the He core boundary as the outermost location where $X<0.01$
 and $Y>0.1$, we can fix $m=M_\mathrm{He}$ in \Eqref{eq:BE} to obtain
