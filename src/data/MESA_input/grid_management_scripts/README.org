@@ -1,0 +1,9 @@
+#+Title: Scripts to manage running grids
+
+These are tuned to run on my workstation, but should be easily
+adaptable to other workflows.
+
+- =setup_binaries.py= was used to create the binary runs
+- =setup_single_stars.py= was used to create the single stars
+- =setup_grid_simplified.py= was used to create the engineered models
+  (see also =./engineered_stars=)
