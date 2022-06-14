@@ -21,7 +21,6 @@
 import sys
 # import socket
 from MESAreader import getSrcCol, Rsun_cm, Lsun
-from lib_plot_bin import plot_entropy
 import numpy as np
 import re
 import os
@@ -312,6 +311,11 @@ def mk_simplified_profile_from_pfile(pfile, outfile=None, plot=False, m_in=None,
                 f.writelines(line)
     return(num_points, xq, s_out, h1_out, he_out)
 
+def plot_entropy(pfile, ax, **plot_kwargs):
+    src, col = getSrcCol(pfile)
+    m = src[:, col.index("mass")]
+    s = src[:, col.index("entropy")]
+    ax.plot(m, s, **plot_kwargs)
 
 def plot_XY(pfile, ax, **plot_kwargs):
     src, col = getSrcCol(pfile)

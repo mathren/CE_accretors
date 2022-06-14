@@ -2,8 +2,8 @@ from lib_plot_bin import plot_BE_r
 from lib_engineered import (
     get_M_boundary,
     plot_XY,
-    plot_entropy,
     get_M_boundary,
+    plot_entropy,
     plot_s_h_he,
     three_panel_plot_s_h_he,
 )

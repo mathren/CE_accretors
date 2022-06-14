@@ -1,6 +1,6 @@
 import paths
-from lib_plot_bin import plot_BE_r, plot_entropy
-from lib_engineered import get_M_boundary, plot_XY
+from lib_plot_bin import plot_BE_r
+from lib_engineered import get_M_boundary, plot_XY, plot_entropy
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 import numpy as np

@@ -43,7 +43,6 @@ for f in grid_folders:
     delta_M_bound, M_bound_max, M_bound_min = get_M_boundary(pfile, offset=0.05)
     label = f"{delta_M_bound:.2f}"  # f.split('/')[-2]
     c = colors[grid_folders.index(f)]
-    # plot_entropy(pfile, inset_ax, c=c, lw=2, label="")
     pfile_end = f + "LOGS/500Rsun.data"
     plot_BE_r(
         pfile_end, ax, alpha_th=0.0, scale_factor=None, top_axis=True, lw=2, ls="--", c=c

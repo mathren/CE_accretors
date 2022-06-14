@@ -34,7 +34,7 @@ except ImportError:
 
     def colored(a, color):
         return a
-
+from lib_engineered import get_M_boundary
 
 try:
     from MESAreader import getSrcCol, secyer, G_cgs, Lsun, Msun, Rsun_cm, clight
@@ -705,7 +705,7 @@ def get_BE_from_pfile(pfile, alpha_th=1.0):
 
 
 def plot_BE_r(
-    pfile, ax, alpha_th=1.0, scale_factor=None, top_axis=False, **plot_kwargs
+        pfile, ax, alpha_th=1.0, scale_factor=None, top_axis=False,  **plot_kwargs
 ):
     """
     plot the binding energy profile as a function of log(r/cm)
@@ -731,7 +731,6 @@ def plot_BE_r(
         # tx.set_xticks([])
         # tx.set_xticklabels([])
         tx.set_xlabel(r"m $[M_\odot]$")
-
 
 def plot_BE_m(pfile, ax, alpha_th=1.0, scale_factor=None, **plot_kwargs):
     """
@@ -1030,13 +1029,6 @@ def get_lambda_profile(pfile, alpha_th=1):
     # print(G_cgs)
     # print("-----------")
     return np.asarray(L, dtype=float)
-
-
-def plot_entropy(pfile, ax, **plot_kwargs):
-    src, col = getSrcCol(pfile)
-    m = src[:, col.index("mass")]
-    s = src[:, col.index("entropy")]
-    ax.plot(m, s, **plot_kwargs)
 
 
 def interpolate_BE_env(x1, x2, y2, offset=1.0):
