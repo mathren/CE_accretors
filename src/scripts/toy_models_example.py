@@ -20,13 +20,13 @@ delta_M_bound, M_bound_min, M_bound_max = get_M_boundary(init_model, offset=0.05
 nonrot30 =  paths.data / "MESA_output/single_stars/Z_0.0019/30_rot0.0"
 pfile_normal = nonrot30 /  "LOGS/500Rsun.data"
 plot_BE_r(
-    pfile_normal, ax, alpha_th=0.0, scale_factor=None, lw=3, ls="--", c="r", zorder=10
+    pfile_normal, ax, alpha_th=0.0, scale_factor=None, top_axis=True, lw=3, ls="--", c="r", zorder=10
 )
 plot_BE_r(
     pfile_normal,
     ax,
     alpha_th=1.0,
-    scale_factor=None,
+    scale_factor=None, top_axis=True,
     lw=3,
     ls="-",
     c="r",
@@ -46,10 +46,10 @@ for f in grid_folders:
     # plot_entropy(pfile, inset_ax, c=c, lw=2, label="")
     pfile_end = f + "LOGS/500Rsun.data"
     plot_BE_r(
-        pfile_end, ax, alpha_th=0.0, scale_factor=None, lw=2, ls="--", c=c
+        pfile_end, ax, alpha_th=0.0, scale_factor=None, top_axis=True, lw=2, ls="--", c=c
     )  # , label=label)
     plot_BE_r(
-        pfile_end, ax, alpha_th=1.0, scale_factor=None, lw=2, ls="-", c=c
+        pfile_end, ax, alpha_th=1.0, scale_factor=None, top_axis=True, lw=2, ls="-", c=c
     )  # , label=label)
 
 ax.plot(np.nan, np.nan, ls="-", c="k", label=r"$\alpha_{th}=1.0$")

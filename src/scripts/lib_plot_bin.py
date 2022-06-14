@@ -31,8 +31,10 @@ import glob
 try:
     from termcolor import colored
 except ImportError:
+
     def colored(a, color):
         return a
+
 
 try:
     from MESAreader import getSrcCol, secyer, G_cgs, Lsun, Msun, Rsun_cm, clight
@@ -702,7 +704,9 @@ def get_BE_from_pfile(pfile, alpha_th=1.0):
     return np.asarray(BE, dtype=float)
 
 
-def plot_BE_r(pfile, ax, alpha_th=1.0, scale_factor=None, **plot_kwargs):
+def plot_BE_r(
+    pfile, ax, alpha_th=1.0, scale_factor=None, top_axis=False, **plot_kwargs
+):
     """
     plot the binding energy profile as a function of log(r/cm)
     use scale_factor (`float`) to set the y-axis units (if None units are erg)
@@ -713,6 +717,20 @@ def plot_BE_r(pfile, ax, alpha_th=1.0, scale_factor=None, **plot_kwargs):
     src, col = getSrcCol(pfile)
     logr = np.log10(src[:, col.index("radius")] * Rsun_cm)
     ax.plot(logr, BE, **plot_kwargs)
+    if top_axis:
+        """add top axis for mass"""
+        ax.tick_params(axis="x", which="both", top=False)
+        tx = ax.twiny()
+        m = src[:, col.index("mass")]
+        xmin, xmax = ax.get_xlim()
+        imin = np.argmin(np.absolute(logr - xmin))
+        imax = np.argmin(np.absolute(logr - xmax))
+        tmin = m[imin]
+        tmax = m[imax]
+        tx.set_xlim(tmin, tmax)
+        # tx.set_xticks([])
+        # tx.set_xticklabels([])
+        tx.set_xlabel(r"m $[M_\odot]$")
 
 
 def plot_BE_m(pfile, ax, alpha_th=1.0, scale_factor=None, **plot_kwargs):
@@ -1069,13 +1087,9 @@ def get_He_core_mass_from_pfile(pfile):
     m_he_core = max(m[Hecore])
     return m_he_core
 
+
 def plot_lambda_at_one_radius(
-    ax,
-    string,
-    grid_folders,
-    accretor=None,
-    nonrot=None,
-    plot_func=plot_lambda_mass
+    ax, string, grid_folders, accretor=None, nonrot=None, plot_func=plot_lambda_mass
 ):
     """make plots of the lambda profiles comparing models
 
@@ -1101,10 +1115,10 @@ def plot_lambda_at_one_radius(
         pfile = glob.glob(accretor + "/" + string)[0]
         plot_func(pfile, ax, alpha_th=1, c="orange", label="accretor")
         mhe = get_He_core_mass_from_pfile(pfile)
-        ax.axvline(mhe, 0,1,ls='--', lw=2, c="orange")
+        ax.axvline(mhe, 0, 1, ls="--", lw=2, c="orange")
 
     if nonrot:
-        pfile = glob.glob(nonrot  + string)[0]
+        pfile = glob.glob(nonrot + string)[0]
         plot_func(pfile, ax, alpha_th=1, c="r", label="single")
         mhe = get_He_core_mass_from_pfile(pfile)
-        ax.axvline(mhe, 0,1,ls='--', lw=2, c="r")
+        ax.axvline(mhe, 0, 1, ls="--", lw=2, c="r")
