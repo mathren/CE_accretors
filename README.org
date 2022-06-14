@@ -20,10 +20,6 @@
 </p>
 #+END_html
 
-
-Access the latest successful build of the manuscript from the badge
-above.
-
 You can see the source in =src/tex/CE_accretors.tex=, which you can edit
 and should be able to compile locally (more below).
 
@@ -42,6 +38,14 @@ and should be able to compile locally (more below).
    mass, rejuvenation, and changes in the density, temperature,
    entropy, and composition of the star and ultimately its binding
    energy profile.
+
+   Our result broadly indicate that having accreted mass during the
+   main sequence leads to evolved stars with overall less bound
+   envelopes that might be easier to eject. More info:
+</a>
+<a href="https://github.com/mathren/CE_accretors/raw/main-pdf/CE_accretors.pdf">
+<img src="https://img.shields.io/badge/article-pdf-blue.svg?style=flat" alt="Read the article"/>
+</a>
 
 ** Migration to new showyourwork
 
