@@ -167,7 +167,6 @@ def plot_HRD(input_file, ax, convert=True, annotate_radii=None, **plot_kwargs):
     if annotate_radii:
         annotate_radii_hrd(ax, radii=annotate_radii)
 
-
 def get_L_from_r_teff(radius, teff):
     # to annotate radii on HRD
     from math import pi

@@ -271,7 +271,7 @@ def grid_ratios(fig_name=None):
             color="r",
             ls="-",
         )
-        print(pfile_single, min(ratio), max(ratio))
+        # print(pfile_single, min(ratio), max(ratio))
     # 30
     cx1 = fig.add_subplot(gs[:20, 100:])
     cx2 = fig.add_subplot(gs[20:40, 100:])
@@ -381,7 +381,7 @@ def grid_ratios(fig_name=None):
         ratio = plot_ratio_BE_r(
             pfile_single, pfile_accretor, cx, alpha_th=alpha_th, color="r", ls="-"
         )
-        print(pfile_single, min(ratio), max(ratio))
+        # print(pfile_single, min(ratio), max(ratio))
     for cx in cxes:
         dx = cx.twinx()
         dx.set_yticks(cx.get_yticks())
