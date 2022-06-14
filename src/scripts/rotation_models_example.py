@@ -29,12 +29,22 @@ for f in grid_folders:
         label = "$\omega/\omega_\mathrm{crit}=$" + label
         c = colors[grid_folders.index(f)]
         pfile_end = f + "/LOGS/500Rsun.data"
-        plot_BE_r(pfile_end, ax, alpha_th=0.0, scale_factor=None, lw=2, ls="--", c=c)
+        plot_BE_r(
+            pfile_end,
+            ax,
+            alpha_th=0.0,
+            scale_factor=None,
+            top_axis=True,
+            lw=2,
+            ls="--",
+            c=c,
+        )
         plot_BE_r(
             pfile_end,
             ax,
             alpha_th=1.0,
             scale_factor=None,
+            top_axis=True,
             lw=2,
             ls="-",
             c=c,
@@ -44,13 +54,22 @@ for f in grid_folders:
 nonrot30 = paths.data / "MESA_output/single_stars/Z_0.0019/30_rot0.0/"
 pfile_normal = nonrot30 / "LOGS/500Rsun.data"
 plot_BE_r(
-    pfile_normal, ax, alpha_th=0.0, scale_factor=None, lw=3, c="r", zorder=10, ls="--"
+    pfile_normal,
+    ax,
+    alpha_th=0.0,
+    scale_factor=None,
+    top_axis=True,
+    lw=3,
+    c="r",
+    zorder=10,
+    ls="--",
 )
 plot_BE_r(
     pfile_normal,
     ax,
     alpha_th=1.0,
     scale_factor=None,
+    top_axis=True,
     lw=3,
     c="r",
     zorder=10,
