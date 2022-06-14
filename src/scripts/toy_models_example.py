@@ -1,4 +1,4 @@
-from lib_plot_bin import plot_BE_r, plot_entropy
+from lib_plot_bin import plot_BE_r
 from lib_engineered import get_M_boundary
 import glob
 import numpy as np
