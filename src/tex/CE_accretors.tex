@@ -23,7 +23,7 @@
 \graphicspath{{./figures/}}
 
 \title{Rejuvenated stars are more easily unbound:\\ The first stable
-  mass transfer impacts the donor of common envelopes in gravitational wave progenitors}
+  mass transfer impacts the donor of common envelopes in gravitational-wave progenitors}
 
 \author[0000-0002-6718-9472]{M.~Renzo \todo{other and order TBD}}
 \affiliation{Center for Computational Astrophysics, Flatiron Institute, New York, NY 10010, USA}
@@ -500,31 +500,32 @@ an integrated binding energy for the envelope:
 \Figref{fig:BE_env_R} shows the evolution of this integrated envelope
 binding energy as a function of the outer radius. Each panel shows one
 of our binaries, from top to bottom: 36+30\,$M_\odot$,
-20+17\,$M_\odot$, 18+15\,$M_\odot$. The dashed lines correspond to
-single stars with the same total mass as the accretors post-RLOF,
-while solid lines correspond to the accretors. For each binary, the
+20+17\,$M_\odot$, 18+15\,$M_\odot$.  For each binary, the
 lower panel shows the ratios of the envelope binding energy of the
 accretor divided the binding energy of the comparison single star
 (i.e., the ratio of the solid lines to the dashed lines in the panel
 above). To compute these ratios, we interpolate our accretor models
-on the time-grid of the single stars using the central temperature
+on the adaptive time-grid of the single stars using the central temperature
 $\log_{10}(T_c/[\mathrm{K}])$ as independent coordinate. In each of
 the lower panels the ratios are lower than one (marked by the gray
 dashed lines) at almost all radii, again suggesting that post-RLOF,
 accretor stars have envelopes that require less energy input to be
-ejected in a CE event.
+ejected in a CE event. The only times the binding energy of the
+accretor is higher than the corresponding single stars is during the
+blueward evolution discussed earlier.
 
 \begin{figure}[tp]
   \centering
   \includegraphics[width=0.5\textwidth]{BE_env_R.pdf}
   \caption{Evolution as a function of the photospheric radius $R$ of
-    the binding energy (including the thermal
-    energy, $\alpha_\mathrm{th}=1$) of the accretors and single stars
-    of the same (post-RLOF) total mass. The bottom panels show the
-    ratio, which is always smaller than 1 the first time a certain
-    radius $R$ is reached, indicating that the
-    accretors might have envelopes easier to unbind in a common
-    envelope event.}
+    the binding energy (including the thermal energy,
+    $\alpha_\mathrm{th}=1$) of the accretors and single stars of the
+    same (post-RLOF) total mass. The dashed lines correspond to single
+    stars with the same total mass as the accretors post-RLOF, while
+    solid lines correspond to the accretors. The bottom panels show
+    the ratio, which is always smaller than 1 the first time a certain
+    radius $R$ is reached, indicating that the accretors might have
+    envelopes easier to unbind in a common envelope event.}
   \label{fig:BE_env_R}
   \script{BE_env_R.py}
 \end{figure}
@@ -603,8 +604,8 @@ different.\todo{check C shell in kippenhahns?}.
 We have focused accretor models for progenitors of NS and BH. However,
 the physical processes described should be similar in all accretor
 stars with convective main sequence cores, down to initial mass
-$\sim{}M_{\rm ZAMS}\gtrsim 1.2\,M_\odot$ \citep[see also][]{wang:20}.
-Thus, also a fraction white dwarf progenitor binary systems, if
+$M_{\rm ZAMS}\gtrsim 1.2\,M_\odot$ \citep[see also][]{wang:20}.
+Thus, also a fraction of white dwarf progenitor binary systems, if
 sufficiently massive and experiencing a (case B) RLOF phase of
 evolution, may be influenced by the structural differences between
 single stars and RLOF-accretors.
