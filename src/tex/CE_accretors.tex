@@ -93,7 +93,7 @@ massive binary black holes \citep[e.g.,][]{pavlovskii:2017,
   klencki:2020, klencki:2021, vanson:2021, marchant:2021}.
 CE remains a crucial step in the
 formation, among many other compact binaries, of cataclysmic variable
-\citep{paczynski:1976}, double white dwarfs
+\citep[e.g.,][]{paczynski:1976}, double white dwarfs
 \citep[e.g.,][]{zorotovic:2010, korol:2017, kremer:2017, renzo:21gwce,
   thiele:21}, binary neutron stars
 \citep[NS, e.g.,][]{vigna-gomez:2018, vigna-gomez:2020}, merging black hole-neutron stars
@@ -129,24 +129,23 @@ accretors are expected to adjust their core-size to the new mass in a
   hellings:1984}. The readjustment is driven by mixing at the boundary
 between the convective core and the envelope, which refuels the
 convective region of hydrogen (H). This mixing also affects the
-thermal structure of the layer above the helium (He) core partially
-depleted in H \citep[][]{renzo:2021zoph}, which we refer to as core-envelope
-boundary (CEB) layer. It is in the CEB that the density rises and most
-of the envelope binding energy is accumulated for the remaining
-stellar lifetime. Consequently, the success or failure of
-the CE ejection, which is likely decided in the CEB layer
-\citep[e.g.,][]{ivanova:2013}, may be different depending on whether
-the CE-donor accreted mass previously or not.
+thermal structure of the partially H-depleted layer above the helium
+(He), which we refer to as core-envelope boundary (CEB) layer. It is
+in the CEB that the density rises and most of the envelope binding
+energy is accumulated for the remaining stellar lifetime.
+Consequently, the success or failure of the CE ejection, which is
+likely decided in the CEB layer \citep[e.g.,][]{ivanova:2013}, may be
+different depending on whether the CE-donor accreted mass previously
+or not.
 
-\todo{fix below}
 Here, we use structure and evolution binary models to study the impact
 of the first RLOF phase on the outcome of possible subsequent CE
-events. \Secref{sec:methods} describe our \mesa\ calculations, and
-\Secref{sec:intro_res} presents a proof-of-principle of the effect of
-core boundary mixing and rotation on the envelope binding energy. In
+events. \Secref{sec:methods} describe our \mesa\ calculations. In
 \Secref{sec:bin_models} we compare our accretor models to single stars
 with the same total post-RLOF mass. We discuss our findings and
-conclude in \Secref{sec:conclusions}.
+conclude in \Secref{sec:conclusions}. Appendix~\ref{sec:toy_models} presents a
+proof-of-principle of the effect of core boundary mixing and rotation
+on the envelope binding energy.
 
 \section{Pre-common envelope evolution}
 \label{sec:methods}
@@ -178,24 +177,26 @@ outcome, and BH progenitors, respectively. Our \mesa\ models assume
 that the accretion efficiency is limited by rotationally enhanced wind
 mass loss \citep[e.g.,][]{sravan:2019, wang:2020, renzo:2021zoph,
   sen:2022}. However, this may lead to less conservative mass transfer
-than suggested by observations \citep[e.g.,][]{wang:2021a}.
+than suggested by observations (e.g., \citealt{wang:2021a}, see also
+ \citealt{renzo:2021zoph}).
 
-We reduce the computing time and complexity by avoiding to compute the
-late evolutionary phases of the RLOF-donors. After the binary detaches
-from the Roche lobe (see discussion in \citealt{renzo:2021zoph}), our
-simulations artificially detach\footnote{We make the routine to detach
-  a \mesa\ binary on-the-fly publicly available
-  \url{https://github.com/MESAHub/mesa-contrib/}} the stars and
-continue the evolution of the accretor as a single star until it
-reaches carbon depletion (defined by central carbon mass fraction
-$X_\mathrm{c}(^{12}\mathrm{C})<2\times10^{-4} $). This implies that we
-neglect further -- possible, but not expected -- mass transfer
-episodes (case BB RLOF, \citealt{laplace:2020}) and tidal interactions
-between the stars. We also neglect the impact of the SN ejecta with
-the accretor \cite[e.g.,][]{hirai:2018, ogata:2021} and the orbital
-consequences of the RLOF-donor core-collapse
-\citep[e.g.,][]{brandt:1995, kalogera:1996, tauris:1998,
-  renzo:2019walk}.
+ After the binary detaches from the Roche lobe (see discussion in
+ \citealt{renzo:2021zoph}), our simulations artificially
+ detach\footnote{We make the routine to detach a \mesa\ binary
+   on-the-fly publicly available
+   \url{https://github.com/MESAHub/mesa-contrib/}} the stars and
+ continue the evolution of the accretor as a single star until it
+ reaches carbon depletion (defined by central carbon mass fraction
+ $X_\mathrm{c}(^{12}\mathrm{C})<2\times10^{-4} $).
+ This reduces the complexity and computing time by avoiding to simulate the
+late evolutionary phases of the RLOF-donors, and implies that
+ we neglect further -- possible, but not expected -- mass transfer
+ episodes (case BB RLOF, \citealt{laplace:2020}) and tidal
+ interactions between the stars. We also neglect the impact of the SN
+ ejecta with the accretor \cite[e.g.,][]{hirai:2018, ogata:2021} and
+ the orbital consequences of the RLOF-donor core-collapse
+ \citep[e.g.,][]{brandt:1995, kalogera:1996, tauris:1998,
+   renzo:2019walk}.
 
 To illustrate the physical reason why the first RLOF may influence the
 envelope structure of the accretor much later on, we also compute
@@ -207,7 +208,7 @@ rejuvenation of the accretors CEB (see also Appendix~\ref{sec:toy_models}).
 
 We compare the internal structure of accretors to single and
 engineered stars at various radii
-($R=100, 200, 300, 500, 1000\,R_\odot$). At the onset of a CE event,
+($R=100,\ 200,\ 300,\ 500,\ 1000\,R_\odot$). At the onset of a CE event,
 $R\equiv R_\mathrm{RL, donor}$ is the size of the Roche lobe of the
 donor star determined by the binary separation and mass ratio
 \citep[e.g.,][]{paczynski:1971, eggleton:83}.% as it becomes a red
@@ -221,15 +222,17 @@ POSYDON \citep{fragos:2022} and publicly available at \todo{fix}.
 
 \section{Accretors from self-consistent binary models}
 \label{sec:bin_models}
-\todo{smooth}
-We now consider accretors computed self-consistently in a binary until
-detachment, and subsequently as single stars until carbon core
-depletion. \Figref{fig:HRD} shows the evolution of our binaries on the
+
+% not needed with new structure
+% We now consider accretors computed self-consistently in a binary until
+% detachment, and subsequently as single stars until carbon core
+% depletion.
+\Figref{fig:HRD} shows the evolution of our binaries on the
 Hertzsprung-Russell (HR) diagram. The thin dashed lines % in
 % \Figref{fig:HRD}
-show the evolution of the donor stars from ZAMS,
-through RLOF, until our definition of detachment \citep[see, e.g.,][]{yoon:2017,
-  gotberg:2017, gotberg:2018, laplace:2020, laplace:2021}. The solid
+show the evolution of the donor stars \citep[see also, e.g.,][]{yoon:2017,
+  gotberg:2017, gotberg:2018, laplace:2020, laplace:2021} from ZAMS,
+through RLOF, until our definition of detachment. The solid
 lines correspond to the full evolution of the accretors, from zero age
 main sequence (ZAMS), through RLOF (see \citealt{sravan:2019,
   renzo:2021zoph, wang:2020}), until carbon depletion. % We analyze the
@@ -259,10 +262,10 @@ this results in a blue-loop, which last $\sim{}10^5$ years. These two
 models spend a significant fraction of their He core burning as hot
 yellow/blue supergiants, and reach
 $\log_{10}(T_\mathrm{eff}/\mathrm{[K]})\gtrsim 4.2$. Our most massive
-  accretor ($M\simeq36\,M_\odot$) evolves towards hotter temperatures
+  accretor ($M_2=30\rightarrow 36\,M_\odot$) evolves towards hotter temperatures
   during core He burning, but never fully recovers closing the blue
   loop. Its excursion to hottest temperatures occurs after He core
-  depletion and lasts $\sim{}10^{4}$ years for the most massive one.
+  depletion and lasts $\sim{}10^{4}$ years.
 
 Blue loops are not expected for single stars with
 $M\gtrsim 12\,M_\odot$ \citep[e.g.,][]{walmswell:2015}, and their
@@ -306,58 +309,85 @@ limited. % Moreover, blue-loops are sensitive to
   \script{TAMS_profiles.py}
 \end{figure*}
 
-\Figref{fig:TAMS_profiles} shows the entropy, H and He mass fraction
-profiles at TAMS for our accretor models (orange), single non-rotating
-stars (red) and ``engineered'' models of the same mass as the accretor
-post-RLOF. We chose to compare our accretors to models of the same
-total mass, since this quantity appears in the envelope binding energy
-\citep[see \Eqref{eq:BE} and e.g.,][]{dekool:1990, dewi:2000}, and
-rapid population synthesis codes typically use the total mass as the
-main parameter to construct accretor models.
-Nevertheless, it is not obvious that this is the most relevant
-comparison: for instance, the (helium or carbon-oxygen) core mass is often
-used to determine the final compact object \citep[e.g.,][]{fryer:2012,
-  farmer:2019, patton:2021, renzo:2022, fryer:2022}, and comparing models of roughly the same
-core-mass might be more appropriate (but is sensitive to the condition
-defining the core edge). We present in
-\Figref{fig:TAMS_profiles} a comparison between TAMS
-profiles of accretors, single stars, and engineered models with the
-same \emph{initial} mass as an alternative comparison that should bracket the
-range of sensible comparison models.
+We calculate the cumulative binding energy outside outside mass coordinate $m$
+\citep[e.g.,][]{dekool:1990, dewi:2000, lau:2022} as:
+\begin{equation}
+  \label{eq:BE}
+BE(m, \alpha_{\rm th}) = - \int_{m}^M\,dm'\left( -\frac{G m'}{r(m')}+\alpha_\mathrm{th} u(m')\right) \ \ ,
+\end{equation}
+with $r(m')$ radius, $u(m')$ the internal energy of a shell of mass
+thickness $dm'$ and outer Lagrangian mass coordinate $m'$, and $G$ the
+gravitational constant. The integral domain goes from mass coordinate
+$m$, which can be thought of the mass of the ``core'' surviving a
+hypothetical CE, to the surface. The parameter
+$0\leq \alpha_\mathrm{th}\leq 1$ is the fraction of internal energy
+(including recombination energy) that can be used to lift the shared
+CE. It is possible that $\alpha_\mathrm{th}$ may not be constant
+during a CE (e.g., if recombination happens in already unbound
+material it cannot contribute to the CE energetics) or across binary
+systems entering a CE at different evolutionary stages. For
+$\alpha_\mathrm{th}=0$, \Eqref{eq:BE} give the gravitational binding
+energy (dashed lines in
+\Figref{fig:toy_models_example}-\ref{fig:rotation_models_example}),
+while $\alpha_{\mathrm{th}}=1$ assumes perfectly fine tuned use of all
+the internal energy (solid lines). These two cases bracket the range
+of possible use of internal energy to eject the CE.
+
+\Figref{fig:TAMS_profiles} shows the specific entropy (s) profile --
+which determines the thermo-dynamical properties of the stars -- and the
+H and He mass fractions at TAMS for our accretor models (orange),
+single non-rotating stars (red) and ``engineered'' models of the same
+mass as the accretor post-RLOF. We chose to compare our accretors to
+models of the same total mass $M$ which enters in \Eqref{eq:BE} and is
+typically used in rapid population synthesis codes to construct
+accretor models. Nevertheless, it is not obvious that models of the
+same total mass are the most relevant comparison: for instance, the
+(helium or carbon-oxygen) core mass is often used to determine the
+final compact object \citep[e.g.,][]{fryer:2012, farmer:2019,
+  patton:2021, renzo:2022, fryer:2022}, and comparing models of
+roughly the same core-mass might be more appropriate (but is sensitive
+to the condition defining the core edge). We present in
+\Figref{fig:TAMS_profiles} a comparison between TAMS profiles of
+accretors, single stars, and engineered models with the same
+\emph{initial} mass as an alternative comparison that should bracket
+the range of sensible comparison models.
 
 Accretion through RLOF affects the CEB layer in more subtle ways than
 we impose in our ``engineered'' models. One expects the CEB in
 accretors to be steeper than in a star evolving as single, resulting
 in models qualitatively more similar to our engineered models with the
-steeper CEB (darker lines in
+steeper entropy and composition in the CEB (darker lines in
 \Figref{fig:toy_models_example}-\ref{fig:rotation_models_example},
 \Figref{fig:TAMS_profiles}-\ref{fig:grid_ratios}, and
-\Figref{fig:TAMS_profiles_same_initial_mass}-\ref{fig:lambda_grid}). In fact, rejuvenation of the accretor is caused by an
-increase in mass coordinate of the convective core (and consequent
-refueling of H in the core): this is a thermal process related to
-convection and convective boundary mixing. Since the convective
-turnover timescale in the core of a massive star is shorter than
-(\emph{i}) the nuclear timescale -- over which the composition of the
-core changes, (\emph{ii}) the donor thermal timescale -- governing
-case B RLOF mass-transfer, and (\emph{iii}) the accretor thermal
-timescale -- governing the thermal readjustment of the star, the
-increase in mass coordinate of the core should create a steep
-composition and entropy gradient at the new (post-accretion) outer
-edge. In practice, binary interactions occur after a finite amount of
-the accretor's main-sequence has elapsed. This pre-RLOF duration
-depends on the period and mass ratio of the two stars. For our
-binaries with initial $P=100$\,days and $q=M_2/M_1\simeq 0.8$, RLOF
-starts after $\sim{}$10, 9, and 5\,Myrs from the least massive to the
-most massive binary, which correspond to central H mass fractions
+\Figref{fig:TAMS_profiles_same_initial_mass}-\ref{fig:lambda_grid}).
+In fact, rejuvenation of the accretor is caused by an increase in mass
+coordinate of the convective core (and consequent refueling of H in
+the core): this is a thermal process related to convection and
+convective boundary mixing. Since the convective turnover timescale in
+the core of a massive star is shorter than (\emph{i}) the nuclear
+timescale -- over which the composition of the core changes,
+(\emph{ii}) the donor thermal timescale -- governing case B RLOF
+mass-transfer, and (\emph{iii}) the accretor thermal timescale --
+governing the thermal readjustment of the star, the increase in mass
+coordinate of the core should create a steep composition and entropy
+gradient at the new (post-accretion) outer edge. In practice, binary
+interactions occur after a finite amount of the accretor's
+main-sequence has elapsed. This pre-RLOF duration depends on the
+period and mass ratio of the two stars. For our binaries with initial
+$P=100$\,days and $q=M_2/M_1\simeq 0.8$, RLOF starts after $\sim{}$10,
+9, and 5\,Myrs from the least massive to the most massive binary,
+which correspond to central H mass fractions
 $X_\mathrm{c}(^1\mathrm{H}) = 0.27, 0.23$, and 0.21 for the accretors.
 Thus, the accreting stars are not homogeneous in composition at the
 onset of RLOF: the convective core is already bound by a composition
 gradient that generally impedes the mixing \citep[e.g.,][]{yoon:05}.
-Thus, the advance in mass coordinate of the convective region due to mass accretion (i.e., the ``rejuvenation process'') during RLOF occurs against a gradient (of entropy,
-$\mu$, H, and He) set by the pre-RLOF evolution.
+Thus, the advance in mass coordinate of the convective region due to
+mass accretion (i.e., the ``rejuvenation process'') during RLOF occurs
+against a gradient (of entropy, $\mu$, H, and He) set by the pre-RLOF
+evolution.
 
 To quantify the impact of the first RLOF phase on the outcome of the
-second mass transfer phase, we evolve in time all the TAMS profiles
+second mass transfer phase, we evolve forward all the TAMS profiles
 shown in \Figref{fig:TAMS_profiles} and compare them at fixed outer
 radii. %  We define the local binding
 % energy as:
@@ -379,7 +409,7 @@ including the internal energy, i.e. $\alpha_\mathrm{th}=1$) % and gravitational 
 % lines, $\alpha_\mathrm{th}=0$)
 of our accretor models, single stars with initial mass roughly equal
 to the accretors post-RLOF mass, and our engineered models (see also
-\Figref{fig:lambda_grid} for the $\lambda_\mathrm{CE}$ profile defined in Appendix~\ref{sec:pop_synth_app}) The two
+\Figref{fig:lambda_grid} for the $\lambda_\mathrm{CE}$ profile defined in Appendix~\ref{sec:pop_synth_app}). The two
 lowest mass accretors (left and central column) do not expand to
 $R=1000\, R_\odot$ before carbon depletion. Generally speaking, the
 accretors (orange) have lower binding energies than corresponding
@@ -664,33 +694,18 @@ $1000\,R_\odot$.
 gravitational and binding energy profiles of a $30\,M_\odot$ single
 star (red solid line) to
 ``engineered'' models (see \Secref{sec:methods}), when stars first
-reach radius $R=500\,R_\odot$. We
-define the binding energy above mass coordinate $m$ as
-\citep[e.g.,][]{dekool:1990, dewi:2000, lau:2022}:
-\begin{equation}
-  \label{eq:BE}
-BE(m, \alpha_{\rm th}) = - \int_{m}^M\,dm'\left( -\frac{G m'}{r(m')}+\alpha_\mathrm{th} u(m')\right)
-\end{equation}
+reach radius $R=500\,R_\odot$. % We
+% define the binding energy above mass coordinate $m$ as
+% \citep[e.g.,][]{dekool:1990, dewi:2000, lau:2022}:
+% \begin{equation}
+%   \label{eq:BE}
+% BE(m, \alpha_{\rm th}) = - \int_{m}^M\,dm'\left( -\frac{G m'}{r(m')}+\alpha_\mathrm{th} u(m')\right)
+% \end{equation}
 % \begin{equation}
 %   \label{eq:Egrav}
 %   E_\mathrm{grav}(m) = \int_{m}^{M} - \frac{Gm'}{r(m')}\,dm' \ \ ,
 % \end{equation}
-with $M$ total mass of the star, $r(m')$ radius, $u(m')$ the internal
-energy of a shell of mass thickness $dm'$ and outer Lagrangian mass
-coordinate $m'$, and $G$ the gravitational constant. The integral
-domain goes from mass coordinate $m$, which can be thought of the mass
-of the ``core'' surviving a hypothetical CE, to the surface. The
-parameter $0\leq \alpha_\mathrm{th}\leq 1$ is the fraction of internal
-energy (including recombination energy) that can be used to lift the
-shared CE. It is possible that $\alpha_\mathrm{th}$ may not be
-constant during a CE (e.g., if recombination happens in already
-unbound material it cannot contribute to the CE energetics) or across
-binary systems entering a CE at different evolutionary stages. For
-$\alpha_\mathrm{th}=0$, \Eqref{eq:BE} give the gravitational binding
-energy (dashed lines in \Figref{fig:toy_models_example}), while
-$\alpha_{\mathrm{th}}=1$ assumes perfectly fine tuned use of all the
-internal energy (solid lines). These two cases bracket the range of
-possible use of internal energy to eject the CE.
+% with $M$ total mass of the star,
 
 \Figref{fig:toy_models_example} shows that
 binding energy depends on the structure of the CEB region. In single
