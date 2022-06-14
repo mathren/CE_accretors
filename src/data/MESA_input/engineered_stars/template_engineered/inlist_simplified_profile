@@ -1,0 +1,158 @@
+&star_job
+
+show_log_description_at_start = .false.
+show_timestep_limit_counts_when_terminate = .true.
+
+
+change_net = .true.
+change_initial_net = .true.
+new_net_name =  "approx21_plus_co56.net"
+
+load_saved_model = .true.
+saved_model_name = '/mnt/home/mrenzo/ceph/RUNS/accretors/mesa15140/simplified_profiles/MASS_rot0_to_TAMS/MASS_rot0.0_single_final.mod'
+
+relax_initial_composition = .true.
+num_steps_to_relax_composition = 100 ! speedup tests
+!!! these are created with `make_simplified_chem_profiles.ipynb`
+relax_composition_filename = 'CHEMSTRING'
+
+relax_initial_entropy = .true.
+relax_entropy_filename = 'ENTROPYSTRING'
+timescale_for_relax_entropy = 1d-4 ! if this is too small it won't work
+max_dt_for_relax_entropy = 1d-10
+num_timescales_for_relax_entropy = 1000
+max_steps_to_relax_entropy = 100000
+
+! set_initial_dt = .true.
+! seconds_for_initial_dt = 1e3
+
+set_initial_model_number = .true.
+initial_model_number = 0
+
+profile_starting_model = .false.
+profile_model_number = 0
+
+
+pgstar_flag = .true.
+/
+
+
+&kap
+use_Type2_opacities = .true.
+Zbase = 0.0019d0 ! METALLICITYd0
+/
+
+&eos
+/
+
+&controls
+
+! stop at 1000Rsun or C-depletion (from run_star_extras.f90), whichever is first
+photosphere_r_upper_limit = 1000.0d0
+
+use_superad_reduction = .true.
+min_timestep_limit = 1d-20
+
+! winds
+hot_wind_scheme = 'Dutch'
+cool_wind_RGB_scheme = 'Dutch'
+cool_wind_AGB_scheme = 'Dutch'
+Dutch_scaling_factor = 1.0
+mdot_omega_power = 0.43d0
+
+! mixing
+use_ledoux_criterion = .true.
+mixing_length_alpha = 1.5d0
+alpha_semiconvection = 1.0d0 !1.0d0
+thermohaline_coeff = 1.0d0 !1.0d0
+! thermohaline_option = 'Brown_Garaud_Stellmach_13'
+
+! overshoot controls
+overshoot_scheme(1) = 'exponential'
+overshoot_zone_type(1) = 'any'
+overshoot_zone_loc(1) = 'core'
+overshoot_bdy_loc(1) = 'any'
+! overwritten as a function of mass in run_star_extras.f90
+overshoot_f(1) = 4.15d-2
+overshoot_f0(1) = 0.008d0
+
+! Brott+11
+! overshoot_scheme(1) = 'step'
+! overshoot_zone_type(1) = 'any'
+! overshoot_zone_loc(1) = 'core'
+! overshoot_bdy_loc(1) = 'any'
+! overshoot_f(1) = 0.345d0
+! overshoot_f0(1) = 0.01d0
+
+set_min_D_mix = .true.
+min_D_mix=1d-2
+
+
+! for thermal relaxation
+! for normal evolution set these to 1
+! mix_factor = 0d0
+! dxdt_nuc_factor = 0.0d0
+! Dutch_scaling_factor = 0.0d0
+
+
+min_timestep_limit = 1e-10 !sec ! 1e-10 !to be able to reach CC
+varcontrol_target = 1d-4
+max_timestep_factor = 1.05d0
+retry_hold = 2
+min_J_div_delta_J = 5d0
+! space
+max_dq = 2d-3
+max_allowed_nz = 50000
+
+
+star_history_dbl_format = '(1pes32.16e3, 1x)'
+star_history_int_format = '(i32, 1x)'
+star_history_txt_format = '(a32, 1x)'
+
+
+! time step resolution on fuel depletion
+delta_lg_XH_cntr_limit = 0.01d0
+delta_lg_XH_cntr_max   = 0.0d0
+delta_lg_XH_cntr_min   = -4.0d0
+delta_lg_XH_cntr_hard_limit = 0.02d0
+delta_lg_XHe_cntr_limit = 0.01d0
+delta_lg_XHe_cntr_max   = 0.0d0
+delta_lg_XHe_cntr_min   = -4.0d0
+delta_lg_XHe_cntr_hard_limit = 0.02d0
+delta_lg_XC_cntr_limit = 0.02d0
+delta_lg_XC_cntr_max   = 0.2d0
+delta_lg_XC_cntr_min   = -2.0d0 ! -3.0d0
+delta_lg_XC_cntr_hard_limit = 0.02d0
+delta_lg_XO_cntr_limit = 0.01d0
+delta_lg_XO_cntr_max   = 0.0d0
+delta_lg_XO_cntr_min   = -3.0d0
+delta_lg_XO_cntr_hard_limit = 0.02d0
+
+delta_lgL_limit = 0.01d0
+delta_lgL_hard_limit = 0.1d0
+
+delta_lgTeff_limit = 0.008d0
+delta_lgTeff_hard_limit = 0.01d0
+
+delta_lgT_cntr_limit   = 0.005d0   ! default 0.01
+delta_lgT_limit = 0.025d0         ! default 0.5
+delta_lgRho_cntr_limit = 0.025d0   ! default 0.05
+delta_lgRho_limit = 0.5d0          ! default 1.0
+delta_lgL_nuc_limit = 1d-2
+
+delta_lgL_He_limit = 0.01d0
+delta_lgL_He_hard_limit = 0.025d0
+delta_HR_ds_Teff = 1d-5
+
+delta_lgL_H_limit = 0.01d0
+delta_lgL_H_hard_limit = 0.025d0
+
+
+! spatial increase resolution during He core burning
+T_function2_weight = 100d0
+T_function2_param = 2.4d8
+
+! increase resolution for omega
+omega_function_weight = 100d0
+
+/ ! end of controls namelist

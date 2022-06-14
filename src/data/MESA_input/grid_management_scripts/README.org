@@ -3,7 +3,9 @@
 These are tuned to run on my workstation, but should be easily
 adaptable to other workflows.
 
-- =setup_binaries.py= was used to create the binary runs
-- =setup_single_stars.py= was used to create the single stars
+- =setup_binaries.py= was used to create the binary runs using as
+  =TEMPLATE= MESA work directory =../binaries/template_binary=
+- =setup_single_stars.py= was used to create the single stars with the
+  =TEMPLATE= MESA work directory =../single_stars/template_single=
 - =setup_grid_simplified.py= was used to create the engineered models
-  (see also =./engineered_stars=)
+  with the =TEMPLATE= MESA work directory =../engineered_stars/same_core/template_engineered/=
