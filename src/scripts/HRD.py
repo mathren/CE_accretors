@@ -1,4 +1,5 @@
 from lib_plot_bin import plot_HRD, annotate_radii_hrd
+from MESAreader import getSrcCol
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
@@ -24,9 +25,12 @@ colors = prop_cycle.by_key()['color']
 for f in bin_folders:
     c = colors[bin_folders.index(f)]
     LOGS2 = f / "LOGS2/"
-    plot_HRD(str(LOGS2) + '/history.data', ax=ax, ls="-", c=c)
+    hfile2 = str(LOGS2) + '/history.data'
+    plot_HRD(hfile2, ax=ax, ls="-", c=c)
+    src, col = getSrcCol(hfile2)
     LOGS1 = f / "LOGS1/"
-    plot_HRD(str(LOGS1) + '/history.data', ax=ax, ls='--', lw=2, c=c)
+    hfile1 = str(LOGS1) + '/history.data'
+    plot_HRD(hfile1, ax=ax, ls='--', lw=2, c=c)
 
 annotate_radii_hrd(ax, [100, 200, 300, 500, 1000])
 ax.set_xlim(xmin=3.6, xmax=4.75)
@@ -34,9 +38,6 @@ ax.invert_xaxis()
 ax.plot(np.nan, np.nan, c="k", ls='--', lw=2, label="donor")
 ax.plot(np.nan, np.nan, c="k", label="accretor")
 ax.legend()
-# bx.invert_xaxis()
 ax.set_xlabel(r"$\log_{10}(T_\mathrm{eff}/[\mathrm{K}])$")
 ax.set_ylabel(r"$\log_{10}(L/L_\odot)$")
-# bx.set_xlabel(r"$\log_{10}(T_\mathrm{eff}/[\mathrm{K}])$")
-# bx.set_ylabel(r"$\log_{10}(L/L_\odot)$")
 plt.savefig(paths.figures / 'HRD.pdf')
