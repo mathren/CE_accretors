@@ -146,3 +146,11 @@
 *** Issues to report on =showyourwork=
 
 ***** =./showyourwork/cache/= becomes pretty huge pretty fast: clean-up?
+
+** TODO list
+
+  - [ ] add =*.mod= files, inlists, and src to static dataset
+  - [ ] move static dataset to zenodo (now sandbox)
+  - [ ] update =showyourwork.yml= with zenodo link (not sandbox)
+  - [ ] check C shell burning convective behavior
+  - [ ] annotate HRD
