@@ -63,15 +63,16 @@ def plot_HRD(input_file, ax, convert=True, annotate_radii=None, **plot_kwargs):
         src, col = getSrcCol(input_file, convert, convert)
     else:
         raise FileNotFoundError(input_file)
-    T = src[:, col.index("log_Teff")]
-    L = src[:, col.index("log_L")]
+    logT = src[:, col.index("log_Teff")]
+    logL = src[:, col.index("log_L")]
     try:
+        # annotate masses
         fff = input_file[:-7]
         m1, m2 = get_masses(fff)
         if "LOGS1" in input_file:
             ax.text(
-                T[0] - 0.01,
-                L[0] - 0.01,
+                logT[0] - 0.01,
+                logL[0] - 0.01,
                 f"{m1:.1f}",
                 fontsize=20,
                 va="center",
@@ -80,8 +81,8 @@ def plot_HRD(input_file, ax, convert=True, annotate_radii=None, **plot_kwargs):
             )
         elif "LOGS2" in folder:
             ax.text(
-                T[0] - 0.01,
-                L[0] - 0.01,
+                logT[0] - 0.01,
+                logL[0] - 0.01,
                 f"{m2:.1f}",
                 fontsize=20,
                 va="center",
@@ -90,7 +91,7 @@ def plot_HRD(input_file, ax, convert=True, annotate_radii=None, **plot_kwargs):
             )
     except:
         pass
-    ax.plot(T, L, **plot_kwargs)
+    ax.plot(logT, logL, **plot_kwargs)
     if annotate_radii:
         annotate_radii_hrd(ax, radii=annotate_radii)
 
