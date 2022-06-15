@@ -70,7 +70,7 @@ dependencies:
 
 datasets:
   # this will be of the zenodo static dataset -- for now sandbox 10.5072/zenodo.1070800
-  10.5072/zenodo.1070800:
+  10.5072/zenodo.1074069:
     destination: src/data/
     contents:
       MESA_output.tar.gz:
