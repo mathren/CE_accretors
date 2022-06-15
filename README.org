@@ -87,10 +87,19 @@
 
 ** Local compilation
 
-   You can clone this repository and just run =showyourwork= and it
-   should work. The first time it will download the data (1.1 Gb) and
-   process them, which may take a very long while (~30min on my
-   workstation excluding the time to download):
+   Assuming you have a working installation of conda, you can [[https://show-your.work/en/latest/install/][install
+   showyourwork]], clone this repository, and just run =showyourwork= and
+   it should work:
+
+#+BEGIN_SRC bash
+  pip install -U showyourwork
+  git clone git@github.com:mathren/CE_accretors.git
+  showyourwork
+#+END_SRC
+
+   The first time it will download the data (1.1 Gb) and process them,
+   which may take a very long while (~30min on my workstation
+   excluding the time to download):
 
 #+BEGIN_SRC bash
   > time showyourwork
@@ -99,6 +108,10 @@
   user    27m9.104s
   sys     0m59.076s
 #+END_SRC
+
+  After the data exist cached on your machine, this will be much
+  faster (how much depends on what has changed in the repo that needs
+  to be redone).
 
   You can alo see the source in =src/tex/CE_accretors.tex=, which you
   can edit and should be able to compile locally. If you have never
