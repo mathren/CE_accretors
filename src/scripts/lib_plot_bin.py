@@ -43,79 +43,6 @@ except:
 
 from scipy.interpolate import interp1d
 
-# def convert_eps_to_mass_frac(X_H, epsilon, err_epsilon, A_element):
-#     """
-#     converts epsilon = 12+log10(N_element/N_H) to mass_fraction
-#     A_element is the atomic mass. X_H the hydrogen mass fraction.
-#     """
-#     # Get the number ratio between the element and hydrogen
-#     N_element_div_N_H = 10.0 ** (epsilon - 12.0)
-#     # since:
-#     # N1/N2 = (X1/A1)/(X2/A2)
-#     # Therefore:
-#     # X1 = A1*(X2/A2)*(N1/N2)
-#     A_H = 1.0  # we neglect deuterium and tritium
-#     X_element = A_element * (X_H / A_H) * N_element_div_N_H
-#     err_X_element = A_element * (X_H / A_H) * N_element_div_N_H * np.log(10) * err_epsilon
-#     return X_element, err_X_element
-
-
-# # -------------------------------------------------------------------
-# # radius plots
-# def get_radius_time(hfile):
-#     src, col = getSrcCol(hfile)
-#     t = src[:, col.index("star_age")] * 1e-6
-#     R = 10.0 ** (src[:, col.index("log_R")])
-#     return t, R
-
-
-# def plot_radius_time(ax, hfile1, c="#77CCCC", hfile2="", label=""):
-#     t, R = get_radius_time(hfile1)
-#     ax.plot(t, R, c=c, zorder=2, label=label)
-#     # post binary evolution part is optional
-#     if hfile2 != "":
-#         t, R = get_radius_time(hfile2)
-#         ax.plot(t, R, c=c, ls="-.", zorder=2, label=label)
-
-
-# # -------------------------------------------------------------------
-# # rotation
-# def get_surface_rotation_time(hfile):
-#     src, col = getSrcCol(hfile)
-#     t = src[:, col.index("star_age")] * 1e-6
-#     v = src[:, col.index("surf_avg_v_rot")]
-#     return t, v
-
-
-# def plot_surface_rotation_time(hfile1, ax, c="#77CCCC", hfile2="", label="", ls='-', lw=3):
-#     t, v = get_surface_rotation_time(hfile1)
-#     ax.scatter(t, v, color=c, zorder=2, label=label)
-#     # post binary evolution part is optional
-#     if hfile2 != "":
-#         t, v = get_surface_rotation_time(hfile2)
-#         ax.plot(t[0], v[0], c='k', zorder=2, marker='D', ms=10)
-#         ax.plot(t, v, c=c, zorder=2, label=label, ls=ls, lw=lw)
-
-
-# def get_omega_time(hfile, log_till_end=False):
-#     src, col = getSrcCol(hfile)
-#     omega_div_omega_crit = src[:, col.index("surf_avg_omega_div_omega_crit")]
-#     t = src[:, col.index("star_age")] # * 1e-6  # in Myr
-#     if log_till_end:
-#         print(colored("returning log10(t_end-t)/yr","yellow"))
-#         t = np.log10(t[-1]-t)
-#     else:
-#         print(colored("returning t in yr","yellow"))
-#     return t, omega_div_omega_crit
-
-
-# def plot_omega_div_omega_crit(hfile1, ax, hfile2="", log_till_end=False, **plot_kwargs):
-#     t, omega_div_omega_crit = get_omega_time(hfile1, log_till_end)
-#     ax.plot(t, omega_div_omega_crit, **plot_kwargs)
-#     if hfile2 != "":
-#         t, omega_div_omega_crit = get_omega_time(hfile2)
-#         ax.plot(t, omega_div_omega_crit, **plot_kwargs)
-
 
 # -------------------------------------------------------------------
 # HRD
@@ -1087,13 +1014,15 @@ def plot_lambda_at_one_radius(
 
     Parameters:
     ----------
-    ax : `mpl.axes` where to plot
-    string: `str` profile name to be looked into the folders LOGS/LOGS2
+    ax :          `mpl.axes` where to plot
+    string:       `str` profile name to be looked into the folders LOGS/LOGS2
     grid_folders: `str` path to grid of engineered models workdirectory
-    accretor: `str` or None, optional, path to the LOGS2 folder of the accretor
-    nonrot: `str` or None, optional, path to the work directory of a single star normal model
-    plot_func  : `python function`, can be `plot_lambda_mass` or `plot_lambda_r` depending on if you want to plot as a function of mass coordinate or radius
-    legend: `bool` whether to show the legend or not
+    accretor:     `str` or None, optional, path to the LOGS2 folder of the accretor
+    nonrot:       `str` or None, optional, path to the work directory of a single star normal model
+    plot_func  :  `python function`, can be `plot_lambda_mass` or
+                  `plot_lambda_r` depending on if you want to plot
+                  as a function of mass coordinate or radius
+    legend:       `bool` whether to show the legend or not
     """
     colors = plt.cm.viridis(np.linspace(0, 1, len(grid_folders)))
 
