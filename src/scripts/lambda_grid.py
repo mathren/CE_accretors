@@ -91,7 +91,7 @@ def grid_lambdas(
             bx.set_xlabel(r"$m\ [M_\odot]$")
     plot_lambda_at_one_radius(
         bx1,
-        "/100Rsun.data",
+        "100Rsun.data",
         grid_folders=grid_folders2,
         accretor=b2,
         nonrot=nonrot2,
@@ -99,7 +99,7 @@ def grid_lambdas(
     )
     plot_lambda_at_one_radius(
         bx2,
-        "/200Rsun.data",
+        "200Rsun.data",
         grid_folders=grid_folders2,
         accretor=b2,
         nonrot=nonrot2,
@@ -107,7 +107,7 @@ def grid_lambdas(
     )
     plot_lambda_at_one_radius(
         bx3,
-        "/300Rsun.data",
+        "300Rsun.data",
         grid_folders=grid_folders2,
         accretor=b2,
         nonrot=nonrot2,
@@ -139,7 +139,7 @@ def grid_lambdas(
             cx.set_xlabel(r"$m\ [M_\odot]$")
     plot_lambda_at_one_radius(
         cx1,
-        "/100Rsun.data",
+        "100Rsun.data",
         grid_folders=grid_folders3,
         accretor=b3,
         nonrot=nonrot3,
@@ -219,18 +219,18 @@ def grid_lambdas(
 if __name__ == "__main__":
     # locations, to be fixed when uploading on zenodo
     root = paths.data / "MESA_output/"
-    root_accretors = str(root / "binaries/Z_0.0019/")
 
+    root_accretors = root / "binaries/Z_0.0019/"
     b1 = (
-        root_accretors
+        str(root_accretors)
         + "/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/"
     )
     b2 = (
-        root_accretors
+        str(root_accretors)
         + "/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/"
     )
     b3 = (
-        root_accretors
+        str(root_accretors)
         + "/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/"
     )
 
@@ -239,12 +239,12 @@ if __name__ == "__main__":
     nonrot18 = str(root / "single_stars/Z_0.0019/18_rot0.0/LOGS")+"/"
 
     root_simplified = str(root / "engineered_stars/same_core/")
-    root_grid18 = root_simplified + "grid18/"
-    root_grid20 = root_simplified + "grid20/"
-    root_grid36 = root_simplified + "grid36/"
-    grid_folders18 = sorted(glob.glob(root_grid18 + "/*.*/"))
-    grid_folders20 = sorted(glob.glob(root_grid20 + "/*.*/"))
-    grid_folders36 = sorted(glob.glob(root_grid36 + "/*.*/"))
+    root_grid18 = root_simplified + "/grid18/"
+    root_grid20 = root_simplified + "/grid20/"
+    root_grid36 = root_simplified + "/grid36/"
+    grid_folders18 = sorted(glob.glob(root_grid18 + "/*.*/LOGS/"))
+    grid_folders20 = sorted(glob.glob(root_grid20 + "/*.*/LOGS/"))
+    grid_folders36 = sorted(glob.glob(root_grid36 + "/*.*/LOGS/"))
 
     fig_name = paths.figures / "lambda_grid.pdf"
 
