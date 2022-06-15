@@ -1,3 +1,5 @@
+name:
+  - CE_accretors
 channels:
   - defaults
 dependencies:
