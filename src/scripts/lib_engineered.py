@@ -30,6 +30,7 @@ try:
     from termcolor import colored
 except:
     from MESAreader import colored
+import paths
 
 # ---------------------------------------
 def get_xq(m, Mtot):
@@ -433,3 +434,33 @@ def three_panel_plot_s_h_he(
     fig.align_labels()
     if fig_name:
         plt.savefig(fig_name)
+
+
+def get_dm_from_pfile_eng(pfile):
+    """
+    get the `dm` by which we shift the upper-edge of the CEB of a
+    normal single star to make the engineered models. The dm is read
+    from the folder name
+
+    see also /src/data/MESA_input/grid_management_scripts/setup_engineered.py
+
+    Parameters:
+    ----------
+    `pfile`: `str` or path of the engineered star,
+
+    Returns:
+    -------
+    `dm`:   `float` (can be <0 for shifts towards the center)
+    """
+    return float(pfile.split('/')[-3])
+
+def sorter_engineered_profiles(pfile):
+    # get corresponding normal single star model
+    mass = pfile.split('/')[-4].lstrip('grid')
+    init_model = str(paths.data)+"/MESA_output/engineered_stars/TAMS_models/"+str(mass)+"_rot0_to_TAMS/LOGS/TAMS.data"
+    # get outer CEB boundary in the reference TAMS model
+    delta_M_bound, M_bound_max, M_bound_min = get_M_boundary(init_model)
+    # get shift from reference TAMS model
+    dm = get_dm_from_pfile_eng(pfile) # can be <0
+    # return final outer boundary of the engineered model
+    return M_bound_max+dm

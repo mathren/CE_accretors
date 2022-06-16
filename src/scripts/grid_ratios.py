@@ -1,6 +1,6 @@
 from MESAreader import getSrcCol
 from lib_plot_bin import plot_ratio_BE_r, get_ax_from_pfile, Rsun_cm
-from lib_engineered import get_M_boundary
+from lib_engineered import get_dm_from_pfile_eng, sorter_engineered_profiles
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
@@ -14,32 +14,27 @@ def grid_ratios(fig_name=None):
     ----------
     fig_name: `string` location where to save the figure
     """
-
     root = paths.data / "MESA_output/"
+    root_eng = root / "engineered_stars/same_core/"
+    root_accretors = root / "binaries/Z_0.0019/"
 
     s1 = str(root) + "/single_stars/Z_0.0019/18_rot0.0/LOGS/"
-    s2 = str(root) + "/single_stars/Z_0.0019/20_rot0.0/LOGS/"
-    s3 = str(root) + "/single_stars/Z_0.0019/36_rot0.0/LOGS/"
-
-    ## engineered stars
-    root_eng = root / "engineered_stars/same_core/"
-    engineered_grid1 = sorted(glob.glob(str(root_eng) + "/grid18/*.*/LOGS/"))
-    engineered_grid2 = sorted(glob.glob(str(root_eng) + "/grid20/*.*/LOGS/"))
-    engineered_grid3 = sorted(glob.glob(str(root_eng) + "/grid36/*.*/LOGS/"))
-    for f in engineered_grid1:
-        print(f)
-
-    ## accretor models
-    root_accretors = root / "binaries/Z_0.0019/"
-    #
+    engineered_grid1 = sorted(glob.glob(str(root_eng) + "/grid18/*.*/LOGS/"), key=sorter_engineered_profiles)
     b1 = (
         str(root_accretors)
         + "/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/"
     )
+
+    s2 = str(root) + "/single_stars/Z_0.0019/20_rot0.0/LOGS/"
+    engineered_grid2 = sorted(glob.glob(str(root_eng) + "/grid20/*.*/LOGS/"), key=sorter_engineered_profiles)
     b2 = (
         str(root_accretors)
         + "/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/"
     )
+
+
+    s3 = str(root) + "/single_stars/Z_0.0019/36_rot0.0/LOGS/"
+    engineered_grid3 = sorted(glob.glob(str(root_eng) + "/grid36/*.*/LOGS/"), key=sorter_engineered_profiles)
     b3 = (
         str(root_accretors)
         + "/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/"
@@ -100,6 +95,18 @@ def grid_ratios(fig_name=None):
         # if (round(max(ratio), 5) != 1 or round(min(ratio), 5) != 1):
         #     print("1", pfile_accretor, np.nanmax(ratio), np.nanmin(ratio))
         # # -----------------------
+        # now plot normal single star
+        pfile_single = glob.glob(s1 + string)[0]
+        # internal energy included
+        alpha_th = 1.0
+        # sanity check
+        # ratio = plot_ratio_BE_r(pfile_single, pfile_single, dummy_ax, alpha_th=alpha_th)
+        # if (round(max(ratio), 5) != 1 or round(min(ratio), 5) != 1):
+        #     print("0", pfile_single, np.nanmax(ratio), np.nanmin(ratio))
+        # # accretor/single
+        ratio = plot_ratio_BE_r(
+            pfile_single, pfile_accretor,  ax, alpha_th=alpha_th, color="r", ls="-", zorder=2,
+        )
         colors = plt.cm.viridis(np.linspace(0, 1, len(engineered_grid1)))
         for f in engineered_grid1:
             pfile_single = glob.glob(f + string)[0]
@@ -116,20 +123,8 @@ def grid_ratios(fig_name=None):
                 ax,
                 alpha_th=alpha_th,
                 color=colors[engineered_grid1.index(f)],
-                ls="-", lw=2
+                ls="-", lw=2, zorder=1
             )
-        # now plot normal single star
-        pfile_single = glob.glob(s1 + string)[0]
-        # internal energy included
-        alpha_th = 1.0
-        # sanity check
-        # ratio = plot_ratio_BE_r(pfile_single, pfile_single, dummy_ax, alpha_th=alpha_th)
-        # if (round(max(ratio), 5) != 1 or round(min(ratio), 5) != 1):
-        #     print("0", pfile_single, np.nanmax(ratio), np.nanmin(ratio))
-        # # accretor/single
-        ratio = plot_ratio_BE_r(
-            pfile_single, pfile_accretor,  ax, alpha_th=alpha_th, color="r", ls="-"
-        )
 
     # # 20 Msun
     bx1 = fig.add_subplot(gs[:20, 50:100])
