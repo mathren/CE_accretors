@@ -633,7 +633,7 @@ def get_BE_from_pfile(pfile, alpha_th=1.0):
 
 
 def plot_BE_r(
-        pfile, ax, alpha_th=1.0, scale_factor=None, top_axis=False,  **plot_kwargs
+        pfile, ax, alpha_th=1.0, scale_factor=None, top_axis=False, **plot_kwargs
 ):
     """
     plot the binding energy profile as a function of log(r/cm)
@@ -659,6 +659,7 @@ def plot_BE_r(
         # tx.set_xticks([])
         # tx.set_xticklabels([])
         tx.set_xlabel(r"m $[M_\odot]$")
+
 
 def plot_BE_m(pfile, ax, alpha_th=1.0, scale_factor=None, **plot_kwargs):
     """
@@ -1004,8 +1005,12 @@ def get_He_core_mass_from_pfile(pfile):
     y = src[:, col.index("he4")]
     m = src[:, col.index("mass")]
     Hecore = (y >= 0.1) & (x <= 0.01)
-    m_he_core = max(m[Hecore])
-    return m_he_core
+    m_he_core_01 = max(m[Hecore])
+    Hecore = (y >= 0.1) & (x <= 0.1)
+    m_he_core_1 = max(m[Hecore])
+    Hecore = (y >= 0.1) & (x <= 0.2)
+    m_he_core_2 = max(m[Hecore])
+    return m_he_core_01, m_he_core_1, m_he_core_2
 
 
 def plot_lambda_at_one_radius(
@@ -1036,11 +1041,15 @@ def plot_lambda_at_one_radius(
     if accretor:
         pfile = glob.glob(accretor + "/" + string)[0]
         plot_func(pfile, ax, alpha_th=1, c="orange", label="accretor")
-        mhe = get_He_core_mass_from_pfile(pfile)
-        ax.axvline(mhe, 0, 1, ls="--", lw=2, c="orange")
+        m_he_core_01, m_he_core_1, m_he_core_2= get_He_core_mass_from_pfile(pfile)
+        ax.axvline(m_he_core_01, 0, 1, ls="-", lw=2, c="orange", zorder=0)
+        ax.axvline(m_he_core_1, 0, 1, ls="--", lw=2, c="orange", zorder=0)
+        ax.axvline(m_he_core_2, 0, 1, ls="-.", lw=2, c="orange", zorder=0)
 
     if nonrot:
         pfile = glob.glob(nonrot + string)[0]
         plot_func(pfile, ax, alpha_th=1, c="r", label="single")
-        mhe = get_He_core_mass_from_pfile(pfile)
-        ax.axvline(mhe, 0, 1, ls="--", lw=2, c="r")
+        m_he_core_01, m_he_core_1, m_he_core_2= get_He_core_mass_from_pfile(pfile)
+        ax.axvline(m_he_core_01, 0, 1, ls="-", lw=2, c="red", zorder=0)
+        ax.axvline(m_he_core_1, 0, 1, ls="--", lw=2, c="red", zorder=0)
+        ax.axvline(m_he_core_2, 0, 1, ls="-.", lw=2, c="red", zorder=0)
