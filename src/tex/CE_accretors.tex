@@ -28,28 +28,28 @@
 \author[0000-0002-6718-9472]{M.~Renzo \todo{other and order TBD}}
 \affiliation{Center for Computational Astrophysics, Flatiron Institute, New York, NY 10010, USA}
 
-% % Potential co-authors:
-\author[0000-0001-5228-6598]{K.~Breivik}
-\affiliation{Center for Computational Astrophysics, Flatiron Institute, New York, NY 10010, USA}
+% % % Potential co-authors:
+% \author[0000-0001-5228-6598]{K.~Breivik}
+% \affiliation{Center for Computational Astrophysics, Flatiron Institute, New York, NY 10010, USA}
 
-\author[0000-0003-3441-7624]{R.~Farmer}
-\affiliation{Max-Planck-Institut für Astrophysik, Karl-Schwarzschild-Straße 1, 85741 Garching, Germany}
-% E.~Zapartas
-% Y.~Gotberg
-\author[0000-0002-6592-2036]{M. Lau}
-\affiliation{School of Physics and Astronomy, Monash University,
-  Clayton, Victoria 3800, Australia}
-\affiliation{OzGrav: The ARC Centre of Excellence for Gravitational Wave Discovery, Australia}
-\affiliation{Center for Computational Astrophysics, Flatiron  Institute, New York, NY 10010, USA}
-\author{S.~Justham}
-\affiliation{Anton Pannekoek Institute of Astronomy and GRAPPA,
-  University of Amsterdam, Science Park 904, 1098 XH Amsterdam, The
-  Netherlands}
-\affiliation{School of Astronomy and Space Science, University of the Chinese Academy of Sciences, Beijing 100012, PR China}
-\author[0000-0002-4670-7509]{B.~D.~Metzger}
-\affiliation{Columbia Astrophysics Laboratory, Columbia University, New York, New York 10027, USA}
-\affiliation{Center for Computational Astrophysics, Flatiron Institute, New York, NY 10010, USA}
-% M. Cantiello
+% \author[0000-0003-3441-7624]{R.~Farmer}
+% \affiliation{Max-Planck-Institut für Astrophysik, Karl-Schwarzschild-Straße 1, 85741 Garching, Germany}
+% % E.~Zapartas
+% % Y.~Gotberg
+% \author[0000-0002-6592-2036]{M. Lau}
+% \affiliation{School of Physics and Astronomy, Monash University,
+%   Clayton, Victoria 3800, Australia}
+% \affiliation{OzGrav: The ARC Centre of Excellence for Gravitational Wave Discovery, Australia}
+% \affiliation{Center for Computational Astrophysics, Flatiron  Institute, New York, NY 10010, USA}
+% \author{S.~Justham}
+% \affiliation{Anton Pannekoek Institute of Astronomy and GRAPPA,
+%   University of Amsterdam, Science Park 904, 1098 XH Amsterdam, The
+%   Netherlands}
+% \affiliation{School of Astronomy and Space Science, University of the Chinese Academy of Sciences, Beijing 100012, PR China}
+% \author[0000-0002-4670-7509]{B.~D.~Metzger}
+% \affiliation{Columbia Astrophysics Laboratory, Columbia University, New York, New York 10027, USA}
+% \affiliation{Center for Computational Astrophysics, Flatiron Institute, New York, NY 10010, USA}
+% % M. Cantiello
 
 % \author[0000-0002-6960-6911]{Y.~G\"otberg}\thanks{Hubble Fellow}
 % \affiliation{The Observatories of the Carnegie Institution for
@@ -154,15 +154,19 @@ We use \mesa\ \citep[version 15140,][]{paxton:2011, paxton:2013,
   paxton:2015, paxton:2018, paxton:2011} to compute the evolution of
 binaries which experience mass transfer after the end of the donor's
 main sequence, that is case B Roche lobe overflow
-\citep[RLOF,][]{kippenhahn:1967}. Our setup is similar to \cite{renzo:2021zoph},
-except for the metallicity: here we adopt $Z=0.0019\simeq Z_\odot/10$,
-relevant for the progenitor population of GW events
-\citep[e.g.,][]{vanson:2021}. Moreover, we apply throughout the star a
-small amount of mixing with diffusivity \texttt{min\_D\_mix}=100. This
-improves the numerical stability by smoothing properties across
-adjacent cells, without introducing significant quantitative
-variations, and is a typical numerical technique used in
-asteroseismology calculations (J.~Fuller, private~comm.).
+\citep[RLOF,][]{kippenhahn:1967}. All of our input files are available
+at \url{10.5281/zenodo.6600641} and our output is compatible with the
+population synthesis code \code{POSYDON} \citep{fragos:2022} and publicly
+available at \todo{zenodo}. Our setup is similar to
+\cite{renzo:2021zoph}, except for the metallicity: here we adopt
+$Z=0.0019\simeq Z_\odot/10$, relevant for the progenitor population of
+GW events \citep[e.g.,][]{vanson:2021}. Moreover, we apply throughout
+the star a small amount of mixing with diffusivity
+\texttt{min\_D\_mix}=100. This improves the numerical stability by
+smoothing properties across adjacent cells, without introducing
+significant quantitative variations, and is a typical numerical
+technique used in asteroseismology calculations (J.~Fuller,
+private~comm.).
 
 We adopt initial period $P=100$\,days and choose initial masses
 $(M_{1}, M_{2}) = (18, 15), (20, 17), (38, 30)\,M_\odot$. We focus on
@@ -213,12 +217,6 @@ $R\equiv R_\mathrm{RL, donor}$ is the size of the Roche lobe of the
 donor star determined by the binary separation and mass ratio
 \citep[e.g.,][]{paczynski:1971, eggleton:83}.% as it becomes a red
 % supergiant.
-
-All of our input files are available at \url{10.5281/zenodo.6600641}
-and our output is compatible with the population synthesis code
-POSYDON \citep{fragos:2022} and publicly available at \todo{zenodo}.
-
-
 
 \section{Accretors from self-consistent binary models}
 \label{sec:bin_models}
