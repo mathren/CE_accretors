@@ -16,10 +16,18 @@ def grid_ratios(fig_name=None):
     """
 
     root = paths.data / "MESA_output/"
+
+    s1 = str(root) + "/single_stars/Z_0.0019/18_rot0.0/LOGS/"
+    s2 = str(root) + "/single_stars/Z_0.0019/20_rot0.0/LOGS/"
+    s3 = str(root) + "/single_stars/Z_0.0019/36_rot0.0/LOGS/"
+
+    ## engineered stars
     root_eng = root / "engineered_stars/same_core/"
-    grid_folders18 = sorted(glob.glob(str(root_eng) + "/grid18/*.*/LOGS/"))
-    grid_folders20 = sorted(glob.glob(str(root_eng) + "/grid20/*.*/LOGS/"))
-    grid_folders36 = sorted(glob.glob(str(root_eng) + "/grid36/*.*/LOGS/"))
+    engineered_grid1 = sorted(glob.glob(str(root_eng) + "/grid18/*.*/LOGS/"))
+    engineered_grid2 = sorted(glob.glob(str(root_eng) + "/grid20/*.*/LOGS/"))
+    engineered_grid3 = sorted(glob.glob(str(root_eng) + "/grid36/*.*/LOGS/"))
+    for f in engineered_grid1:
+        print(f)
 
     ## accretor models
     root_accretors = root / "binaries/Z_0.0019/"
@@ -36,14 +44,6 @@ def grid_ratios(fig_name=None):
         str(root_accretors)
         + "/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/"
     )
-
-    single_grid1 = grid_folders18
-    single_grid2 = grid_folders20
-    single_grid3 = grid_folders36
-
-    s1 = str(root) + "/single_stars/Z_0.0019/18_rot0.0/LOGS/"
-    s2 = str(root) + "/single_stars/Z_0.0019/20_rot0.0/LOGS/"
-    s3 = str(root) + "/single_stars/Z_0.0019/36_rot0.0/LOGS/"
 
     fig = plt.figure(figsize=(16, 24))
     gs = gridspec.GridSpec(120, 150)
@@ -100,8 +100,8 @@ def grid_ratios(fig_name=None):
         # if (round(max(ratio), 5) != 1 or round(min(ratio), 5) != 1):
         #     print("1", pfile_accretor, np.nanmax(ratio), np.nanmin(ratio))
         # # -----------------------
-        colors = plt.cm.viridis(np.linspace(0, 1, len(single_grid1)))
-        for f in single_grid1:
+        colors = plt.cm.viridis(np.linspace(0, 1, len(engineered_grid1)))
+        for f in engineered_grid1:
             pfile_single = glob.glob(f + string)[0]
             # internal energy included
             alpha_th = 1.0
@@ -115,7 +115,7 @@ def grid_ratios(fig_name=None):
                 pfile_accretor,
                 ax,
                 alpha_th=alpha_th,
-                color=colors[single_grid1.index(f)],
+                color=colors[engineered_grid1.index(f)],
                 ls="-", lw=2
             )
         # now plot normal single star
@@ -143,8 +143,6 @@ def grid_ratios(fig_name=None):
         bx.set_xlim(8.2, 14)
         bx.set_ylim(-0.05, 2.5)
         bx.set_yticklabels([])
-
-        bx.set_xticklabels([])
         # bx.axhline(1, 0, 1, lw=2, ls="--", c="#808080")
         bx.text(
             0.05,
@@ -170,6 +168,8 @@ def grid_ratios(fig_name=None):
         if bx == bxes[-1]:
             bx.axhline(1, 0, 1, lw=2, ls="--", c="#808080")
             bx.set_xlabel(r"$\log_{10}(r/\mathrm{[cm]})$")
+        else:
+            bx.set_xticklabels([])
 
     profiles = sorted(glob.glob(b2 + "/*Rsun.data"))  # , key=get_age_from_profile)
     # for pfile_accretor in tqdm(profiles, desc="20Msun"):
@@ -184,8 +184,8 @@ def grid_ratios(fig_name=None):
         # if (round(max(ratio), 5) != 1 or round(min(ratio), 5) != 1):
         #     print("1", pfile_accretor, np.nanmax(ratio), np.nanmin(ratio))
         # # -----------------------
-        colors = plt.cm.viridis(np.linspace(0, 1, len(single_grid2)))
-        for f in single_grid2:
+        colors = plt.cm.viridis(np.linspace(0, 1, len(engineered_grid2)))
+        for f in engineered_grid2:
             pfile_single = glob.glob(f + string)[0]  # +string)
             # internal energy included
             alpha_th = 1.0
@@ -198,7 +198,7 @@ def grid_ratios(fig_name=None):
                 pfile_accretor,
                 bx,
                 alpha_th=alpha_th,
-                color=colors[single_grid2.index(f)],
+                color=colors[engineered_grid2.index(f)],
                 ls="-", lw=2
             )
         # now plot normal single star
@@ -268,8 +268,8 @@ def grid_ratios(fig_name=None):
         # if (round(max(ratio), 5) != 1 or round(min(ratio), 5) != 1):
         #     print("1", pfile_accretor, np.nanmax(ratio), np.nanmin(ratio))
         # # -----------------------
-        colors = plt.cm.viridis(np.linspace(0, 1, len(single_grid3)))
-        for f in single_grid3:
+        colors = plt.cm.viridis(np.linspace(0, 1, len(engineered_grid3)))
+        for f in engineered_grid3:
             # print(colored(pfile_single, "green"))
             pfile_single = glob.glob(f + string)[0]
             # internal energy included
@@ -283,7 +283,7 @@ def grid_ratios(fig_name=None):
                 pfile_accretor,
                 cx,
                 alpha_th=alpha_th,
-                color=colors[single_grid3.index(f)],
+                color=colors[engineered_grid3.index(f)],
                 ls="-", lw=2
             )
         # now plot normal single star
