@@ -1,5 +1,5 @@
 from lib_plot_bin import plot_BE_r
-from lib_engineered import get_M_boundary
+from lib_engineered import get_M_boundary, sorter_engineered_profiles
 import glob
 import numpy as np
 import matplotlib.pyplot as plt
@@ -36,14 +36,14 @@ plot_BE_r(
 
 
 root_grid30 = str(paths.data / "MESA_output/engineered_stars/same_core/grid30/")
-grid_folders = sorted(glob.glob(root_grid30 + "/*.*/"))
+grid_folders = sorted(glob.glob(root_grid30 + "/*.*/LOGS/"), key=sorter_engineered_profiles)
 colors = plt.cm.viridis(np.linspace(0, 1, len(grid_folders)))
 for f in grid_folders:
-    pfile = f + "/LOGS/profile1.data"
+    pfile = f + "/profile1.data"
     delta_M_bound, M_bound_max, M_bound_min = get_M_boundary(pfile, offset=0.05)
     label = f"{delta_M_bound:.2f}"  # f.split('/')[-2]
     c = colors[grid_folders.index(f)]
-    pfile_end = f + "LOGS/500Rsun.data"
+    pfile_end = f + "/500Rsun.data"
     plot_BE_r(
         pfile_end, ax, alpha_th=0.0, scale_factor=None, top_axis=False, lw=2, ls="--", c=c
     )  # , label=label)

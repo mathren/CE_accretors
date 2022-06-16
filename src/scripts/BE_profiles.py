@@ -1,4 +1,5 @@
 from lib_plot_bin import plot_BE_r, get_ax_from_pfile, Rsun_cm
+from lib_engineered import sorter_engineered_profiles
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
@@ -13,35 +14,31 @@ def grid_BE_profiles(fig_name=None):
     ----------
     fig_name: `string` location where to save the figure
     """
-    # locations fix with zenodo
+
     root = paths.data / "MESA_output/"
     root_eng = root / "engineered_stars/same_core/"
-    grid_folders18 = sorted(glob.glob(str(root_eng) + "/grid18/*.*/LOGS/"))
-    grid_folders20 = sorted(glob.glob(str(root_eng) + "/grid20/*.*/LOGS/"))
-    grid_folders36 = sorted(glob.glob(str(root_eng) + "/grid36/*.*/LOGS/"))
-    ## accretor models
     root_accretors = root / "binaries/Z_0.0019/"
-    #
+
+    s1 = str(root) + "/single_stars/Z_0.0019/18_rot0.0/LOGS/"
+    single_grid1 =sorted(glob.glob(str(root_eng) + "/grid18/*.*/LOGS/"), key=sorter_engineered_profiles)
     b1 = (
         str(root_accretors)
         + "/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/"
     )
+
+    s2 = str(root) + "/single_stars/Z_0.0019/20_rot0.0/LOGS/"
+    single_grid2 = sorted(glob.glob(str(root_eng) + "/grid20/*.*/LOGS/"), key=sorter_engineered_profiles)
     b2 = (
         str(root_accretors)
         + "/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/"
     )
+
+    s3 = str(root) + "/single_stars/Z_0.0019/36_rot0.0/LOGS/"
+    single_grid3 = sorted(glob.glob(str(root_eng) + "/grid36/*.*/LOGS/"), key=sorter_engineered_profiles)
     b3 = (
         str(root_accretors)
         + "/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/"
     )
-
-    single_grid1 = grid_folders18
-    single_grid2 = grid_folders20
-    single_grid3 = grid_folders36
-
-    s1 = str(root) + "/single_stars/Z_0.0019/18_rot0.0/LOGS/"
-    s2 = str(root) + "/single_stars/Z_0.0019/20_rot0.0/LOGS/"
-    s3 = str(root) + "/single_stars/Z_0.0019/36_rot0.0/LOGS/"
 
     fig = plt.figure(figsize=(16, 24))
     gs = gridspec.GridSpec(120, 150)
@@ -68,15 +65,6 @@ def grid_BE_profiles(fig_name=None):
     for pfile_accretor in profiles:
         string = pfile_accretor.split("/")[-1]
         ax = get_ax_from_pfile(pfile_accretor, axes)
-        # plot_BE_r(
-        #     pfile_accretor,
-        #     ax,
-        #     scale_factor=None,
-        #     alpha_th=0.0,
-        #     c="orange",
-        #     ls="--",
-        #     zorder=10,
-        # )
         plot_BE_r(
             pfile_accretor,
             ax,
@@ -89,15 +77,6 @@ def grid_BE_profiles(fig_name=None):
         colors = plt.cm.viridis(np.linspace(0, 1, len(single_grid1)))
         for f in single_grid1:
             pfile_single = glob.glob(f + string)[0]  # +string)
-            # gravitational only
-            # plot_BE_r(
-            #     pfile_single,
-            #     ax,
-            #     scale_factor=None,
-            #     alpha_th=0.0,
-            #     c=colors[single_grid1.index(f)],
-            #     ls="--",
-            # )
             plot_BE_r(
                 pfile_single,
                 ax,
@@ -109,9 +88,6 @@ def grid_BE_profiles(fig_name=None):
             )
         # now plot normal single star
         pfile_single = glob.glob(s1 + string)[0]
-        # plot_BE_r(
-        #     pfile_single, ax, scale_factor=None, alpha_th=0.0, c="r", ls="--", zorder=9
-        # )
         plot_BE_r(
             pfile_single, ax, scale_factor=None, alpha_th=1.0, c="r", ls="-", zorder=9
         )
@@ -142,15 +118,6 @@ def grid_BE_profiles(fig_name=None):
         #     continue
         string = pfile_accretor.split("/")[-1]
         ax = get_ax_from_pfile(pfile_accretor, bxes)
-        # plot_BE_r(
-        #     pfile_accretor,
-        #     ax,
-        #     scale_factor=None,
-        #     alpha_th=0.0,
-        #     c="orange",
-        #     ls="--",
-        #     zorder=10,
-        # )
         plot_BE_r(
             pfile_accretor,
             ax,
@@ -163,15 +130,6 @@ def grid_BE_profiles(fig_name=None):
         colors = plt.cm.viridis(np.linspace(0, 1, len(single_grid2)))
         for f in single_grid2:
             pfile_single = glob.glob(f + string)[0]  # +string)
-            # gravitational only
-            # plot_BE_r(
-            #     pfile_single,
-            #     ax,
-            #     alpha_th=0.0,
-            #     scale_factor=None,
-            #     c=colors[single_grid2.index(f)],
-            #     ls="--",
-            # )
             plot_BE_r(
                 pfile_single,
                 ax,
@@ -183,9 +141,6 @@ def grid_BE_profiles(fig_name=None):
             )
         # now plot normal single star
         pfile_single = glob.glob(s2 + string)[0]
-        # plot_BE_r(
-        #     pfile_single, ax, scale_factor=None, alpha_th=0.0, c="r", ls="--", zorder=9
-        # )
         plot_BE_r(
             pfile_single, ax, scale_factor=None, alpha_th=1.0, c="r", ls="-", zorder=9
         )
@@ -212,15 +167,6 @@ def grid_BE_profiles(fig_name=None):
     for pfile_accretor in profiles:
         string = pfile_accretor.split("/")[-1]
         ax = get_ax_from_pfile(pfile_accretor, cxes)
-        # plot_BE_r(
-        #     pfile_accretor,
-        #     ax,
-        #     scale_factor=None,
-        #     alpha_th=0.0,
-        #     c="orange",
-        #     ls="--",
-        #     zorder=10,
-        # )
         plot_BE_r(
             pfile_accretor,
             ax,
@@ -233,15 +179,6 @@ def grid_BE_profiles(fig_name=None):
         colors = plt.cm.viridis(np.linspace(0, 1, len(single_grid3)))
         for f in single_grid3:
             pfile_single = glob.glob(f + string)[0]  # +string)
-            # # gravitational only
-            # plot_BE_r(
-            #     pfile_single,
-            #     ax,
-            #     alpha_th=0.0,
-            #     scale_factor=None,
-            #     c=colors[single_grid3.index(f)],
-            #     ls="--",
-            # )
             plot_BE_r(
                 pfile_single,
                 ax,
@@ -253,9 +190,6 @@ def grid_BE_profiles(fig_name=None):
             )
         # now plot normal single star
         pfile_single = glob.glob(s3 + string)[0]
-        # plot_BE_r(
-        #     pfile_single, ax, scale_factor=None, alpha_th=0.0, c="r", ls="--", zorder=9
-        # )
         plot_BE_r(
             pfile_single, ax, scale_factor=None, alpha_th=1.0, c="r", ls="-", zorder=9
         )
@@ -298,13 +232,9 @@ def grid_BE_profiles(fig_name=None):
     cx1.set_title(r"$M_2=30\rightarrow 36\,M_\odot$", size=30)
 
     # legends
-    # bxes[-1].plot(np.nan, np.nan, c="k", ls="--", label=r"$\alpha_\mathrm{th}=0$")
-    # bxes[-1].plot(np.nan, np.nan, c="k", ls="-", label=r"$\alpha_\mathrm{th}=1$")
     bxes[-1].plot(np.nan, np.nan, c="r", ls="-", label="single star")
     bxes[-1].plot(np.nan, np.nan, c="orange", ls="-", label="accretor")
     bxes[-1].legend(loc="center")
-    # axes[-1].plot(np.nan, np.nan, c="orange", ls="-", label="accretor")
-    # axes[-1].legend(loc="center")
 
     for ax in axes + bxes + cxes:
         ax.set_yticks([1e46, 1e48, 1e50], minor=False)
