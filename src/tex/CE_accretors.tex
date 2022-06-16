@@ -22,8 +22,9 @@
 
 \graphicspath{{./figures/}}
 
-\title{Rejuvenated stars are more easily unbound:\\ The first stable
-  mass transfer impacts the donor of common envelopes in gravitational-wave progenitors}
+\title{Rejuvenated accretors have less bound envelopes:\\ Impact of
+  the first Roche lobe overflow on the common envelope in
+  gravitational wave progenitors}
 
 \author[0000-0002-6718-9472]{M.~Renzo \todo{other and order TBD}}
 \affiliation{Center for Computational Astrophysics, Flatiron Institute, New York, NY 10010, USA}
@@ -55,29 +56,29 @@
 % \affiliation{The Observatories of the Carnegie Institution for
 %  Science, 813 Santa Barbara Street, Pasadena, CA 91101, USA}
 
-
 \begin{abstract}
   Common envelope (CE) evolution is an outstanding open problem in
-  stellar evolution and it is critical to the formation of compact
-  binaries, including gravitational-wave sources. In the ``classical''
+  stellar evolution, critical to the formation of compact binaries
+  including gravitational-wave (GW) sources. In the ``classical''
   isolated binary evolution scenario for double compact objects, the
   CE phase is usually the second mass transfer. Thus, the donor star
   of the CE is the product of a previous binary interaction, often a
   stable Roche lobe overflow (RLOF). Because of the accretion of mass
-  during the first RLOF, the convective core of the accretor star
+  during the first RLOF, the main-sequence core of the accretor star
   grows and is ``rejuvenated''. This modifies the core-envelope
   boundary region and decreases significantly the envelope binding
-  energy. Comparing accretor models from self-consistent binary models
-  to stars evolved as single, we demonstrate that the ``rejuvenation''
-  can lower the amount of energy necessary for a CE ejection for both
-  black hole and neutron star progenitors by $\sim 4-58\%$ depending
-  on the evolutionary stage and final orbital separation. Despite
-  their high mass, our accretors also experience extended ``blue
-  loops'' , which may have observational consequences for
-  low-metallicity stellar populations and asteroseismology. Extending
-  our small grid will be necessary to produce a rapid population
-  synthesis algorithm to account for this effect.
-  % tex-count-words = 190
+  energy for the remaining evolution. Comparing accretor models from
+  self-consistent binary models to stars evolved as single, we
+  demonstrate that the rejuvenation can lower the energy required to
+  eject a CE ejection for both black hole and neutron star progenitors
+  by $\sim 4-58\%$, depending on the evolutionary stage and final
+  orbital separation. Therefore, GW progenitors experiencing stable
+  mass transfer may more easily survive subsequent possible CE events
+  compared to current predictions. Despite their high mass, our
+  accretors also experience extended ``blue loops'' , which may have
+  observational consequences for low-metallicity stellar populations
+  and asteroseismology.
+  % tex-count-words = 197
 \end{abstract}
 
 \keywords{stars: massive -- stars: binaries: mass transfer -- stars:
@@ -253,7 +254,7 @@ $\beta_\mathrm{RLOF}=|\Delta M_\mathrm{accretor}/\Delta M_\mathrm{donor}| = 0.29
 % $R=100, 200, 300, 500, 1000\,R_\odot$, corresponding to the Roche
 % radius of the CE-donor, marked by gray dot-dashed lines in \Figref{fig:HRD}.
 
-\begin{figure}[htbp]
+\begin{figure}[bp]
   \includegraphics[width=0.5\textwidth]{HRD.pdf}
   \caption{HR diagram of the binary systems. The thin dashed lines
     show the evolution of the donors until RLOF detachment, the solid
@@ -393,7 +394,7 @@ which correspond to central H mass fractions
 $X_\mathrm{c}(^1\mathrm{H}) = 0.27, 0.23$, and 0.21 for the accretors.
 Thus, the accreting stars are not homogeneous in composition at the
 onset of RLOF: the convective core is already bound by a composition
-gradient that generally impedes the mixing \citep[e.g.,][]{yoon:05}.
+gradient that generally impedes the mixing \citep[e.g.,][]{yoon:2005}.
 Thus, the advance in mass coordinate of the convective region due to
 mass accretion (i.e., the ``rejuvenation process'') during RLOF occurs
 against a gradient (of entropy, $\mu$, H, and He) set by the pre-RLOF
@@ -551,8 +552,8 @@ blueward evolution discussed earlier.
 We have modeled the impact of mass transfer on the envelope structure
 of the accretor, focusing on thermal timescale, post-donor-main
 sequence case B RLOF (see \Figref{fig:HRD}). The accretion of mass
-drives the growth of the convective core, changing the core/envelope
-boundary and ``rejuvenating'' the star. As the accretors evolve
+drives the growth of the accretor's core, changing the core/envelope
+boundary region and ``rejuvenating'' the star. As the accretors evolve
 beyond the main sequence, they experience large blue-loops which are
 not expected in single stars of the same mass -- with potential
 implications for asteroseismology \citep[e.g.,][]{dorn-wallenstein:20},
@@ -568,9 +569,10 @@ convective boundaries in stellar regime is an active topic of research
 of the main sequence \citep[e.g.,][]{brott:11} and asteroseismology
 \citep[e.g.,][]{moravveji:16} suggest the presence of convective
 boundary mixing in the core of massive main-sequence stars. In our
-one-dimensional accretor models, the main mixing in the envelope is
-Eddington-Sweet circulations and thermohaline mixing
-\citep{renzo:2021zoph}, while at the core boundary is it overshooting,
+one-dimensional accretor models, % the main mixing in the envelope is
+% Eddington-Sweet circulations and thermohaline mixing
+% \citep{renzo:2021zoph}, while at
+the dominant core boundary mixing is overshooting,
 with rotationally driven instabilities contributing to a lesser extent
 during late RLOF. We adopt an exponentially decreasing overshooting
 diffusion coefficient (\citealt{claret:17}) which may underestimate
@@ -580,39 +582,52 @@ thick convective shell develops above the core see
 binding energy profiles (see \Figref{fig:BE_profiles}).
 
 % CE other uncertainties
-We have focused on the consequences of the first mass transfer
-accretion for next binary interaction on the path to a GW merger: the
-CE event initiated by the RLOF-accretor. We find that accretors have
-overall lower envelopes binding energy (both integrated from the
-surface to the He core, see~\Figref{fig:BE_env_R} and as a function of
-radius, see~\Figref{fig:BE_profiles}-\ref{fig:grid_ratios}). Since the
+We have focused on the consequences of accretion in the first RLOF for
+subsequent binary interaction on the path to a GW merger: the CE event
+initiated by the RLOF-accretor. We find that accretors have overall
+lower envelopes binding energy (both integrated from the surface to
+the He core, see~\Figref{fig:BE_env_R} and as a function of radius,
+see~\Figref{fig:BE_profiles}-\ref{fig:grid_ratios}). Since the
 (second) common envelope in the evolution of isolated binary
 progenitors to GW mergers occurs from the RLOF-accretor, the
 systematically lower binding energy our accretor models compared to
 single stars of the same outer radius may imply an easier to eject
 envelope in the CE evolution of GW-progenitors.
 
-Before the onset of the
-dynamical instability in a CE event, a pre-CE thermal timescale phase
-of mass transfer may occur \citep[e.g.,][]{hjellming:1987, pejcha:17,
-  blagorodnova:2021}. This initial phase is usually neglected in
-hydrodynamical simulations and may impact the envelope structure of
-CE-donors whether they have previously been RLOF-accretors (as in our
-models) or not.
+For very massive BH progenitors with $M\gtrsim 40\,M_\odot$, the
+effect discussed here may be less pronounced or absent. First of all,
+GW-progenitors of these masses may not experience CE at all
+\citep[e.g.,][]{vanson:2021, marchant:2021}. Second, in this regime
+the main-sequence lifetime becomes roughly independent of mass at
+$\sim{}2.5-3$\,Myr: therefore, at the first RLOF, the accretors may be
+already sufficiently evolved to prevent rejuvenation through a steep
+core/envelope chemical boundary. However, more massive stars are
+generally easier to mix \citep[e.g.,][]{yoon:2005}, therefore more
+studies are needed to asses the importance of their structural
+readjustment to RLOF-accretion for subsequent binary interactions.
 
-% other applications
-The structural change of the core/envelope boundary in the accretor
-may also impact other aspects of its evolution. For example, even if
-the following mass transfer is stable, the different binding energy
-profile may affect the evolution during the second mass transfer. If
-instead the binary is disrupted at the core-collapse of the RLOF-donor
-\citep[e.g.,][]{blaauw:1961, renzo:2019walk}, the different chemical
-composition at the surface \citep[e.g.,][]{blaauw:93, renzo:2021zoph}
-may change the wind final velocity (but not the total mass loss rate),
-with consequences for bow-shocks \citep[e.g.,][]{bodensteiner:18,
-  moutzouri:22}. At core-collapse and explosion, the reverse shock
-produced at the crossing of the He core boundary may be
-different.\todo{check C shell in kippenhahns?}.
+Before the onset of the dynamical instability in a CE event, a pre-CE
+thermal timescale phase of mass transfer may occur
+\citep[e.g.,][]{hjellming:1987, pejcha:17, blagorodnova:2021}. This
+initial phase is usually neglected in hydrodynamical simulations and
+may impact the envelope structure of CE-donors whether they have
+previously been RLOF-accretors (as in our models) or not.
+
+% % other applications
+% The structural change of the core/envelope boundary in the accretor
+% may also impact other aspects of its evolution. For example, even if
+% the following mass transfer is stable, the different binding energy
+% profile may affect the evolution during the second mass transfer. If
+% instead the binary is disrupted at the core-collapse of the RLOF-donor
+% \citep[e.g.,][]{blaauw:1961, renzo:2019walk}, the different chemical
+% composition at the surface \citep[e.g.,][]{blaauw:93, renzo:2021zoph}
+% may change the wind final velocity (but not the total mass loss rate),
+% with consequences for bow-shocks \citep[e.g.,][]{bodensteiner:18,
+%   moutzouri:22}, and the asteroseismological properties of accretors.
+% At core-collapse and explosion, the reverse shock produced at the
+% crossing of the He core boundary may be different.
+\todo{check C shell
+  in kippenhahns?}.
 
 We have focused accretor models for progenitors of NS and BH. However,
 the physical processes described should be similar in all accretor
