@@ -39,6 +39,7 @@ dependencies:
     - src/data/MESA_output/ #    - src/data/converted_output_exists
   src/scripts/BE_profiles.py:
     - src/scripts/lib_plot_bin.py
+    - src/scripts/lib_engineered.py
     - src/scripts/MESAreader.py
     # input data            #   -- list token file as dependence
     - src/data/MESA_output/ #    - src/data/converted_output_exists
@@ -70,7 +71,8 @@ dependencies:
 
 datasets:
   # this will be of the zenodo static dataset -- for now sandbox
-  10.5072/zenodo.1074069:
+  # 10.5072/zenodo.1074069: # smaller dataset
+  10.5072/zenodo.1074339:
     destination: src/data/
     contents:
       MESA_output.tar.gz:
