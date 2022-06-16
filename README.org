@@ -150,6 +150,7 @@
   - [ ] update =showyourwork.yml= with zenodo link (not sandbox)
   - [ ] check C shell burning convective behavior
   - [ ] annotate HRD
+  - [ ] fix x-axis middle bottom panel fig.4
 
 *** Manos comments
 
@@ -158,8 +159,9 @@
    - [X] maybe explain M_max_boundary +/- dm (at least in comment in
      script
      https://github.com/mathren/CE_accretors/blob/087b573e31e8a879758d6141f633f260a8c96274/src/data/MESA_input/grid_management_scripts/setup_grid_simplified.py#L77)
-   - [ ] add to fig. 4 and 10 vertical lines for multiple definition
-     of M_{He}
+   - [X] add to fig. 3, 4 and 10 vertical lines for multiple definition
+     of M_{He} (Done for fig. 10, 3 and 4 are in radial coordinates, too
+     much overlap)
    - [X] abstract: add "easier to survive CE in GW sources"
    - [X] emphasize also in conclusions
 
