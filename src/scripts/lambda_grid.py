@@ -1,6 +1,6 @@
 from MESAreader import getSrcCol
 from lib_plot_bin import plot_lambda_mass, plot_lambda_at_one_radius, Rsun_cm
-from lib_engineered import get_M_boundary
+from lib_engineered import get_M_boundary, sorter_engineered_profiles
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
@@ -219,8 +219,9 @@ def grid_lambdas(
 if __name__ == "__main__":
     # locations, to be fixed when uploading on zenodo
     root = paths.data / "MESA_output/"
-
     root_accretors = root / "binaries/Z_0.0019/"
+    root_simplified = str(root / "engineered_stars/same_core/")
+
     b1 = (
         str(root_accretors)
         + "/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/"
@@ -238,13 +239,12 @@ if __name__ == "__main__":
     nonrot20 = str(root / "single_stars/Z_0.0019/20_rot0.0/LOGS")+"/"
     nonrot18 = str(root / "single_stars/Z_0.0019/18_rot0.0/LOGS")+"/"
 
-    root_simplified = str(root / "engineered_stars/same_core/")
     root_grid18 = root_simplified + "/grid18/"
     root_grid20 = root_simplified + "/grid20/"
     root_grid36 = root_simplified + "/grid36/"
-    grid_folders18 = sorted(glob.glob(root_grid18 + "/*.*/LOGS/"))
-    grid_folders20 = sorted(glob.glob(root_grid20 + "/*.*/LOGS/"))
-    grid_folders36 = sorted(glob.glob(root_grid36 + "/*.*/LOGS/"))
+    grid_folders18 = sorted(glob.glob(root_grid18 + "/*.*/LOGS/"), key=sorter_engineered_profiles)
+    grid_folders20 = sorted(glob.glob(root_grid20 + "/*.*/LOGS/"), key=sorter_engineered_profiles)
+    grid_folders36 = sorted(glob.glob(root_grid36 + "/*.*/LOGS/"), key=sorter_engineered_profiles)
 
     fig_name = paths.figures / "lambda_grid.pdf"
 
