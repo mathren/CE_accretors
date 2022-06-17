@@ -34,6 +34,8 @@ except ImportError:
 
     def colored(a, color):
         return a
+
+
 from lib_engineered import get_M_boundary
 
 try:
@@ -633,7 +635,13 @@ def get_BE_from_pfile(pfile, alpha_th=1.0):
 
 
 def plot_BE_r(
-        pfile, ax, alpha_th=1.0, scale_factor=None, top_axis=False, **plot_kwargs
+    pfile,
+    ax,
+    alpha_th=1.0,
+    scale_factor=None,
+    top_axis=False,
+    mark_he_core=False,
+    **plot_kwargs,
 ):
     """
     plot the binding energy profile as a function of log(r/cm)
@@ -659,6 +667,19 @@ def plot_BE_r(
         # tx.set_xticks([])
         # tx.set_xticklabels([])
         tx.set_xlabel(r"m $[M_\odot]$")
+    if mark_he_core:
+        m_he_core_01, m_he_core_1, m_he_core_2 = get_He_core_mass_from_pfile(pfile)
+        m = src[:, col.index("mass")]
+        i_01 = np.argmin(np.absolute(m-m_he_core_01))
+        i_1 = np.argmin(np.absolute(m-m_he_core_1))
+        i_2 = np.argmin(np.absolute(m-m_he_core_2))
+        try:
+            color = plot_kwargs['color']
+        except:
+            color = plot_kwargs['c']
+        ax.axvline(logr[i_01], 0, 1, ls="-", lw=2, c=color, zorder=0)
+        ax.axvline(logr[i_1], 0, 1, ls="--", lw=2, c=color, zorder=0)
+        ax.axvline(logr[i_2], 0, 1, ls="-.", lw=2, c=color, zorder=0)
 
 
 def plot_BE_m(pfile, ax, alpha_th=1.0, scale_factor=None, **plot_kwargs):
@@ -1041,7 +1062,7 @@ def plot_lambda_at_one_radius(
     if accretor:
         pfile = glob.glob(accretor + "/" + string)[0]
         plot_func(pfile, ax, alpha_th=1, c="orange", label="accretor")
-        m_he_core_01, m_he_core_1, m_he_core_2= get_He_core_mass_from_pfile(pfile)
+        m_he_core_01, m_he_core_1, m_he_core_2 = get_He_core_mass_from_pfile(pfile)
         ax.axvline(m_he_core_01, 0, 1, ls="-", lw=2, c="orange", zorder=0)
         ax.axvline(m_he_core_1, 0, 1, ls="--", lw=2, c="orange", zorder=0)
         ax.axvline(m_he_core_2, 0, 1, ls="-.", lw=2, c="orange", zorder=0)
@@ -1049,7 +1070,7 @@ def plot_lambda_at_one_radius(
     if nonrot:
         pfile = glob.glob(nonrot + string)[0]
         plot_func(pfile, ax, alpha_th=1, c="r", label="single")
-        m_he_core_01, m_he_core_1, m_he_core_2= get_He_core_mass_from_pfile(pfile)
+        m_he_core_01, m_he_core_1, m_he_core_2 = get_He_core_mass_from_pfile(pfile)
         ax.axvline(m_he_core_01, 0, 1, ls="-", lw=2, c="red", zorder=0)
         ax.axvline(m_he_core_1, 0, 1, ls="--", lw=2, c="red", zorder=0)
         ax.axvline(m_he_core_2, 0, 1, ls="-.", lw=2, c="red", zorder=0)

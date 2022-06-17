@@ -69,6 +69,7 @@ def grid_BE_profiles(fig_name=None):
             pfile_accretor,
             ax,
             scale_factor=None,
+            mark_he_core=True,
             alpha_th=1.0,
             c="orange",
             ls="-",
@@ -89,7 +90,7 @@ def grid_BE_profiles(fig_name=None):
         # now plot normal single star
         pfile_single = glob.glob(s1 + string)[0]
         plot_BE_r(
-            pfile_single, ax, scale_factor=None, alpha_th=1.0, c="r", ls="-", zorder=9
+            pfile_single, ax, scale_factor=None, mark_he_core=True, alpha_th=1.0, c="r", ls="-", zorder=9
         )
 
     # # 20 Msun
@@ -122,6 +123,7 @@ def grid_BE_profiles(fig_name=None):
             pfile_accretor,
             ax,
             scale_factor=None,
+            mark_he_core=True,
             alpha_th=1.0,
             c="orange",
             ls="-",
@@ -142,7 +144,7 @@ def grid_BE_profiles(fig_name=None):
         # now plot normal single star
         pfile_single = glob.glob(s2 + string)[0]
         plot_BE_r(
-            pfile_single, ax, scale_factor=None, alpha_th=1.0, c="r", ls="-", zorder=9
+            pfile_single, ax, scale_factor=None, mark_he_core=True, alpha_th=1.0, c="r", ls="-", zorder=9
         )
 
     # 30
@@ -171,6 +173,7 @@ def grid_BE_profiles(fig_name=None):
             pfile_accretor,
             ax,
             scale_factor=None,
+            mark_he_core=True,
             alpha_th=1.0,
             c="orange",
             ls="-",
@@ -191,7 +194,7 @@ def grid_BE_profiles(fig_name=None):
         # now plot normal single star
         pfile_single = glob.glob(s3 + string)[0]
         plot_BE_r(
-            pfile_single, ax, scale_factor=None, alpha_th=1.0, c="r", ls="-", zorder=9
+            pfile_single, ax, scale_factor=None, mark_he_core=True, alpha_th=1.0, c="r", ls="-", zorder=9
         )
 
     for cx in cxes:
