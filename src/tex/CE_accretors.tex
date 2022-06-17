@@ -61,19 +61,19 @@
   stellar evolution, critical to the formation of compact binaries
   including gravitational-wave (GW) sources. In the ``classical''
   isolated binary evolution scenario for double compact objects, the
-  CE phase is usually the second mass transfer. Thus, the donor star
+  CE is usually the second mass transfer phase. Thus, the donor star
   of the CE is the product of a previous binary interaction, often a
   stable Roche lobe overflow (RLOF). Because of the accretion of mass
   during the first RLOF, the main-sequence core of the accretor star
   grows and is ``rejuvenated''. This modifies the core-envelope
   boundary region and decreases significantly the envelope binding
-  energy for the remaining evolution. Comparing accretor models from
+  energy for the remaining evolution. Comparing accretor stars from
   self-consistent binary models to stars evolved as single, we
   demonstrate that the rejuvenation can lower the energy required to
-  eject a CE ejection for both black hole and neutron star progenitors
-  by $\sim 4-58\%$, depending on the evolutionary stage and final
-  orbital separation. Therefore, GW progenitors experiencing stable
-  mass transfer may more easily survive subsequent possible CE events
+  eject a CE by $\sim 4-58\%$ for both black hole and neutron star
+  progenitors, depending on the evolutionary stage and final orbital
+  separation. Therefore, GW progenitors experiencing stable mass
+  transfer may more easily survive subsequent possible CE events
   compared to current predictions. Despite their high mass, our
   accretors also experience extended ``blue loops'' , which may have
   observational consequences for low-metallicity stellar populations
@@ -323,8 +323,17 @@ limited. % Moreover, blue-loops are sensitive to
   \script{TAMS_profiles.py}
 \end{figure*}
 
-We calculate the cumulative binding energy outside outside mass coordinate $m$
-\citep[e.g.,][]{dekool:1990, dewi:2000, lau:2022} as:
+In the ``classical'' binary evolution path, after the RLOF donor
+collapses to a compact object, the evolutionary expansion of the
+RLOF-accretor triggers a CE. Physically, its outcome is determined by
+the thermal and dynamical reaction of the now-shared envelope to the
+inspiral \citep[e.g.,][]{ivanova:2013, ivanova:2020, renzo:21gwce}.
+However, a common oversimplification is to rely on energy conservation
+\citep[$\alpha_{\mathrm{CE}}\lambda_\mathrm{CE}$ algorithms,
+e.g.,][]{webbink:1984, dekool:1990} to determine CE ejection and final
+separation, therefore, we focus here on the RLOF-accretor/CE-donor binding energy. We
+calculate the cumulative binding energy outside outside mass
+coordinate $m$ \citep[e.g.,][]{dekool:1990, dewi:2000, lau:2022} as:
 \begin{equation}
   \label{eq:BE}
 BE(m, \alpha_{\rm th}) = - \int_{m}^M\,dm'\left( -\frac{G m'}{r(m')}+\alpha_\mathrm{th} u(m')\right) \ \ ,
@@ -582,19 +591,38 @@ thick convective shell develops above the core see
 binding energy profiles (see \Figref{fig:BE_profiles}).
 
 % CE other uncertainties
-We have focused on the consequences of accretion in the first RLOF for
-subsequent binary interaction on the path to a GW merger: the CE event
-initiated by the RLOF-accretor. We find that accretors have overall
-lower envelopes binding energy (both integrated from the surface to
-the He core, see~\Figref{fig:BE_env_R} and as a function of radius,
-see~\Figref{fig:BE_profiles}-\ref{fig:grid_ratios}). Since the
-(second) common envelope in the evolution of isolated binary
-progenitors to GW mergers occurs from the RLOF-accretor, the
-systematically lower binding energy our accretor models compared to
-single stars of the same outer radius may imply an easier to eject
-envelope in the CE evolution of GW-progenitors.
+We have focused on the structural consequences of RLOF accretion,
+specifically their impact on the subsequent binary interaction in the
+``classical'' scenario to a GW merger: the CE event initiated by the
+RLOF-accretor. Before the onset of the dynamical instability in a CE
+event, a pre-CE thermal timescale phase of mass transfer may occur
+\citep[e.g.,][]{hjellming:1987, pejcha:17, blagorodnova:2021}. This
+initial phase is usually neglected in hydrodynamical simulations and
+may impact the envelope structure of CE-donors whether they have
+previously been RLOF-accretors (as in our models) or not.
 
-For very massive BH progenitors with $M\gtrsim 40\,M_\odot$, the
+Accretors have overall lower binding energy of the envelope
+(both integrated from the surface to the He core,
+see~\Figref{fig:BE_env_R} and as a function of radius,
+see~\Figref{fig:BE_profiles}-\ref{fig:grid_ratios}). The
+systematically lower binding energy our accretor models compared to
+single stars of the same outer radius and total mass may % have an
+% influence on both stable and unstable subsequent mass transfer. For CE
+% initiated by a RLOF-accretor, it
+% may
+imply easier to eject (post-RLOF, second) CE (\Figref{fig:grid_ratios}).
+
+%pop synth application
+Including this effect in population synthesis simulations could impact
+the distribution of post-CE orbital separations, the predicted number
+of ``reverse'' stellar mergers \citep[e.g.,][]{zapartas:2017}, and the
+rate of GW mergers. Our grid consists only of three binaries,
+but could be extended to inform
+semi-analytic approximations of the binding energy of CE-donor that
+have accreted mass in a previous stable mass transfer phase (see also
+\Figref{fig:lambda_grid}).
+
+For very massive BH progenitors with $M_{\rm ZAMS}\gtrsim 40\,M_\odot$, the
 effect discussed here may be less pronounced or absent. First of all,
 GW-progenitors of these masses may not experience CE at all
 \citep[e.g.,][]{vanson:2021, marchant:2021}. Second, in this regime
@@ -602,16 +630,18 @@ the main-sequence lifetime becomes roughly independent of mass at
 $\sim{}2.5-3$\,Myr: therefore, at the first RLOF, the accretors may be
 already sufficiently evolved to prevent rejuvenation through a steep
 core/envelope chemical boundary. However, more massive stars are
-generally easier to mix \citep[e.g.,][]{yoon:2005}, therefore more
-studies are needed to asses the importance of their structural
-readjustment to RLOF-accretion for subsequent binary interactions.
+generally easier to mix \citep[e.g.,][]{yoon:2005}, therefore the
+importance of their structural readjustment to RLOF-accretion for
+subsequent binary interactions remains to be studied.
 
-Before the onset of the dynamical instability in a CE event, a pre-CE
-thermal timescale phase of mass transfer may occur
-\citep[e.g.,][]{hjellming:1987, pejcha:17, blagorodnova:2021}. This
-initial phase is usually neglected in hydrodynamical simulations and
-may impact the envelope structure of CE-donors whether they have
-previously been RLOF-accretors (as in our models) or not.
+We have focused accretor models for progenitors of NS and BH. However,
+the physical processes described should be similar in all accretor
+stars with convective main sequence cores, down to initial mass
+$M_{\rm ZAMS}\gtrsim 1.2\,M_\odot$ \citep[see also][]{wang:20}.
+Thus, also a fraction of white dwarf progenitor binary systems, if
+sufficiently massive and experiencing a (case B) RLOF phase of
+evolution, may be influenced by the structural differences between
+single stars and RLOF-accretors.
 
 % % other applications
 % The structural change of the core/envelope boundary in the accretor
@@ -629,19 +659,7 @@ previously been RLOF-accretors (as in our models) or not.
 \todo{check C shell
   in kippenhahns?}.
 
-We have focused accretor models for progenitors of NS and BH. However,
-the physical processes described should be similar in all accretor
-stars with convective main sequence cores, down to initial mass
-$M_{\rm ZAMS}\gtrsim 1.2\,M_\odot$ \citep[see also][]{wang:20}.
-Thus, also a fraction of white dwarf progenitor binary systems, if
-sufficiently massive and experiencing a (case B) RLOF phase of
-evolution, may be influenced by the structural differences between
-single stars and RLOF-accretors.
 
-Our grid of models consists of only three systems, but could be
-extended to inform a rapid-population synthesis semi-analytic
-approximation for the binding energy of CE-donor that have accreted
-mass in a previous stable mass transfer phase (see also \Figref{fig:lambda_grid}).
 
 
 \software{MESA \citep{paxton:2011, paxton:2015, paxton:2018,
