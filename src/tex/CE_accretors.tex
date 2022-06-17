@@ -331,9 +331,10 @@ inspiral \citep[e.g.,][]{ivanova:2013, ivanova:2020, renzo:21gwce}.
 However, a common oversimplification is to rely on energy conservation
 \citep[$\alpha_{\mathrm{CE}}\lambda_\mathrm{CE}$ algorithms,
 e.g.,][]{webbink:1984, dekool:1990} to determine CE ejection and final
-separation, therefore, we focus here on the RLOF-accretor/CE-donor binding energy. We
-calculate the cumulative binding energy outside outside mass
-coordinate $m$ \citep[e.g.,][]{dekool:1990, dewi:2000, lau:2022} as:
+separation, therefore, we focus here on the RLOF-accretor/CE-donor
+binding energy. We calculate the cumulative binding energy outside
+outside mass coordinate $m$ \citep[e.g.,][]{dekool:1990, dewi:2000,
+  lau:2022} as:
 \begin{equation}
   \label{eq:BE}
 BE(m, \alpha_{\rm th}) = - \int_{m}^M\,dm'\left( -\frac{G m'}{r(m')}+\alpha_\mathrm{th} u(m')\right) \ \ ,
@@ -442,15 +443,18 @@ local deviations from this trend can occur for some $r$.
 
 \begin{figure*}[hbtp]
   \includegraphics[width=\textwidth]{BE_profiles.pdf}
-  \caption{Binding energy profile at fixed radii (right y-axis) as a
-    function of radial mass coordinate. We only show profiles with
-    $\alpha_\mathrm{th}=1$, that is accounting for the internal energy
-    content of the star. Orange, red, and other colors show
-    respectively the accretor models, single stars of same post-RLOF
-    total mass, and engineered models with varying CEB steepness.
-    Titles indicates the pre-RLOF and approximate post-RLOF accretor
-    masses, and vertical gray dashed lines mark the total radius $R$
-    of these models.}
+  \caption{Binding energy profile at fixed photospheric radius $R$
+    (right y-axis) as a function of radius $r(m)$. We only show
+    profiles with $\alpha_\mathrm{th}=1$, that is accounting for the
+    internal energy content of the star. Orange, red, and other colors
+    show respectively the accretor models, single stars of same
+    post-RLOF total mass, and engineered models with varying CEB
+    steepness. Titles indicates the pre-RLOF and approximate post-RLOF
+    accretor masses. The vertical colored lines mark the outer edge of
+    the helium cores of the accretor and single star, that is the
+    outermost location where $Y>0.1$ and $X<0.01$ (solid lines), or
+    $X<0.1$ (dashed), or $X<0.2$ (dot-dashed). The ggray dashed lines mark
+    the total radius $R$ of these models.}
   \label{fig:BE_profiles}
   \script{BE_profiles.py}
 \end{figure*}
@@ -872,7 +876,7 @@ in \Figref{fig:lambda_grid} the $\lambda_\mathrm{CE}$ profiles for our models.
   \caption{Profile of the binding energy parameter
     $\lambda_\mathrm{CE}$ as a function of mass coordinate for
     accretors (orange), single stars (red), and our engineered stars
-    (other colors) at selected total radii. The vertical dashed lines
+    (other colors) at selected total radii. The vertical lines
     mark the outer edge of the helium cores of the accretor and single
     star, that is the outermost location where $Y>0.1$ and $X<0.01$
     (solid lines), or $X<0.1$ (dashed), or $X<0.2$ (dot-dashed).}
