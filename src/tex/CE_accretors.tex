@@ -360,8 +360,14 @@ of possible use of internal energy to eject the CE.
 which determines the thermo-dynamical properties of the stars -- and
 the H and He mass fractions at TAMS for our accretor models (orange),
 single non-rotating stars (red) and ``engineered'' models of roughly
-same total mass as the accretor post-RLOF. We chose to compare our
-models for the same total mass $M$ because it enters in \Eqref{eq:BE} and
+same total mass as the accretor post-RLOF. A gray region highlights
+the CEB (roughly corresponding to H mass fraction
+$X_\mathrm{c}(^1\mathrm{H})+0.01<X(^1\mathrm{H})<X_\mathrm{surf}(^1\mathrm{H})-0.01$,
+with $X_c$ and $X_\mathrm{surf}$ the central and surface value of the
+hydrogen mass fraction), and their overlap produces the shade in
+\Figref{fig:TAMS_profiles}.
+We compare our
+models at the same total post-RLOF mass ($M\simeq M_{2}$) because it enters in \Eqref{eq:BE} and
 is typically used in rapid population synthesis codes to construct
 accretors from single star models \citep[e.g.,][]{hurley:2002}. Nevertheless, it is not obvious that models of the
 same total mass are the most relevant comparison: for instance, the
@@ -370,7 +376,7 @@ final compact object \citep[e.g.,][]{fryer:2012, farmer:2019,
   patton:2021, renzo:2022, fryer:2022}, and comparing models of
 roughly the same core-mass might be more appropriate (but is sensitive
 to the condition defining the core edge). We present in
-\Figref{fig:TAMS_profiles} a comparison between TAMS profiles of
+\Figref{fig:TAMS_profiles_same_initial_mass} a comparison between TAMS profiles of
 accretors, single stars, and engineered models with the same
 \emph{initial} mass as an alternative comparison that should bracket
 the range of sensible comparison models.
@@ -381,7 +387,7 @@ accretors to be steeper than in a star evolving as single, resulting
 in models qualitatively more similar to our engineered models with the
 steeper entropy and composition in the CEB (darker lines in
 \Figref{fig:TAMS_profiles}-\ref{fig:grid_ratios},
-\Figref{fig:toy_models_example}--% \ref{fig:rotation_models_example}, and
+\Figref{fig:toy_models_example}, and \Figref{fig:TAMS_profiles_same_initial_mass}--% \ref{fig:rotation_models_example}, and
 % \Figref{fig:TAMS_profiles_same_initial_mass}-
 \ref{fig:lambda_grid}).
 In fact, rejuvenation of the accretor is caused by an increase in mass
@@ -698,13 +704,7 @@ star (\Secref{sec:rot_examples}). Both can be significantly modified
 by accretion during the first RLOF.
 
 \Figref{fig:engineered_TAMS} shows an example grid of ``engineered
-stars'' of $30M_\odot$. A gray region highlights where each
-model is modified (corresponding to H mass fraction
-$X_\mathrm{c}(^1\mathrm{H})+0.01<X(^1\mathrm{H})<X_\mathrm{surf}(^1\mathrm{H})-0.01$,
-with $X_c$ and $X_\mathrm{surf}$ the central and surface value of the
-hydrogen mass fraction), and their overlap produces the shade in
-\Figref{fig:engineered_TAMS}.
-
+stars'' of $30M_\odot$, similar to \Figref{fig:TAMS_profiles}.
 Starting from a non-rotating single star at TAMS (e.g., red model in
 \Figref{fig:engineered_TAMS}), we modify the CEB specific entropy (s)
 which controls the thermal properties of the gas, and its H, and He
