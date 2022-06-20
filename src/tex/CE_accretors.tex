@@ -142,11 +142,15 @@ or not.
 Here, we use structure and evolution binary models to study the impact
 of the first RLOF phase on the outcome of possible subsequent CE
 events. \Secref{sec:methods} describe our \mesa\ calculations. In
-\Secref{sec:bin_models} we compare our accretor models to single stars
-with the same total post-RLOF mass. We discuss our findings and
-conclude in \Secref{sec:conclusions}. Appendix~\ref{sec:toy_models} presents a
-proof-of-principle of the effect of core boundary mixing and rotation
-on the envelope binding energy.
+\Secref{sec:bin_models} we show the ratio of binding energies of our
+accretor models divided single stars of the same total post-RLOF mass. We
+discuss our findings and conclude in \Secref{sec:conclusions}.
+Appendix~\ref{sec:toy_models} presents a proof-of-principle numerical
+experiment illustrating the effect of changing the core-envelope
+boundary region and the and rotation on the envelope binding energy,
+and Appendixes~\ref{sec:BE}--\ref{sec:pop_synth_app} present
+additional plots.
+
 \section{Pre-common envelope evolution}
 \label{sec:methods}
 
@@ -369,13 +373,7 @@ hydrogen mass fraction), and their overlap produces the shade in
 We compare our
 models at the same total post-RLOF mass ($M\simeq M_{2}$) because it enters in \Eqref{eq:BE} and
 is typically used in rapid population synthesis codes to construct
-accretors from single star models \citep[e.g.,][]{hurley:2002}. Nevertheless, it is not obvious that models of the
-same total mass are the most relevant comparison: for instance, the
-(helium or carbon-oxygen) core mass is often used to determine the
-final compact object \citep[e.g.,][]{fryer:2012, farmer:2019,
-  patton:2021, renzo:2022, fryer:2022}, and comparing models of
-roughly the same core-mass might be more appropriate (but is sensitive
-to the condition defining the core edge). We present in
+accretors from single star models \citep[e.g.,][]{hurley:2002}.  We present in
 \Figref{fig:TAMS_profiles_same_initial_mass} a comparison between TAMS profiles of
 accretors, single stars, and engineered models with the same
 \emph{initial} mass as an alternative comparison that should bracket
@@ -434,41 +432,8 @@ radii. %  We define the local binding
 % reduces to the gravitational potential energy except for the sign
 % $BE(m, \alpha_{\rm th}=0)\equiv -E_\mathrm{grav}(m)$, plotted in
 % \Figref{fig:toy_models_example} and \ref{fig:rotation_models_example}.
-In \Figref{fig:BE_profiles}, we show the binding energy of our
-accretor models (solid lines,
-including the internal energy, i.e.\ $\alpha_\mathrm{th}=1$ in
-\Eqref{eq:BE}),
-% and gravitational binding energy (dashed
-% lines, $\alpha_\mathrm{th}=0$)
-single stars with initial mass roughly equal
-to the accretors post-RLOF mass, and our engineered models (see also
-\Figref{fig:lambda_grid} for the $\lambda_\mathrm{CE}$ profile defined in Appendix~\ref{sec:pop_synth_app}). The two
-lowest mass accretors (left and central column) do not expand to
-$R=1000\, R_\odot$ before carbon depletion. Generally speaking, the
-accretors (orange) have lower binding energies than corresponding
-single stars (red), and their profiles are qualitatively closer to the
-engineered models with the steepest core (darker curves), although
-local deviations from this trend can occur for some $r$.
 
-\begin{figure*}[hbtp]
-  \includegraphics[width=\textwidth]{BE_profiles.pdf}
-  \caption{Binding energy profile at fixed photospheric radius $R$
-    (right y-axis) as a function of radius $r(m)$. We only show
-    profiles with $\alpha_\mathrm{th}=1$, that is accounting for the
-    internal energy content of the star. Orange, red, and other colors
-    show respectively the accretor models, single stars of same
-    post-RLOF total mass, and engineered models with varying CEB
-    steepness. Titles indicates the pre-RLOF and approximate post-RLOF
-    accretor masses. The vertical colored lines mark the outer edge of
-    the helium cores of the accretor and single star, that is the
-    outermost location where $Y>0.1$ and $X<0.01$ (solid lines), or
-    $X<0.1$ (dashed), or $X<0.2$ (dot-dashed). The ggray dashed lines mark
-    the total radius $R$ of these models.}
-  \label{fig:BE_profiles}
-  \script{BE_profiles.py}
-\end{figure*}
-
-\subsection{Ratio of binding energies as a function of mass}
+% \subsection{Ratio of binding energies as a function of mass}
 
 \begin{figure*}[htbp]
   \includegraphics[width=\textwidth]{grid_ratios.pdf}
@@ -486,12 +451,13 @@ local deviations from this trend can occur for some $r$.
 \end{figure*}
 
 Because of the large range of $BE$ across the stellar structures, it
-is hard to appreciate the magnitude of the effect of RLOF-driven
-rejuvenation on the structure of the stars in
-\Figref{fig:BE_profiles}. Figure~\ref{fig:grid_ratios} presents the
+is hard to appreciate directly the magnitude of the effect of RLOF-driven
+rejuvenation on the $BE$ profile (shown in \Figref{fig:BE_profiles}). Figure~\ref{fig:grid_ratios} presents the
 ratio of the local value of the cumulative binding energy from the
 surface of our accretor models divided the
-comparison single stars, as a function of radius. To compute the
+comparison single stars, as a function of radius. The two
+lowest mass accretors (left and central column) do not expand to
+$R=1000\, R_\odot$ before carbon depletion. To compute the
 ratio, we interpolate linearly the single star models on the mesh of
 our accretor, using the fractional Lagrangian mass coordinate $m/M$ as
 independent coordinate. % , and we
@@ -691,6 +657,7 @@ single stars and RLOF-accretors.
 
 \appendix
 
+
 \section{Impact of core-envelope boundary and rotation on the binding  energy profile}
 \label{sec:toy_models}
 
@@ -846,7 +813,59 @@ timing and amplitude of the impact of mixing and rotation can be
 different than for single stars \citep[e.g.,][]{renzo:2021zoph}.
 
 
+\section{Binding energy profiles}
+\label{sec:BE}
+
+In \Figref{fig:BE_profiles}, we show the binding energy of our
+accretor models (solid lines,
+including the internal energy, i.e.\ $\alpha_\mathrm{th}=1$ in
+\Eqref{eq:BE}),
+% and gravitational binding energy (dashed
+% lines, $\alpha_\mathrm{th}=0$)
+single stars with initial mass roughly equal
+to the accretors post-RLOF mass, and our engineered models (see also
+\Figref{fig:lambda_grid} for the $\lambda_\mathrm{CE}$ profile defined in Appendix~\ref{sec:pop_synth_app}). The two
+lowest mass accretors (left and central column) do not expand to
+$R=1000\, R_\odot$ before carbon depletion. Generally speaking, the
+accretors (orange) have lower binding energies than corresponding
+single stars (red), and their profiles are qualitatively closer to the
+engineered models with the steepest core (darker curves), although
+local deviations from this trend can occur for some $r$.
+
+\begin{figure*}[hbtp]
+  \includegraphics[width=\textwidth]{BE_profiles.pdf}
+  \caption{Binding energy profile at fixed photospheric radius $R$
+    (right y-axis) as a function of radius $r(m)$. We only show
+    profiles with $\alpha_\mathrm{th}=1$, that is accounting for the
+    internal energy content of the star. Orange, red, and other colors
+    show respectively the accretor models, single stars of same
+    post-RLOF total mass, and engineered models with varying CEB
+    steepness. Titles indicates the pre-RLOF and approximate post-RLOF
+    accretor masses. The vertical colored lines mark the outer edge of
+    the helium cores of the accretor and single star, that is the
+    outermost location where $Y>0.1$ and $X<0.01$ (solid lines), or
+    $X<0.1$ (dashed), or $X<0.2$ (dot-dashed). The ggray dashed lines mark
+    the total radius $R$ of these models.}
+  \label{fig:BE_profiles}
+  \script{BE_profiles.py}
+\end{figure*}
+
+
 \section{Comparison with same core mass}
+\label{sec:same_core}
+
+\Figref{fig:TAMS_profiles} compares our accretor models to stars of
+the same total \emph{post-RLOF} mass. However, it is not obvious that models
+of the same total mass are the most relevant comparison: for instance,
+the (helium or carbon-oxygen) core mass is often used to determine the
+final compact object \citep[e.g.,][]{fryer:2012, farmer:2019,
+  patton:2021, renzo:2022, fryer:2022}, and comparing models of
+roughly the same core-mass might be more appropriate (but is sensitive
+to the condition defining the core edge). We show in
+\Figref{fig:TAMS_profiles_same_initial_mass} a comparison of our
+accretors with models of the same total \emph{initial} mass, which
+constitute the extreme opposite comparison point.
+
 
 \begin{figure*}[htbp]
   \centering
