@@ -20,21 +20,27 @@ def grid_BE_profiles(fig_name=None):
     root_accretors = root / "binaries/Z_0.0019/"
 
     s1 = str(root) + "/single_stars/Z_0.0019/18_rot0.0/LOGS/"
-    single_grid1 =sorted(glob.glob(str(root_eng) + "/grid18/*.*/LOGS/"), key=sorter_engineered_profiles)
+    single_grid1 = sorted(
+        glob.glob(str(root_eng) + "/grid18/*.*/LOGS/"), key=sorter_engineered_profiles
+    )
     b1 = (
         str(root_accretors)
         + "/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/"
     )
 
     s2 = str(root) + "/single_stars/Z_0.0019/20_rot0.0/LOGS/"
-    single_grid2 = sorted(glob.glob(str(root_eng) + "/grid20/*.*/LOGS/"), key=sorter_engineered_profiles)
+    single_grid2 = sorted(
+        glob.glob(str(root_eng) + "/grid20/*.*/LOGS/"), key=sorter_engineered_profiles
+    )
     b2 = (
         str(root_accretors)
         + "/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/"
     )
 
     s3 = str(root) + "/single_stars/Z_0.0019/36_rot0.0/LOGS/"
-    single_grid3 = sorted(glob.glob(str(root_eng) + "/grid36/*.*/LOGS/"), key=sorter_engineered_profiles)
+    single_grid3 = sorted(
+        glob.glob(str(root_eng) + "/grid36/*.*/LOGS/"), key=sorter_engineered_profiles
+    )
     b3 = (
         str(root_accretors)
         + "/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/"
@@ -68,7 +74,6 @@ def grid_BE_profiles(fig_name=None):
         plot_BE_r(
             pfile_accretor,
             ax,
-            scale_factor=None,
             mark_he_core=True,
             alpha_th=1.0,
             c="orange",
@@ -81,7 +86,6 @@ def grid_BE_profiles(fig_name=None):
             plot_BE_r(
                 pfile_single,
                 ax,
-                scale_factor=None,
                 alpha_th=1.0,
                 c=colors[single_grid1.index(f)],
                 ls="-",
@@ -90,7 +94,7 @@ def grid_BE_profiles(fig_name=None):
         # now plot normal single star
         pfile_single = glob.glob(s1 + string)[0]
         plot_BE_r(
-            pfile_single, ax, scale_factor=None, mark_he_core=True, alpha_th=1.0, c="r", ls="-", zorder=9
+            pfile_single, ax, mark_he_core=True, alpha_th=1.0, c="r", ls="-", zorder=9
         )
 
     # # 20 Msun
@@ -122,7 +126,6 @@ def grid_BE_profiles(fig_name=None):
         plot_BE_r(
             pfile_accretor,
             ax,
-            scale_factor=None,
             mark_he_core=True,
             alpha_th=1.0,
             c="orange",
@@ -136,7 +139,6 @@ def grid_BE_profiles(fig_name=None):
                 pfile_single,
                 ax,
                 alpha_th=1.0,
-                scale_factor=None,
                 c=colors[single_grid2.index(f)],
                 ls="-",
                 lw=2,
@@ -144,7 +146,7 @@ def grid_BE_profiles(fig_name=None):
         # now plot normal single star
         pfile_single = glob.glob(s2 + string)[0]
         plot_BE_r(
-            pfile_single, ax, scale_factor=None, mark_he_core=True, alpha_th=1.0, c="r", ls="-", zorder=9
+            pfile_single, ax, mark_he_core=True, alpha_th=1.0, c="r", ls="-", zorder=9
         )
 
     # 30
@@ -172,7 +174,6 @@ def grid_BE_profiles(fig_name=None):
         plot_BE_r(
             pfile_accretor,
             ax,
-            scale_factor=None,
             mark_he_core=True,
             alpha_th=1.0,
             c="orange",
@@ -186,7 +187,6 @@ def grid_BE_profiles(fig_name=None):
                 pfile_single,
                 ax,
                 alpha_th=1.0,
-                scale_factor=None,
                 c=colors[single_grid3.index(f)],
                 ls="-",
                 lw=2,
@@ -194,7 +194,7 @@ def grid_BE_profiles(fig_name=None):
         # now plot normal single star
         pfile_single = glob.glob(s3 + string)[0]
         plot_BE_r(
-            pfile_single, ax, scale_factor=None, mark_he_core=True, alpha_th=1.0, c="r", ls="-", zorder=9
+            pfile_single, ax, mark_he_core=True, alpha_th=1.0, c="r", ls="-", zorder=9
         )
 
     for cx in cxes:

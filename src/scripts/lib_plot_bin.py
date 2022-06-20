@@ -593,7 +593,7 @@ def get_masses(f):
 #     return(cmap1, vmin1, vmax1, norm1, cmap2, vmin2, vmax2, norm2, cmap3, vmin3, vmax3, norm3)
 
 
-def get_BE_from_pfile(pfile, alpha_th=1.0):
+def get_BE_from_pfile(pfile, alpha_th=1.0, alpha_rot=0.0):
     """Calculates the binding energy profile of the star. See Eq. 6 in
     Dewi & Tauris 2000 (but change sign, binding energy>0 if layer is bound).
 
@@ -620,17 +620,19 @@ def get_BE_from_pfile(pfile, alpha_th=1.0):
     u = src[:, col.index("energy")]  # erg
     # calculate local gravitational potential
     psi = -1.0 * G_cgs * np.divide(m, r)  # erg
-    # BE_old = np.zeros(len(m))
-    # # integrate from the center outwards:
-    # for i in range(len(m)-1):
-    #     # i = 0 center, i=len(m)-1 = surface
-    #     # i:  is python from "from index i to end"
-    #     BE_old[i] = np.sum((psi[i:]+alpha_th*u[i:])*dm[i:])
-    # BE_old = BE_old[::-1]
+    if alpha_rot != 0:
+        # calculate rotationa energy of spherical shell of
+        # mass dm, outer radius r,
+        # thickness dr, and rotation frequency omega
+        from math import pi
+        omega = src[:, col.index("omega")]
+        dr = src[:, col.index("dr")]
+        I = (2.0/5.0)*dm*((r-dr)**3.0-r**3)
+        erot = 0.5*I*omega*omega
+    else:
+        erot = np.zeros(len(psi))
     # change sign: BE is the energy (>0) to provide to unbind the star
-    BE = -1.0 * np.cumsum(np.multiply(psi + alpha_th * u, dm))
-    # # sanity check
-    # print(max(np.absolute(BE[1:]-BE_old[1:])))
+    BE = -1.0 * np.cumsum(np.multiply(psi + alpha_th * u + alpha_rot*erot, dm))
     return np.asarray(BE, dtype=float)
 
 
@@ -638,18 +640,15 @@ def plot_BE_r(
     pfile,
     ax,
     alpha_th=1.0,
-    scale_factor=None,
+    alpha_rot=0.0,
     top_axis=False,
     mark_he_core=False,
     **plot_kwargs,
 ):
     """
     plot the binding energy profile as a function of log(r/cm)
-    use scale_factor (`float`) to set the y-axis units (if None units are erg)
     """
-    BE = get_BE_from_pfile(pfile, alpha_th=alpha_th)
-    if scale_factor:
-        BE *= scale_factor
+    BE = get_BE_from_pfile(pfile, alpha_th=alpha_th, alpha_rot=alpha_rot)
     src, col = getSrcCol(pfile)
     logr = np.log10(src[:, col.index("radius")] * Rsun_cm)
     ax.plot(logr, BE, **plot_kwargs)
@@ -682,26 +681,24 @@ def plot_BE_r(
         ax.axvline(logr[i_2], 0, 1, ls="-.", lw=2, c=color, zorder=0)
 
 
-def plot_BE_m(pfile, ax, alpha_th=1.0, scale_factor=None, **plot_kwargs):
+def plot_BE_m(pfile, ax, alpha_th=1.0, **plot_kwargs):
     """
     plot the binding energy profile as a function of mass
-    use scale_factor (`float`) to set the y-axis units (if None units are erg)
     """
     BE = get_BE_from_pfile(pfile, alpha_th=alpha_th)
-    if scale_factor:
-        BE *= scale_factor
     src, col = getSrcCol(pfile)
     # logr = np.log10(src[:, col.index("radius")] * Rsun_cm)
     m = src[:, col.index("mass")]
     ax.plot(m, BE, **plot_kwargs)
 
 
-def get_ratio_BE(pfile1, pfile2, alpha_th):
+def get_ratio_BE(pfile1, pfile2, alpha_th, alpha_rot):
     """Ratio of pfile2/pfile1 on the x-coordinates in pfile1.
 
     Ratio of the binding energies (0<alpha_th<=1
-    sets the fractional contribution of the internal energy) or
-    gravitational energy (alpha_th=0).
+    sets the fractional contribution of the internal energy -- 0<alpha_rot<=1
+    sets the fractional contribution of the rotational energy) or
+    gravitational energy (alpha_th=0, alpha_rot=0).
 
     Uses scipy.interpolate.interp1d to find a function that can then
     be evaluated on the other grid. The interpolation is done in
@@ -709,10 +706,12 @@ def get_ratio_BE(pfile1, pfile2, alpha_th):
 
     Parameters:
     -----------
-    pfile1  :   `string` absolute path of MESA profile
-    pfile2  :   `string` absolute path of MESA profile
-    alpha_th:   `float`, optional fraction of thermal energy that is
-                considered in the binding energy. By default include the internal energy.
+    pfile1   :   `string` absolute path of MESA profile
+    pfile2   :   `string` absolute path of MESA profile
+    alpha_th :   `float`, optional fraction of thermal energy that is
+                 considered in the binding energy. By default include the internal energy.
+    alpha_rot:   `float`, optional fraction of rotational energy that is
+                 considered in the binding energy. By default do not the rotational energy.
 
     Returns:
     -------
@@ -722,13 +721,13 @@ def get_ratio_BE(pfile1, pfile2, alpha_th):
     """
     # get data pfile1
     src1, col1 = getSrcCol(pfile1)
-    BE1 = get_BE_from_pfile(pfile1, alpha_th=alpha_th)
+    BE1 = get_BE_from_pfile(pfile1, alpha_th=alpha_th, alpha_rot=alpha_rot)
     r1 = src1[:, col1.index("radius")]
     m1 = src1[:, col1.index("mass")]
     q1 = m1 / max(m1)
     # get data pfile2
     src2, col2 = getSrcCol(pfile2)
-    BE2 = get_BE_from_pfile(pfile2, alpha_th=alpha_th)
+    BE2 = get_BE_from_pfile(pfile2, alpha_th=alpha_th, alpha_rot=alpha_rot)
     r2 = src2[:, col2.index("radius")]
     m2 = src2[:, col2.index("mass")]
     q2 = m2 / max(m2)
@@ -749,13 +748,14 @@ def get_ratio_BE(pfile1, pfile2, alpha_th):
     return ratio2_to_1
 
 
-def plot_ratio_BE_r(pfile1, pfile2, ax, alpha_th=1.0, **plot_kwargs):
+def plot_ratio_BE_r(pfile1, pfile2, ax, alpha_th=1.0, alpha_rot=0.0,  **plot_kwargs):
     """
     Ratio of pfile2/pfile1 on the x-coordinates in pfile1.
 
-    plots the ratio of the binding energies (0<alpha_th<=1
-    sets the fractional contribution of the internal energy) or
-    gravitational energy (alpha_th=0).
+    Ratio of the binding energies (0<alpha_th<=1
+    sets the fractional contribution of the internal energy -- 0<alpha_rot<=1
+    sets the fractional contribution of the rotational energy) or
+    gravitational energy (alpha_th=0, alpha_rot=0).
 
     Uses scipy.interpolate.interp1d to find a function that can then
     be evaluated on the other grid. The interpolation is done in mass coordinate.
@@ -763,11 +763,14 @@ def plot_ratio_BE_r(pfile1, pfile2, ax, alpha_th=1.0, **plot_kwargs):
 
     Parameters:
     -----------
-    pfile1  :   `string` absolute path of MESA profile
-    pfile2  :   `string` absolute path of MESA profile
-    ax      :   `matplotlib.axes._subplots.AxesSubplot`
-    alpha_th:   `float`, optional fraction of thermal energy that is
+    pfile1   :   `string` absolute path of MESA profile
+    pfile2   :   `string` absolute path of MESA profile
+    ax       :   `matplotlib.axes._subplots.AxesSubplot`
+    alpha_th :   `float`, optional fraction of thermal energy that is
                 considered in the binding energy. By default include the internal energy.
+    alpha_rot:   `float`, optional fraction of rotational energy that is
+                 considered in the binding energy. By default do not the rotational energy.
+
 
     Returns:
     -------
@@ -775,7 +778,7 @@ def plot_ratio_BE_r(pfile1, pfile2, ax, alpha_th=1.0, **plot_kwargs):
                   of pfile2 outside the domain of pfile1 in mass)
     """
     src1, col1 = getSrcCol(pfile1)
-    ratio2_to_1 = get_ratio_BE(pfile1, pfile2, alpha_th)
+    ratio2_to_1 = get_ratio_BE(pfile1, pfile2, alpha_th, alpha_rot)
     r1 = src1[:, col1.index("radius")]
     ax.plot(np.log10(r1 * Rsun_cm), ratio2_to_1, **plot_kwargs)
     return ratio2_to_1

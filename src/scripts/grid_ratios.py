@@ -8,6 +8,7 @@ import glob
 import warnings
 import paths
 
+
 def grid_ratios(fig_name=None):
     """
     Parameters:
@@ -19,22 +20,27 @@ def grid_ratios(fig_name=None):
     root_accretors = root / "binaries/Z_0.0019/"
 
     s1 = str(root) + "/single_stars/Z_0.0019/18_rot0.0/LOGS/"
-    engineered_grid1 = sorted(glob.glob(str(root_eng) + "/grid18/*.*/LOGS/"), key=sorter_engineered_profiles)
+    engineered_grid1 = sorted(
+        glob.glob(str(root_eng) + "/grid18/*.*/LOGS/"), key=sorter_engineered_profiles
+    )
     b1 = (
         str(root_accretors)
         + "/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/"
     )
 
     s2 = str(root) + "/single_stars/Z_0.0019/20_rot0.0/LOGS/"
-    engineered_grid2 = sorted(glob.glob(str(root_eng) + "/grid20/*.*/LOGS/"), key=sorter_engineered_profiles)
+    engineered_grid2 = sorted(
+        glob.glob(str(root_eng) + "/grid20/*.*/LOGS/"), key=sorter_engineered_profiles
+    )
     b2 = (
         str(root_accretors)
         + "/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/"
     )
 
-
     s3 = str(root) + "/single_stars/Z_0.0019/36_rot0.0/LOGS/"
-    engineered_grid3 = sorted(glob.glob(str(root_eng) + "/grid36/*.*/LOGS/"), key=sorter_engineered_profiles)
+    engineered_grid3 = sorted(
+        glob.glob(str(root_eng) + "/grid36/*.*/LOGS/"), key=sorter_engineered_profiles
+    )
     b3 = (
         str(root_accretors)
         + "/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/"
@@ -91,7 +97,17 @@ def grid_ratios(fig_name=None):
         # ratio = plot_ratio_BE_r(pfile_accretor, pfile_accretor, dummy_ax, alpha_th=0)
         # if (round(max(ratio), 5) != 1 or round(min(ratio), 5) != 1):
         #     print("0", pfile_accretor, np.nanmax(ratio), np.nanmin(ratio))
-        ratio = plot_ratio_BE_r(pfile_accretor, pfile_accretor, ax, alpha_th=1, c="orange", ls='-', lw=2, zorder=0)
+        ratio = plot_ratio_BE_r(
+            pfile_accretor,
+            pfile_accretor,
+            ax,
+            alpha_th=1.0,
+            alpha_rot=0.0,
+            c="orange",
+            ls="-",
+            lw=2,
+            zorder=0,
+        )
         # if (round(max(ratio), 5) != 1 or round(min(ratio), 5) != 1):
         #     print("1", pfile_accretor, np.nanmax(ratio), np.nanmin(ratio))
         # # -----------------------
@@ -105,8 +121,16 @@ def grid_ratios(fig_name=None):
         #     print("0", pfile_single, np.nanmax(ratio), np.nanmin(ratio))
         # # accretor/single
         ratio = plot_ratio_BE_r(
-            pfile_single, pfile_accretor,  ax, alpha_th=alpha_th, color="r", ls="-", zorder=2,
+            pfile_single,
+            pfile_accretor,
+            ax,
+            alpha_th=alpha_th,
+            alpha_rot=0.0,
+            color="r",
+            ls="-",
+            zorder=2,
         )
+        print(min(ratio))
         colors = plt.cm.viridis(np.linspace(0, 1, len(engineered_grid1)))
         for f in engineered_grid1:
             pfile_single = glob.glob(f + string)[0]
@@ -122,8 +146,11 @@ def grid_ratios(fig_name=None):
                 pfile_accretor,
                 ax,
                 alpha_th=alpha_th,
+                alpha_rot=0.0,
                 color=colors[engineered_grid1.index(f)],
-                ls="-", lw=2, zorder=1
+                ls="-",
+                lw=2,
+                zorder=1,
             )
 
     # # 20 Msun
@@ -175,7 +202,17 @@ def grid_ratios(fig_name=None):
         # ratio = plot_ratio_BE_r(pfile_accretor, pfile_accretor, dummy_ax, alpha_th=0)
         # if (round(max(ratio), 5) != 1 or round(min(ratio), 5) != 1):
         #     print("0", pfile_accretor, np.nanmax(ratio), np.nanmin(ratio))
-        ratio = plot_ratio_BE_r(pfile_accretor, pfile_accretor, bx, alpha_th=1, c="orange", ls='-', lw=2, zorder=0)
+        ratio = plot_ratio_BE_r(
+            pfile_accretor,
+            pfile_accretor,
+            bx,
+            alpha_th=1.0,
+            alpha_rot=0.0,
+            c="orange",
+            ls="-",
+            lw=2,
+            zorder=0,
+        )
         # if (round(max(ratio), 5) != 1 or round(min(ratio), 5) != 1):
         #     print("1", pfile_accretor, np.nanmax(ratio), np.nanmin(ratio))
         # # -----------------------
@@ -193,8 +230,10 @@ def grid_ratios(fig_name=None):
                 pfile_accretor,
                 bx,
                 alpha_th=alpha_th,
+                alpha_rot=0.0,
                 color=colors[engineered_grid2.index(f)],
-                ls="-", lw=2
+                ls="-",
+                lw=2,
             )
         # now plot normal single star
         pfile_single = glob.glob(s2 + string)[0]
@@ -209,9 +248,11 @@ def grid_ratios(fig_name=None):
             pfile_accretor,
             bx,
             alpha_th=alpha_th,
+            alpha_rot=0.0,
             color="r",
             ls="-",
         )
+        print(min(ratio))
     # 30
     cx1 = fig.add_subplot(gs[:20, 100:])
     cx2 = fig.add_subplot(gs[20:40, 100:])
@@ -259,7 +300,17 @@ def grid_ratios(fig_name=None):
         # ratio = plot_ratio_BE_r(pfile_accretor, pfile_accretor, dummy_ax, alpha_th=0)
         # if (round(max(ratio), 5) != 1 or round(min(ratio), 5) != 1):
         #     print("0", pfile_accretor, np.nanmax(ratio), np.nanmin(ratio))
-        ratio = plot_ratio_BE_r(pfile_accretor, pfile_accretor, cx, alpha_th=1, c="orange", ls='-', lw=2, zorder=0)
+        ratio = plot_ratio_BE_r(
+            pfile_accretor,
+            pfile_accretor,
+            cx,
+            alpha_th=1.0,
+            alpha_rot=0.0,
+            c="orange",
+            ls="-",
+            lw=2,
+            zorder=0,
+        )
         # if (round(max(ratio), 5) != 1 or round(min(ratio), 5) != 1):
         #     print("1", pfile_accretor, np.nanmax(ratio), np.nanmin(ratio))
         # # -----------------------
@@ -278,8 +329,10 @@ def grid_ratios(fig_name=None):
                 pfile_accretor,
                 cx,
                 alpha_th=alpha_th,
+                alpha_rot=0.0,
                 color=colors[engineered_grid3.index(f)],
-                ls="-", lw=2
+                ls="-",
+                lw=2,
             )
         # now plot normal single star
         pfile_single = glob.glob(s3 + string)[0]
@@ -290,9 +343,15 @@ def grid_ratios(fig_name=None):
         #     print("0", pfile_single, np.nanmax(ratio), np.nanmin(ratio))
         # # accretor/single
         ratio = plot_ratio_BE_r(
-            pfile_single, pfile_accretor, cx, alpha_th=alpha_th, color="r", ls="-"
+            pfile_single,
+            pfile_accretor,
+            cx,
+            alpha_th=alpha_th,
+            alpha_rot=0.0,
+            color="r",
+            ls="-",
         )
-
+        print(min(ratio))
     for cx in cxes:
         dx = cx.twinx()
         dx.set_yticks(cx.get_yticks())
@@ -332,6 +391,7 @@ def grid_ratios(fig_name=None):
     plt.close(fig2)
     if fig_name:
         plt.savefig(fig_name)
+
 
 if __name__ == "__main__":
     # three_masses_grid(fig_name='grid_ratios.pdf')
