@@ -176,17 +176,19 @@ We adopt initial period $P=100$\,days and choose initial masses
 $(M_{1}, M_{2}) = (18, 15), (20, 17), (38, 30)\,M_\odot$. We focus on
 the initially less massive stars, which after accretion become
 $M_2=15\rightarrow 18, 17\rightarrow 20, 30\rightarrow 36\,M_\odot$,
-roughly\footnote{Whether a core-collapse results in NS or BH
-  formation, with or without an associated explosion, cannot be
-  decided solely based on the (total or core) mass of a star
-  \citep[e.g.,][]{oconnor:11, farmer:16, patton:20, zapartas:21b,
-    patton:22}.} representative of NS, uncertain core-collapse
-outcome, and BH progenitors, respectively. Our \mesa\ models assume
-that the accretion efficiency is limited by rotationally enhanced wind
-mass loss \citep[e.g.,][]{sravan:2019, wang:2020, renzo:2021zoph,
+roughly representative of NS, uncertain core-collapse outcome, and BH
+progenitors, respectively. However, we emphasize that the
+core-collapse outcome (NS or BH formation, with explosion or not),
+cannot be decided solely based on the (total or core) mass of a star
+\citep[e.g.,][]{oconnor:11, farmer:16, patton:20, zapartas:21b,
+  patton:22}.
+
+Our \mesa\ models assume that the
+accretion efficiency is limited by rotationally enhanced wind mass
+loss \citep[e.g.,][]{sravan:2019, wang:2020, renzo:2021zoph,
   sen:2022}. However, this may lead to less conservative mass transfer
 than suggested by observations (e.g., \citealt{wang:2021a}, see also
- \citealt{renzo:2021zoph}).
+\citealt{renzo:2021zoph}).
 
  After the binary detaches from the Roche lobe (see discussion in
  \citealt{renzo:2021zoph}), our simulations artificially
@@ -257,7 +259,7 @@ $\beta_\mathrm{RLOF}=|\Delta M_\mathrm{accretor}/\Delta M_\mathrm{donor}| = 0.29
 % $R=100, 200, 300, 500, 1000\,R_\odot$, corresponding to the Roche
 % radius of the CE-donor, marked by gray dot-dashed lines in \Figref{fig:HRD}.
 
-\begin{figure}[bp]
+\begin{figure}[tbp]
   \includegraphics[width=0.5\textwidth]{HRD.pdf}
   \caption{HR diagram of the binary systems. The thin dashed lines
     show the evolution of the donors until RLOF detachment, the solid
@@ -266,7 +268,7 @@ $\beta_\mathrm{RLOF}=|\Delta M_\mathrm{accretor}/\Delta M_\mathrm{donor}| = 0.29
     of $R=100, 200, 300, 500, 1000\,R_\odot$, all models have
     $Z=0.0019$, period $100$\,days, and initial masses of 38 and
     30\,$M_\odot$ (green), 20 and 17\,$M_\odot$ (orange), 18 and
-    15\,$M_\odot$ (blue).}
+    15\,$M_\odot$ (blue). \todo{mark accretor TAMS}}
   \label{fig:HRD}
   \script{HRD.py}
 \end{figure}
@@ -326,40 +328,6 @@ limited. % Moreover, blue-loops are sensitive to
   \script{TAMS_profiles.py}
 \end{figure*}
 
-In the ``classical'' binary evolution path, after the RLOF-donor
-collapses to a compact object, the evolutionary expansion of the
-RLOF-accretor triggers a CE. Physically, the CE outcome is determined by
-the thermal and dynamical reaction of the now-shared envelope to the
-inspiraling binary \citep[e.g.,][]{ivanova:2013, ivanova:2020, renzo:21gwce}.
-However, a common oversimplification is to rely on energy conservation
-\citep[``$\alpha_{\mathrm{CE}}\lambda_\mathrm{CE}$ algorithm'',
-e.g.,][]{webbink:1984, dekool:1990} to determine CE ejection and final
-separation, therefore, we focus here on the RLOF-accretor/CE-donor
-binding energy profile. We calculate the cumulative binding energy outside
-mass coordinate $m$ as \citep[e.g.,][]{dekool:1990, dewi:2000,
-  lau:2022}:
-\begin{equation}
-  \label{eq:BE}
-BE(m, \alpha_{\rm th}) = - \int_{m}^M\,dm'\left( -\frac{G m'}{r(m')}+\alpha_\mathrm{th} u(m')\right) \ \ ,
-\end{equation}
-with $r(m')$ radius, $u(m')$ the internal energy of a shell of mass
-thickness $dm'$ and outer Lagrangian mass coordinate $m'$, and $G$ the
-gravitational constant. The integral domain goes from mass coordinate
-$m$, which can be thought of the mass of the ``core'' surviving a
-hypothetical CE, to the surface. The parameter
-$0\leq \alpha_\mathrm{th}\leq 1$ is the fraction of internal energy
-(including recombination energy) that can be used to lift the shared
-CE. It is possible that $\alpha_\mathrm{th}$ may not be constant
-during a CE (e.g., if recombination happens in already unbound
-material it cannot contribute to the CE energetics) or across binary
-systems entering a CE at different evolutionary stages. For
-$\alpha_\mathrm{th}=0$, \Eqref{eq:BE} give the gravitational binding
-energy (dashed lines in
-\Figref{fig:toy_models_example}-\ref{fig:rotation_models_example}),
-while $\alpha_{\mathrm{th}}=1$ assumes perfectly fine-tuned use of all
-the internal energy \citep[solid lines,][]{klencki:2020}. These two cases bracket the range
-of possible use of internal energy to eject the CE.
-
 \Figref{fig:TAMS_profiles} shows the specific entropy (s) profile --
 which determines the thermo-dynamical properties of the stars -- and
 the H and He mass fractions at TAMS for our accretor models (orange),
@@ -414,26 +382,6 @@ mass accretion (i.e., the ``rejuvenation process'') during RLOF occurs
 against a gradient (of entropy, $\mu$, H, and He) set by the pre-RLOF
 evolution.
 
-To quantify the impact of the first RLOF phase on the outcome of the
-second mass transfer phase, we evolve forward all the TAMS profiles
-shown in \Figref{fig:TAMS_profiles} and compare them at fixed outer
-radii. %  We define the local binding
-% energy as:
-% \todo{repetition}
-% \begin{equation}
-%   \label{eq:BE}
-% BE(m, \alpha_{\rm th}) = - \int_{m}^M\,dm'\left( -\frac{G m'}{r(m')}+\alpha_\mathrm{th} u(m')\right)
-% \end{equation}
-% where we integrate from Lagrangian mass coordinate $m$ (assumed as the ``core''
-% surviving a CE) to the surface, $u(m')$ is the internal energy of the
-% spherical shell at mass coordinate $m'$ and thickness $dm'$, and $\alpha_{\mathrm{th}}=0,1$ is
-% the fraction of the internal energy included
-% \citep[e.g.,][]{dewi:2000}. For $\alpha_{\rm th}=0$, \Eqref{eq:BE}
-% reduces to the gravitational potential energy except for the sign
-% $BE(m, \alpha_{\rm th}=0)\equiv -E_\mathrm{grav}(m)$, plotted in
-% \Figref{fig:toy_models_example} and \ref{fig:rotation_models_example}.
-
-% \subsection{Ratio of binding energies as a function of mass}
 
 \begin{figure*}[htbp]
   \includegraphics[width=\textwidth]{grid_ratios.pdf}
@@ -449,6 +397,51 @@ radii. %  We define the local binding
   \label{fig:grid_ratios}
   \script{grid_ratios.py}
 \end{figure*}
+
+
+To quantify the impact of the first RLOF phase on the outcome of the
+second mass transfer phase, we evolve forward all the TAMS profiles
+shown in \Figref{fig:TAMS_profiles} and compare them at fixed outer
+radii.
+In the ``classical'' binary evolution path, after the RLOF-donor
+collapses to a compact object, the evolutionary expansion of the
+RLOF-accretor triggers a CE. Physically, the CE outcome is determined by
+the thermal and dynamical reaction of the now-shared envelope to the
+inspiraling binary \citep[e.g.,][]{ivanova:2013, ivanova:2020, renzo:21gwce}.
+However, a common oversimplification is to rely on energy conservation
+\citep[``$\alpha_{\mathrm{CE}}\lambda_\mathrm{CE}$ algorithm'',
+e.g.,][]{webbink:1984, dekool:1990} to determine CE ejection and final
+separation, therefore, we focus here on the RLOF-accretor/CE-donor
+binding energy profile. We calculate the cumulative binding energy outside
+mass coordinate $m$ as \citep[e.g.,][]{dekool:1990, dewi:2000,
+  lau:2022}:
+\begin{equation}
+  \label{eq:BE}
+BE(m, \alpha_{\rm th}) = - \int_{m}^M\,dm'\left( -\frac{G m'}{r(m')}+\alpha_\mathrm{th} u(m')\right) \ \ ,
+\end{equation}
+with $r(m')$ radius, $u(m')$ the internal energy of a shell of mass
+thickness $dm'$ and outer Lagrangian mass coordinate $m'$, and $G$ the
+gravitational constant. The integral domain goes from mass coordinate
+$m$, which can be thought of the mass of the ``core'' surviving a
+hypothetical CE, to the surface. The parameter
+$0\leq \alpha_\mathrm{th}\leq 1$ is the fraction of internal energy
+(including recombination energy) that can be used to lift the shared
+CE. It is possible that $\alpha_\mathrm{th}$ may not be constant
+during a CE (e.g., if recombination happens in already unbound
+material it cannot contribute to the CE energetics) or across binary
+systems entering a CE at different evolutionary stages. For
+$\alpha_\mathrm{th}=0$, \Eqref{eq:BE} give the gravitational binding
+energy (dashed lines in
+\Figref{fig:toy_models_example}-\ref{fig:rotation_models_example}),
+while $\alpha_{\mathrm{th}}=1$ assumes perfectly fine-tuned use of all
+the internal energy \citep[solid lines,][]{klencki:2020}. These two
+cases bracket the range of possible use of internal energy to eject
+the CE. We checked that the additional inclusion of the rotational
+energy in \Eqref{eq:BE} %($dI\omega^2$)
+contributes to less than $\lesssim 10\%$ of the cumulative binding
+energy only in the outermost layers -- likely to be crossed during a
+dynamical plunge-in in CE evolution -- and for $R\lesssim 300\,R_\odot$
+-- afterwards, even the accretor spin down significantly.
 
 Because of the large range of $BE$ across the stellar structures, it
 is hard to appreciate directly the magnitude of the effect of RLOF-driven
