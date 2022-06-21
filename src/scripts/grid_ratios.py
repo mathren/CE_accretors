@@ -130,7 +130,7 @@ def grid_ratios(fig_name=None):
             ls="-",
             zorder=2,
         )
-        print(min(ratio))
+        print(f"{min(ratio):.1f}")
         colors = plt.cm.viridis(np.linspace(0, 1, len(engineered_grid1)))
         for f in engineered_grid1:
             pfile_single = glob.glob(f + string)[0]
@@ -252,7 +252,7 @@ def grid_ratios(fig_name=None):
             color="r",
             ls="-",
         )
-        print(min(ratio))
+        print(f"{min(ratio):.1f}")
     # 30
     cx1 = fig.add_subplot(gs[:20, 100:])
     cx2 = fig.add_subplot(gs[20:40, 100:])
@@ -351,7 +351,7 @@ def grid_ratios(fig_name=None):
             color="r",
             ls="-",
         )
-        print(min(ratio))
+        print(f"{min(ratio):.1f}")
     for cx in cxes:
         dx = cx.twinx()
         dx.set_yticks(cx.get_yticks())
