@@ -29,27 +29,27 @@
 \author[0000-0002-6718-9472]{M.~Renzo \todo{other and order TBD}}
 \affiliation{Center for Computational Astrophysics, Flatiron Institute, New York, NY 10010, USA}
 
-% % % Potential co-authors:
-% \author[0000-0001-5228-6598]{K.~Breivik}
-% \affiliation{Center for Computational Astrophysics, Flatiron Institute, New York, NY 10010, USA}
+% % Potential co-authors:
+\author[0000-0001-5228-6598]{K.~Breivik}
+\affiliation{Center for Computational Astrophysics, Flatiron Institute, New York, NY 10010, USA}
 
-% \author[0000-0003-3441-7624]{R.~Farmer}
-% \affiliation{Max-Planck-Institut für Astrophysik, Karl-Schwarzschild-Straße 1, 85741 Garching, Germany}
-% % E.~Zapartas
+\author[0000-0003-3441-7624]{R.~Farmer}
+\affiliation{Max-Planck-Institut für Astrophysik, Karl-Schwarzschild-Straße 1, 85741 Garching, Germany}
+\author{E.~Zapartas}
 % % Y.~Gotberg
-% \author[0000-0002-6592-2036]{M. Lau}
-% \affiliation{School of Physics and Astronomy, Monash University,
-%   Clayton, Victoria 3800, Australia}
-% \affiliation{OzGrav: The ARC Centre of Excellence for Gravitational Wave Discovery, Australia}
-% \affiliation{Center for Computational Astrophysics, Flatiron  Institute, New York, NY 10010, USA}
-% \author{S.~Justham}
-% \affiliation{Anton Pannekoek Institute of Astronomy and GRAPPA,
-%   University of Amsterdam, Science Park 904, 1098 XH Amsterdam, The
-%   Netherlands}
-% \affiliation{School of Astronomy and Space Science, University of the Chinese Academy of Sciences, Beijing 100012, PR China}
-% \author[0000-0002-4670-7509]{B.~D.~Metzger}
-% \affiliation{Columbia Astrophysics Laboratory, Columbia University, New York, New York 10027, USA}
-% \affiliation{Center for Computational Astrophysics, Flatiron Institute, New York, NY 10010, USA}
+\author[0000-0002-6592-2036]{M. Lau}
+\affiliation{School of Physics and Astronomy, Monash University,
+  Clayton, Victoria 3800, Australia}
+\affiliation{OzGrav: The ARC Centre of Excellence for Gravitational Wave Discovery, Australia}
+\affiliation{Center for Computational Astrophysics, Flatiron  Institute, New York, NY 10010, USA}
+\author{S.~Justham}
+\affiliation{Anton Pannekoek Institute of Astronomy and GRAPPA,
+  University of Amsterdam, Science Park 904, 1098 XH Amsterdam, The
+  Netherlands}
+\affiliation{School of Astronomy and Space Science, University of the Chinese Academy of Sciences, Beijing 100012, PR China}
+\author[0000-0002-4670-7509]{B.~D.~Metzger}
+\affiliation{Columbia Astrophysics Laboratory, Columbia University, New York, New York 10027, USA}
+\affiliation{Center for Computational Astrophysics, Flatiron Institute, New York, NY 10010, USA}
 % % M. Cantiello
 
 % \author[0000-0002-6960-6911]{Y.~G\"otberg}\thanks{Hubble Fellow}
@@ -222,7 +222,8 @@ than suggested by observations (e.g., \citealt{wang:2021a}, see also
  donor star determined by the binary separation and mass ratio
  \citep[e.g.,][]{paczynski:1971, eggleton:83}. Thus, we compare the
  internal structure of accretors to single and engineered stars at
- fixed $R=100,\ 200,\ 300,\ 500,\ 1000\,R_\odot$.
+ various epochs defined by a fixed photospheric
+ radius $R=100,\ 200,\ 300,\ 500,\ 1000\,R_\odot$.
 
 \section{Accretors from self-consistent binary models}
 \label{sec:bin_models}
@@ -253,11 +254,6 @@ respectively, corresponding to an overall mass transfer efficiency
 $\beta_\mathrm{RLOF}=|\Delta M_\mathrm{accretor}/\Delta M_\mathrm{donor}| = 0.29,\ 0.30,$\,and
 0.43, respectively
 \citep[see discussion in ][]{renzo:2021zoph}.
-
-% We analyze the
-% RLOF-accretor/CE-donor models at given photospheric radii
-% $R=100, 200, 300, 500, 1000\,R_\odot$, corresponding to the Roche
-% radius of the CE-donor, marked by gray dot-dashed lines in \Figref{fig:HRD}.
 
 \begin{figure}[tbp]
   \includegraphics[width=0.5\textwidth]{HRD.pdf}
@@ -678,7 +674,8 @@ mass coordinate which we specify as a parameter (see
 \Figref{fig:engineered_TAMS} and \Figref{fig:TAMS_profiles}). We let \mesa\ relax
 the TAMS profiles to the desired entropy and composition profiles and
 then recover thermal and hydrostatic equilibrium, and then evolve
-until either carbon depletion or when these models first exceed
+until either carbon depletion or when the photospheric radius of these
+models first exceeds
 $1000\,R_\odot$.
 
 
@@ -698,7 +695,7 @@ $1000\,R_\odot$.
 \label{sec:eng_examples}
 
 
-\begin{figure}[bp]
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=0.5\textwidth]{toy_models_example.pdf}
   \caption{The structure of the CEB at the end of the main sequence
