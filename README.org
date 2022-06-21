@@ -145,9 +145,5 @@
 
 ** TODO list
 
-  - [X] add =*.mod= files, inlists, and src to static dataset (17GB)
   - [ ] move static dataset to zenodo (now sandbox)
   - [ ] update =showyourwork.yml= with zenodo link (not sandbox)
-  - [ ] check C shell burning convective behavior
-  - [ ] annotate HRD
-  - [ ] check Brian's comments

@@ -26,11 +26,12 @@ for f in bin_folders:
     c = colors[bin_folders.index(f)]
     LOGS2 = f / "LOGS2/"
     hfile2 = str(LOGS2) + '/history.data'
-    plot_HRD(hfile2, ax=ax, ls="-", c=c)
-    src, col = getSrcCol(hfile2)
+    plot_HRD(hfile2, ax=ax, annotate_TAMS=True, annotate_RLOF=True,
+             ls="-", c=c, zorder=10)
     LOGS1 = f / "LOGS1/"
     hfile1 = str(LOGS1) + '/history.data'
-    plot_HRD(hfile1, ax=ax, ls='--', lw=2, c=c)
+    plot_HRD(hfile1, ax=ax, annotate_TAMS=False, annotate_RLOF=True,
+             ls='--', lw=2, c=c, zorder=0)
 
 annotate_radii_hrd(ax, [100, 200, 300, 500, 1000])
 ax.set_xlim(xmin=3.6, xmax=4.75)

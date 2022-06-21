@@ -1,0 +1,59 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: CE_accretors.aux
+The style file: aasjournal.bst
+Database file #1: ./CE_accretors.bib
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Warning--empty journal in blaauw:1993
+Warning--empty journal in blagorodnova:2021
+Warning--empty journal in hellings:1983
+Warning--empty journal in hellings:1984
+Warning--empty journal in klencki:2021
+Warning--empty journal in klencki:2020
+Warning--empty journal in marchant:2021
+Warning--empty journal in ogata:2021
+Warning--empty journal in patton:2021
+Warning--empty journal in paxton:2019
+Warning--empty journal in wang:2021a
+You've used 105 entries,
+            3168 wiz_defined-function locations,
+            1326 strings with 29879 characters,
+and the built_in function-call counts, 50117 in all, are:
+= -- 4126
+> -- 3923
+< -- 33
++ -- 1320
+- -- 1439
+* -- 4588
+:= -- 9244
+add.period$ -- 122
+call.type$ -- 105
+change.case$ -- 634
+chr.to.int$ -- 103
+cite$ -- 116
+duplicate$ -- 1750
+empty$ -- 2909
+format.name$ -- 1557
+if$ -- 10042
+int.to.chr$ -- 3
+int.to.str$ -- 0
+missing$ -- 103
+newline$ -- 340
+num.names$ -- 421
+pop$ -- 708
+preamble$ -- 1
+purify$ -- 634
+quote$ -- 0
+skip$ -- 1499
+stack$ -- 0
+substring$ -- 1909
+swap$ -- 9
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 942
+warning$ -- 11
+while$ -- 387
+width$ -- 0
+write$ -- 1138
+(There were 11 warnings)

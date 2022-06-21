@@ -31,6 +31,7 @@ import glob
 try:
     from termcolor import colored
 except ImportError:
+
     def colored(a, color):
         return a
 
@@ -47,7 +48,15 @@ from scipy.interpolate import interp1d
 
 # -------------------------------------------------------------------
 # HRD
-def plot_HRD(input_file, ax, convert=True, annotate_radii=None, **plot_kwargs):
+def plot_HRD(
+    input_file,
+    ax,
+    convert=True,
+    annotate_radii=None,
+    annotate_TAMS=False,
+    annotate_RLOF=False,
+    **plot_kwargs,
+):
     """Make HRD
 
     Parameters:
@@ -56,6 +65,8 @@ def plot_HRD(input_file, ax, convert=True, annotate_radii=None, **plot_kwargs):
     convert: `bool` optional, create *.npy binary of the data file
     ax: `mpl.axes`
     annotate_radii: `None` or `np.array(dtype=float)`  optional, annotate loci of constant R provided
+    annotate_TAMS:  `bool`, optional, mark TAMS
+    annotate_RLOF:  `bool`, optional, try to highlight RLOF phase
     """
     # print(colored(input_file, "blue"))
     if os.path.isdir(input_file):
@@ -95,6 +106,52 @@ def plot_HRD(input_file, ax, convert=True, annotate_radii=None, **plot_kwargs):
     ax.plot(logT, logL, **plot_kwargs)
     if annotate_radii:
         annotate_radii_hrd(ax, radii=annotate_radii)
+    if annotate_TAMS:
+        X = src[:, col.index("center_h1")]
+        iTAMS = np.argmin(np.absolute(X - 1e-4))
+        try:
+            color = plot_kwargs["c"]
+        except:
+            color = plot_kwargs["color"]
+        ax.plot(
+            logT[iTAMS],
+            logL[iTAMS],
+            lw=0,
+            marker="D",
+            mew=2,
+            markeredgecolor=color,
+            ms=10,
+            color="y",
+            zorder=1,
+        )
+    if annotate_RLOF:
+        if os.path.isdir(input_file):
+            bin_hfile = input_file + "../binary_history.data"
+        elif os.path.isfile(input_file):
+            if "LOGS1" in input_file:
+                bin_hfile = input_file.replace(
+                    "LOGS1/history.data", "binary_history.data"
+                )
+            elif "LOGS2" in input_file:
+                bin_hfile = input_file.replace(
+                    "LOGS2/history.data", "binary_history.data"
+                )
+        if os.path.isfile(bin_hfile):
+            src, col = getSrcCol(bin_hfile, convert, convert)
+            rl_relative_overflow_1 = src[:, col.index("rl_relative_overflow_1")]
+            iRLOF = rl_relative_overflow_1 > 0
+            # complete this array: no binary_history.data after detachment
+            if len(logT) < len(iRLOF):
+                # working on star 1
+                iRLOF = iRLOF[0:len(logT)]# np.concatenate((iRLOF, np.full((len(iRLOF)-len(logT)), False)))
+            ax.plot(
+                logT[iRLOF],
+                logL[iRLOF],
+                color='k', lw=6,
+                zorder=min(int(plot_kwargs["zorder"]) - 1, 0),
+            )
+        else:
+            raise FileNotFoundError(bin_hfile)
 
 
 def get_L_from_r_teff(radius, teff):
@@ -141,7 +198,6 @@ def annotate_radii_hrd(ax, radii=np.logspace(0, 3, base=10)):
     ax.set_ylim(ymin, ymax)
 
 
-
 def get_BE_from_pfile(pfile, alpha_th=1.0, alpha_rot=0.0):
     """Calculates the binding energy profile of the star. See Eq. 6 in
     Dewi & Tauris 2000 (but change sign, binding energy>0 if layer is bound).
@@ -173,14 +229,15 @@ def get_BE_from_pfile(pfile, alpha_th=1.0, alpha_rot=0.0):
         # mass dm, outer radius r,
         # thickness dr, and rotation frequency omega
         from math import pi
-        omega = src[:, col.index("omega")] #1/sec
-        dr = src[:, col.index("dr")] # cm
-        I = (2.0/3.0)*np.square(r) # specific moment of inertia cgs units
-        erot = 0.5*I*np.square(omega)
+
+        omega = src[:, col.index("omega")]  # 1/sec
+        dr = src[:, col.index("dr")]  # cm
+        I = (2.0 / 3.0) * np.square(r)  # specific moment of inertia cgs units
+        erot = 0.5 * I * np.square(omega)
     else:
         erot = np.zeros(len(psi))
     # change sign: BE is the energy (>0) to provide to unbind the star
-    BE = -1.0 * np.cumsum(np.multiply(psi + alpha_th * u + alpha_rot*erot, dm))
+    BE = -1.0 * np.cumsum(np.multiply(psi + alpha_th * u + alpha_rot * erot, dm))
     return np.asarray(BE, dtype=float)
 
 
@@ -217,13 +274,13 @@ def plot_BE_r(
     if mark_he_core:
         m_he_core_01, m_he_core_1, m_he_core_2 = get_He_core_mass_from_pfile(pfile)
         m = src[:, col.index("mass")]
-        i_01 = np.argmin(np.absolute(m-m_he_core_01))
-        i_1 = np.argmin(np.absolute(m-m_he_core_1))
-        i_2 = np.argmin(np.absolute(m-m_he_core_2))
+        i_01 = np.argmin(np.absolute(m - m_he_core_01))
+        i_1 = np.argmin(np.absolute(m - m_he_core_1))
+        i_2 = np.argmin(np.absolute(m - m_he_core_2))
         try:
-            color = plot_kwargs['color']
+            color = plot_kwargs["color"]
         except:
-            color = plot_kwargs['c']
+            color = plot_kwargs["c"]
         ax.axvline(logr[i_01], 0, 1, ls="-", lw=2, c=color, zorder=0)
         ax.axvline(logr[i_1], 0, 1, ls="--", lw=2, c=color, zorder=0)
         ax.axvline(logr[i_2], 0, 1, ls="-.", lw=2, c=color, zorder=0)
@@ -313,17 +370,17 @@ def plot_ratio_BErot_BE_m(pfile, ax, **plot_kwargs):
     """
     BE = get_BE_from_pfile(pfile, alpha_th=1.0, alpha_rot=0.0)
     BErot = get_BE_from_pfile(pfile, alpha_th=1.0, alpha_rot=1.0)
-    ratio = BErot/BE
-    print("min= ",min(ratio), "max=", max(ratio))
+    ratio = BErot / BE
+    print("min= ", min(ratio), "max=", max(ratio))
     src, col = getSrcCol(pfile)
     m = src[:, col.index("mass")]
-    logr = np.log10(src[:, col.index("radius")]*Rsun_cm)
+    logr = np.log10(src[:, col.index("radius")] * Rsun_cm)
     ax.plot(logr, ratio, **plot_kwargs)
-    ax.set_ylim(0.8,1.2)
+    ax.set_ylim(0.8, 1.2)
     return ratio
 
 
-def plot_ratio_BE_r(pfile1, pfile2, ax, alpha_th=1.0, alpha_rot=0.0,  **plot_kwargs):
+def plot_ratio_BE_r(pfile1, pfile2, ax, alpha_th=1.0, alpha_rot=0.0, **plot_kwargs):
     """
     Ratio of pfile2/pfile1 on the x-coordinates in pfile1.
 
