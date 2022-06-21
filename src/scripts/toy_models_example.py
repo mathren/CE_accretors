@@ -17,16 +17,16 @@ init_model = (
 delta_M_bound, M_bound_min, M_bound_max = get_M_boundary(init_model, offset=0.05)
 
 
-nonrot30 =  paths.data / "MESA_output/single_stars/Z_0.0019/30_rot0.0"
-pfile_normal = nonrot30 /  "LOGS/500Rsun.data"
+nonrot30 = paths.data / "MESA_output/single_stars/Z_0.0019/30_rot0.0"
+pfile_normal = nonrot30 / "LOGS/500Rsun.data"
 plot_BE_r(
-    pfile_normal, ax, alpha_th=0.0, scale_factor=None, top_axis=False, lw=3, ls="--", c="r", zorder=10
+    pfile_normal, ax, alpha_th=0.0, top_axis=False, lw=3, ls="--", c="r", zorder=10
 )
 plot_BE_r(
     pfile_normal,
     ax,
     alpha_th=1.0,
-    scale_factor=None, top_axis=True,
+    top_axis=True,
     lw=3,
     ls="-",
     c="r",
@@ -36,7 +36,9 @@ plot_BE_r(
 
 
 root_grid30 = str(paths.data / "MESA_output/engineered_stars/same_core/grid30/")
-grid_folders = sorted(glob.glob(root_grid30 + "/*.*/LOGS/"), key=sorter_engineered_profiles)
+grid_folders = sorted(
+    glob.glob(root_grid30 + "/*.*/LOGS/"), key=sorter_engineered_profiles
+)
 colors = plt.cm.viridis(np.linspace(0, 1, len(grid_folders)))
 for f in grid_folders:
     pfile = f + "/profile1.data"
@@ -45,10 +47,10 @@ for f in grid_folders:
     c = colors[grid_folders.index(f)]
     pfile_end = f + "/500Rsun.data"
     plot_BE_r(
-        pfile_end, ax, alpha_th=0.0, scale_factor=None, top_axis=False, lw=2, ls="--", c=c
+        pfile_end, ax, alpha_th=0.0, top_axis=False, lw=2, ls="--", c=c
     )  # , label=label)
     plot_BE_r(
-        pfile_end, ax, alpha_th=1.0, scale_factor=None, top_axis=False, lw=2, ls="-", c=c
+        pfile_end, ax, alpha_th=1.0, top_axis=False, lw=2, ls="-", c=c
     )  # , label=label)
 
 ax.plot(np.nan, np.nan, ls="-", c="k", label=r"$\alpha_{th}=1.0$")

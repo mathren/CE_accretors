@@ -240,7 +240,7 @@ def plot_BE_m(pfile, ax, alpha_th=1.0, **plot_kwargs):
     ax.plot(m, BE, **plot_kwargs)
 
 
-def get_ratio_BE(pfile1, pfile2, alpha_th, alpha_rot):
+def get_ratio_BE(pfile1, pfile2, alpha_th=1.0, alpha_rot=0.0):
     """Ratio of pfile2/pfile1 on the x-coordinates in pfile1.
 
     Ratio of the binding energies (0<alpha_th<=1
