@@ -147,3 +147,4 @@
 
   - [ ] move static dataset to zenodo (now sandbox)
   - [ ] update =showyourwork.yml= with zenodo link (not sandbox)
+Why not che? Earlier P lower Z? Higher q? Mixing?
