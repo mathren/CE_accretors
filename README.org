@@ -81,6 +81,7 @@
      Please refer to the [[https://docs.mesastar.org/en/latest/][MESA documentation]] and [[https://lists.mesastar.org/mailman/listinfo][mailing list]] for
      support.
 
+
 ** Local compilation
 
    Assuming you have a working installation of conda, you can [[https://show-your.work/en/latest/install/][install
@@ -93,9 +94,10 @@
   showyourwork
 #+END_SRC
 
-   The first time it will download the data (1.1 Gb) and process them,
-   which may take a very long while (~30min on my workstation
-   excluding the time to download):
+  See also the [[https://show-your.work/en/latest/][showyourwork documentation]]. The first time it will
+  download the data (1.9 Gb) and process them -- unpacking up to 7.6
+  Gb of MESA output. This may take long (~30min on my workstation
+  excluding the time to download):
 
 #+BEGIN_SRC bash
   > time showyourwork
@@ -109,53 +111,34 @@
   faster (how much depends on what has changed in the repo that needs
   to be redone).
 
-  You can alo see the source in =src/tex/CE_accretors.tex=, which you
-  can edit and should be able to compile locally. If you have never
-  ran =showyourwork= locally, then the figures will be missing on your
-  machine (but you can still compile using the =draft= option). If you
-  have ever ran =showyourwork= you will have a (possibly outdated)
+  You can also find the =tex= source in =src/tex/CE_accretors.tex=, which
+  you can edit and should be able to compile locally. If you have
+  never ran =showyourwork= locally, then the figures will be missing on
+  your machine (but you can still compile using the =draft= option). If
+  you have ever ran =showyourwork= you will have a (possibly outdated)
   version of the figures locally, and you can compile the =tex= as you
   would usually.
 
-** Migration to new showyourwork
-
-*** DONE Simple test
-    The scripts =convert_MESA_output.py= should create  =src/data/try.npy=.
-    =zenodo_plotter.py= reads it and creates a figure.
-*** DONE downloading tarball and converting
-*** DONE cleanup figures
-
-    - [X] Refactor scripts in =/src/figures/=.
-    - [X] change =graphicspath= in =CE_accretors.tex.=
-    - [X] Remove figures from repo
-
-*** DONE caching of intermediate results
-
-    - [X] modify Snakemake file to have caching
-    - [X] modify dependencies in =showyourwork.yml=
-    - [X] modify tex file to include figure
-
-*** TODO browsable folders on zenodo
-
-    - [ ] right now the cache on [[https://sandbox.zenodo.org/deposit/1071935][zenodo sandbox]] re-uploads a megafolder
-
-*** Issues to report on =showyourwork=
-
-***** =./showyourwork/cache/= becomes pretty huge pretty fast: clean-up?
 
 ** TODO list
 
   - [ ] move static dataset to zenodo (now sandbox)
   - [ ] update =showyourwork.yml= with zenodo link (not sandbox)
-  - [ ] Why not CHE? Earlier P lower Z? Higher q? Mixing?
+  - [X] Why not CHE? Earlier P lower Z? Higher q? Mixing?
     Treatment of mixing, much shorter P and higher q, comparable Z in
     Cantiello et al. 2007
+
+** Migration to new showyourwork
+
+*** Issues to report on =showyourwork=
+
+***** =./showyourwork/cache/= becomes pretty huge pretty fast: clean-up?
+
 ** To be submitted to ApJL
 
    From Fred Rasio:
 
    #+BEGIN_SRC
-
    Dear Mathieu,
 
    Yes, this looks interesting and I would welcome submission to ApJ Letters.
@@ -164,6 +147,4 @@
 
    Best wishes,
    Fred
-
-
    #+END_SRC
