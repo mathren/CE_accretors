@@ -147,4 +147,6 @@
 
   - [ ] move static dataset to zenodo (now sandbox)
   - [ ] update =showyourwork.yml= with zenodo link (not sandbox)
-Why not che? Earlier P lower Z? Higher q? Mixing?
+  - [ ] Why not CHE? Earlier P lower Z? Higher q? Mixing?
+    Treatment of mixing, much shorter P and higher q, comparable Z in
+    Cantiello et al. 2007
