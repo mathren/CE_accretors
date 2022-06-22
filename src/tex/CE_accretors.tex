@@ -388,11 +388,12 @@ evolution.
     energy) of the accretor stars divided stars of the same total mass
     post-RLOF. The orange solid line at 1 shows the ratio of the
     accretor to itself as a sanity check, red solid lines show the
-    ratio of the accretor to a non-rotating
-    single star, while the other colors show the ratio to
-    ``engineered'' star (see text). Each panel shows the ratios at the
-    first time the models reach the radius indicated on the right and
-    by the vertical dashed gray line.}
+    ratio of the accretor to a non-rotating single star, while the
+    other colors show the ratio to ``engineered'' star. Each panel
+    shows the ratios at the first time the models reach the radius
+    indicated on the right and by the vertical dashed gray line. For
+    the binding energy profiles in the numerator and denominator see
+    \Figref{fig:BE_profiles}.}
   \label{fig:grid_ratios}
   \script{grid_ratios.py}
 \end{figure*}
@@ -490,7 +491,9 @@ representing engineered models with steeper CEB profiles.
     solid lines correspond to the accretors. The bottom panels show
     the ratio, which is always smaller than 1 the first time a certain
     radius $R$ is reached, indicating that the accretors might have
-    envelopes easier to unbind in a common envelope event.}
+    envelopes easier to unbind in a common envelope event. See
+    \Figref{fig:BE_profiles} for the radial profile at given outer
+    radii $R$.}
   \label{fig:BE_env_R}
   \script{BE_env_R.py}
 \end{figure}
@@ -574,38 +577,49 @@ binding energy profiles (see \Figref{fig:BE_profiles}).
 We have focused on the structural consequences of RLOF accretion,
 specifically their impact on the subsequent binary interaction in the
 ``classical'' scenario to a GW merger: the CE event initiated by the
-RLOF-accretor. Before the onset of the dynamical instability in a CE
+RLOF-accretor. Accretors have overall lower binding energy of the envelope
+(both integrated from the surface to the He core,
+see~\Figref{fig:BE_env_R} and as a function of radius,
+see~\Figref{fig:grid_ratios}, \ref{fig:BE_profiles}, and \ref{fig:lambda_grid}). The
+systematically lower binding energy our accretor models compared to
+single stars of the same outer radius and total mass may % have an
+% influence on both stable and unstable subsequent mass transfer. For CE
+% initiated by a RLOF-accretor, it
+% may
+imply easier to eject (post-RLOF, second) CE and wider post-CE separations. % (\Figref{fig:grid_ratios}).
+
+Before the onset of the dynamical instability in a CE
 event, a pre-CE thermal timescale phase of mass transfer may occur
 \citep[e.g.,][]{hjellming:1987, pejcha:17, blagorodnova:2021}. This
 initial phase is usually neglected in hydrodynamical simulations and
 may impact the envelope structure of CE-donors whether they have
 previously been RLOF-accretors (as in our models) or not.
 
-Accretors have overall lower binding energy of the envelope
-(both integrated from the surface to the He core,
-see~\Figref{fig:BE_env_R} and as a function of radius,
-see~\Figref{fig:BE_profiles}-\ref{fig:grid_ratios}). The
-systematically lower binding energy our accretor models compared to
-single stars of the same outer radius and total mass may % have an
-% influence on both stable and unstable subsequent mass transfer. For CE
-% initiated by a RLOF-accretor, it
-% may
-imply easier to eject (post-RLOF, second) CE. % (\Figref{fig:grid_ratios}).
+A key uncertainty in CE outcome is the location of the separation
+between the (possibly) ejected envelope and the remaining core
+\citep[e.g.,][]{ivanova:20}. This affects equally each CE donor and
+can have an amplitude comparable to the effect of rejuvenation in
+accretors (see \Figref{fig:BE_profiles} for three possible definition
+of ``core''). In the case of rejuvenated CE donors, uncertainty in the
+core definition compounds with the effect of rejuvenation itself.
 
 % other binary architectures
 Not all binary architectures necessarily result in rejuvenated
 accretors like the ones described here. Very massive BH progenitors
-($M_{\rm ZAMS}\gtrsim 40\,M_\odot$) may not experience CE at all
-\citep[e.g.,][]{vanson:2021, marchant:2021}. Their main-sequence
-lifetimes are roughly independent of mass ($\sim{}2.5-3$\,Myr):
-therefore, at the first RLOF, accretors this massive may already
-be sufficiently evolved to prevent rejuvenation through a deep
-core/envelope chemical gradient. However, more massive stars are
-generally easier to mix \citep[including reaching rotationally-induced
-chemically homogeneous evolution, e.g.,][]{yoon:2005, demink:2016}.
-Shorter initial periods (i.e., earlier mass transfer) and more equal
-mass ratios can also result in the accretor avoiding the red
-supergiant phase even at lower masses \citep{cantiello:2007}.
+($M_{\rm ZAMS}\gtrsim 40\,M_\odot$) may not expand as red supergiants
+at all or avoid unstable mass transfer \citep[e.g.,][]{vanson:2021,
+  marchant:2021}. Since their main-sequence lifetimes are roughly
+independent of mass ($\sim{}2.5-3$\,Myr), at the first RLOF, accretors
+this massive may already have a deep core/envelope chemical gradient
+to prevent rejuvenation. % be sufficiently evolved to prevent
+% rejuvenation through a deep core/envelope chemical gradient.
+However,
+more massive stars are generally easier to mix \citep[including
+reaching rotationally-induced chemically homogeneous evolution,
+e.g.,][]{yoon:2005, demink:2016}. Shorter initial periods (i.e.,
+earlier mass transfer) and more equal mass ratios can also result in
+the accretor avoiding the red supergiant phase even at lower masses
+\citep{cantiello:2007}.
 
 We have focused accretor models for progenitors of NS and BH. However,
 the physical processes described should be similar in all accretor
