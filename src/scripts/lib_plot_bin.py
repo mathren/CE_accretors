@@ -147,7 +147,7 @@ def plot_HRD(
             ax.plot(
                 logT[iRLOF],
                 logL[iRLOF],
-                color='k', lw=6,
+                color='y', lw=6, alpha=0.5,
                 zorder=min(int(plot_kwargs["zorder"]) - 1, 0),
             )
         else:
