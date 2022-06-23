@@ -108,7 +108,7 @@ progenitor binary % gravitational-wave
 % progenitor system
 experiences a first dynamically stable mass transfer through
 Roche-lobe overflow (RLOF) between two non-compact
-stars. Subsequently, the 
+stars. Subsequently, the
 initially more massive RLOF-donor collapses to a compact object
 without disrupting the binary
 \citep[e.g.,][]{blaauw:1961,renzo:2019walk}. Only afterwards, as the
@@ -203,7 +203,7 @@ than suggested by observations (e.g., \citealt{wang:2021a}, see also
  complexity and computing time by avoiding to simulate the late
  evolutionary phases of the RLOF-donors, and implies that we neglect
  further possible -- but not expected in this regime -- mass
- transfer episodes (case BB RLOF, \citealt{laplace:2020}) and tidal
+ transfer episodes (case BB RLOF, \citealt{delgado:81, laplace:2020}) and tidal
  interactions between the stars. We also neglect the impact of the SN
  ejecta with the accretor \cite[e.g.,][]{hirai:2018, ogata:2021} and
  the orbital consequences of the RLOF-donor core-collapse
@@ -238,8 +238,7 @@ than suggested by observations (e.g., \citealt{wang:2021a}, see also
 Hertzsprung-Russell (HR) diagram. The thin dashed lines % in
 % \Figref{fig:HRD}
 show the evolution of the donor stars \citep[see also,
-e.g.,][]{yoon:2017, gotberg:2017, gotberg:2018, laplace:2020,
-  laplace:2021} from ZAMS, through RLOF, until our definition of
+e.g.,][]{gotberg:2017, laplace:2021} from ZAMS, through RLOF, until our definition of
 detachment. The solid lines correspond to the full evolution of the
 accretors, from zero age main sequence (ZAMS), through RLOF, until
 carbon depletion. The high luminosity excursion during the main
@@ -413,7 +412,7 @@ However, a common oversimplification is to rely on energy conservation
 e.g.,][]{webbink:1984, dekool:1990} to determine CE ejection and final
 separation, therefore, we focus here on the RLOF-accretor/CE-donor
 binding energy profile. We calculate the cumulative binding energy outside
-mass coordinate $m$ as \citep[e.g.,][]{dekool:1990, dewi:2000,
+mass coordinate $m$ as \citep[e.g.,][]{dekool:1990, han:95, dewi:2000,
   lau:2022}:
 \begin{equation}
   \label{eq:BE}
@@ -655,7 +654,7 @@ phase (see also \Figref{fig:lambda_grid}).
 % crossing of the He core boundary may be different.
 
 \software{MESA \citep{paxton:2011, paxton:2015, paxton:2018,
-    paxton:2019}, pyMESA \citep{pymesa}, \code{POSYDON} \citep{fragos:22},
+    paxton:2019}, pyMESA \citep{pymesa}, \code{POSYDON} \citep{fragos:2022},
   compare\_workdir\_MESA\footnote{\url{https://github.com/mathren/compare_workdir_MESA/releases/tag/2.0}},
   Ipython \citep{ipython}, numpy
   \citep{numpy}, scipy \citep{scipy}, matplotlib \citep{matplotlib}, showyourwork
@@ -908,7 +907,8 @@ stars when calculating the post-CE orbit using energy conservation:
   \lambda_\mathrm{CE} \equiv \lambda_\mathrm{CE}(m) = (GM(M-m)/R)/BE(m, \alpha_\mathrm{th}=1.0) \ \ ,
 \end{equation}
 where again the Lagrangian mass coordinate $m$ can be interpreted as a
-variable core mass \citep[see also][]{demarco:11, ivanova:2013}. While \cite{dekool:1990} used
+variable core mass \citep[see also][]{demarco:11, ivanova:2013}. While
+\cite{dekool:1990} implicitly used
   $\alpha_\mathrm{th}=0$, we calculate $\lambda_\mathrm{CE}$ with
   $\alpha_\mathrm{th}=1.0$, which provides a best case scenario for
   the ejection of the CE by harvesting the entire internal energy
