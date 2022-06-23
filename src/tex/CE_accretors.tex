@@ -655,11 +655,16 @@ phase (see also \Figref{fig:lambda_grid}).
 % crossing of the He core boundary may be different.
 
 \software{MESA \citep{paxton:2011, paxton:2015, paxton:2018,
-    paxton:2019}, pyMESA \citep{pymesa},
+    paxton:2019}, pyMESA \citep{pymesa}, \code{POSYDON} \citep{fragos:22},
   compare\_workdir\_MESA\footnote{\url{https://github.com/mathren/compare_workdir_MESA/releases/tag/2.0}},
   Ipython \citep{ipython}, numpy
   \citep{numpy}, scipy \citep{scipy}, matplotlib \citep{matplotlib}, showyourwork
   \citep{showyourwork}.}
+
+\acknowledgements{We are grateful to R.~Luger for the development of
+  \showyourwork, and to the \code{POSYDON} team for sharing before
+  publication their \code{MESA} setup.}
+
 
 
 \bibliographystyle{aasjournal}
@@ -904,8 +909,8 @@ stars when calculating the post-CE orbit using energy conservation:
 \end{equation}
 where again the Lagrangian mass coordinate $m$ can be interpreted as a
 variable core mass \citep[see also][]{demarco:11, ivanova:2013}. While \cite{dekool:1990} used
-  $\alpha_\mathrm{CE}=0$, we calculate $\lambda_\mathrm{CE}$ with
-  $\alpha_\mathrm{CE}=1.0$, which provides a best case scenario for
+  $\alpha_\mathrm{th}=0$, we calculate $\lambda_\mathrm{CE}$ with
+  $\alpha_\mathrm{th}=1.0$, which provides a best case scenario for
   the ejection of the CE by harvesting the entire internal energy
   available in the gas. We show
 in \Figref{fig:lambda_grid} the $\lambda_\mathrm{CE}$ profiles for our models.
