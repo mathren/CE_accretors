@@ -1,7 +1,7 @@
 #+Title: Rejuvenated accretors have less bound envelopes
 #+author: [[mailto:mrenzo@flatironinstitute.org][Mathieu Renzo]]
 
-* Impact of  the first Roche lobe overflow on the common envelope in gravitational wave progenitors
+/Impact of  the first Roche lobe overflow on the common envelope in gravitational wave progenitors/
 
 #+BEGIN_html
 <p align="center">
@@ -23,7 +23,7 @@
 #+END_html
 
 
-** Why care about the first mass transfer on future common envelope?
+** Why care about previous mass transfer when thinking about future common envelope?
 
    Most binary evolution scenarios for gravitational wave sources rely
    on a common envelope (CE) to reduce the separation (exceptions are
@@ -31,19 +31,18 @@
    channels). The CE is initiated by a star that has previously
    accreted mass during a stable Roche lobe overflow (RLOF) phase.
 
-   We want to study how the previous accretion through RLOF influences
-   the radial evolution and the binding energy of the accretor star.
-   This may be different from single stars, because accretion of
-   matter from a companion leads to increase of the convective core
-   mass, rejuvenation, and changes in the density, temperature,
-   entropy, and composition of the star and ultimately its binding
-   energy profile.
+   We study how the previous accretion through RLOF influences the
+   radial evolution and the binding energy profile of the accretor
+   star. This is different than profiles of genuinely single stars,
+   because accretion of matter from a companion leads to increase of
+   the convective core mass, rejuvenation, and changes in the density,
+   temperature, entropy, and composition of the star and ultimately
+   its binding energy profile.
 
    Our result broadly indicate that having accreted mass during the
    main sequence leads to evolved stars with overall less bound
    envelopes that might be easier to eject. For more info, click on
    the article pdf badge above.
-
 
 ** Structure of the repository
 
@@ -80,11 +79,13 @@
      GNU Fortran (GCC) 10.2.0
      #+END_SRC
 
-     Please refer to the [[https://docs.mesastar.org/en/latest/][MESA documentation]] and [[https://lists.mesastar.org/mailman/listinfo][mailing list]] for
+     Please refer to the [[https://docs.mesastar.org/en/r15140/][MESA documentation]] and [[https://lists.mesastar.org/mailman/listinfo][mailing list]] for
      support.
 
 
-** Local compilation
+** How to build the article locally
+
+   (See also the [[https://show-your.work/en/latest/][showyourwork documentation]])
 
    Assuming you have a working installation of conda, you can [[https://show-your.work/en/latest/install/][install
    showyourwork]], clone this repository, and just run =showyourwork= and
@@ -95,8 +96,6 @@
   git clone git@github.com:mathren/CE_accretors.git
   showyourwork
 #+END_SRC
-
-  See also the [[https://show-your.work/en/latest/][showyourwork documentation]].
 
   The first time this will download the data (1.6 Gb) and process them
   -- unpacking up to 7.6 Gb of MESA output. Download, unpacking the
