@@ -7,9 +7,8 @@ ms_name: CE_accretors
 run_cache_rules_on_ci: true
 
 datasets:
-  # this will be of the zenodo static dataset -- for now sandbox
-  # 10.5072/zenodo.1074069: # smaller dataset
-  10.5072/zenodo.1074339:
+  # 10.5072/zenodo.1074339: sandbox
+  10.5281/zenodo.6600641:
     destination: src/data/
     contents:
       MESA_output.tar.gz:

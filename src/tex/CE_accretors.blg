@@ -8,7 +8,6 @@ Warning--empty journal in blaauw:1993
 Warning--empty journal in blagorodnova:2021
 Warning--empty journal in hellings:1983
 Warning--empty journal in hellings:1984
-Warning--empty publisher in ivanova:20
 Warning--empty journal in klencki:2021
 Warning--empty journal in klencki:2020
 Warning--empty journal in marchant:2021
@@ -18,43 +17,43 @@ Warning--empty journal in paxton:2019
 Warning--empty journal in wang:2021a
 You've used 107 entries,
             3168 wiz_defined-function locations,
-            1336 strings with 30220 characters,
-and the built_in function-call counts, 50928 in all, are:
-= -- 4195
-> -- 3975
-< -- 34
-+ -- 1337
-- -- 1457
-* -- 4655
-:= -- 9387
+            1339 strings with 30226 characters,
+and the built_in function-call counts, 50837 in all, are:
+= -- 4198
+> -- 3954
+< -- 35
++ -- 1328
+- -- 1447
+* -- 4641
+:= -- 9362
 add.period$ -- 124
 call.type$ -- 107
-change.case$ -- 645
+change.case$ -- 641
 chr.to.int$ -- 105
-cite$ -- 119
-duplicate$ -- 1783
-empty$ -- 2968
-format.name$ -- 1580
-if$ -- 10209
+cite$ -- 118
+duplicate$ -- 1786
+empty$ -- 2964
+format.name$ -- 1577
+if$ -- 10200
 int.to.chr$ -- 3
 int.to.str$ -- 0
 missing$ -- 105
 newline$ -- 346
 num.names$ -- 429
-pop$ -- 723
+pop$ -- 721
 preamble$ -- 1
-purify$ -- 645
+purify$ -- 641
 quote$ -- 0
-skip$ -- 1528
+skip$ -- 1526
 stack$ -- 0
-substring$ -- 1936
+substring$ -- 1943
 swap$ -- 9
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 957
-warning$ -- 12
-while$ -- 394
+type$ -- 960
+warning$ -- 11
+while$ -- 395
 width$ -- 0
 write$ -- 1159
-(There were 12 warnings)
+(There were 11 warnings)
