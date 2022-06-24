@@ -1,5 +1,7 @@
-#+Title: Common envelope initiated by the secondaries
+#+Title: Rejuvenated accretors have less bound envelopes
 #+author: [[mailto:mrenzo@flatironinstitute.org][Mathieu Renzo]]
+
+* Impact of  the first Roche lobe overflow on the common envelope in gravitational wave progenitors
 
 #+BEGIN_html
 <p align="center">
@@ -19,6 +21,7 @@
 </a>
 </p>
 #+END_html
+
 
 ** Why care about the first mass transfer on future common envelope?
 
@@ -80,6 +83,7 @@
      Please refer to the [[https://docs.mesastar.org/en/latest/][MESA documentation]] and [[https://lists.mesastar.org/mailman/listinfo][mailing list]] for
      support.
 
+
 ** Local compilation
 
    Assuming you have a working installation of conda, you can [[https://show-your.work/en/latest/install/][install
@@ -130,7 +134,6 @@
   - [ ] Convection argument for steepness (see Stephen's comment on
     slack)
   - [ ] Check zenodo link
-  - [ ] check
 
 
 ** To be submitted to ApJL
