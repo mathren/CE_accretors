@@ -182,11 +182,10 @@ $(M_{1}, M_{2}) = (18, 15), (20, 17), (38, 30)\,M_\odot$. We focus on
 the initially less massive stars, which after accretion become
 $M_2=15\rightarrow 18, 17\rightarrow 20, 30\rightarrow 36\,M_\odot$,
 roughly representative of NS, uncertain core-collapse outcome, and BH
-progenitors, respectively. However, we emphasize that the
-core-collapse outcome (NS or BH formation, with explosion or not),
-cannot be decided solely based on the (total or core) mass of a star
-\citep[e.g.,][]{oconnor:11, farmer:16, patton:20, zapartas:21b,
-  patton:22}.
+progenitors, respectively. However, the core-collapse outcome (NS or
+BH formation, with explosion or not), cannot be decided solely based
+on the (total or core) mass of a star \citep[e.g.,][]{oconnor:11,
+  farmer:16, patton:20, zapartas:21b, patton:22}.
 
 Our \mesa\ models assume that the
 accretion efficiency is limited by rotationally enhanced wind mass
@@ -241,9 +240,9 @@ than suggested by observations (e.g., \citealt{wang:2021a}, see also
 Hertzsprung-Russell (HR) diagram. The thin dashed lines % in
 % \Figref{fig:HRD}
 show the evolution of the donor stars \citep[see also,
-e.g.,][]{gotberg:2017, laplace:2021} from ZAMS, through RLOF, until our definition of
+e.g.,][]{gotberg:2017, laplace:2021} from zero age main sequence (ZAMS), through RLOF, until our definition of
 detachment. The solid lines correspond to the full evolution of the
-accretors, from zero age main sequence (ZAMS), through RLOF, until
+accretors, from ZAMS, through RLOF, until
 carbon depletion. The high luminosity excursion during the main
 sequence of the accretors corresponds to the dip in luminosity of the
 donor during RLOF (see e.g., \citealt{renzo:2021zoph}). During this phase the accretor is progressively
@@ -331,7 +330,7 @@ limited. % Moreover, blue-loops are sensitive to
 \end{figure*}
 
 \Figref{fig:TAMS_profiles} shows the specific entropy (s) profile --
-which determines the thermo-dynamical properties of the stars -- and
+which determines the instantaneous dynamical response of the gas -- and
 the H and He mass fractions at TAMS for our accretor models (orange),
 single non-rotating stars (red) and ``engineered'' models of roughly
 same total mass as the accretor post-RLOF. A gray region highlights
@@ -389,7 +388,7 @@ evolution.
   \caption{Ratios of the binding energy profiles (including internal
     energy) of the accretor stars divided stars of the same total mass
     post-RLOF. The orange solid line at 1 shows the ratio of the
-    accretor to itself as a sanity check, red solid lines show the
+    accretor to itself as a check, red solid lines show the
     ratio of the accretor to a non-rotating single star, while the
     other colors show the ratio to ``engineered'' star. Each panel
     shows the ratios at the first time the models reach the radius
@@ -400,23 +399,22 @@ evolution.
   \script{grid_ratios.py}
 \end{figure*}
 
-
 To quantify the impact of the first RLOF phase on the outcome of the
 second mass transfer phase, we evolve forward all the TAMS profiles
 shown in \Figref{fig:TAMS_profiles} and compare them at fixed outer
-radii.
-In the ``classical'' binary evolution path, after the RLOF-donor
-collapses to a compact object, the evolutionary expansion of the
-RLOF-accretor triggers a CE. Physically, the CE outcome is determined by
-the thermal and dynamical reaction of the now-shared envelope to the
-inspiraling binary \citep[e.g.,][]{ivanova:2013, ivanova:2020, renzo:21gwce}.
-However, a common oversimplification is to rely on energy conservation
+radii. In the ``classical'' binary evolution path, after the
+RLOF-donor collapses to a compact object, the evolutionary expansion
+of the RLOF-accretor triggers a CE. Physically, the CE outcome is
+determined by the thermal and dynamical reaction of the now-shared
+envelope to the inspiraling binary \citep[e.g.,][]{ivanova:2013,
+  ivanova:2020, renzo:21gwce}. However, a common oversimplification is
+to rely on energy conservation
 \citep[``$\alpha_{\mathrm{CE}}\lambda_\mathrm{CE}$ algorithm'',
-e.g.,][]{webbink:1984, dekool:1990} to determine CE ejection and final
-separation, therefore, we focus here on the RLOF-accretor/CE-donor
-binding energy profile. We calculate the cumulative binding energy outside
-mass coordinate $m$ as \citep[e.g.,][]{dekool:1990, han:95, dewi:2000,
-  lau:2022}:
+e.g.,][]{webbink:1984, dekool:1990, demarco:11} to determine CE
+ejection and final separation. Therefore, we focus here on the
+RLOF-accretor/CE-donor binding energy profile. We calculate the
+cumulative binding energy outside mass coordinate $m$ as
+\citep[e.g.,][]{dekool:1990, han:95, dewi:2000, lau:2022}:
 \begin{equation}
   \label{eq:BE}
 BE(m, \alpha_{\rm th}) = - \int_{m}^M\,dm'\left( -\frac{G m'}{r(m')}+\alpha_\mathrm{th} u(m')\right) \ \ ,
