@@ -22,47 +22,57 @@ dependencies:
     - src/scripts/lib_engineered.py
     - src/scripts/MESAreader.py
     - src/data/MESA_output/
+    - src/data/MESA_output.tar.gz
   src/scripts/toy_models_example.py:
     - src/scripts/lib_plot_bin.py
     - src/scripts/lib_engineered.py
     - src/scripts/MESAreader.py
     - src/data/MESA_output/
+    - src/data/MESA_output.tar.gz
   src/scripts/rotation_models_example.py:
     - src/scripts/lib_plot_bin.py
     - src/scripts/lib_engineered.py
     - src/scripts/MESAreader.py
     - src/data/MESA_output/
+    - src/data/MESA_output.tar.gz
   src/scripts/HRD.py:
     - src/scripts/lib_plot_bin.py
     - src/scripts/lib_engineered.py
     - src/scripts/MESAreader.py
     - src/data/MESA_output/
+    - src/data/MESA_output.tar.gz
   src/scripts/TAMS_profiles.py:
     - src/scripts/lib_engineered.py
     - src/scripts/MESAreader.py
     - src/data/MESA_output/
+    - src/data/MESA_output.tar.gz
   src/scripts/BE_profiles.py:
     - src/scripts/lib_plot_bin.py
     - src/scripts/lib_engineered.py
     - src/scripts/MESAreader.py
     - src/data/MESA_output/
+    - src/data/MESA_output.tar.gz
   src/scripts/grid_ratios.py:
     - src/scripts/lib_plot_bin.py
     - src/scripts/lib_engineered.py
     - src/scripts/MESAreader.py
     - src/data/MESA_output/
+    - src/data/MESA_output.tar.gz
   src/scripts/BE_env_R.py:
     - src/scripts/lib_plot_bin.py
     - src/scripts/lib_engineered.py
     - src/scripts/MESAreader.py
     - src/data/MESA_output/
+    - src/data/MESA_output.tar.gz
   src/scripts/TAMS_profiles_same_initial_mass.py:
     - src/scripts/lib_plot_bin.py
     - src/scripts/lib_engineered.py
     - src/scripts/MESAreader.py
     - src/data/MESA_output/
+    - src/data/MESA_output.tar.gz
   src/scripts/lambda_grid.py:
     - src/scripts/lib_plot_bin.py
     - src/scripts/lib_engineered.py
     - src/scripts/MESAreader.py
     - src/data/MESA_output/
+    - src/data/MESA_output.tar.gz
