@@ -125,8 +125,9 @@
 
 ** TODO list
 
-  - [X] Convection argument for steepness (see Stephen's comment on
-    slack)
+  - [ ] Convection argument for steepness (see Stephen's comment on
+    slack): *Pending Stephen's feedback*
+  - [ ] ask Ylva
   - [ ] report on showyourwork that cache freezing works while cache
     publish doesn't. Figures remain badge-less.
 
