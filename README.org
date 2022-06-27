@@ -1,7 +1,7 @@
 #+Title: Rejuvenated accretors have less bound envelopes
 #+author: [[mailto:mrenzo@flatironinstitute.org][Mathieu Renzo]]
 
-/Impact of  the first Roche lobe overflow on the common envelope on subsequent common envelope events/
+/Impact of  the first Roche lobe overflow on subsequent common envelope events/
 
 #+BEGIN_html
 <p align="center">
@@ -23,13 +23,14 @@
 #+END_html
 
 
-** Why care about previous mass transfer when thinking about future common envelope?
+** Why care about previous mass transfer phases when thinking about future common envelope?
 
-   Most binary evolution scenarios for gravitational wave sources rely
-   on a common envelope (CE) to reduce the separation (exceptions are
-   chemically homogeneous evolution and stable mass transfer
-   channels). The CE is initiated by a star that has previously
-   accreted mass during a stable Roche lobe overflow (RLOF) phase.
+   Most isolated binary evolution scenarios for gravitational-wave
+   sources rely on a common envelope (CE) to reduce the separation
+   (exceptions are chemically homogeneous evolution and stable mass
+   transfer channels). The CE is often initiated by a star that has
+   previously accreted mass during a stable Roche lobe overflow (RLOF)
+   phase.
 
    We study how the previous accretion through RLOF influences the
    radial evolution and the binding energy profile of the accretor
@@ -112,7 +113,8 @@
 
   After the data exist cached on your machine, this will be much
   faster (how much depends on what has changed in the repo that needs
-  to be redone).
+  to be redone). A public version of the cached data is available on
+  [[https://sandbox.zenodo.org/record/1074085][zenodo sandbox]].
 
   You can also find the =tex= source in =src/tex/CE_accretors.tex=, which
   you can edit and should be able to compile locally. If you have
