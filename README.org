@@ -127,9 +127,10 @@
 
   - [X] move static dataset to zenodo (now sandbox)
   - [X] update =showyourwork.yml= with zenodo link (not sandbox)
+  - [X] Check zenodo link
   - [ ] Convection argument for steepness (see Stephen's comment on
     slack)
-  - [ ] Check zenodo link
+
 
 
 ** To be submitted to ApJL
