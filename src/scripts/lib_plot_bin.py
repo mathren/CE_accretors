@@ -143,11 +143,15 @@ def plot_HRD(
             # complete this array: no binary_history.data after detachment
             if len(logT) < len(iRLOF):
                 # working on star 1
-                iRLOF = iRLOF[0:len(logT)]# np.concatenate((iRLOF, np.full((len(iRLOF)-len(logT)), False)))
+                iRLOF = iRLOF[
+                    0 : len(logT)
+                ]  # np.concatenate((iRLOF, np.full((len(iRLOF)-len(logT)), False)))
             ax.plot(
                 logT[iRLOF],
                 logL[iRLOF],
-                color='y', lw=6, alpha=0.5,
+                color="y",
+                lw=6,
+                alpha=0.5,
                 zorder=min(int(plot_kwargs["zorder"]) - 1, 0),
             )
         else:

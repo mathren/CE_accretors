@@ -36,8 +36,8 @@ if __name__ == "__main__":
     bin_folders = [b1, b2, b3]
 
     TAMS_folders = paths.data / "MESA_output/engineered_stars/TAMS_models/"
-    print(str(TAMS_folders)+'*/LOGS/')
-    for b in glob.glob(str(TAMS_folders)+'/*/LOGS/'):
+    print(str(TAMS_folders) + "*/LOGS/")
+    for b in glob.glob(str(TAMS_folders) + "/*/LOGS/"):
         print(b)
         TAMSdata = glob.glob(str(b) + "/*TAMS*.data")
         # if TAMSdata == []:

@@ -64,7 +64,7 @@ try:
     clight = const_def.clight.value
     print(colored("successfully read constants from pyMesa", "blue"))
 except:
-    """ if pyMESA not available, define by hand """
+    """if pyMESA not available, define by hand"""
     dayyer = 365.25
     secyer = dayyer * 24 * 60 * 60
     G_cgs = 6.67430e-8  # in cgs
@@ -278,7 +278,6 @@ def read_MESA_header(fname):
 #     # convert bytes to strings
 #     lines = [l.decode("utf-8") for l in lines]
 #     return lines
-
 
 
 def scrub(logName):

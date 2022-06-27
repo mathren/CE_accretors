@@ -19,6 +19,7 @@
 # along with this program.  If not, see http://www.gnu.org/licenses/.
 
 import sys
+
 # import socket
 from MESAreader import getSrcCol, Rsun_cm, Lsun
 import numpy as np
@@ -26,6 +27,7 @@ import re
 import os
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
+
 try:
     from termcolor import colored
 except:
@@ -34,13 +36,15 @@ import paths
 
 # ---------------------------------------
 def get_xq(m, Mtot):
-    """ given a lagrangian mass coordinate
+    """given a lagrangian mass coordinate
     calculates the fraction of Mtot above it"""
-    xq = (Mtot-m)/Mtot
+    xq = (Mtot - m) / Mtot
     return xq
 
-def mk_line(x0,y0, xx, y1):
-    return y0+((y1-y0)/(max(xx)-x0))*(xx-x0)
+
+def mk_line(x0, y0, xx, y1):
+    return y0 + ((y1 - y0) / (max(xx) - x0)) * (xx - x0)
+
 
 def get_M_boundary(pfile, h1_outer=None, h1_inner=None, offset=1e-2, plot=False):
     """calculate mass of the He core-envelope boundary region based on the h1 and he4 profiles.
@@ -65,27 +69,27 @@ def get_M_boundary(pfile, h1_outer=None, h1_inner=None, offset=1e-2, plot=False)
 
     src, col = getSrcCol(pfile)
     h1 = src[:, col.index("h1")]
-    he3 = src[:,col.index("he3")]
+    he3 = src[:, col.index("he3")]
     he4 = src[:, col.index("he4")]
     m = src[:, col.index("mass")]
-    r = src[:, col.index("radius")]*Rsun_cm
+    r = src[:, col.index("radius")] * Rsun_cm
 
     if not h1_outer:
         h1_outer = h1[0]
     if not h1_inner:
         h1_inner = h1[-1]
     # index slicing for core-envelope boundary region
-    ind = ((h1<=h1_outer-offset) & (h1>h1_inner+offset))
+    ind = (h1 <= h1_outer - offset) & (h1 > h1_inner + offset)
     if plot:
-        fig = plt.figure(figsize=(10,10))
+        fig = plt.figure(figsize=(10, 10))
         gs = gridspec.GridSpec(100, 100)
         ax = fig.add_subplot(gs[:, :])
-        text = pfile.split('/')[-1].split('.data')[0]
-        title = text.replace("Rsun",r" $R_\odot$")
+        text = pfile.split("/")[-1].split(".data")[0]
+        title = text.replace("Rsun", r" $R_\odot$")
         ax.set_title(title, fontsize=30)
         ax.plot(m, h1, label="h1")
         ax.plot(m, he4, label="he4")
-        ax.fill_between((min(m[ind]),max(m[ind])) , 0, 1, zorder=0, alpha=0.5)
+        ax.fill_between((min(m[ind]), max(m[ind])), 0, 1, zorder=0, alpha=0.5)
         ax.set_xlabel(r"m $M_\odot$")
         ax.set_ylabel(r"$X_i$")
         ax.legend()
@@ -93,20 +97,23 @@ def get_M_boundary(pfile, h1_outer=None, h1_inner=None, offset=1e-2, plot=False)
         if "index" in folder:
             # binary run
             m1, m2 = get_masses(folder)
-            text = "accretor_"+f"{m1:.0f}_"+text
+            text = "accretor_" + f"{m1:.0f}_" + text
         else:
             # single star run
-            text = folder+"_"+text
-        print(colored("/"+text+"M_boundary.png","blue"))
-        plt.savefig("/"+text+"M_boundary.png")
+            text = folder + "_" + text
+        print(colored("/" + text + "M_boundary.png", "blue"))
+        plt.savefig("/" + text + "M_boundary.png")
         plt.close()
-    delta_M_boundary = max(m[ind])- min(m[ind])
+    delta_M_boundary = max(m[ind]) - min(m[ind])
     max_M_boundary = max(m[ind])
     min_M_boundary = min(m[ind])
-    return delta_M_boundary,max_M_boundary, min_M_boundary
+    return delta_M_boundary, max_M_boundary, min_M_boundary
 
-def mk_simplified_profile_from_pfile(pfile, outfile=None, plot=False, m_in=None, m_out=None):
-    """ takes surface and hydrogen mass fraction and entropy, and thickness
+
+def mk_simplified_profile_from_pfile(
+    pfile, outfile=None, plot=False, m_in=None, m_out=None
+):
+    """takes surface and hydrogen mass fraction and entropy, and thickness
     of the core/envelope boundary region and produces a simple entropy and
     composition profile to initialize MESA. Assume the Z abundance are not
     affected. The input model should be a TAMS model or close to it.
@@ -154,7 +161,7 @@ def mk_simplified_profile_from_pfile(pfile, outfile=None, plot=False, m_in=None,
 
     """
     # check if call makes sense
-    if (((m_in != None) and (m_out==None)) or ((m_in ==None) and (m_out !=None))):
+    if ((m_in != None) and (m_out == None)) or ((m_in == None) and (m_out != None)):
         raise ValueError("provide both or neither m_in and m_out!")
     # get data
     src, col = getSrcCol(pfile)
@@ -162,17 +169,17 @@ def mk_simplified_profile_from_pfile(pfile, outfile=None, plot=False, m_in=None,
     entropy = src[:, col.index("entropy")]
     # composition
     neut = src[:, col.index("neut")]
-    h1   = src[:, col.index("h1")]
+    h1 = src[:, col.index("h1")]
     prot = src[:, col.index("prot")]
-    he3  = src[:, col.index("he3")]
-    he4  = src[:, col.index("he4")]
-    c12  = src[:, col.index("c12")]
-    n14  = src[:, col.index("n14")]
-    o16  = src[:, col.index("o16")]
+    he3 = src[:, col.index("he3")]
+    he4 = src[:, col.index("he4")]
+    c12 = src[:, col.index("c12")]
+    n14 = src[:, col.index("n14")]
+    o16 = src[:, col.index("o16")]
     ne20 = src[:, col.index("ne20")]
     mg24 = src[:, col.index("mg24")]
     si28 = src[:, col.index("si28")]
-    s32  = src[:, col.index("s32")]
+    s32 = src[:, col.index("s32")]
     ar36 = src[:, col.index("ar36")]
     ca40 = src[:, col.index("ca40")]
     ti44 = src[:, col.index("ti44")]
@@ -186,12 +193,12 @@ def mk_simplified_profile_from_pfile(pfile, outfile=None, plot=False, m_in=None,
     ## plot input model
     if plot:
         fig, ax = plt.subplots()
-        ax.plot(mass, h1, 'b', label="h1 input")
-        ax.plot(mass, he4, 'g', label="he4 input")
+        ax.plot(mass, h1, "b", label="h1 input")
+        ax.plot(mass, he4, "g", label="he4 input")
         # ax.set_yscale('log')
         # ax.set_ylim(1e-4,1)
         bx = ax.twinx()
-        bx.plot(mass, entropy,'r', label="s input")
+        bx.plot(mass, entropy, "r", label="s input")
     # build output
     num_points = len(mass)
     xq = get_xq(mass, max(mass))
@@ -199,17 +206,21 @@ def mk_simplified_profile_from_pfile(pfile, outfile=None, plot=False, m_in=None,
     h1_out = np.zeros(len(mass))
     he4_out = np.zeros(len(mass))
     # get extremal values
-    original_delta_M_boundary, original_max_M_boundary, original_min_M_boundary = get_M_boundary(pfile)
-    if ((m_in == None) and (m_out==None)):
+    (
+        original_delta_M_boundary,
+        original_max_M_boundary,
+        original_min_M_boundary,
+    ) = get_M_boundary(pfile)
+    if (m_in == None) and (m_out == None):
         # print(colored("no m_in, m_out, let me calculate them from "+pfile, "blue"))
         min_M_boundary = original_min_M_boundary
         max_M_boundary = original_max_M_boundary
     else:
         min_M_boundary = m_in
         max_M_boundary = m_out
-    i_out = np.argmin(np.absolute(mass-max_M_boundary))
-    i_in = np.argmin(np.absolute(mass-min_M_boundary))
-    if (max_M_boundary-min_M_boundary) >= original_delta_M_boundary:
+    i_out = np.argmin(np.absolute(mass - max_M_boundary))
+    i_in = np.argmin(np.absolute(mass - min_M_boundary))
+    if (max_M_boundary - min_M_boundary) >= original_delta_M_boundary:
         # widening the transition region
         h_out = h1[i_out]
         h_in = h1[i_in]
@@ -219,21 +230,29 @@ def mk_simplified_profile_from_pfile(pfile, outfile=None, plot=False, m_in=None,
         entropy_in = entropy[i_in]
         # split domain in regions core/transition/envelope
         index_in = mass <= min_M_boundary
-        index_boundary = (mass<=max_M_boundary) & (mass >= min_M_boundary)
+        index_boundary = (mass <= max_M_boundary) & (mass >= min_M_boundary)
         index_out = mass >= max_M_boundary
         ## # create output arrays
         # entropy
         s_out[index_in] = entropy[index_in]
-        s_out[index_boundary] = mk_line(min(mass[index_boundary]), entropy_in, mass[index_boundary], entropy_out)
+        s_out[index_boundary] = mk_line(
+            min(mass[index_boundary]), entropy_in, mass[index_boundary], entropy_out
+        )
         s_out[index_out] = entropy[index_out]
-        if plot: bx.scatter(mass, s_out,color='orange', label="s output")
+        if plot:
+            bx.scatter(mass, s_out, color="orange", label="s output")
         # composition
         h1_out[index_in] = h1[index_in]
-        h1_out[index_boundary] = mk_line(min(mass[index_boundary]), h_in, mass[index_boundary], h_out)
+        h1_out[index_boundary] = mk_line(
+            min(mass[index_boundary]), h_in, mass[index_boundary], h_out
+        )
         h1_out[index_out] = h1[index_out]
-        if plot: ax.scatter(mass, h1_out, c="c", label="h1 output")
+        if plot:
+            ax.scatter(mass, h1_out, c="c", label="h1 output")
         he4_out[index_in] = he4[index_in]
-        he4_out[index_boundary] = mk_line(min(mass[index_boundary]), he_in, mass[index_boundary], he_out)
+        he4_out[index_boundary] = mk_line(
+            min(mass[index_boundary]), he_in, mass[index_boundary], he_out
+        )
         he4_out[index_out] = he4[index_out]
         if plot:
             ax.scatter(mass, he4_out, c="m", label="he4 output")
@@ -241,8 +260,8 @@ def mk_simplified_profile_from_pfile(pfile, outfile=None, plot=False, m_in=None,
     else:
         # shrinking: we have to extrapolate from the edges of the
         # original_delta_M_boundary to the mass coordinate wanted
-        original_i_out = np.argmin(np.absolute(mass-original_max_M_boundary))
-        original_i_in = np.argmin(np.absolute(mass-original_min_M_boundary))
+        original_i_out = np.argmin(np.absolute(mass - original_max_M_boundary))
+        original_i_in = np.argmin(np.absolute(mass - original_min_M_boundary))
         h_out = h1[original_i_out]
         h_in = h1[original_i_in]
         he_out = he4[original_i_out]
@@ -254,63 +273,101 @@ def mk_simplified_profile_from_pfile(pfile, outfile=None, plot=False, m_in=None,
         index_layer_in = (mass > original_min_M_boundary) & (mass <= min_M_boundary)
         index_intermediate = (mass > min_M_boundary) & (mass <= max_M_boundary)
         index_layer_out = (mass > max_M_boundary) & (mass <= original_max_M_boundary)
-        index_out = (mass >= original_max_M_boundary)
+        index_out = mass >= original_max_M_boundary
         # entropy
         s_out[index_in] = entropy[index_in]
         s_out[index_layer_in] = entropy_in
-        s_out[index_intermediate] = mk_line(min(mass[index_intermediate]), entropy_in, mass[index_intermediate], entropy_out)
+        s_out[index_intermediate] = mk_line(
+            min(mass[index_intermediate]),
+            entropy_in,
+            mass[index_intermediate],
+            entropy_out,
+        )
         s_out[index_layer_out] = entropy_out
-        s_out[index_out]= entropy[index_out]
-        if plot: bx.scatter(mass, s_out,color='orange', label="s output")
+        s_out[index_out] = entropy[index_out]
+        if plot:
+            bx.scatter(mass, s_out, color="orange", label="s output")
         # composition
         h1_out[index_in] = h1[index_in]
         h1_out[index_layer_in] = h_in
-        h1_out[index_intermediate] = mk_line(min(mass[index_intermediate]), h_in, mass[index_intermediate], h_out)
+        h1_out[index_intermediate] = mk_line(
+            min(mass[index_intermediate]), h_in, mass[index_intermediate], h_out
+        )
         h1_out[index_layer_out] = h_out
-        h1_out[index_out]= h1[index_out]
-        if plot: ax.scatter(mass, h1_out, c="c", label="h1 output")
+        h1_out[index_out] = h1[index_out]
+        if plot:
+            ax.scatter(mass, h1_out, c="c", label="h1 output")
         he4_out[index_in] = he4[index_in]
         he4_out[index_layer_in] = he_in
-        he4_out[index_intermediate] = mk_line(min(mass[index_intermediate]), he_in, mass[index_intermediate], he_out)
+        he4_out[index_intermediate] = mk_line(
+            min(mass[index_intermediate]), he_in, mass[index_intermediate], he_out
+        )
         he4_out[index_layer_out] = he_out
-        he4_out[index_out]= he4[index_out]
+        he4_out[index_out] = he4[index_out]
     if outfile:
         # Make composition simplified input profile
-        with open(outfile+'_composition.txt', 'w') as f:
-            f.writelines(str(len(mass))+' '+str(22)+'\n') #   1st line: num_points num_species
+        with open(outfile + "_composition.txt", "w") as f:
+            f.writelines(
+                str(len(mass)) + " " + str(22) + "\n"
+            )  #   1st line: num_points num_species
             for i in range(len(mass)):
-                line = f"{xq[i]:.16f}"+"    "+\
-                f"{neut[i]:.16f}"+"    "+\
-                f"{h1_out[i]:.16f}"+"    "+\
-                f"{prot[i]:.16f}"+"    "+\
-                f"{he3[i]:.16f}"+"    "+\
-                f"{he4_out[i]:.16f}"+"    "+\
-                f"{c12[i]:.16f}"+"    "+\
-                f"{n14[i]:.16f}"+"    "+\
-                f"{o16[i]:.16f}"+"    "+\
-                f"{ne20[i]:.16f}"+"    "+\
-                f"{mg24[i]:.16f}"+"    "+\
-                f"{si28[i]:.16f}"+"    "+\
-                f"{s32[i]:.16f}"+"    "+\
-                f"{ar36[i]:.16f}"+"    "+\
-                f"{ca40[i]:.16f}"+"    "+\
-                f"{ti44[i]:.16f}"+"    "+\
-                f"{cr48[i]:.16f}"+"    "+\
-                f"{cr56[i]:.16f}"+"    "+\
-                f"{fe52[i]:.16f}"+"    "+\
-                f"{fe54[i]:.16f}"+"    "+\
-                f"{fe56[i]:.16f}"+"    "+\
-                f"{co56[i]:.16f}"+"    "+\
-                f"{ni56[i]}"+"\n"
+                line = (
+                    f"{xq[i]:.16f}"
+                    + "    "
+                    + f"{neut[i]:.16f}"
+                    + "    "
+                    + f"{h1_out[i]:.16f}"
+                    + "    "
+                    + f"{prot[i]:.16f}"
+                    + "    "
+                    + f"{he3[i]:.16f}"
+                    + "    "
+                    + f"{he4_out[i]:.16f}"
+                    + "    "
+                    + f"{c12[i]:.16f}"
+                    + "    "
+                    + f"{n14[i]:.16f}"
+                    + "    "
+                    + f"{o16[i]:.16f}"
+                    + "    "
+                    + f"{ne20[i]:.16f}"
+                    + "    "
+                    + f"{mg24[i]:.16f}"
+                    + "    "
+                    + f"{si28[i]:.16f}"
+                    + "    "
+                    + f"{s32[i]:.16f}"
+                    + "    "
+                    + f"{ar36[i]:.16f}"
+                    + "    "
+                    + f"{ca40[i]:.16f}"
+                    + "    "
+                    + f"{ti44[i]:.16f}"
+                    + "    "
+                    + f"{cr48[i]:.16f}"
+                    + "    "
+                    + f"{cr56[i]:.16f}"
+                    + "    "
+                    + f"{fe52[i]:.16f}"
+                    + "    "
+                    + f"{fe54[i]:.16f}"
+                    + "    "
+                    + f"{fe56[i]:.16f}"
+                    + "    "
+                    + f"{co56[i]:.16f}"
+                    + "    "
+                    + f"{ni56[i]}"
+                    + "\n"
+                )
                 f.writelines(line)
         # Make entropy simplified input profile
-        with open(outfile+'_entropy.txt', 'w') as f:
-            f.writelines(str(len(mass))+'\n') #   1st line: num_points
+        with open(outfile + "_entropy.txt", "w") as f:
+            f.writelines(str(len(mass)) + "\n")  #   1st line: num_points
             for i in range(len(mass)):
-                line = f"{xq[i]:.16f}"+"    "+\
-                    f"{s_out[i]:.16f}"+"\n"
+                line = f"{xq[i]:.16f}" + "    " + f"{s_out[i]:.16f}" + "\n"
                 f.writelines(line)
-    return(num_points, xq, s_out, h1_out, he_out)
+    return (num_points, xq, s_out, h1_out, he_out)
+
 
 def plot_entropy(pfile, ax, **plot_kwargs):
     src, col = getSrcCol(pfile)
@@ -318,19 +375,21 @@ def plot_entropy(pfile, ax, **plot_kwargs):
     s = src[:, col.index("entropy")]
     ax.plot(m, s, **plot_kwargs)
 
+
 def plot_XY(pfile, ax, **plot_kwargs):
     src, col = getSrcCol(pfile)
     m = src[:, col.index("mass")]
     h1 = src[:, col.index("h1")]
     he4 = src[:, col.index("he4")]
     # overwrite linestyle
-    plot_kwargs["linestyle"] = '-'
+    plot_kwargs["linestyle"] = "-"
     ax.plot(m, h1, **plot_kwargs)
     plot_kwargs["linestyle"] = "--"
     ax.plot(m, he4, **plot_kwargs)
 
+
 def plot_s_h_he(init_model, grid_folders, accretor, ax_top, ax_bottom):
-    """ helper function for fig. 5 """
+    """helper function for fig. 5"""
 
     colors = plt.cm.viridis(np.linspace(0, 1, len(grid_folders)))
 
@@ -351,9 +410,7 @@ def plot_s_h_he(init_model, grid_folders, accretor, ax_top, ax_bottom):
         label = ""  # f.split('/')[-2]
         delta_M_bound, M_bound_min, M_bound_max = get_M_boundary(pfile, offset=0.05)
         ax_top.axvspan(M_bound_min, M_bound_max, fc="#808080", alpha=0.1, zorder=0)
-        ax_bottom.axvspan(
-            M_bound_min, M_bound_max, fc="#808080", alpha=0.1, zorder=0
-        )
+        ax_bottom.axvspan(M_bound_min, M_bound_max, fc="#808080", alpha=0.1, zorder=0)
         # print(f, M_bound_min, M_bound_max)
         # label = f"{delta_M_bound:.3f}" # f.split('/')[-2]
         c = colors[grid_folders.index(f)]
@@ -426,7 +483,9 @@ def three_panel_plot_s_h_he(
     # legend
     bx1.plot(np.nan, np.nan, ls="-", c="k", label=r"$^1\mathrm{H}$")
     bx1.plot(np.nan, np.nan, ls="--", c="k", label=r"$^4\mathrm{He}$")
-    bx1.legend(handletextpad=0.4, handlelength=0.75, columnspacing=0.75, loc="center left")
+    bx1.legend(
+        handletextpad=0.4, handlelength=0.75, columnspacing=0.75, loc="center left"
+    )
 
     ax1.legend(handletextpad=0.5, frameon=True)
     ax2.legend(handletextpad=0.5, frameon=True)
@@ -452,15 +511,21 @@ def get_dm_from_pfile_eng(pfile):
     -------
     `dm`:   `float` (can be <0 for shifts towards the center)
     """
-    return float(pfile.split('/')[-3])
+    return float(pfile.split("/")[-3])
+
 
 def sorter_engineered_profiles(pfile):
     # get corresponding normal single star model
-    mass = pfile.split('/')[-4].lstrip('grid')
-    init_model = str(paths.data)+"/MESA_output/engineered_stars/TAMS_models/"+str(mass)+"_rot0_to_TAMS/LOGS/TAMS.data"
+    mass = pfile.split("/")[-4].lstrip("grid")
+    init_model = (
+        str(paths.data)
+        + "/MESA_output/engineered_stars/TAMS_models/"
+        + str(mass)
+        + "_rot0_to_TAMS/LOGS/TAMS.data"
+    )
     # get outer CEB boundary in the reference TAMS model
     delta_M_bound, M_bound_max, M_bound_min = get_M_boundary(init_model)
     # get shift from reference TAMS model
-    dm = get_dm_from_pfile_eng(pfile) # can be <0
+    dm = get_dm_from_pfile_eng(pfile)  # can be <0
     # return final outer boundary of the engineered model
-    return M_bound_max+dm
+    return M_bound_max + dm

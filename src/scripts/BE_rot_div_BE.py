@@ -1,5 +1,6 @@
 from MESAreader import getSrcCol
 from lib_plot_bin import plot_ratio_BErot_BE_m, get_ax_from_pfile, Rsun_cm
+
 # from lib_engineered import get_dm_from_pfile_eng, sorter_engineered_profiles
 import numpy as np
 import matplotlib.pyplot as plt
@@ -98,7 +99,7 @@ def grid_erot_fraction_BE(fig_name=None):
         string = pfile.split("/")[-1]
         bx = get_ax_from_pfile(pfile, bxes)
         ratio = plot_ratio_BErot_BE_m(pfile, bx, c=colors[1])
-        print(pfile.split('/')[-1], pfile.split('/')[-3], max(ratio), min(ratio))
+        print(pfile.split("/")[-1], pfile.split("/")[-3], max(ratio), min(ratio))
 
     # 30
     cx1 = fig.add_subplot(gs[:20, 100:])
@@ -123,7 +124,7 @@ def grid_erot_fraction_BE(fig_name=None):
         string = pfile.split("/")[-1]
         cx = get_ax_from_pfile(pfile, cxes)
         ratio = plot_ratio_BErot_BE_m(pfile, cx, c=colors[2])
-        print(pfile.split('/')[-1], pfile.split('/')[-3], max(ratio), min(ratio))
+        print(pfile.split("/")[-1], pfile.split("/")[-3], max(ratio), min(ratio))
 
     for cx in cxes:
         dx = cx.twinx()
@@ -165,6 +166,7 @@ def grid_erot_fraction_BE(fig_name=None):
         plt.savefig(fig_name)
     else:
         plt.show()
+
 
 if __name__ == "__main__":
     # three_masses_grid(fig_name='grid_ratios.pdf')

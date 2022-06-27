@@ -7,6 +7,7 @@ import matplotlib.gridspec as gridspec
 import glob
 import paths
 
+
 def grid_lambdas(
     b1,
     b2,
@@ -235,16 +236,22 @@ if __name__ == "__main__":
         + "/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/"
     )
 
-    nonrot36 = str(root / "single_stars/Z_0.0019/36_rot0.0/LOGS")+"/"
-    nonrot20 = str(root / "single_stars/Z_0.0019/20_rot0.0/LOGS")+"/"
-    nonrot18 = str(root / "single_stars/Z_0.0019/18_rot0.0/LOGS")+"/"
+    nonrot36 = str(root / "single_stars/Z_0.0019/36_rot0.0/LOGS") + "/"
+    nonrot20 = str(root / "single_stars/Z_0.0019/20_rot0.0/LOGS") + "/"
+    nonrot18 = str(root / "single_stars/Z_0.0019/18_rot0.0/LOGS") + "/"
 
     root_grid18 = root_simplified + "/grid18/"
     root_grid20 = root_simplified + "/grid20/"
     root_grid36 = root_simplified + "/grid36/"
-    grid_folders18 = sorted(glob.glob(root_grid18 + "/*.*/LOGS/"), key=sorter_engineered_profiles)
-    grid_folders20 = sorted(glob.glob(root_grid20 + "/*.*/LOGS/"), key=sorter_engineered_profiles)
-    grid_folders36 = sorted(glob.glob(root_grid36 + "/*.*/LOGS/"), key=sorter_engineered_profiles)
+    grid_folders18 = sorted(
+        glob.glob(root_grid18 + "/*.*/LOGS/"), key=sorter_engineered_profiles
+    )
+    grid_folders20 = sorted(
+        glob.glob(root_grid20 + "/*.*/LOGS/"), key=sorter_engineered_profiles
+    )
+    grid_folders36 = sorted(
+        glob.glob(root_grid36 + "/*.*/LOGS/"), key=sorter_engineered_profiles
+    )
 
     fig_name = paths.figures / "lambda_grid.pdf"
 

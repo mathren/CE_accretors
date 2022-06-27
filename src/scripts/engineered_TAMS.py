@@ -1,6 +1,11 @@
 import paths
 from lib_plot_bin import plot_BE_r
-from lib_engineered import get_M_boundary, plot_XY, plot_entropy, sorter_engineered_profiles
+from lib_engineered import (
+    get_M_boundary,
+    plot_XY,
+    plot_entropy,
+    sorter_engineered_profiles,
+)
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 import numpy as np
@@ -12,13 +17,18 @@ ax = fig.add_subplot(gs[:50, :])
 bx = fig.add_subplot(gs[50:, :])
 
 # plot single star
-init_model = paths.data / "MESA_output/engineered_stars/TAMS_models/30_rot0_to_TAMS/LOGS/TAMS.data"
+init_model = (
+    paths.data
+    / "MESA_output/engineered_stars/TAMS_models/30_rot0_to_TAMS/LOGS/TAMS.data"
+)
 delta_M_bound, M_bound_min, M_bound_max = get_M_boundary(init_model, offset=0.05)
 plot_entropy(init_model, ax, lw=3, ls="-", color="r", zorder=10, label="$30\,M_\odot$")
-plot_XY(init_model, bx, lw=3, color='r', zorder=10)
+plot_XY(init_model, bx, lw=3, color="r", zorder=10)
 # plot engineered models
 root_grid30 = str(paths.data / "MESA_output/engineered_stars/same_core/grid30/")
-grid_folders = sorted(glob.glob(root_grid30+"/*.*/LOGS/"), key=sorter_engineered_profiles)
+grid_folders = sorted(
+    glob.glob(root_grid30 + "/*.*/LOGS/"), key=sorter_engineered_profiles
+)
 colors = plt.cm.viridis(np.linspace(0, 1, len(grid_folders)))
 # plot engineered models
 for f in grid_folders:

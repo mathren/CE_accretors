@@ -26,14 +26,29 @@ init_model17 = root_TAMS / "17_rot0_to_TAMS/LOGS/TAMS.data"
 init_model30 = root_TAMS / "30_rot0_to_TAMS/LOGS/TAMS.data"
 
 root_eng = str(root / "engineered_stars/same_core/")
-grid_folders15 = sorted(glob.glob(root_eng + "/grid15/*.*/LOGS/"), key=sorter_engineered_profiles)
-grid_folders17 = sorted(glob.glob(root_eng + "/grid17/*.*/LOGS/"), key=sorter_engineered_profiles)
-grid_folders30 = sorted(glob.glob(root_eng + "/grid30/*.*/LOGS/"), key=sorter_engineered_profiles)
+grid_folders15 = sorted(
+    glob.glob(root_eng + "/grid15/*.*/LOGS/"), key=sorter_engineered_profiles
+)
+grid_folders17 = sorted(
+    glob.glob(root_eng + "/grid17/*.*/LOGS/"), key=sorter_engineered_profiles
+)
+grid_folders30 = sorted(
+    glob.glob(root_eng + "/grid30/*.*/LOGS/"), key=sorter_engineered_profiles
+)
 
 root_accretors = root / "binaries/Z_0.0019"
-accretor18 = root_accretors / "m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/"
-accretor20 = root_accretors / "m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/"
-accretor30 = root_accretors / "m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/"
+accretor18 = (
+    root_accretors
+    / "m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/"
+)
+accretor20 = (
+    root_accretors
+    / "m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/"
+)
+accretor30 = (
+    root_accretors
+    / "m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/"
+)
 
 
 # make same initial mass TAMS_profile
@@ -52,7 +67,7 @@ init_model3 = str(init_model30)
 accretor3 = str(accretor30)
 nonrot3 = str(nonrot30)
 
-fig_name = paths.figures  / "TAMS_profiles_same_initial_mass.pdf"
+fig_name = paths.figures / "TAMS_profiles_same_initial_mass.pdf"
 
 three_panel_plot_s_h_he(
     grid_folders1,
