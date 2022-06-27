@@ -125,14 +125,9 @@
 
 ** TODO list
 
-  - [X] move static dataset to zenodo (now sandbox)
-  - [X] update =showyourwork.yml= with zenodo link (not sandbox)
-  - [X] Check zenodo link
   - [ ] Convection argument for steepness (see Stephen's comment on
     slack)
-
-
-
+  - [ ] Test cache upload?
 ** To be submitted to ApJL
 
    From Fred Rasio:
