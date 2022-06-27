@@ -1,7 +1,7 @@
 #+Title: Rejuvenated accretors have less bound envelopes
 #+author: [[mailto:mrenzo@flatironinstitute.org][Mathieu Renzo]]
 
-/Impact of  the first Roche lobe overflow on the common envelope in gravitational wave progenitors/
+/Impact of  the first Roche lobe overflow on the common envelope on subsequent common envelope events/
 
 #+BEGIN_html
 <p align="center">
@@ -125,9 +125,11 @@
 
 ** TODO list
 
-  - [ ] Convection argument for steepness (see Stephen's comment on
+  - [X] Convection argument for steepness (see Stephen's comment on
     slack)
-  - [ ] Test cache upload?
+  - [ ] report on showyourwork that cache freezing works while cache
+    publish doesn't. Figures remain badge-less.
+
 ** To be submitted to ApJL
 
    From Fred Rasio:
