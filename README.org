@@ -99,7 +99,7 @@
 #+END_SRC
 
   The first time this will download the data (1.6 Gb) and process them
-  -- unpacking up to 7.6 Gb of MESA output. Download, unpacking the
+  -- unpacking up to 7.6 Gb of MESA output. Downloading, unpacking the
   data, and pre-processing them may take long (~30min on my
   workstation excluding the time to download):
 
