@@ -15,45 +15,45 @@ Warning--empty journal in ogata:2021
 Warning--empty journal in patton:2021
 Warning--empty journal in paxton:2019
 Warning--empty journal in wang:2021a
-You've used 107 entries,
+You've used 109 entries,
             3168 wiz_defined-function locations,
-            1339 strings with 30226 characters,
-and the built_in function-call counts, 50837 in all, are:
-= -- 4198
-> -- 3954
-< -- 35
-+ -- 1328
-- -- 1447
-* -- 4641
-:= -- 9362
-add.period$ -- 124
-call.type$ -- 107
-change.case$ -- 641
-chr.to.int$ -- 105
-cite$ -- 118
-duplicate$ -- 1786
-empty$ -- 2964
-format.name$ -- 1577
-if$ -- 10200
-int.to.chr$ -- 3
+            1351 strings with 30607 characters,
+and the built_in function-call counts, 51946 in all, are:
+= -- 4293
+> -- 4027
+< -- 36
++ -- 1355
+- -- 1475
+* -- 4741
+:= -- 9555
+add.period$ -- 127
+call.type$ -- 109
+change.case$ -- 656
+chr.to.int$ -- 106
+cite$ -- 120
+duplicate$ -- 1818
+empty$ -- 3033
+format.name$ -- 1605
+if$ -- 10431
+int.to.chr$ -- 4
 int.to.str$ -- 0
-missing$ -- 105
-newline$ -- 346
-num.names$ -- 429
-pop$ -- 721
+missing$ -- 107
+newline$ -- 353
+num.names$ -- 437
+pop$ -- 736
 preamble$ -- 1
-purify$ -- 641
+purify$ -- 656
 quote$ -- 0
-skip$ -- 1526
+skip$ -- 1564
 stack$ -- 0
-substring$ -- 1943
-swap$ -- 9
+substring$ -- 2016
+swap$ -- 11
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 960
+type$ -- 978
 warning$ -- 11
-while$ -- 395
+while$ -- 403
 width$ -- 0
-write$ -- 1159
+write$ -- 1181
 (There were 11 warnings)

@@ -51,6 +51,10 @@
 \author[0000-0003-3441-7624]{R.~Farmer}
 \affiliation{Max-Planck-Institut für Astrophysik, Karl-Schwarzschild-Straße 1, 85741 Garching, Germany}
 
+\author[0000-0002-8171-8596]{M.~Cantiello}
+\affiliation{Center for Computational Astrophysics, Flatiron
+  Institute, New York, NY 10010, USA}
+
 \author[0000-0002-4670-7509]{B.~D.~Metzger}
 \affiliation{Columbia Astrophysics Laboratory, Columbia University, New York, New York 10027, USA}
 \affiliation{Center for Computational Astrophysics, Flatiron Institute, New York, NY 10010, USA}
@@ -79,7 +83,7 @@
   transfer may more easily survive subsequent possible CE events and
   with different final separations compared to current predictions.
   Despite their high mass, our accretors also experience extended
-  ``blue loops'' , which may have observational consequences for
+  ``blue loops'', which may have observational consequences for
   low-metallicity stellar populations and asteroseismology.
   % tex-count-words = 197
 \end{abstract}
@@ -137,7 +141,7 @@ accretors are expected to adjust their core-size to the new mass in a
 ``rejuvenation'' process \citep[e.g.,][]{neo:1977, hellings:1983,
   hellings:1984}. The readjustment is driven by mixing at the boundary
 between the convective core and the envelope, which refuels the
-burning region of hydrogen (H). This mixing also affects the thermal
+burning region of hydrogen (H), increasing the stellar lifetime. This mixing also affects the thermal
 structure of the partially H-depleted layer above the helium-rich core
 (He), which we refer to as core-envelope boundary layer (CEB). It is
 in the CEB that the density rises and most of the envelope binding
@@ -174,7 +178,7 @@ setup is similar to \cite{renzo:2021zoph}, except for the metallicity:
 here we adopt $Z=0.0019\simeq Z_\odot/10$, relevant for the progenitor
 population of GW events \citep[e.g.,][]{vanson:2021}. Moreover, we
 apply throughout the star a small amount of mixing with diffusivity
-\texttt{min\_D\_mix}=100. This improves the numerical stability by
+\texttt{min\_D\_mix}=100\,$\mathrm{cm^2 s^{-1}}$. This improves the numerical stability by
 smoothing properties across adjacent cells, without introducing
 significant quantitative variations, and is a typical numerical
 technique used in asteroseismology calculations (J.~Fuller,
@@ -418,14 +422,15 @@ Appendix~\ref{sec:eng_examples}).
 \begin{figure*}[htbp]
   \includegraphics[width=\textwidth]{grid_ratios.pdf}
   \caption{Ratios of the binding energy profiles (including internal
-    energy, $\alpha_\mathrm{th}=1$) of the accretor stars divided
-    stars of the same total mass post-RLOF. The orange solid line at 1
-    shows the ratio of the accretor to itself as a check, red solid
-    lines show the ratio of the accretor to a non-rotating single
-    star, while the other colors show the ratio to ``engineered'' star
-    (see Appendix~\ref{sec:eng_examples}). Each panel shows the ratios
-    at the first time the models reach the radius indicated on the
-    right and by the vertical dashed gray line. For the binding energy
+    energy, $\alpha_\mathrm{th}=1$) of the accretor stars divided the
+    binding energy profile of stars of the same total mass post-RLOF.
+    The orange solid line at 1 shows the ratio of the accretor to
+    itself as a check, red solid lines show the ratio of the accretor
+    to a non-rotating single star, while the other colors show the
+    ratio to ``engineered'' star (see
+    Appendix~\ref{sec:eng_examples}). Each panel shows the ratios at
+    the first time the models reach the radius indicated on the right
+    and by the vertical dashed gray line. For the binding energy
     profiles in the numerator and denominator see
     \Figref{fig:BE_profiles}.}
   \label{fig:grid_ratios}
@@ -462,7 +467,7 @@ BE(m, \alpha_{\rm th}) = - \int_{m}^M\,dm'\left( -\frac{G m'}{r(m')}+\alpha_\mat
 with $r(m')$ radius, $u(m')$ the internal energy of a shell of mass
 thickness $dm'$ and outer Lagrangian mass coordinate $m'$, and $G$ the
 gravitational constant. The integral goes from mass coordinate
-$m$, which can be thought of the mass of the ``core'' surviving a
+$m$, which can be thought of as the mass of the ``core'' surviving a
 hypothetical CE, to the surface. The parameter
 $0\leq \alpha_\mathrm{th}\leq 1$ is the fraction of internal energy
 (including recombination energy) that can be used to lift the shared
@@ -607,7 +612,7 @@ with rotationally driven instabilities contributing to a lesser extent
 during late RLOF. We adopt an exponentially decreasing overshooting
 diffusion coefficient (\citealt{claret:17}) which may underestimate
 the amount of mixing at the accretor core boundary. After RLOF, a
-thick convective shell develops above the core see
+thick convective shell develops above the core
 \citep[see][]{renzo:2021zoph}, which also contributes to the different
 binding energy profiles (see \Figref{fig:BE_profiles}).
 
@@ -659,7 +664,7 @@ earlier mass transfer) and more equal mass ratios can also result in
 the accretor avoiding the red supergiant phase even at lower masses
 \citep{cantiello:2007}.
 
-We have focused accretor models for progenitors of NS and BH. However,
+We have focused on accretor models for progenitors of NS and BH. However,
 the physical processes described should be similar in all accretor
 stars with convective main sequence cores, down to initial mass
 $M_{\rm ZAMS}\gtrsim 1.2\,M_\odot$ \citep[see also][]{wang:20}. Thus,
@@ -797,7 +802,7 @@ stars, the CEB is determined by the extent of the convective boundary
 mixing and the recession in mass coordinate of the
 convective core. In \Figref{fig:toy_models_example}, lines of
 different colors show a trend with shallower entropy and composition
-profiles at TAMS (lighter curves in \Figref{fig:toy_models_example})
+profiles at TAMS (lighter curves in \Figref{fig:engineered_TAMS})
 evolving into more bound inner envelopes (larger
 binding energy inside $\log_{10}(r/\mathrm{cm})\lesssim 11.5$), and viceversa.
 
@@ -807,13 +812,12 @@ binding energy inside $\log_{10}(r/\mathrm{cm})\lesssim 11.5$), and viceversa.
 Mass transfer through RLOF from a binary companion also spins up the
 accreting star, often to critical rotation\footnote{At critical
   rotation, the centrifugal force
-  balances the gravitational pull at the equator, corresponding to
+  balances the gravitational pull at the equator, corresponding to critical
   angular frequency
-  $\omega_\mathrm{crit}=\sqrt{(1-L/L_\mathrm{Edd})GM/R^3}$ is the
-  critical spin frequency, with $L_\mathrm{Edd}$ the Eddington
-  luminosity, and $L$ is the luminosity.} \citep[e.g.,][]{lubow:1975,
+  $\omega_\mathrm{crit}=\sqrt{(1-L/L_\mathrm{Edd})GM/R^3}$, with $L_\mathrm{Edd}$ the Eddington
+  luminosity, and $L$ the stellar luminosity.} \citep[e.g.,][]{lubow:1975,
   packet:1981, cantiello:2007}. Although spinning up a star late during its
-main-sequence evolution has a different structural consequences than
+main-sequence evolution has  different structural consequences than
 natal rotation (see \citealt{renzo:2021zoph}), our accretor models can
 reach a rigid, close-to-critical rotation late during RLOF.
 Thus, it is worth considering the impact of rotation on the envelope
@@ -892,7 +896,7 @@ local deviations from this trend can occur for some $r$.
 \begin{figure*}[hbtp]
   \includegraphics[width=\textwidth]{BE_profiles.pdf}
   \caption{Binding energy profile at fixed photospheric radius $R$
-    (right y-axis) as a function of radius $r(m)$. We only show
+    (right y-axis) as a function of radius $r\equiv r(m)$. We only show
     profiles with $\alpha_\mathrm{th}=1$, that is accounting for the
     internal energy content of the star. Orange, red, and other colors
     show respectively the accretor models, single stars of same
