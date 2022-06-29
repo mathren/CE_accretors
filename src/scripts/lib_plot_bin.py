@@ -121,8 +121,7 @@ def plot_HRD(
             mew=2,
             markeredgecolor=color,
             ms=10,
-            color="y",
-            zorder=1,
+            color="r", zorder=10
         )
     if annotate_RLOF:
         if os.path.isdir(input_file):
