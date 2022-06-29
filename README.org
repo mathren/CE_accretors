@@ -1,8 +1,3 @@
-#+Title: Rejuvenated accretors have less bound envelopes
-#+author: [[mailto:mrenzo@flatironinstitute.org][Mathieu Renzo]]
-
-/Impact of  the first Roche lobe overflow on subsequent common envelope events/
-
 #+BEGIN_html
 <p align="center">
 <a href="https://github.com/showyourwork/showyourwork">
@@ -22,12 +17,15 @@
 </p>
 #+END_html
 
-   Most isolated binary evolution scenarios for gravitational-wave
-   sources rely on a common envelope (CE) to reduce the separation
-   (exceptions are chemically homogeneous evolution and stable mass
-   transfer channels). The CE is often initiated by a star that has
-   previously accreted mass during a stable Roche lobe overflow (RLOF)
-   phase.
+*  Rejuvenated accretors have less bound envelopes
+  /Impact of  the first Roche lobe overflow on subsequent common envelope events/
+
+  Most isolated binary evolution scenarios for gravitational-wave
+  sources rely on a common envelope (CE) to reduce the separation
+  (exceptions are chemically homogeneous evolution and stable mass
+  transfer channels). The CE is often initiated by a star that has
+  previously accreted mass during a stable Roche lobe overflow (RLOF)
+  phase.
 
    We study how the previous accretion through RLOF influences the
    radial evolution and the binding energy profile of the accretor
