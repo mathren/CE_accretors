@@ -23,6 +23,7 @@ __author__ = ['Mathieu Renzo <mrenzo@flatironinstitute.org']
 
 import sys
 import os
+import glob
 
 def folder_name(m1, m2, P, Z, grid_index=0, root="/tmp/"):
     """
@@ -44,3 +45,27 @@ def folder_name(m1, m2, P, Z, grid_index=0, root="/tmp/"):
     """
     folder_name = f"/m1_{m1:.4f}_m2_{m2:.4f}_initial_z_{Z:.3}_initial_period_in_days_{P:.4e}_grid_index_{grid_index:d}"
     return root+folder_name
+
+def checkFolder(folder):
+    """ checks if folder exists, if not, it creates it, and returns its content """
+    found = glob.glob(folder)
+    if found:
+        print("Found folder:", folder)
+        content = glob.glob(folder + "/*")
+        return content
+    if not found:
+        os.system("mkdir -p " + str(folder))
+        return glob.glob(folder + "/*")  ## will be empty
+
+
+def gitPush(repo, description="[skip ci] started a run with no description"):
+    push = input("should we push to the git repo first? [Y/n]")
+    if (push == "Y") or (push == "y"):
+        if not description:
+            description = input("commit message:")
+        pwd = os.getcwd()  # where am I?
+        os.chdir(repo)
+        os.system(
+            "git add . && git commit -am 'about to start a run: " + description + " ' && git push"
+        )
+        os.chdir(pwd)  # go back to previous folder

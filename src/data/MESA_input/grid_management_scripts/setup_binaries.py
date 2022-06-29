@@ -26,12 +26,7 @@ import os
 import glob
 import math
 import numpy as np
-sys.path.append("/mnt/home/mrenzo/codes/python_stuff/plotFunc/")
-sys.path.append("/mnt/home/mrenzo/Templates/binary_setup/notebooks/")
-# sys.path.append("/home/math/Documents/Research/codes/plotFunc/")
-# sys.path.append("/home/math/Documents/Research/Projects/binary_setup/notebooks/")
-from utilsLib import checkFolder, gitPush
-from scripts_aux import folder_name
+from scripts_aux import folder_name, checkFolder, gitPush
 
 def get_period_from_masses_sep(a, M1, M2):
     """
@@ -47,9 +42,9 @@ def get_period_from_masses_sep(a, M1, M2):
 
 if __name__=="__main__":
     # define the grid
-    primary_masses = [18, 20, 38]
-    mass_ratios = [0.4, 0.5, 0.6, 0.7, 0.9]
-    secondary_masses = []
+    primary_masses = [20] #, 20, 38]
+    mass_ratios = []# 0.4, 0.5, 0.6, 0.7, 0.9]
+    secondary_masses = [17]
     periods = [100]
     # separations = [300] # Rsun
     metallicities = [0.0019] # , 0.00019]
@@ -57,9 +52,9 @@ if __name__=="__main__":
 
 
     # these will all become sys.argv if needed
-    ROOT = "/mnt/home/mrenzo/Templates/"
-    TEMPLATE = ROOT+"binary_mesa/template_binary/"
-    WHERE_TO_RUN = "/mnt/home/mrenzo/ceph/RUNS/accretors/mesa15140/binaries/more_qzams/"
+    ROOT = "../../MESA_input/"
+    TEMPLATE = ROOT+"binaries/template_binary/"
+    WHERE_TO_RUN = "/mnt/home/mrenzo/ceph/RUNS/accretors/mesa15140/binaries/no_rot/"
 
     # check if folders exist
     print("template:",TEMPLATE)
@@ -79,7 +74,7 @@ if __name__=="__main__":
     RUNFILE = WHERE_TO_RUN+"/grid_of_accretors.txt"
 
     # push to repo
-    gitPush("/mnt/home/mrenzo/Templates/binary_mesa")
+    gitPush("/mnt/home/mrenzo/Projects/CE_accretors_base/CE_accretors/")
 
     # set up the grid now
     for Z in metallicities:
