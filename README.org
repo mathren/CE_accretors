@@ -22,9 +22,6 @@
 </p>
 #+END_html
 
-
-** Why care about previous mass transfer phases when thinking about future common envelope?
-
    Most isolated binary evolution scenarios for gravitational-wave
    sources rely on a common envelope (CE) to reduce the separation
    (exceptions are chemically homogeneous evolution and stable mass
@@ -42,8 +39,10 @@
 
    Our result broadly indicate that having accreted mass during the
    main sequence leads to evolved stars with overall less bound
-   envelopes that might be easier to eject. For more info, click on
-   the article pdf badge above.
+   envelopes that might be easier to eject in a CE, suggesting a
+   higher CE survival rate and wider post-CE orbital sepatations.
+
+   For more info, see [[shttps://github.com/mathren/CE_accretors/raw/main-pdf/CE_accretors.pdf][the article]].
 
 ** Structure of the repository
 
