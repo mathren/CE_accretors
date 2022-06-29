@@ -127,8 +127,8 @@
 
 ** TODO list
 
-  - [ ] Convection argument for steepness (see Stephen's comment on
-    slack): *Pending Stephen's feedback*
+  - [ ] Convection argument for steepness: emphasize that convection
+    is fast to explain plateau
 
 
 ** To be submitted to ApJL
