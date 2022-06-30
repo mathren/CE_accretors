@@ -20,6 +20,8 @@
 *  Rejuvenated accretors have less bound envelopes
   /Impact of  the first Roche lobe overflow on subsequent common envelope events/
 
+  (to be submitted to ApJL)
+
   Most isolated binary evolution scenarios for gravitational-wave
   sources rely on a common envelope (CE) to reduce the separation
   (exceptions are chemically homogeneous evolution and stable mass
@@ -40,7 +42,8 @@
    envelopes that might be easier to eject in a CE, suggesting a
    higher CE survival rate and wider post-CE orbital sepatations.
 
-   For more info, see [[shttps://github.com/mathren/CE_accretors/raw/main-pdf/CE_accretors.pdf][the article]].
+   For more info, see [[shttps://github.com/mathren/CE_accretors/raw/main-pdf/CE_accretors.pdf][the article]]. Data are publicly available on
+   [[https://zenodo.org/record/6600641][zenodo]].
 
 ** Structure of the repository
 
@@ -120,25 +123,3 @@
   you have ever ran =showyourwork= you will have a (possibly outdated)
   version of the figures locally, and you can compile the =tex= as you
   would usually.
-
-
-** TODO list
-
-  - [ ] Convection argument for steepness: emphasize that convection
-    is fast to explain plateau
-
-
-** To be submitted to ApJL
-
-   From Fred Rasio:
-
-   #+BEGIN_SRC
-   Dear Mathieu,
-
-   Yes, this looks interesting and I would welcome submission to ApJ Letters.
-
-   Please make a note of this communication in a cover letter or manuscript comment when you submit online.
-
-   Best wishes,
-   Fred
-   #+END_SRC
