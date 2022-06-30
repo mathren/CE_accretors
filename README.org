@@ -42,8 +42,9 @@
    envelopes that might be easier to eject in a CE, suggesting a
    higher CE survival rate and wider post-CE orbital sepatations.
 
-   For more info, see [[shttps://github.com/mathren/CE_accretors/raw/main-pdf/CE_accretors.pdf][the article]]. Data are publicly available on
-   [[https://zenodo.org/record/6600641][zenodo]].
+   For more info, see [[shttps://github.com/mathren/CE_accretors/raw/main-pdf/CE_accretors.pdf][the article]]. Our MESA simulations output are
+   publicly available on [[https://zenodo.org/record/6600641][zenodo]], and processed data produced by the
+   scripts are cached on [[https://sandbox.zenodo.org/record/1074085][zenodo sandbox]].
 
 
 ** How to build the article locally
