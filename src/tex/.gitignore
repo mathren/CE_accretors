@@ -2,5 +2,9 @@
 *latexindent*
 *.aux
 *.bbl
+*.blg
+*.log
+CE_accretors.pdf
+*.synctex.gz
 *.toc
 auto/
