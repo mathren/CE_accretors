@@ -18,7 +18,7 @@
 #+END_html
 
 *  Rejuvenated accretors have less bound envelopes
-  /Impact of  the first Roche lobe overflow on subsequent common envelope events/
+  /Impact of Roche lobe overflow on subsequent common envelope events/
 
   (to be submitted to ApJL)
 
