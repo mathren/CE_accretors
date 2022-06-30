@@ -117,11 +117,11 @@ def plot_HRD(
             logT[iTAMS],
             logL[iTAMS],
             lw=0,
-            marker="D",
+            marker="o",
             mew=2,
-            markeredgecolor=color,
+            markeredgecolor='k',
             ms=10,
-            color="r",
+            color=color,
             zorder=10,
         )
     if annotate_RLOF:
