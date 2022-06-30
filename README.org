@@ -45,6 +45,46 @@
    For more info, see [[shttps://github.com/mathren/CE_accretors/raw/main-pdf/CE_accretors.pdf][the article]]. Data are publicly available on
    [[https://zenodo.org/record/6600641][zenodo]].
 
+
+** How to build the article locally
+
+   (See also the [[https://show-your.work/en/latest/][showyourwork documentation]])
+
+   Assuming you have a working installation of conda, you can [[https://show-your.work/en/latest/install/][install
+   showyourwork]], clone this repository, and just run =showyourwork= and
+   it should work:
+
+#+BEGIN_SRC bash
+  pip install -U showyourwork
+  git clone git@github.com:mathren/CE_accretors.git
+  showyourwork
+#+END_SRC
+
+  The first time this will download the data (1.6 Gb) and process them
+  -- unpacking up to 7.6 Gb of MESA output. Downloading, unpacking the
+  data, and pre-processing them may take long (~30min on my
+  workstation excluding the time to download):
+
+#+BEGIN_SRC bash
+  time showyourwork
+  [...]
+  real    30m13.209s
+  user    27m9.104s
+  sys     0m59.076s
+#+END_SRC
+
+  After the data exist cached on your machine, this will be much
+  faster (how much depends on what has changed in the repo that needs
+  to be redone). A public version of the cached data is available on
+  [[https://sandbox.zenodo.org/record/1074085][zenodo sandbox]].
+
+  You can also edit and should be able to compile locally the =tex=
+  file. If you have never ran =showyourwork= locally, then the figures
+  will be missing on your machine (but you can still compile using the
+  =draft= option). If you have ever ran =showyourwork= you will have a
+  (possibly outdated) version of the figures locally, and you can
+  compile the =tex= as you would usually.
+
 ** Structure of the repository
 
    This follows the structure prescribed by [[https://github.com/showyourwork/showyourwork][showyourwork]].
@@ -82,44 +122,3 @@
 
      Please refer to the [[https://docs.mesastar.org/en/r15140/][MESA documentation]] and [[https://lists.mesastar.org/mailman/listinfo][mailing list]] for
      support.
-
-
-** How to build the article locally
-
-   (See also the [[https://show-your.work/en/latest/][showyourwork documentation]])
-
-   Assuming you have a working installation of conda, you can [[https://show-your.work/en/latest/install/][install
-   showyourwork]], clone this repository, and just run =showyourwork= and
-   it should work:
-
-#+BEGIN_SRC bash
-  pip install -U showyourwork
-  git clone git@github.com:mathren/CE_accretors.git
-  showyourwork
-#+END_SRC
-
-  The first time this will download the data (1.6 Gb) and process them
-  -- unpacking up to 7.6 Gb of MESA output. Downloading, unpacking the
-  data, and pre-processing them may take long (~30min on my
-  workstation excluding the time to download):
-
-#+BEGIN_SRC bash
-  time showyourwork
-  [...]
-  real    30m13.209s
-  user    27m9.104s
-  sys     0m59.076s
-#+END_SRC
-
-  After the data exist cached on your machine, this will be much
-  faster (how much depends on what has changed in the repo that needs
-  to be redone). A public version of the cached data is available on
-  [[https://sandbox.zenodo.org/record/1074085][zenodo sandbox]].
-
-  You can also find the =tex= source in =src/tex/CE_accretors.tex=, which
-  you can edit and should be able to compile locally. If you have
-  never ran =showyourwork= locally, then the figures will be missing on
-  your machine (but you can still compile using the =draft= option). If
-  you have ever ran =showyourwork= you will have a (possibly outdated)
-  version of the figures locally, and you can compile the =tex= as you
-  would usually.
