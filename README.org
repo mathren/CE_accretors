@@ -17,7 +17,7 @@
 </p>
 #+END_html
 
-*  Rejuvenated accretors have less bound envelopes
+* Rejuvenated accretors have less bound envelopes
   /Impact of Roche lobe overflow on subsequent common envelope events/
 
   Most isolated binary evolution scenarios for gravitational-wave
@@ -40,9 +40,9 @@
   envelopes that might be easier to eject in a CE, suggesting a
   higher CE survival rate and wider post-CE orbital sepatations.
 
-  For more info, see [[shttps://github.com/mathren/CE_accretors/raw/main-pdf/CE_accretors.pdf][the article]] (submitted). Our MESA simulations
-  output are publicly available on [[https://zenodo.org/record/6600641][zenodo]], and processed data produced
-  by the scripts are cached on [[https://sandbox.zenodo.org/record/1074085][zenodo sandbox]].
+  For more info, see [[shttps://github.com/mathren/CE_accretors/raw/main-pdf/CE_accretors.pdf][the article]] (submitted, [[http://arxiv.org/abs/2206.15338][arXiv:2206.15338]]). Our
+  MESA simulations output are publicly available on [[https://zenodo.org/record/6600641][zenodo]], and
+  processed data produced by the scripts are cached on [[https://sandbox.zenodo.org/record/1074085][zenodo sandbox]].
 
 
 ** How to build the article locally
