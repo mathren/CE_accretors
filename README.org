@@ -41,8 +41,9 @@
   higher CE survival rate and wider post-CE orbital sepatations.
 
   For more info, see [[shttps://github.com/mathren/CE_accretors/raw/main-pdf/CE_accretors.pdf][the article]] (submitted, [[http://arxiv.org/abs/2206.15338][arXiv:2206.15338]]). Our
-  MESA simulations output are publicly available on [[https://zenodo.org/record/6600641][zenodo]], and
-  processed data produced by the scripts are cached on [[https://sandbox.zenodo.org/record/1074085][zenodo sandbox]].
+  [[https://zenodo.org/record/6600641][MESA simulations input and output are publicly available on zenodo]],
+  and processed data produced by the scripts are also publicly
+  available as a =showyourwork=-managed on [[https://zenodo.org/record/6788916][cache]] also zenodo.
 
 
 ** How to build the article locally
@@ -74,8 +75,7 @@
 
   After the data exist cached on your machine, this will be much
   faster (how much depends on what has changed in the repo that needs
-  to be redone). A public version of the cached data is also available
-  on [[https://zenodo.org/record/6788916][zenodo]], so that you can skip the longer computations.
+  to be redone).
 
   You can also edit and should be able to compile locally the =tex= file
   (see below). If you have never ran =showyourwork= locally, then the
@@ -108,7 +108,8 @@
 
       The subfolders here contain template MESA work directory used to
       run our models. Tarball containing the exact template used for
-      the models in the paper are also uploaded on [[https://zenodo.org/record/6600641][zenodo]].
+      the models in the paper are also uploaded on [[https://zenodo.org/record/6600641][zenodo]] -- the
+      template here may evolve in the future.
 
       This project uses =MESA version 15140=, =MESA SDK
       x86_64-linux-20.12.1= (also logged in the =*.data= files), which
