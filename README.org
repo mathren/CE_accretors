@@ -43,7 +43,7 @@
   For more info, see [[shttps://github.com/mathren/CE_accretors/raw/main-pdf/CE_accretors.pdf][the article]] (submitted, [[http://arxiv.org/abs/2206.15338][arXiv:2206.15338]]). Our
   [[https://zenodo.org/record/6600641][MESA simulations input and output are publicly available on zenodo]],
   and processed data produced by the scripts are also publicly
-  available as a =showyourwork=-managed on [[https://zenodo.org/record/6788916][cache]] also zenodo.
+  available as a =showyourwork=-managed [[https://zenodo.org/record/6788916][cache]] also on zenodo.
 
 
 ** How to build the article locally
