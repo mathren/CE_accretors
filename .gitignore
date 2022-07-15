@@ -6,6 +6,7 @@
 /*.pdf
 report.html
 arxiv.tar.gz
+CE_accretors.pdf
 
 # Figure output
 src/tex/figures/*
