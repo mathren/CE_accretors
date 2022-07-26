@@ -196,8 +196,10 @@ def annotate_radii_hrd(ax, radii=np.logspace(0, 3, base=10)):
     for r in radii:
         l = get_L_from_r_teff(r, teff)
         y = np.log10(l)
-        ax.plot(x, y, c="#808080", ls="-.", lw=1)
-        # ax.text(x[5], y[5], f"{r:.0f}"+r"$\,R_\odot$", fontsize=20, transform=ax.transData, zorder=0, c="#808080")# , rotation=np.((max(y)-min(y))/(max(x)-min(x))))
+        ax.plot(x, y, c="#808080", ls=":", lw=1)
+        # ax.text(x[5], y[5], f"{r:.0f}"+r"$\,R_\odot$", fontsize=20,
+        # transform=ax.transData, zorder=0, c="#808080"),
+        # rotation=np.((max(y)-min(y))/(max(x)-min(x))))
     # reset ylim
     ax.set_ylim(ymin, ymax)
 
