@@ -108,6 +108,6 @@ ax.text(
     bbox=dict(facecolor="none", edgecolor="black", boxstyle="round,pad=0.1"),
 )
 ax.set_yscale("log")
-ax.set_ylim(1e46, 1e51)
+ax.set_ylim(1e46, 5e51)
 ax.set_xlim(10, 14)
 plt.savefig(paths.figures / "rotation_models_example.pdf")
