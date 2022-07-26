@@ -75,7 +75,7 @@
   energy for the remaining evolution. Comparing accretor stars from
   self-consistent binary models to stars evolved as single, we
   demonstrate that the rejuvenation can lower the energy required to
-  eject a CE by $\sim 4-58\%$ for both black hole and neutron star
+  eject a CE \textcolor{red}{to} $\sim 4-58\%$ for both black hole and neutron star
   progenitors, depending on the evolutionary stage and final orbital
   separation. Therefore, GW progenitors experiencing a first stable mass
   transfer may more easily survive subsequent possible CE events and
@@ -86,7 +86,7 @@
   % tex-count-words = 200
 \end{abstract}
 
-\keywords{Multiple stellar evolution -- Roche lobe overflow -- Common envelope}
+\keywords{\textcolor{red}{Binary stars} -- Roche lobe overflow -- Common envelope}
 
 \section{Introduction}
 \label{sec:intro}
@@ -159,10 +159,10 @@ additional plots of our model grids.
 \label{sec:methods}
 
 We use \mesa\ \citep[version 15140,][]{paxton:2011, paxton:2013,
-  paxton:2015, paxton:2018, paxton:2011} to compute the evolution of
+  paxton:2015, paxton:2018, paxton:2019} to compute the evolution of
 binaries which experience mass transfer after the end of the donor's
-main sequence, that is case B Roche lobe overflow
-\citep[RLOF,][]{kippenhahn:1967}. Our output files are compatible for
+main sequence, that is case B RLOF
+\citep[][]{kippenhahn:1967}. Our output files are compatible for
 use in the population synthesis code \code{POSYDON}
 \citep{fragos:2022} and publicly available together with our input
 files and customized routines at
@@ -177,7 +177,7 @@ adjacent cells, without introducing significant quantitative
 variations, and is a typical numerical technique used in
 asteroseismology calculations (J.~Fuller, private~comm.).
 
-We adopt initial period $P=100$\,days and choose initial masses
+We adopt \textcolor{red}{an} initial period $P=100$\,days and choose initial masses
 $(M_{1}, M_{2}) = (18, 15), (20, 17), (38, 30)\,M_\odot$. We focus on
 the initially less massive stars, which after accretion become
 $M_2=15\rightarrow 18, 17\rightarrow 20, 30\rightarrow 36\,M_\odot$,
@@ -204,7 +204,7 @@ computing time by avoiding to simulate the late evolutionary phases of
 the RLOF-donors, and implies that we neglect further possible -- but
 not expected in this regime -- mass transfer episodes (case BB RLOF,
 \citealt{delgado:81, laplace:2020}) and tidal interactions between the
-stars. We also neglect the impact of the SN ejecta with the accretor
+stars. We also neglect the impact of the \textcolor{red}{supernova} ejecta with the accretor
 \cite[e.g.,][]{hirai:2018, ogata:2021} and the orbital consequences of
 the RLOF-donor core-collapse \citep[e.g.,][]{brandt:1995,
   kalogera:1996, tauris:1998, renzo:2019walk}.
@@ -257,9 +257,9 @@ $\beta_\mathrm{RLOF}=|\Delta M_\mathrm{accretor}/\Delta M_\mathrm{donor}| = 0.29
     outlines mark the accretor's TAMS (not shown for donor). The thin
     dot-dashed lines mark constant radii of
     $R=100, 200, 300, 500, 1000\,R_\odot$, all models have $Z=0.0019$,
-    period $100$\,days, and initial masses of 38 and 30\,$M_\odot$
-    (green), 20 and 17\,$M_\odot$ (orange), 18 and 15\,$M_\odot$
-    (blue).}
+    \textcolor{red}{an initial orbital} period of $100$\,days, and initial masses of 38
+    and 30\,$M_\odot$ (green), 20 and 17\,$M_\odot$ (orange), 18 and
+    15\,$M_\odot$ (blue).}
   \label{fig:HRD}
   \script{HRD.py}
 \end{figure}
