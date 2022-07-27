@@ -18,86 +18,86 @@ dependencies:
     - src/scripts/lib_plot_bin.py
     - src/scripts/lib_engineered.py
     - src/scripts/MESAreader.py
-    - src/data/MESA_output/binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS1/history.data
-    - src/data/MESA_output/binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/history.data
-    - src/data/MESA_output/binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS1/history.data
-    - src/data/MESA_output/binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/history.data
-    - src/data/MESA_output/binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS1/history.data
-    - src/data/MESA_output/binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/history.data
-    # - src/data/MESA_output/
-    # - src/data/MESA_output.tar.gz
+    # - src/data/MESA_output/binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS1/history.data
+    # - src/data/MESA_output/binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/history.data
+    # - src/data/MESA_output/binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS1/history.data
+    # - src/data/MESA_output/binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/history.data
+    # - src/data/MESA_output/binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS1/history.data
+    # - src/data/MESA_output/binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/history.data
+    - src/data/MESA_output/
+    - src/data/MESA_output.tar.gz
   src/scripts/TAMS_profiles.py:
     - src/scripts/lib_engineered.py
     - src/scripts/MESAreader.py
-    # - src/data/MESA_output/
-    # - src/data/MESA_output.tar.gz
+    - src/data/MESA_output/
+    - src/data/MESA_output.tar.gz
   src/scripts/engineered_TAMS.py:
     - src/scripts/lib_plot_bin.py
     - src/scripts/lib_engineered.py
     - src/scripts/MESAreader.py
-    - src/data/MESA_output/engineered_stars/TAMS_models/30_rot0_to_TAMS/LOGS/TAMS.data
-    - src/data/MESA_output/engineered_stars/same_core/grid30/1.2/LOGS/profile1.data
-    - src/data/MESA_output/engineered_stars/same_core/grid30/-0.8/LOGS/profile1.data
-    - src/data/MESA_output/engineered_stars/same_core/grid30/-2.0/LOGS/profile1.data
-    - src/data/MESA_output/engineered_stars/same_core/grid30/3.6/LOGS/profile1.data
-    - src/data/MESA_output/engineered_stars/same_core/grid30/2.0/LOGS/profile1.data
-    - src/data/MESA_output/engineered_stars/same_core/grid30/-1.2/LOGS/profile1.data
-    - src/data/MESA_output/engineered_stars/same_core/grid30/4.0/LOGS/profile1.data
-    - src/data/MESA_output/engineered_stars/same_core/grid30/2.8/LOGS/profile1.data
-    - src/data/MESA_output/engineered_stars/same_core/grid30/-3.6/LOGS/profile1.data
-    - src/data/MESA_output/engineered_stars/same_core/grid30/-2.8/LOGS/profile1.data
-    - src/data/MESA_output/engineered_stars/same_core/grid30/3.2/LOGS/profile1.data
-    - src/data/MESA_output/engineered_stars/same_core/grid30/0.4/LOGS/profile1.data
-    - src/data/MESA_output/engineered_stars/same_core/grid30/-3.2/LOGS/profile1.data
-    - src/data/MESA_output/engineered_stars/same_core/grid30/-1.6/LOGS/profile1.data
-    - src/data/MESA_output/engineered_stars/same_core/grid30/0.0/LOGS/profile1.data
-    - src/data/MESA_output/engineered_stars/same_core/grid30/2.4/LOGS/profile1.data
-    - src/data/MESA_output/engineered_stars/same_core/grid30/-0.4/LOGS/profile1.data
-    - src/data/MESA_output/engineered_stars/same_core/grid30/0.8/LOGS/profile1.data
-    - src/data/MESA_output/engineered_stars/same_core/grid30/-4.0/LOGS/profile1.data
-    - src/data/MESA_output/engineered_stars/same_core/grid30/1.6/LOGS/profile1.data
-    - src/data/MESA_output/engineered_stars/same_core/grid30/-2.4/LOGS/profile1.data
-    # - src/data/MESA_output/
-    # - src/data/MESA_output.tar.gz
+    # - src/data/MESA_output/engineered_stars/TAMS_models/30_rot0_to_TAMS/LOGS/TAMS.data
+    # - src/data/MESA_output/engineered_stars/same_core/grid30/1.2/LOGS/profile1.data
+    # - src/data/MESA_output/engineered_stars/same_core/grid30/-0.8/LOGS/profile1.data
+    # - src/data/MESA_output/engineered_stars/same_core/grid30/-2.0/LOGS/profile1.data
+    # - src/data/MESA_output/engineered_stars/same_core/grid30/3.6/LOGS/profile1.data
+    # - src/data/MESA_output/engineered_stars/same_core/grid30/2.0/LOGS/profile1.data
+    # - src/data/MESA_output/engineered_stars/same_core/grid30/-1.2/LOGS/profile1.data
+    # - src/data/MESA_output/engineered_stars/same_core/grid30/4.0/LOGS/profile1.data
+    # - src/data/MESA_output/engineered_stars/same_core/grid30/2.8/LOGS/profile1.data
+    # - src/data/MESA_output/engineered_stars/same_core/grid30/-3.6/LOGS/profile1.data
+    # - src/data/MESA_output/engineered_stars/same_core/grid30/-2.8/LOGS/profile1.data
+    # - src/data/MESA_output/engineered_stars/same_core/grid30/3.2/LOGS/profile1.data
+    # - src/data/MESA_output/engineered_stars/same_core/grid30/0.4/LOGS/profile1.data
+    # - src/data/MESA_output/engineered_stars/same_core/grid30/-3.2/LOGS/profile1.data
+    # - src/data/MESA_output/engineered_stars/same_core/grid30/-1.6/LOGS/profile1.data
+    # - src/data/MESA_output/engineered_stars/same_core/grid30/0.0/LOGS/profile1.data
+    # - src/data/MESA_output/engineered_stars/same_core/grid30/2.4/LOGS/profile1.data
+    # - src/data/MESA_output/engineered_stars/same_core/grid30/-0.4/LOGS/profile1.data
+    # - src/data/MESA_output/engineered_stars/same_core/grid30/0.8/LOGS/profile1.data
+    # - src/data/MESA_output/engineered_stars/same_core/grid30/-4.0/LOGS/profile1.data
+    # - src/data/MESA_output/engineered_stars/same_core/grid30/1.6/LOGS/profile1.data
+    # - src/data/MESA_output/engineered_stars/same_core/grid30/-2.4/LOGS/profile1.data
+    - src/data/MESA_output/
+    - src/data/MESA_output.tar.gz
   src/scripts/toy_models_example.py:
     - src/scripts/lib_plot_bin.py
     - src/scripts/lib_engineered.py
     - src/scripts/MESAreader.py
-    # - src/data/MESA_output/
-    # - src/data/MESA_output.tar.gz
+    - src/data/MESA_output/
+    - src/data/MESA_output.tar.gz
   src/scripts/rotation_models_example.py:
     - src/scripts/lib_plot_bin.py
     - src/scripts/lib_engineered.py
     - src/scripts/MESAreader.py
-    # - src/data/MESA_output/
-    # - src/data/MESA_output.tar.gz
+    - src/data/MESA_output/
+    - src/data/MESA_output.tar.gz
   src/scripts/BE_profiles.py:
     - src/scripts/lib_plot_bin.py
     - src/scripts/lib_engineered.py
     - src/scripts/MESAreader.py
-    # - src/data/MESA_output/
-    # - src/data/MESA_output.tar.gz
+    - src/data/MESA_output/
+    - src/data/MESA_output.tar.gz
   src/scripts/grid_ratios.py:
     - src/scripts/lib_plot_bin.py
     - src/scripts/lib_engineered.py
     - src/scripts/MESAreader.py
-    # - src/data/MESA_output/
-    # - src/data/MESA_output.tar.gz
+    - src/data/MESA_output/
+    - src/data/MESA_output.tar.gz
   src/scripts/BE_env_R.py:
     - src/scripts/lib_plot_bin.py
     - src/scripts/lib_engineered.py
     - src/scripts/MESAreader.py
-    # - src/data/MESA_output/
-    # - src/data/MESA_output.tar.gz
+    - src/data/MESA_output/
+    - src/data/MESA_output.tar.gz
   src/scripts/TAMS_profiles_same_initial_mass.py:
     - src/scripts/lib_plot_bin.py
     - src/scripts/lib_engineered.py
     - src/scripts/MESAreader.py
-    # - src/data/MESA_output/
-    # - src/data/MESA_output.tar.gz
+    - src/data/MESA_output/
+    - src/data/MESA_output.tar.gz
   src/scripts/lambda_grid.py:
     - src/scripts/lib_plot_bin.py
     - src/scripts/lib_engineered.py
     - src/scripts/MESAreader.py
-    # - src/data/MESA_output/
-    # - src/data/MESA_output.tar.gz
+    - src/data/MESA_output/
+    - src/data/MESA_output.tar.gz
