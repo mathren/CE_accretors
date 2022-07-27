@@ -33,15 +33,16 @@ def grid_lambdas(
     axes = [ax1, ax2, ax3, ax4, ax5]
     for ax in axes:
         ax.set_xlim(0, 18.5)
+        ax.set_yscale('log')
         if ax != axes[-1]:
             ax.set_xticklabels([])
         else:
             ax.set_xlabel(r"$m\ [M_\odot]$")
-    ax1.set_ylim(-0.1, 1.1)
-    ax2.set_ylim(-0.1, 1.1)
-    ax3.set_ylim(-0.1, 1.3)
-    ax4.set_ylim(-0.1, 1.7)
-    ax5.set_ylim(-0.1, 2.1)
+    ax1.set_ylim(5e-3, 1.85)
+    ax2.set_ylim(5e-3, 1.85)
+    ax3.set_ylim(5e-3, 1.85)
+    ax4.set_ylim(5e-3, 1.85)
+    ax5.set_ylim(5e-3, 2.3)
     plot_lambda_at_one_radius(
         ax1,
         "100Rsun.data",
@@ -74,7 +75,6 @@ def grid_lambdas(
         nonrot=nonrot1,
         plot_func=plot_func,
     )
-    # plot_lambda_at_one_radius(ax5, "1000Rsun.data", grid_folders=grid_folders1 ,accretor=b1, nonrot=nonrot1, plot_func = plot_func)
     # # 20 Msun
     bx1 = fig.add_subplot(gs[:20, 50:100])
     bx2 = fig.add_subplot(gs[20:40, 50:100])
@@ -84,8 +84,9 @@ def grid_lambdas(
     bxes = [bx1, bx2, bx3, bx4, bx5]
     for bx in bxes:
         bx.set_xlim(0, 21.7)
-        bx.set_yticklabels([])
+        bx.set_yscale('log')
         bx.set_ylim(axes[bxes.index(bx)].get_ylim())
+        bx.set_yticklabels([])
         if bx != bxes[-1]:
             bx.set_xticklabels([])
         else:
@@ -122,7 +123,6 @@ def grid_lambdas(
         nonrot=nonrot2,
         plot_func=plot_func,
     )
-    # plot_lambda_at_one_radius(bx5, "1000Rsun.data", grid_folders=grid_folders2 ,accretor=b2, nonrot=nonrot2, plot_func = plot_func)
     # 30
     cx1 = fig.add_subplot(gs[:20, 100:])
     cx2 = fig.add_subplot(gs[20:40, 100:])
@@ -132,8 +132,9 @@ def grid_lambdas(
     cxes = [cx1, cx2, cx3, cx4, cx5]
     for cx in cxes:
         cx.set_xlim(0, 36.3)
-        cx.set_yticklabels([])
+        cx.set_yscale('log')
         cx.set_ylim(axes[cxes.index(cx)].get_ylim())
+        cx.set_yticklabels([])
         if cx != cxes[-1]:
             cx.set_xticklabels([])
         else:
@@ -178,48 +179,37 @@ def grid_lambdas(
         nonrot=nonrot3,
         plot_func=plot_func,
     )
-    # ax.set_xlabel(r"m [$M_\odot$]")
     ax3.set_ylabel(r"$\lambda_\mathrm{CE} = (GM(M-m)/R)/BE(m, \alpha_\mathrm{th}=1.0)$")
     for cx in cxes:
         dx = cx.twinx()
-        dx.set_yticks(cx.get_yticks())
+        dx.set_yscale('log')
+        dx.set_ylim(cx.get_ylim())
+        # dx.set_yticks(cx.get_yticks())
         dx.set_yticklabels([])
         if cx == cxes[0]:
-            # bx.text(0.2, 0.1, , fontsize=30, transform=bx.transAxes, va="bottom", ha="right")
             label = "$100\,R_\odot$"
             X = 100 * Rsun_cm
         if cx == cxes[1]:
-            # bx.text(0.2, 0.1, , fontsize=30, transform=bx.transAxes, va="bottom", ha="right")
             label = "$200\,R_\odot$"
             X = 200 * Rsun_cm
         if cx == cxes[2]:
-            # bx.text(0.2, 0.1, , fontsize=30, transform=bx.transAxes, va="bottom", ha="right")
             label = "$300\,R_\odot$"
             X = 300 * Rsun_cm
         if cx == cxes[3]:
-            # bx.text(0.2, 0.1, , fontsize=30, transform=bx.transAxes, va="bottom", ha="right")
             label = "$500\,R_\odot$"
             X = 500 * Rsun_cm
         if cx == cxes[4]:
-            # bx.text(0.2, 0.1, , fontsize=30, transform=bx.transAxes, va="bottom", ha="right")
             label = "$1000\,R_\odot$"
             X = 1000 * Rsun_cm
         dx.set_ylabel(label)
-        # cx.axvline(np.log10(X), 0, 1, ls=":", lw=2, c="#808080", zorder=0)
-        # ax = axes[cxes.index(cx)]
-        # if ax != axes[-1]:  # skip last panel
-        #     ax.axvline(np.log10(X), 0, 1, ls=":", lw=2, c="#808080", zorder=0)
-        # bx = bxes[cxes.index(cx)]
-        # if bx != bxes[-1]:  # skip last panel
-        #     bx.axvline(np.log10(X), 0, 1, ls=":", lw=2, c="#808080", zorder=0)
-
+    # titles and legends
     ax1.set_title(r"$M_2=15\rightarrow 18\,M_\odot$", size=30)
     bx1.set_title(r"$M_2=17\rightarrow 20\,M_\odot$", size=30)
     cx1.set_title(r"$M_2=30\rightarrow 36\,M_\odot$", size=30)
     if legend:
         ax5.plot(np.nan, np.nan, c="orange", lw=3, ls="-", label="accretor")
         ax5.plot(np.nan, np.nan, c="r", lw=3, ls="-", label="single star")
-        ax5.legend(handlelength=0.5)
+        ax5.legend()
 
     if fig_name:
         plt.savefig(fig_name)
