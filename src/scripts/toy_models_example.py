@@ -26,7 +26,7 @@ plot_BE_r(
     pfile_normal,
     ax,
     alpha_th=1.0,
-    top_axis=True,
+    top_axis=False,
     lw=3,
     ls="-",
     c="r",

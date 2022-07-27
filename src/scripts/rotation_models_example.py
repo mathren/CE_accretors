@@ -55,7 +55,7 @@ plot_BE_r(
     pfile_normal,
     ax,
     alpha_th=0.0,
-    top_axis=True,  # top axis only for one model
+    top_axis=False,
     lw=3,
     c="r",
     zorder=10,
