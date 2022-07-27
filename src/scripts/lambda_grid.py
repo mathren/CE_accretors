@@ -205,13 +205,13 @@ def grid_lambdas(
             label = "$1000\,R_\odot$"
             X = 1000 * Rsun_cm
         dx.set_ylabel(label)
-        cx.axvline(np.log10(X), 0, 1, ls=":", lw=2, c="#808080", zorder=0)
-        ax = axes[cxes.index(cx)]
-        if ax != axes[-1]:  # skip last panel
-            ax.axvline(np.log10(X), 0, 1, ls=":", lw=2, c="#808080", zorder=0)
-        bx = bxes[cxes.index(cx)]
-        if bx != bxes[-1]:  # skip last panel
-            bx.axvline(np.log10(X), 0, 1, ls=":", lw=2, c="#808080", zorder=0)
+        # cx.axvline(np.log10(X), 0, 1, ls=":", lw=2, c="#808080", zorder=0)
+        # ax = axes[cxes.index(cx)]
+        # if ax != axes[-1]:  # skip last panel
+        #     ax.axvline(np.log10(X), 0, 1, ls=":", lw=2, c="#808080", zorder=0)
+        # bx = bxes[cxes.index(cx)]
+        # if bx != bxes[-1]:  # skip last panel
+        #     bx.axvline(np.log10(X), 0, 1, ls=":", lw=2, c="#808080", zorder=0)
 
     ax1.set_title(r"$M_2=15\rightarrow 18\,M_\odot$", size=30)
     bx1.set_title(r"$M_2=17\rightarrow 20\,M_\odot$", size=30)
