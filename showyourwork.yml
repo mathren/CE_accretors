@@ -1,5 +1,3 @@
-# version: 0.3.1.dev18+g96e8aa8
-
 verbose: True
 
 ms_name: CE_accretors
@@ -14,7 +12,7 @@ datasets:
 
 dependencies:
   src/scripts/convert_MESA_output.py:
-    - src/data/MESA_output.tar.gz  # 1.8 Gb
+    - src/data/MESA_output.tar.gz
     - src/scripts/MESAreader.py
   src/scripts/HRD.py:
     - src/scripts/lib_plot_bin.py
