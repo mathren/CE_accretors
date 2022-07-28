@@ -1,7 +1,5 @@
 version: cadb4086dd2a46cb68e6acffa73c2f7976e6d64d
 
-render_dag: True
-
 verbose: True
 
 ms_name: CE_accretors
