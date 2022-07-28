@@ -1,10 +1,12 @@
 version: cadb4086dd2a46cb68e6acffa73c2f7976e6d64d
 
+render_dag: True
+
 verbose: True
 
 ms_name: CE_accretors
 
-run_cache_rules_on_ci: true
+run_cache_rules_on_ci: True
 
 datasets:
   10.5281/zenodo.6600641:
@@ -20,14 +22,14 @@ dependencies:
     - src/scripts/lib_plot_bin.py
     - src/scripts/lib_engineered.py
     - src/scripts/MESAreader.py
-    # - src/data/MESA_output/binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS1/history.data
-    # - src/data/MESA_output/binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/history.data
-    # - src/data/MESA_output/binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS1/history.data
-    # - src/data/MESA_output/binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/history.data
-    # - src/data/MESA_output/binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS1/history.data
-    # - src/data/MESA_output/binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/history.data
-    - src/data/MESA_output/
-    - src/data/MESA_output.tar.gz
+    - src/data/MESA_output/binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS1/history.data
+    - src/data/MESA_output/binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/history.data
+    - src/data/MESA_output/binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS1/history.data
+    - src/data/MESA_output/binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/history.data
+    - src/data/MESA_output/binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS1/history.data
+    - src/data/MESA_output/binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/history.data
+    # - src/data/MESA_output/
+    # - src/data/MESA_output.tar.gz
   src/scripts/TAMS_profiles.py:
     - src/scripts/lib_engineered.py
     - src/scripts/MESAreader.py
