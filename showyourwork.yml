@@ -20,14 +20,14 @@ dependencies:
     - src/scripts/lib_plot_bin.py
     - src/scripts/lib_engineered.py
     - src/scripts/MESAreader.py
-    - src/data/MESA_output/binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS1/history.data
-    - src/data/MESA_output/binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/history.data
-    - src/data/MESA_output/binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS1/history.data
-    - src/data/MESA_output/binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/history.data
-    - src/data/MESA_output/binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS1/history.data
-    - src/data/MESA_output/binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/history.data
-    # - src/data/MESA_output/
-    # - src/data/MESA_output.tar.gz
+    # - src/data/MESA_output/binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS1/history.data
+    # - src/data/MESA_output/binaries/Z_0.0019/m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/history.data
+    # - src/data/MESA_output/binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS1/history.data
+    # - src/data/MESA_output/binaries/Z_0.0019/m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/history.data
+    # - src/data/MESA_output/binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS1/history.data
+    # - src/data/MESA_output/binaries/Z_0.0019/m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1/LOGS2/history.data
+    - src/data/MESA_output/
+    - src/data/MESA_output.tar.gz
   src/scripts/TAMS_profiles.py:
     - src/scripts/lib_engineered.py
     - src/scripts/MESAreader.py
