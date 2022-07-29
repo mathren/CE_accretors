@@ -208,8 +208,9 @@ def grid_lambdas(
     cx1.set_title(r"$M_2=30\rightarrow 36\,M_\odot$", size=30)
     if legend:
         ax5.plot(np.nan, np.nan, c="orange", lw=3, ls="-", label="accretor")
-        ax5.plot(np.nan, np.nan, c="r", lw=3, ls="-", label="single star")
+        bx5.plot(np.nan, np.nan, c="r", lw=3, ls="-", label="single star")
         ax5.legend()
+        bx5.legend()
 
     if fig_name:
         plt.savefig(fig_name)
