@@ -42,8 +42,6 @@ ax2 = fig.add_subplot(gs[42:67, :])
 bx2 = fig.add_subplot(gs[67:82, :])
 ax3 = fig.add_subplot(gs[84:109, :])
 bx3 = fig.add_subplot(gs[109:, :])
-# ax.set_ylabel(r"$BE_\mathrm{env}(\mathrm{accretor})/BE_\mathrm{env}(\mathrm{single})$")
-# ax.set_xlabel(r"$R\  [R_\odot]$")
 
 for ax in [ax1, ax2, ax3]:
     ax.set_xlim(-1, 1200)
@@ -57,7 +55,6 @@ for bx in [bx1, bx2, bx3]:
     bx.set_ylim(0.2, 1.8)
     bx.set_yticks([0.5, 1, 1.5], major=True)
     bx.set_yticks([0.25, 0.5, 0.75, 1.25, 1.5], minor=True)
-    # bx.set_yticks([0.75, 1.25, 1.75], minor=True)
     if bx != bx3:
         bx.set_xticklabels([])
     else:
@@ -87,13 +84,13 @@ for f in single_stars:
     src, col = getSrcCol(f + "/history.data")
     x_center = src[:, col.index("center_h1")]
     y_center = src[:, col.index("center_he4")]
-    iTAMS = np.argmin(np.absolute(x_center - 1e-4))
-    iHe_depl = np.argmin(np.absolute(y_center - 1e-4))
+    # iTAMS = np.argmin(np.absolute(x_center - 1e-4))
+    # iHe_depl = np.argmin(np.absolute(y_center - 1e-4))
     t = src[:, col.index("star_age")]
     r = src[:, col.index("radius")]
     env_BE = (
         -1.0 * src[:, col.index("envelope_binding_energy")]
-    )  # MESA assumes alpha_th=1
+    )  # MESA assumes alpha_th=1 and flips the sign
     logTc = src[:, col.index("log_center_T")]
     # ax.plot(r[iTAMS], env_BE[iTAMS], marker="D", c=c, ms=10)
     # ax.plot(r[iHe_depl], env_BE[iHe_depl], marker="*", c=c, ms=10)
@@ -102,8 +99,8 @@ for f in single_stars:
     src, col = getSrcCol(b + "history.data")
     x_center = src[:, col.index("center_h1")]
     y_center = src[:, col.index("center_he4")]
-    iHe_depl = np.argmin(np.absolute(y_center - 1e-4))
-    iTAMS = np.argmin(np.absolute(x_center - 1e-4))
+    # iHe_depl = np.argmin(np.absolute(y_center - 1e-4))
+    # iTAMS = np.argmin(np.absolute(x_center - 1e-4))
     env_BE_accretor = (
         -1.0 * src[:, col.index("envelope_binding_energy")]
     )  # MESA assumes alpha_th=1
@@ -125,9 +122,6 @@ for ax in [ax1, ax2, ax3]:
     ax.legend(
         loc="best", fontsize=20, labelspacing=0.1, handlelength=0.9, handletextpad=0.1
     )
-# ax1.plot()
-# ax3.plot(np.nan, np.nan, ls='--', c='k', label="single")
-# ax3.plot(np.nan, np.nan, ls='-', c='k', label="accretor")
-# ax3.legend(loc="upper right", handlelength=0.85, handletextpad=0.1)
+
 fig.align_labels()
 plt.savefig(paths.figures / "BE_env_R.pdf")

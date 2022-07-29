@@ -179,6 +179,7 @@ def read_MESA_header(fname):
                 break
     return src, col
 
+
 def scrub(logName):
     # this uses the log_scrubber.py script from Bill Wolf
     # which is available here: https://zenodo.org/record/2619282

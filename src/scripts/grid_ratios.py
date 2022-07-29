@@ -384,7 +384,6 @@ def grid_ratios(fig_name=None):
         dx.set_yticklabels([], minor=True)
         dx.set_ylim(cx.get_ylim())
 
-
     ax1.set_title(r"$M_2=15\rightarrow 18\,M_\odot$", size=30)
     bx1.set_title(r"$M_2=17\rightarrow 20\,M_\odot$", size=30)
     cx1.set_title(r"$M_2=30\rightarrow 36\,M_\odot$", size=30)

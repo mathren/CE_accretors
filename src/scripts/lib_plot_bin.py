@@ -119,7 +119,7 @@ def plot_HRD(
             lw=0,
             marker="o",
             mew=2,
-            markeredgecolor='k',
+            markeredgecolor="k",
             ms=10,
             color=color,
             zorder=10,

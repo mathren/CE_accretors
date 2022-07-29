@@ -33,7 +33,7 @@ def grid_lambdas(
     axes = [ax1, ax2, ax3, ax4, ax5]
     for ax in axes:
         ax.set_xlim(0, 18.5)
-        ax.set_yscale('log')
+        ax.set_yscale("log")
         if ax != axes[-1]:
             ax.set_xticklabels([])
         else:
@@ -84,7 +84,7 @@ def grid_lambdas(
     bxes = [bx1, bx2, bx3, bx4, bx5]
     for bx in bxes:
         bx.set_xlim(0, 21.7)
-        bx.set_yscale('log')
+        bx.set_yscale("log")
         bx.set_ylim(axes[bxes.index(bx)].get_ylim())
         bx.set_yticklabels([])
         if bx != bxes[-1]:
@@ -132,7 +132,7 @@ def grid_lambdas(
     cxes = [cx1, cx2, cx3, cx4, cx5]
     for cx in cxes:
         cx.set_xlim(0, 36.3)
-        cx.set_yscale('log')
+        cx.set_yscale("log")
         cx.set_ylim(axes[cxes.index(cx)].get_ylim())
         cx.set_yticklabels([])
         if cx != cxes[-1]:
@@ -182,7 +182,7 @@ def grid_lambdas(
     ax3.set_ylabel(r"$\lambda_\mathrm{CE} = (GM(M-m)/R)/BE(m, \alpha_\mathrm{th}=1.0)$")
     for cx in cxes:
         dx = cx.twinx()
-        dx.set_yscale('log')
+        dx.set_yscale("log")
         dx.set_ylim(cx.get_ylim())
         # dx.set_yticks(cx.get_yticks())
         dx.set_yticklabels([])
