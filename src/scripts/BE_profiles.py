@@ -197,10 +197,14 @@ def grid_BE_profiles(fig_name=None):
             pfile_single, ax, mark_he_core=True, alpha_th=1.0, c="r", ls="-", zorder=9
         )
 
+    # ticks
+    for ax in axes + bxes + cxes:
+        ax.set_yticks([1e46, 1e48, 1e50], minor=False)
+        ax.set_yticks([1e45, 1e47, 1e49], minor=True)
+        ax.set_yticklabels([], minor=True)
+
     for cx in cxes:
         dx = cx.twinx()
-        # dx.set_yticks(cx.get_yticks())
-        dx.set_yticklabels([])
         if cx == cxes[0]:
             # bx.text(0.2, 0.1, , fontsize=30, transform=bx.transAxes, va="bottom", ha="right")
             label = "$100\,R_\odot$"
@@ -229,6 +233,12 @@ def grid_BE_profiles(fig_name=None):
         bx = bxes[cxes.index(cx)]
         if bx != bxes[-1]:  # skip last panel
             bx.axvline(np.log10(X), 0, 1, ls=":", lw=2, c="#808080", zorder=0)
+        dx.set_yscale(cx.get_yscale())
+        dx.set_ylim(cx.get_ylim())
+        dx.set_yticks([1e46, 1e48, 1e50], minor=False)
+        dx.set_yticks([1e45, 1e47, 1e49], minor=True)
+        dx.set_yticklabels([])
+        dx.set_yticklabels([], minor=True)
 
     ax1.set_title(r"$M_2=15\rightarrow 18\,M_\odot$", size=30)
     bx1.set_title(r"$M_2=17\rightarrow 20\,M_\odot$", size=30)
@@ -238,11 +248,6 @@ def grid_BE_profiles(fig_name=None):
     bxes[-1].plot(np.nan, np.nan, c="r", ls="-", label="single star")
     bxes[-1].plot(np.nan, np.nan, c="orange", ls="-", label="accretor")
     bxes[-1].legend(loc="center")
-
-    for ax in axes + bxes + cxes:
-        ax.set_yticks([1e46, 1e48, 1e50], minor=False)
-        ax.set_yticks([1e45, 1e47, 1e49], minor=True)
-        ax.set_yticklabels([], minor=True)
 
     if fig_name:
         plt.savefig(fig_name)
