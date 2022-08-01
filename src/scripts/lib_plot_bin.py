@@ -234,7 +234,6 @@ def get_BE_from_pfile(pfile, alpha_th=1.0, alpha_rot=0.0):
         # mass dm, outer radius r,
         # thickness dr, and rotation frequency omega
         omega = src[:, col.index("omega")]  # 1/sec
-        dr = src[:, col.index("dr")]  # cm
         I = (2.0 / 3.0) * np.square(r)  # specific moment of inertia cgs units
         erot = 0.5 * I * np.square(omega)
     else:

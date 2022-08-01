@@ -62,7 +62,7 @@ for pfile_rot in pfiles:
     # print(min(ratio), max(ratio))
     print("----------------")
 ax.axvline(np.log10(500*Rsun_cm), 0,1,ls=":", lw=2, c="#808080", zorder=0)
-ax.set_xlim(8.2, 14)
+ax.set_xlim(8.4, 14)
 ax.set_ylim(-0.05, 1.75)
 ax.set_xlabel(r"$\log_{10}(r/\mathrm{[cm]})$")
 ax.set_ylabel(r"BE($\omega$ = 0)/BE($\omega$)")
