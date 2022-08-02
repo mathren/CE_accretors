@@ -10,7 +10,7 @@ MESA_input
 │       ├── make
 │       └── src
 ├── engineered_stars   # contains also notebook to generate input profiles
-│   ├── input_profiles # entropu and chemical profiles
+│   ├── input_profiles # input entropy and chemical profiles
 │   └── template_engineered # MESA work directory
 │       ├── make
 │       └── src
@@ -30,9 +30,6 @@ MESA_input
    =zenodo=. =showyourwork= will download and process it when needed if
    you run it locally. It contains the following MESA output files
    used by the scripts to make figures.
-
-   See also =showyourwork.yml= and the =Snakefile= for the specific
-   dependencies of each individual figure.
 
 #+begin_src bash
 tree MESA_output
