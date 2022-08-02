@@ -1,3 +1,29 @@
+
+* =./MESA_input= structure
+
+#+begin_src bash
+tree -d MESA_input
+
+MESA_input
+├── binaries
+│   └── template_binary # MESA work directory
+│       ├── make
+│       └── src
+├── engineered_stars   # contains also notebook to generate input profiles
+│   ├── input_profiles # entropu and chemical profiles
+│   └── template_engineered # MESA work directory
+│       ├── make
+│       └── src
+├── grid_management_scripts # useful scripts for grid setup and management
+└── single_stars
+    └── template_single # MESA work directory
+        ├── make
+        └── src
+
+14 directories
+
+#+end_src bash
+
 * =./MESA_output= structure
 
    This folder is omitted from the git repository, and only present on
@@ -9,7 +35,6 @@
    dependencies of each individual figure.
 
 #+begin_src bash
-
 tree MESA_output
 
 MESA_output/
