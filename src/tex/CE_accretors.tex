@@ -325,7 +325,8 @@ highlights the CEB, and their overlap produces the shade in
 \Figref{fig:TAMS_profiles}. We compare our models at the same total
 post-RLOF mass ($M\simeq M_{2}$) because it enters in \Eqref{eq:BE}
 and is typically used in rapid population synthesis codes to construct
-accretors from single star models \citep[e.g.,][]{hurley:2002, breivik:2020}. We
+accretors from single star models \citep[e.g.,][]{hurley:2002,
+  breivik:2020}. We
 present in \Figref{fig:TAMS_profiles_same_initial_mass} a comparison
 between TAMS profiles of accretors, single stars, and engineered
 models with the same \emph{initial} mass as an alternative comparison
@@ -420,7 +421,9 @@ energy in \Eqref{eq:BE}
 contributes to less than $\lesssim 10\%$ of the cumulative binding
 energy only in the outermost layers -- likely to be crossed during a
 dynamical plunge-in in CE evolution -- and only for $R\lesssim 300\,R_\odot$
--- afterwards, even the accretor spin down significantly.
+-- afterwards, even the accretor spin down significantly
+\textcolor{green!80!black}{\bf (see also
+Appendix~\ref{sec:rot_examples})}.
 
 Because of the large range of $BE$ across the stellar structures, it
 is hard to appreciate directly the magnitude of the effect of RLOF-driven
@@ -733,8 +736,6 @@ binding energy inside $\log_{10}(r/\mathrm{cm})\lesssim 11.5$), and viceversa.
 \subsection{Rotation}
 \label{sec:rot_examples}
 
-\todo{add plot BE ratios rotating to non-rot models}
-
 Mass transfer through RLOF from a binary companion also spins up the
 accreting star, often to critical rotation\footnote{At critical
   rotation, the centrifugal force
@@ -776,13 +777,7 @@ evolution \citep[e.g.,][]{gagnier:2019}.
 \Figref{fig:rotation_models_example} shows the gravitational binding
 energy profile of the single $30\,M_\odot$ star of
 \Figref{fig:toy_models_example}, compared to single stars of the same
-mass and varying initial $\omega/\omega_{\rm crit}$. % As
-% \Figref{fig:rotation_models_example} illustrates, rotation also
-% impacts the CEB layer: this is caused in part by
-% rotational mixing affecting the CEB profile
-% compared to non-rotating stars, and the impact on the wind mass loss
-% rate and thus the mass and rate of recession of the convective core
-% \citep[e.g.,][]{renzo:2017}.
+mass and varying initial $\omega/\omega_{\rm crit}$.
 For $\omega/\omega_\mathrm{crit}\lesssim 0.5$, corresponding to a
 generous upper-bound for the typical birth rotation rate of single
 massive stars \citep[e.g.,][]{ramirez-agudelo:2015}, the effect is
@@ -791,6 +786,37 @@ modest but non-negligible. For more extreme initial rotation rates
 the He core mass to total mass is significantly changed by rotational
 mixing, which can result in larger binding energy differences than
 changing the CEB layer at fixed core mass.
+
+\textcolor{green!80!black}{\bf \Figref{fig:BE_ratio_rot} shows the
+  ratio of the binding energy (cf.~\Figref{fig:grid_ratios}) of the
+  non-rotating model to the binding energy of the rotating models in
+  \Figref{fig:rotation_models_example}, when they first reach
+  photospheric radius $R=500\,R_\odot$. The impact of rotation is
+  non-negligible, however, ratios of binding energy below 50\% are
+  obtained only for initial rotation rates
+  $\omega \gtrsim 0.7\omega_\mathrm{crit}$. }
+
+\begin{figure}[htbp]
+  \includegraphics[width=0.5\textwidth]{BE_ratio_rot.pdf}
+  \caption{\textcolor{green!80!black}{\bf Ratio of binding energy of a non-rotating $30\,M_\odot$
+    model divided the binding energy of the rotating models of
+    \Figref{fig:rotation_models_example} when they first reach
+    $R=500\,R_\odot$. The binding energy includes the internal energy
+    ($\alpha_\mathrm{th}=1$). We emphasize that the y-axis scale of
+    this plot is smaller than each of the panels in \Figref{fig:grid_ratios}.}}
+  \label{fig:BE_ratio_rot}
+  \script{BE_ratio_rot.py}
+\end{figure}
+
+% \textcolor{green!80!black}{\bf However, we emphasize that it is
+%   \emph{not} the rotational energy
+%   $\int_{m}^{M} 1/2 (2/3 r^2) \omega^2 dm$ that plays a significant role in
+%   the binding energy budget, but rather the \emph{structural} effects
+%   that rotation has on the star (which are different in accretors spun
+%   up from the top down and to critical rotation during mass transfer
+%   and in stars born as fast rotators, \citealt{renzo:2021zoph}).
+%   \Figref{fig:BE_rot_div_BE} shows the
+% }
 
 
 For stars accreting through RLOF in a binary both

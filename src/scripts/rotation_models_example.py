@@ -96,7 +96,7 @@ ax.add_artist(l1)
 
 
 ax.set_xlabel(r"$\log_{10}(r/\mathrm{[cm]})$")
-ax.set_ylabel(r"$BE [\mathrm{erg}]$")
+ax.set_ylabel(r"$BE\ [\mathrm{erg}]$")
 ax.text(
     11.5,
     2.5e50,

@@ -26,15 +26,16 @@ ratio = plot_ratio_BE_r(
     ax,
     alpha_th=1.0,
     alpha_rot=0.0,
-    c="orange",
+    c="red",
     ls="-",
     lw=2,
     zorder=0,
 )
-print(min(ratio), max(ratio))
+# check
+# print(min(ratio), max(ratio))
 for pfile_rot in pfiles:
     label = pfile_rot.split("/")[-3].split("_rot")[-1]
-    label = "$\omega_\mathrm{ZAMS}/\omega_\mathrm{crit}=$" + label
+    label = "$\omega/\omega_\mathrm{crit}=$" + label
     ratio = plot_ratio_BE_r(
         pfile_rot,
         pfile_nonrot,
@@ -47,25 +48,14 @@ for pfile_rot in pfiles:
         zorder=0,
         label=label
         )
-    print(min(ratio), max(ratio))
-    # ratio = plot_ratio_BE_r(
-    #     pfile_rot,
-    #     pfile_nonrot,
-    #     ax,
-    #     alpha_th=1.0,
-    #     alpha_rot=1.0,
-    #     c=colors[pfiles.index(pfile_rot)],
-    #     ls="--",
-    #     lw=5,
-    #     zorder=1
-    #     )
-    # print(min(ratio), max(ratio))
+    print(label, min(ratio), max(ratio))
     print("----------------")
 ax.axvline(np.log10(500*Rsun_cm), 0,1,ls=":", lw=2, c="#808080", zorder=0)
 ax.set_xlim(8.4, 14)
-ax.set_ylim(-0.05, 1.75)
+ax.set_ylim(-0.05, 1.8)
 ax.set_xlabel(r"$\log_{10}(r/\mathrm{[cm]})$")
 ax.set_ylabel(r"BE($\omega$ = 0)/BE($\omega$)")
 ax.legend(handlelength=0.5, ncol=2, fontsize=20)
 plt.tight_layout()
+plt.savefig(paths.figures / "BE_ratio_rot.pdf")
 plt.show()
