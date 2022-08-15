@@ -62,7 +62,7 @@
 \affiliation{Center for Computational Astrophysics, Flatiron Institute, New York, NY 10010, USA}
 
 \begin{abstract}
-  Common envelope (CE) evolution is an outstanding open problem in
+  Common\textcolor{green!80!black}{\bf-}envelope (CE) evolution is an outstanding open problem in
   stellar evolution, critical to the formation of compact binaries
   including gravitational-wave (GW) sources. In the ``classical''
   isolated binary evolution scenario for double compact objects, the
@@ -75,7 +75,7 @@
   energy for the remaining evolution. Comparing accretor stars from
   self-consistent binary models to stars evolved as single, we
   demonstrate that the rejuvenation can lower the energy required to
-  eject a CE \textcolor{green!80!black}{\bf to} $\sim 4-58\%$ for both black hole and neutron star
+  eject a CE \textcolor{green!80!black}{\bf by} $\sim 42-96\%$ for both black hole and neutron star
   progenitors, depending on the evolutionary stage and final orbital
   separation. Therefore, \textcolor{green!80!black}{\bf binaries} experiencing first stable mass
   transfer may more easily survive subsequent CE events and
@@ -146,7 +146,7 @@ Here, we use structure and evolution binary models to study the impact
 of the first RLOF phase on the outcome of possible subsequent CE
 events. \Secref{sec:methods} describe our \mesa\ calculations. In
 \Secref{sec:bin_models} we show the ratio of binding energy of our
-accretor models divided the binding energy of single stars with same
+accretor models divided \textcolor{green!80!black}{\bf by} the binding energy of single stars with same
 total post-RLOF mass. We discuss our findings and conclude in
 \Secref{sec:conclusions}. Appendix~\ref{sec:toy_models} presents a
 proof-of-principle numerical experiment illustrating the effect of
@@ -384,17 +384,17 @@ RLOF-donor collapses to a compact object, the evolutionary expansion
 of the RLOF-accretor triggers a CE. This phase of evolution is a
 complicated physics problem, not necessarily well-described as an
 energetically closed system \citep[e.g.,][]{ivanova:2013,
-  ivanova:2020, renzo:21gwce}.
-However, a common oversimplification is to assume energy conservation
+  ivanova:2020, renzo:21gwce}.  However, a common oversimplification
+is to assume energy conservation
 \citep[``$\alpha_{\mathrm{CE}}\lambda_\mathrm{CE}$ algorithm'',
 e.g.,][]{webbink:1984, dekool:1990, demarco:11} to determine CE
 ejection and final separation. Here we focus on the
 RLOF-accretor/CE-donor binding energy profile as an indication for the
-ease of CE ejection. Even if imperfect, this quantity should be a good
-enough proxy for the physical processes which determine the CE
-outcome. We calculate the cumulative binding energy outside mass
-coordinate $m$ as \citep[e.g.,][]{dekool:1990, dewi:2000,
-  lau:2022}:
+ease of CE ejection. Even if imperfect, \textcolor{green!80!black}{\bf
+  we adopt} this quantity \textcolor{green!80!black}{\bf as a proxy}
+for the physical processes which determine the CE outcome. We
+calculate the cumulative binding energy outside mass coordinate $m$ as
+\citep[e.g.,][]{dekool:1990, dewi:2000, lau:2022}:
 \begin{equation}
   \label{eq:BE}
 BE(m, \alpha_{\rm th}) = - \int_{m}^M\,dm'\left( -\frac{G m'}{r(m')}+\alpha_\mathrm{th} u(m')\right) \ \ ,
@@ -595,7 +595,7 @@ the accretor avoiding the red supergiant phase even at lower masses
 We have focused on accretor models for progenitors of NS and BH. However,
 the physical processes described should be similar in all accretor
 stars with convective main sequence cores, down to initial mass
-$M_{\rm ZAMS}\gtrsim 1.2\,M_\odot$ \citep[see also][]{wang:20}. Thus,
+$M_{\rm ZAMS}\gtrsim 1.2\,M_\odot$ \citep[see also][]{wang:2020}. Thus,
 also a fraction of progenitors of binaries with white dwarfs, if
 sufficiently massive and experiencing a (case B) RLOF phase of
 evolution, may be influenced by the structural differences between
@@ -651,7 +651,8 @@ phase (see also \Figref{fig:lambda_grid}).
 
 In this appendix, we introduce our ``engineered'' models and
 illustrate with examples how the
-envelope binding energy depends on the CEB layer
+envelope binding energy depends on the CEB
+\textcolor{green!80!black}{\bf region}
 (\Secref{sec:eng_examples}) and on the initial rotation rate of the
 star (\Secref{sec:rot_examples}). Both can be significantly modified
 by accretion during the first RLOF.
@@ -678,7 +679,7 @@ linear connection from the outer boundary of the H-depleted core to a
 mass coordinate which we specify as a parameter (see
 \Figref{fig:engineered_TAMS} and \Figref{fig:TAMS_profiles}). We let \mesa\ relax
 the TAMS profiles to the desired entropy and composition profiles and
-then recover thermal and hydrostatic equilibrium, and then evolve
+then recover \textcolor{green!80!black}{\bf gravo}thermal and hydrostatic equilibrium, and then evolve
 until either carbon depletion or when the photospheric radius of these
 models first exceeds
 $1000\,R_\odot$.
@@ -731,25 +732,27 @@ convective core. In \Figref{fig:toy_models_example}, lines of
 different colors show a trend with shallower entropy and composition
 profiles at TAMS (lighter curves in \Figref{fig:engineered_TAMS})
 evolving into more bound inner envelopes (larger
-binding energy inside $\log_{10}(r/\mathrm{cm})\lesssim 11.5$), and viceversa.
+binding energy inside $\log_{10}(r/\mathrm{cm})\lesssim 11.5$), and
+vice versa.
 
 \subsection{Rotation}
 \label{sec:rot_examples}
 
 Mass transfer through RLOF from a binary companion also spins up the
 accreting star, often to critical rotation\footnote{At critical
-  rotation, the centrifugal force
-  balances the gravitational pull at the equator, corresponding to critical
-  angular frequency
-  $\omega_\mathrm{crit}=\sqrt{(1-L/L_\mathrm{Edd})GM/R^3}$, with $L_\mathrm{Edd}$ the Eddington
-  luminosity, and $L$ the stellar luminosity.} \citep[e.g.,][]{lubow:1975,
-  packet:1981, cantiello:2007}. Although spinning up a star late during its
-main-sequence evolution has  different structural consequences than
+  rotation, the centrifugal force balances the gravitational pull at
+  the equator, corresponding to critical angular frequency
+  $\omega_\mathrm{crit}=\sqrt{(1-L/L_\mathrm{Edd})GM/R^3}$, with
+  $L_\mathrm{Edd}$ the Eddington luminosity, and $L$ the stellar
+  luminosity.} \citep[e.g.,][]{lubow:1975, packet:1981,
+  cantiello:2007}. Although spinning up a star late during its
+main-sequence evolution has different structural consequences than
 natal rotation (see \citealt{renzo:2021zoph}), our accretor models can
 reach a rigid, close-to-critical rotation late during RLOF.
-Thus, it is worth considering the impact of rotation on the envelope
-structure and CEB by analyzing single star models rotating since
-birth.
+\textcolor{green!80!black}{\bf To illustrate the impact of rotation},
+it is worth considering the CEB \textcolor{green!80!black}{\bf region}
+and envelope structure \textcolor{green!80!black}{\bf of} single-star
+models rotating since birth.
 
 \begin{figure}[htbp]
   \centering
@@ -760,7 +763,7 @@ birth.
   \script{rotation_models_example.py}
 \end{figure}
 
-Rotation has a two main effects: (\emph{i}) mixing can change the core
+Rotation has two main \textcolor{green!80!black}{\bf evolutionary} effects: (\emph{i}) mixing can change the core
 size directly (see \citealt{heger:2000, maeder:00}), (\emph{ii}) by
 inflating the equatorial region, rotation changes the temperature and
 opacity structure, and therefore the line-driving of the wind
@@ -785,7 +788,7 @@ modest but non-negligible. For more extreme initial rotation rates
 (achievable during RLOF, at least in the surface layers), the ratio of
 the He core mass to total mass is significantly changed by rotational
 mixing, which can result in larger binding energy differences than
-changing the CEB layer at fixed core mass.
+changing the CEB \textcolor{green!80!black}{\bf region} at fixed core mass.
 
 \textcolor{green!80!black}{\bf \Figref{fig:BE_ratio_rot} shows the
   ratio of the binding energy (cf.~\Figref{fig:grid_ratios}) of the
@@ -864,7 +867,7 @@ of the same total mass are the most relevant comparison: for instance,
 the (helium or carbon-oxygen) core mass is often used to determine the
 final compact object \citep[e.g.,][]{fryer:2012, farmer:2019,
   patton:2021, renzo:2022, fryer:2022}, and comparing models of
-roughly the same core-mass might be more appropriate (but is sensitive
+roughly the same core mass might be more appropriate (but is sensitive
 to the condition defining the core edge). We show in
 \Figref{fig:TAMS_profiles_same_initial_mass} a comparison of our
 accretors with models of the same total \emph{initial} mass, which
