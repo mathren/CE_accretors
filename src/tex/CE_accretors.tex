@@ -364,10 +364,9 @@ Appendix~\ref{sec:eng_examples}).
     The orange solid line at 1 shows the ratio of the accretor to
     itself as a check on the models interpolation, red solid lines
     show the ratio of the accretor to a non-rotating single star,
-    while the other colors show the ratio to ``engineered'' star
-    \textcolor{green!80!black}{\bf shown
-      in~\Figref{fig:TAMS_profiles}}
-    (cf.~Appendix~\ref{sec:eng_examples}). Each panel shows the ratios
+    while the other colors show the ratio to ``engineered'' stars
+    \textcolor{green!80!black}{\bf (see~\Figref{fig:TAMS_profiles} for
+      the colors and~Appendix~\ref{sec:eng_examples})}. Each panel shows the ratios
     at the first time the models reach the radius indicated on the
     right and by the vertical \textcolor{green!80!black}{\bf dotted}
     gray lines. For the binding energy profiles in the numerator and
@@ -416,8 +415,10 @@ energy (dashed lines in
 while $\alpha_{\mathrm{th}}=1$ assumes perfectly fine-tuned use of all
 the internal energy \citep[solid lines,][]{klencki:2020}. These two
 cases bracket the range of possible use of internal energy to eject
-the CE. The additional inclusion of the rotational
-energy in \Eqref{eq:BE}
+the CE. The additional inclusion \textcolor{green!80!black}{\bf of a
+  rotational-energy term
+  $0.5 \mathcal{I} \omega^2$ (with $\mathcal{I}=2r^2/3$ the specific moment of
+  inertia) in the integral in \Eqref{eq:BE}}
 contributes to less than $\lesssim 10\%$ of the cumulative binding
 energy only in the outermost layers -- likely to be crossed during a
 dynamical plunge-in in CE evolution -- and only for $R\lesssim 300\,R_\odot$
@@ -468,8 +469,10 @@ representing engineered models with steeper CEB profiles.
     accretors (single stars). The bottom panels show the ratio, which
     is always smaller than 1 the first time a certain radius $R$ is
     reached, indicating that the accretors might have envelopes easier
-    to unbind in a CE event. See \Figref{fig:BE_profiles}
-    for the radial binding energy profile at given outer radii $R$.}
+    to unbind in a CE event. \textcolor{green!80!black}{\bf Excursions
+      above 1 of the ratio occur only during phases of radius decrease
+      which could not initiate a CE.} See \Figref{fig:BE_profiles} for
+    the radial binding energy profile at given outer radii $R$.}
   \label{fig:BE_env_R}
   \script{BE_env_R.py}
 \end{figure}
@@ -502,19 +505,18 @@ binding energy as a function of the outer radius. Each panel shows one
 of our binaries, from top to bottom: 36+30\,$M_\odot$,
 20+17\,$M_\odot$, 18+15\,$M_\odot$.  For each binary, the
 lower panel shows the ratios of the envelope binding energy of the
-accretor divided the binding energy of the comparison single star
+accretor divided \textcolor{green!80!black}{\bf by} the binding energy of the comparison single star
 (i.e., the ratio of the solid lines to the dashed lines in the panel
 above). To compute these ratios, we interpolate our accretor models
 on the time-grid of the single stars using the central temperature
 $\log_{10}(T_c/[\mathrm{K}])$ as independent coordinate. In each of
 the lower panels the ratios are lower than one (marked by the gray
-dashed lines) at almost all radii, again suggesting that post-RLOF,
-accretor stars have envelopes that require less energy input to be
+dashed lines) suggesting that post-RLOF
+accretor stars have envelopes that require less energy to be
 ejected in a CE event. The only times the binding energy of the
 accretor is higher than the corresponding single stars is during the
-blueward evolution discussed earlier.
+blue-ward evolution discussed earlier, \textcolor{green!80!black}{\bf which would not trigger a CE}.
 
-\newpage
 \section{Discussion \& Conclusions}
 \label{sec:conclusions}
 
@@ -611,19 +613,6 @@ extended to inform semi-analytic approximations of the binding energy
 of CE-donor that have accreted mass in a previous stable mass transfer
 phase (see also \Figref{fig:lambda_grid}).
 
-% % other applications
-% The structural change of the core/envelope boundary in the accretor
-% may also impact other aspects of its evolution. For example, even if
-% the following mass transfer is stable, the different binding energy
-% profile may affect the evolution during the second mass transfer. If
-% instead the binary is disrupted at the core-collapse of the RLOF-donor
-% \citep[e.g.,][]{blaauw:1961, renzo:2019walk}, the different chemical
-% composition at the surface \citep[e.g.,][]{blaauw:93, renzo:2021zoph}
-% may change the wind final velocity (but not the total mass loss rate),
-% with consequences for bow-shocks \citep[e.g.,][]{bodensteiner:18,
-%   moutzouri:22}, and the asteroseismological properties of accretors.
-% At core-collapse and explosion, the reverse shock produced at the
-% crossing of the He core boundary may be different.
 
 \software{MESA \citep{paxton:2011, paxton:2015, paxton:2018,
     paxton:2019}, pyMESA \citep{pymesa}, \code{POSYDON} \citep{fragos:2022},
@@ -712,18 +701,7 @@ $1000\,R_\odot$.
 gravitational and binding energy profiles of a $30\,M_\odot$ single
 star (red solid line) to
 ``engineered'' models, when stars first
-reach radius $R=500\,R_\odot$. % We
-% define the binding energy above mass coordinate $m$ as
-% \citep[e.g.,][]{dekool:1990, dewi:2000, lau:2022}:
-% \begin{equation}
-%   \label{eq:BE}
-% BE(m, \alpha_{\rm th}) = - \int_{m}^M\,dm'\left( -\frac{G m'}{r(m')}+\alpha_\mathrm{th} u(m')\right)
-% \end{equation}
-% \begin{equation}
-%   \label{eq:Egrav}
-%   E_\mathrm{grav}(m) = \int_{m}^{M} - \frac{Gm'}{r(m')}\,dm' \ \ ,
-% \end{equation}
-% with $M$ total mass of the star,
+reach radius $R=500\,R_\odot$.
 \Figref{fig:toy_models_example} shows that
 binding energy depends on the structure of the CEB region. In single
 stars, the CEB is determined by the extent of the convective boundary
@@ -738,21 +716,20 @@ vice versa.
 \subsection{Rotation}
 \label{sec:rot_examples}
 
-Mass transfer through RLOF from a binary companion also spins up the
-accreting star, often to critical rotation\footnote{At critical
-  rotation, the centrifugal force balances the gravitational pull at
-  the equator, corresponding to critical angular frequency
+Mass transfer through RLOF also spins up the accreting star, often to
+critical rotation\footnote{At critical rotation, the centrifugal force
+  balances the gravitational pull at the equator, corresponding to
+  critical angular frequency
   $\omega_\mathrm{crit}=\sqrt{(1-L/L_\mathrm{Edd})GM/R^3}$, with
   $L_\mathrm{Edd}$ the Eddington luminosity, and $L$ the stellar
   luminosity.} \citep[e.g.,][]{lubow:1975, packet:1981,
-  cantiello:2007}. Although spinning up a star late during its
+  cantiello:2007}. \textcolor{green!80!black}{\bf To illustrate the
+  impact of rotation, it is worth considering the CEB
+ region and envelope structure
+ of single-star models rotating since
+birth, although spinning up a star late during its
 main-sequence evolution has different structural consequences than
-natal rotation (see \citealt{renzo:2021zoph}), our accretor models can
-reach a rigid, close-to-critical rotation late during RLOF.
-\textcolor{green!80!black}{\bf To illustrate the impact of rotation},
-it is worth considering the CEB \textcolor{green!80!black}{\bf region}
-and envelope structure \textcolor{green!80!black}{\bf of} single-star
-models rotating since birth.
+natal rotation} (see \citealt{renzo:2021zoph}).
 
 \begin{figure}[htbp]
   \centering
@@ -785,7 +762,7 @@ For $\omega/\omega_\mathrm{crit}\lesssim 0.5$, corresponding to a
 generous upper-bound for the typical birth rotation rate of single
 massive stars \citep[e.g.,][]{ramirez-agudelo:2015}, the effect is
 modest but non-negligible. For more extreme initial rotation rates
-(achievable during RLOF, at least in the surface layers), the ratio of
+(achievable during RLOF), the ratio of
 the He core mass to total mass is significantly changed by rotational
 mixing, which can result in larger binding energy differences than
 changing the CEB \textcolor{green!80!black}{\bf region} at fixed core mass.
@@ -801,12 +778,11 @@ changing the CEB \textcolor{green!80!black}{\bf region} at fixed core mass.
 
 \begin{figure}[htbp]
   \includegraphics[width=0.5\textwidth]{BE_ratio_rot.pdf}
-  \caption{\textcolor{green!80!black}{\bf Ratio of binding energy of a non-rotating $30\,M_\odot$
-    model divided the binding energy of the rotating models of
-    \Figref{fig:rotation_models_example} when they first reach
-    $R=500\,R_\odot$. The binding energy includes the internal energy
-    ($\alpha_\mathrm{th}=1$). We emphasize that the y-axis scale of
-    this plot is smaller than each of the panels in \Figref{fig:grid_ratios}.}}
+  \caption{\textcolor{green!80!black}{\bf Ratio of binding energy of a
+      non-rotating $30\,M_\odot$ model divided by the binding energy
+      of the rotating models of \Figref{fig:rotation_models_example}
+      when they first reach $R=500\,R_\odot$. The binding energy
+      includes the internal energy ($\alpha_\mathrm{th}=1$).}}
   \label{fig:BE_ratio_rot}
   \script{BE_ratio_rot.py}
 \end{figure}

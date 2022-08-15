@@ -51,7 +51,7 @@ for ax in [ax1, ax2, ax3]:
 
 for bx in [bx1, bx2, bx3]:
     bx.set_xlim(-1, 1200)
-    bx.axhline(1, 0, 1, c="#808080", ls="--", zorder=0)
+    bx.axhline(1, 0, 1, c="#808080", ls="--", lw=2, zorder=0)
     bx.set_ylim(0.2, 1.8)
     bx.set_yticks([0.5, 1, 1.5], major=True)
     bx.set_yticks([0.25, 0.5, 0.75, 1.25, 1.5], minor=True)
