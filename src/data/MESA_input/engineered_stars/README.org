@@ -1,0 +1,22 @@
+#+Title: Engineered stars
+
+The notebook =make_simplified_chem_profiles.ipynb= can be used to create
+customized hydrogen, helium, and specific entropy profiles. This is
+also set up to work on my workstation, but should be easy to adapt.
+
+It takes as input the TAMS profile of a single star model (assumed to
+be computed with the =approx21= nuclear network for the list of
+isotopes, in our case the input profiles are single non-rotating
+stars), and finds the inner and outer edge of the core/envelope
+transition region according to the function in the =lib_plot_bin.py=
+library in =src/scripts/=.
+
+Then, engineered models are created by taking those boundaries and
+shifting them by =\Delta m= (making the boundary steeper for =\Delta m<0=
+and shallower for =\Delta m>0=). The output is a pair of text files that
+contain the desired profiles, which are used by the =MESA= work
+directory =template_engineered= to create a model and relax to those
+desired profiles.
+
+The folder =input_profiles= contains the inputs for the engineered
+models in the paper, labelled by the =\Delta m= applied.

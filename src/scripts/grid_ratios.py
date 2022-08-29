@@ -1,6 +1,6 @@
 from MESAreader import getSrcCol
 from lib_plot_bin import plot_ratio_BE_r, get_ax_from_pfile, Rsun_cm
-from lib_engineered import get_dm_from_pfile_eng, sorter_engineered_profiles
+from lib_engineered import get_dm_from_pfile_eng, sorter_engineered_profiles, get_M_boundary
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
@@ -73,7 +73,7 @@ def grid_ratios(fig_name=None):
                 transform=ax.transAxes,
                 va="bottom",
                 ha="left",
-                zorder=0,
+                zorder=1,
             )
             ax.text(
                 0.05,
@@ -83,7 +83,7 @@ def grid_ratios(fig_name=None):
                 transform=ax.transAxes,
                 va="bottom",
                 ha="left",
-                zorder=0,
+                zorder=1,
             )
         else:
             ax.set_xlabel(r"$\log_{10}(r/\mathrm{[cm]})$")
@@ -106,8 +106,16 @@ def grid_ratios(fig_name=None):
             c="orange",
             ls="-",
             lw=2,
-            zorder=0,
+            zorder=2,
         )
+        # highlight CEB boundaries for accretor
+        delta_M_boundary, max_M_boundary, min_M_boundary = get_M_boundary(pfile_accretor, offset=0.01)
+        src, col = getSrcCol(pfile_accretor)
+        m = src[:, col.index("mass")]
+        r = src[:, col.index("radius")]
+        r_inner = r[np.argmin(np.absolute(m-min_M_boundary))]
+        r_outer = r[np.argmin(np.absolute(m-max_M_boundary))]
+        ax.axvspan(np.log10(r_inner*Rsun_cm), np.log10(r_outer*Rsun_cm), fc="#808080", alpha=0.5, zorder=0)
         # if (round(max(ratio), 5) != 1 or round(min(ratio), 5) != 1):
         #     print("1", pfile_accretor, np.nanmax(ratio), np.nanmin(ratio))
         # # -----------------------
@@ -128,7 +136,7 @@ def grid_ratios(fig_name=None):
             alpha_rot=0.0,
             color="r",
             ls="-",
-            zorder=2,
+            zorder=10,
         )
         print(f"{min(ratio):.1f}")
         colors = plt.cm.viridis(np.linspace(0, 1, len(engineered_grid1)))
@@ -150,7 +158,7 @@ def grid_ratios(fig_name=None):
                 color=colors[engineered_grid1.index(f)],
                 ls="-",
                 lw=2,
-                zorder=1,
+                zorder=3,
             )
 
     # # 20 Msun
@@ -174,7 +182,7 @@ def grid_ratios(fig_name=None):
             transform=bx.transAxes,
             va="bottom",
             ha="left",
-            zorder=0,
+            zorder=1,
         )
         bx.text(
             0.05,
@@ -184,7 +192,7 @@ def grid_ratios(fig_name=None):
             transform=bx.transAxes,
             va="bottom",
             ha="left",
-            zorder=0,
+            zorder=1,
         )
         bx.set_yticklabels([])
         if bx == bxes[-1]:
@@ -211,8 +219,16 @@ def grid_ratios(fig_name=None):
             c="orange",
             ls="-",
             lw=2,
-            zorder=0,
+            zorder=2,
         )
+        # highlight CEB boundaries for accretor
+        delta_M_boundary, max_M_boundary, min_M_boundary = get_M_boundary(pfile_accretor, offset=0.01)
+        src, col = getSrcCol(pfile_accretor)
+        m = src[:, col.index("mass")]
+        r = src[:, col.index("radius")]
+        r_inner = r[np.argmin(np.absolute(m-min_M_boundary))]
+        r_outer = r[np.argmin(np.absolute(m-max_M_boundary))]
+        bx.axvspan(np.log10(r_inner*Rsun_cm), np.log10(r_outer*Rsun_cm), fc="#808080", alpha=0.5, zorder=0)
         # if (round(max(ratio), 5) != 1 or round(min(ratio), 5) != 1):
         #     print("1", pfile_accretor, np.nanmax(ratio), np.nanmin(ratio))
         # # -----------------------
@@ -234,6 +250,7 @@ def grid_ratios(fig_name=None):
                 color=colors[engineered_grid2.index(f)],
                 ls="-",
                 lw=2,
+                zorder=3
             )
         # now plot normal single star
         pfile_single = glob.glob(s2 + string)[0]
@@ -251,6 +268,7 @@ def grid_ratios(fig_name=None):
             alpha_rot=0.0,
             color="r",
             ls="-",
+            zorder=10
         )
         print(f"{min(ratio):.1f}")
     # 30
@@ -272,7 +290,7 @@ def grid_ratios(fig_name=None):
             transform=cx.transAxes,
             va="bottom",
             ha="left",
-            zorder=0,
+            zorder=1,
         )
         cx.text(
             0.05,
@@ -282,7 +300,7 @@ def grid_ratios(fig_name=None):
             transform=cx.transAxes,
             va="bottom",
             ha="left",
-            zorder=0,
+            zorder=1,
         )
         # cx.axhline(1, 0, 1, lw=2, ls="--", c="#808080")
         cx.set_yticklabels([])
@@ -309,8 +327,16 @@ def grid_ratios(fig_name=None):
             c="orange",
             ls="-",
             lw=2,
-            zorder=0,
+            zorder=3,
         )
+        # highlight CEB boundaries for accretor
+        delta_M_boundary, max_M_boundary, min_M_boundary = get_M_boundary(pfile_accretor, offset=0.01)
+        src, col = getSrcCol(pfile_accretor)
+        m = src[:, col.index("mass")]
+        r = src[:, col.index("radius")]
+        r_inner = r[np.argmin(np.absolute(m-min_M_boundary))]
+        r_outer = r[np.argmin(np.absolute(m-max_M_boundary))]
+        cx.axvspan(np.log10(r_inner*Rsun_cm), np.log10(r_outer*Rsun_cm), fc="#808080", alpha=0.5, zorder=0)
         # if (round(max(ratio), 5) != 1 or round(min(ratio), 5) != 1):
         #     print("1", pfile_accretor, np.nanmax(ratio), np.nanmin(ratio))
         # # -----------------------
@@ -333,6 +359,7 @@ def grid_ratios(fig_name=None):
                 color=colors[engineered_grid3.index(f)],
                 ls="-",
                 lw=2,
+                zorder=10
             )
         # now plot normal single star
         pfile_single = glob.glob(s3 + string)[0]
@@ -350,12 +377,12 @@ def grid_ratios(fig_name=None):
             alpha_rot=0.0,
             color="r",
             ls="-",
+            zorder=10
         )
         print(f"{min(ratio):.1f}")
+
     for cx in cxes:
         dx = cx.twinx()
-        dx.set_yticks(cx.get_yticks())
-        dx.set_yticklabels([])
         if cx == cxes[0]:
             label = "$100\,R_\odot$"
             X = 100 * Rsun_cm
@@ -372,14 +399,18 @@ def grid_ratios(fig_name=None):
             label = "$1000\,R_\odot$"
             X = 1000 * Rsun_cm
         dx.set_ylabel(label)
-        cx.axvline(np.log10(X), 0, 1, ls="--", lw=2, c="#808080", zorder=0)
-
+        cx.axvline(np.log10(X), 0, 1, ls=":", lw=2, c="#808080", zorder=1)
         ax = axes[cxes.index(cx)]
         if ax != axes[-1]:  # skip last panel
-            ax.axvline(np.log10(X), 0, 1, ls="--", lw=2, c="#808080", zorder=0)
+            ax.axvline(np.log10(X), 0, 1, ls=":", lw=2, c="#808080", zorder=1)
         bx = bxes[cxes.index(cx)]
         if bx != bxes[-1]:  # skip last panel
-            bx.axvline(np.log10(X), 0, 1, ls="--", lw=2, c="#808080", zorder=0)
+            bx.axvline(np.log10(X), 0, 1, ls=":", lw=2, c="#808080", zorder=1)
+        dx.set_yticks(cx.get_yticks())
+        dx.set_yticklabels([])
+        dx.set_yticks(cx.get_yticks(minor=True), minor=True)
+        dx.set_yticklabels([], minor=True)
+        dx.set_ylim(cx.get_ylim())
 
     ax1.set_title(r"$M_2=15\rightarrow 18\,M_\odot$", size=30)
     bx1.set_title(r"$M_2=17\rightarrow 20\,M_\odot$", size=30)

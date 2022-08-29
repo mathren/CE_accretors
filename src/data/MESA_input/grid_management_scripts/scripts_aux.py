@@ -19,11 +19,12 @@
 # along with this program.  If not, see http://www.gnu.org/licenses/.
 
 
-__author__ = ['Mathieu Renzo <mrenzo@flatironinstitute.org']
+__author__ = ["Mathieu Renzo <mrenzo@flatironinstitute.org"]
 
 import sys
 import os
 import glob
+
 
 def folder_name(m1, m2, P, Z, grid_index=0, root="/tmp/"):
     """
@@ -44,10 +45,11 @@ def folder_name(m1, m2, P, Z, grid_index=0, root="/tmp/"):
     a string
     """
     folder_name = f"/m1_{m1:.4f}_m2_{m2:.4f}_initial_z_{Z:.3}_initial_period_in_days_{P:.4e}_grid_index_{grid_index:d}"
-    return root+folder_name
+    return root + folder_name
+
 
 def checkFolder(folder):
-    """ checks if folder exists, if not, it creates it, and returns its content """
+    """checks if folder exists, if not, it creates it, and returns its content"""
     found = glob.glob(folder)
     if found:
         print("Found folder:", folder)
@@ -66,6 +68,8 @@ def gitPush(repo, description="[skip ci] started a run with no description"):
         pwd = os.getcwd()  # where am I?
         os.chdir(repo)
         os.system(
-            "git add . && git commit -am 'about to start a run: " + description + " ' && git push"
+            "git add . && git commit -am 'about to start a run: "
+            + description
+            + " ' && git push"
         )
         os.chdir(pwd)  # go back to previous folder

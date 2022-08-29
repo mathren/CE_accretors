@@ -1,13 +1,12 @@
-version: 0.3.0
+version: cadb4086dd2a46cb68e6acffa73c2f7976e6d64d
 
 verbose: True
 
 ms_name: CE_accretors
 
-run_cache_rules_on_ci: true
+run_cache_rules_on_ci: True
 
 datasets:
-  # 10.5072/zenodo.1074339: sandbox
   10.5281/zenodo.6600641:
     destination: src/data/
     contents:
@@ -15,8 +14,19 @@ datasets:
 
 dependencies:
   src/scripts/convert_MESA_output.py:
-    - src/data/MESA_output.tar.gz  # 1.1 Gb
+    - src/data/MESA_output.tar.gz
     - src/scripts/MESAreader.py
+  src/scripts/HRD.py:
+    - src/scripts/lib_plot_bin.py
+    - src/scripts/lib_engineered.py
+    - src/scripts/MESAreader.py
+    - src/data/MESA_output/
+    - src/data/MESA_output.tar.gz
+  src/scripts/TAMS_profiles.py:
+    - src/scripts/lib_engineered.py
+    - src/scripts/MESAreader.py
+    - src/data/MESA_output/
+    - src/data/MESA_output.tar.gz
   src/scripts/engineered_TAMS.py:
     - src/scripts/lib_plot_bin.py
     - src/scripts/lib_engineered.py
@@ -31,17 +41,6 @@ dependencies:
     - src/data/MESA_output.tar.gz
   src/scripts/rotation_models_example.py:
     - src/scripts/lib_plot_bin.py
-    - src/scripts/lib_engineered.py
-    - src/scripts/MESAreader.py
-    - src/data/MESA_output/
-    - src/data/MESA_output.tar.gz
-  src/scripts/HRD.py:
-    - src/scripts/lib_plot_bin.py
-    - src/scripts/lib_engineered.py
-    - src/scripts/MESAreader.py
-    - src/data/MESA_output/
-    - src/data/MESA_output.tar.gz
-  src/scripts/TAMS_profiles.py:
     - src/scripts/lib_engineered.py
     - src/scripts/MESAreader.py
     - src/data/MESA_output/
@@ -73,6 +72,11 @@ dependencies:
   src/scripts/lambda_grid.py:
     - src/scripts/lib_plot_bin.py
     - src/scripts/lib_engineered.py
+    - src/scripts/MESAreader.py
+    - src/data/MESA_output/
+    - src/data/MESA_output.tar.gz
+  src/scripts/BE_ratio_rot.py:
+    - src/scripts/lib_plot_bin.py
     - src/scripts/MESAreader.py
     - src/data/MESA_output/
     - src/data/MESA_output.tar.gz

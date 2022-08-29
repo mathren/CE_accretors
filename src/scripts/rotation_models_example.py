@@ -55,7 +55,7 @@ plot_BE_r(
     pfile_normal,
     ax,
     alpha_th=0.0,
-    top_axis=True,  # top axis only for one model
+    top_axis=False,
     lw=3,
     c="r",
     zorder=10,
@@ -96,7 +96,7 @@ ax.add_artist(l1)
 
 
 ax.set_xlabel(r"$\log_{10}(r/\mathrm{[cm]})$")
-ax.set_ylabel(r"$BE [\mathrm{erg}]$")
+ax.set_ylabel(r"$BE\ [\mathrm{erg}]$")
 ax.text(
     11.5,
     2.5e50,
@@ -108,6 +108,6 @@ ax.text(
     bbox=dict(facecolor="none", edgecolor="black", boxstyle="round,pad=0.1"),
 )
 ax.set_yscale("log")
-ax.set_ylim(1e46, 1e51)
+ax.set_ylim(1e46, 2e51)
 ax.set_xlim(10, 14)
 plt.savefig(paths.figures / "rotation_models_example.pdf")

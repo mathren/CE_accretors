@@ -27,6 +27,7 @@ import re
 import os
 import warnings
 import glob
+from math import pi
 
 try:
     from termcolor import colored
@@ -117,12 +118,12 @@ def plot_HRD(
             logT[iTAMS],
             logL[iTAMS],
             lw=0,
-            marker="D",
+            marker="o",
             mew=2,
-            markeredgecolor=color,
+            markeredgecolor="k",
             ms=10,
-            color="y",
-            zorder=1,
+            color=color,
+            zorder=10,
         )
     if annotate_RLOF:
         if os.path.isdir(input_file):
@@ -160,8 +161,6 @@ def plot_HRD(
 
 def get_L_from_r_teff(radius, teff):
     # to annotate radii on HRD
-    from math import pi
-
     # Stephan Boltzman constant
     boltzm = 1.380649e-16  # cgs
     hbar = 6.62607015e-27 / (2 * pi)
@@ -196,8 +195,10 @@ def annotate_radii_hrd(ax, radii=np.logspace(0, 3, base=10)):
     for r in radii:
         l = get_L_from_r_teff(r, teff)
         y = np.log10(l)
-        ax.plot(x, y, c="#808080", ls="-.", lw=1)
-        # ax.text(x[5], y[5], f"{r:.0f}"+r"$\,R_\odot$", fontsize=20, transform=ax.transData, zorder=0, c="#808080")# , rotation=np.((max(y)-min(y))/(max(x)-min(x))))
+        ax.plot(x, y, c="#808080", ls=":", lw=1)
+        # ax.text(x[5], y[5], f"{r:.0f}"+r"$\,R_\odot$", fontsize=20,
+        # transform=ax.transData, zorder=0, c="#808080"),
+        # rotation=np.((max(y)-min(y))/(max(x)-min(x))))
     # reset ylim
     ax.set_ylim(ymin, ymax)
 
@@ -232,10 +233,7 @@ def get_BE_from_pfile(pfile, alpha_th=1.0, alpha_rot=0.0):
         # calculate rotationa energy of spherical shell of
         # mass dm, outer radius r,
         # thickness dr, and rotation frequency omega
-        from math import pi
-
         omega = src[:, col.index("omega")]  # 1/sec
-        dr = src[:, col.index("dr")]  # cm
         I = (2.0 / 3.0) * np.square(r)  # specific moment of inertia cgs units
         erot = 0.5 * I * np.square(omega)
     else:
@@ -414,7 +412,7 @@ def plot_ratio_BE_r(pfile1, pfile2, ax, alpha_th=1.0, alpha_rot=0.0, **plot_kwar
                   of pfile2 outside the domain of pfile1 in mass)
     """
     src1, col1 = getSrcCol(pfile1)
-    ratio2_to_1 = get_ratio_BE(pfile1, pfile2, alpha_th)
+    ratio2_to_1 = get_ratio_BE(pfile1, pfile2, alpha_th, alpha_rot)
     r1 = src1[:, col1.index("radius")]
     ax.plot(np.log10(r1 * Rsun_cm), ratio2_to_1, **plot_kwargs)
     return ratio2_to_1

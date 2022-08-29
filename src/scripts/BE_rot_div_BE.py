@@ -1,7 +1,5 @@
 from MESAreader import getSrcCol
 from lib_plot_bin import plot_ratio_BErot_BE_m, get_ax_from_pfile, Rsun_cm
-
-# from lib_engineered import get_dm_from_pfile_eng, sorter_engineered_profiles
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
@@ -61,7 +59,7 @@ def grid_erot_fraction_BE(fig_name=None):
 
     axes = [ax1, ax2, ax3, ax4, ax5]
     for ax in axes:
-        # ax.set_xlim(8.2, 14)
+        ax.set_xlim(8.2, 14)
         # ax.set_ylim(-0.05, 2.5)
         if ax != axes[-1]:
             ax.set_xticklabels([])
@@ -84,12 +82,12 @@ def grid_erot_fraction_BE(fig_name=None):
 
     bxes = [bx1, bx2, bx3, bx4, bx5]
     for bx in bxes:
-        # bx.set_xlim(8.2, 14)
+        bx.set_xlim(8.2, 14)
         # bx.set_ylim(-0.05, 2.5)
         bx.set_yticklabels([])
         bx.set_yticklabels([])
         if bx == bxes[-1]:
-            bx.axhline(1, 0, 1, lw=2, ls="--", c="#808080")
+            bx.axhline(1, 0, 1, lw=2, ls=":", c="#808080")
             bx.set_xlabel(r"$\log_{10}(r/\mathrm{[cm]})$")
         else:
             bx.set_xticklabels([])
@@ -99,7 +97,7 @@ def grid_erot_fraction_BE(fig_name=None):
         string = pfile.split("/")[-1]
         bx = get_ax_from_pfile(pfile, bxes)
         ratio = plot_ratio_BErot_BE_m(pfile, bx, c=colors[1])
-        print(pfile.split("/")[-1], pfile.split("/")[-3], max(ratio), min(ratio))
+        # print(pfile.split("/")[-1], pfile.split("/")[-3], max(ratio), min(ratio))
 
     # 30
     cx1 = fig.add_subplot(gs[:20, 100:])
@@ -110,9 +108,9 @@ def grid_erot_fraction_BE(fig_name=None):
 
     cxes = [cx1, cx2, cx3, cx4, cx5]
     for cx in cxes:
-        # cx.set_xlim(8.2, 14)
+        cx.set_xlim(8.2, 14)
         # cx.set_ylim(-0.05, 2.5)
-        # cx.axhline(1, 0, 1, lw=2, ls="--", c="#808080")
+        # cx.axhline(1, 0, 1, lw=2, ls=":", c="#808080")
         cx.set_yticklabels([])
         if cx != cxes[-1]:
             cx.set_xticklabels([])
@@ -124,12 +122,10 @@ def grid_erot_fraction_BE(fig_name=None):
         string = pfile.split("/")[-1]
         cx = get_ax_from_pfile(pfile, cxes)
         ratio = plot_ratio_BErot_BE_m(pfile, cx, c=colors[2])
-        print(pfile.split("/")[-1], pfile.split("/")[-3], max(ratio), min(ratio))
+        # print(pfile.split("/")[-1], pfile.split("/")[-3], max(ratio), min(ratio))
 
     for cx in cxes:
         dx = cx.twinx()
-        dx.set_yticks(cx.get_yticks())
-        dx.set_yticklabels([])
         if cx == cxes[0]:
             label = "$100\,R_\odot$"
             X = 100 * Rsun_cm
@@ -146,14 +142,16 @@ def grid_erot_fraction_BE(fig_name=None):
             label = "$1000\,R_\odot$"
             X = 1000 * Rsun_cm
         dx.set_ylabel(label)
-        cx.axvline(np.log10(X), 0, 1, ls="--", lw=2, c="#808080", zorder=0)
-
+        cx.axvline(np.log10(X), 0, 1, ls=":", lw=2, c="#808080", zorder=0)
+        dx.set_ylim(cx.get_ylim())
+        dx.set_yticks(cx.get_yticks())
+        dx.set_yticklabels([])
         ax = axes[cxes.index(cx)]
         if ax != axes[-1]:  # skip last panel
-            ax.axvline(np.log10(X), 0, 1, ls="--", lw=2, c="#808080", zorder=0)
+            ax.axvline(np.log10(X), 0, 1, ls=":", lw=2, c="#808080", zorder=0)
         bx = bxes[cxes.index(cx)]
         if bx != bxes[-1]:  # skip last panel
-            bx.axvline(np.log10(X), 0, 1, ls="--", lw=2, c="#808080", zorder=0)
+            bx.axvline(np.log10(X), 0, 1, ls=":", lw=2, c="#808080", zorder=0)
 
     ax1.set_title(r"$M_2=15\rightarrow 18\,M_\odot$", size=30)
     bx1.set_title(r"$M_2=17\rightarrow 20\,M_\odot$", size=30)
