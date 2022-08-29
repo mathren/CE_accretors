@@ -64,7 +64,7 @@
 \begin{abstract}
   Common-envelope (CE) evolution is an outstanding open problem in
   stellar evolution, critical to the formation of compact binaries
-  including gravitational-wave (GW) sources. In the ``classical''
+  including gravitational-wave sources. In the ``classical''
   isolated binary evolution scenario for double compact objects, the
   CE is usually the second mass transfer phase. Thus, the donor star
   of the CE is the product of a previous binary interaction, often
@@ -311,7 +311,8 @@ limited.
     overlapping gray bands emphasize the CEB region,
     $X_\mathrm{c}(^1\mathrm{H})+0.01<X(^1\mathrm{H})<X_\mathrm{surf}(^1\mathrm{H})-0.01$,
     with $X_c$ and $X_\mathrm{surf}$ the central and surface value of
-    the hydrogen mass fraction.}
+    the hydrogen mass fraction. \textcolor{blue}{The CEB size of the engineered models
+    increases from blue to yellow.}}
   \label{fig:TAMS_profiles}
   \script{TAMS_profiles.py}
 \end{figure*}
@@ -365,12 +366,13 @@ Appendix~\ref{sec:eng_examples}).
     itself as a check on the models interpolation, red solid lines
     show the ratio of the accretor to a non-rotating single star,
     while the other colors show the ratio to ``engineered'' stars
-    (see~\Figref{fig:TAMS_profiles} for
-      the colors and~Appendix~\ref{sec:eng_examples}). Each panel shows the ratios
-    at the first time the models reach the radius indicated on the
-    right and by the vertical  dotted
-    gray lines. For the binding energy profiles in the numerator and
-    denominator  of the fractions plotted here see \Figref{fig:BE_profiles}.}
+    (see~\Figref{fig:TAMS_profiles}, \textcolor{blue}{increasing CEB
+      size from blue to yellow, see
+    also} Appendix~\ref{sec:eng_examples}). Each panel shows the ratios
+  at the first time the models reach the radius indicated on the right
+  and by the vertical dotted gray lines. For the binding energy
+  profiles in the numerator and denominator of the fractions plotted
+  here see \Figref{fig:BE_profiles}.}
   \label{fig:grid_ratios}
   \script{grid_ratios.py}
 \end{figure*}
@@ -647,9 +649,11 @@ by accretion during the first RLOF.
   \includegraphics[width=0.5\textwidth]{engineered_TAMS.pdf}
   \caption{TAMS entropy profile of a single 30\,$M_\odot$ star (red)
     and engineered models where we artificially modify the CEB region
-    (gray shaded area partially overlapping for multiple models). The CEB for a
-    single $30\,M_\odot$ star has a mass thickness of $5.81\,M_\odot$ at TAMS,
-    while the engineered models span the range $\sim3-9.4\,M_\odot$.}
+    (gray shaded area partially overlapping for multiple models,
+    \textcolor{blue}{increasing CEB size from blue to yellow}). The
+    CEB for a single $30\,M_\odot$ star has a mass thickness of
+    $5.81\,M_\odot$ at TAMS, while the engineered models span the
+    range $\sim3-9.4\,M_\odot$.}
   \label{fig:engineered_TAMS}
   \script{engineered_TAMS.py}
 \end{figure}
@@ -685,7 +689,8 @@ $1000\,R_\odot$.
     contribution only, while solid lines include the contribution of
     the internal energy. The red lines show a $30\,M_\odot$,
     non-rotating, $Z=0.0019$ model compared to ``engineered'' models
-    of the same mass (see \Figref{fig:engineered_TAMS}), but
+    of the same mass (see \Figref{fig:engineered_TAMS},
+    \textcolor{blue}{increasing CEB size from blue to yellow}), but
     artificially imposed profile at TAMS (other colors, see text). The
     top (bottom) axis indicates mass coordinate (radius). We compare
     the models when they first reach $500\,R_\odot$.}
@@ -815,18 +820,18 @@ local deviations from this trend can occur for some $r$.
 \begin{figure*}[hbtp]
   \includegraphics[width=\textwidth]{BE_profiles.pdf}
   \caption{Binding energy profile at fixed photospheric radius $R$
-    (right y-axis) as a function of radial coordinate $r$. We only show
-    profiles with $\alpha_\mathrm{th}=1$, that is accounting for the
-    internal energy content of the star. Orange, red, and other colors
-    show respectively the accretor models, single stars of same
+    (right y-axis) as a function of radial coordinate $r$. We only
+    show profiles with $\alpha_\mathrm{th}=1$, that is accounting for
+    the internal energy content of the star. Orange, red, and other
+    colors show respectively the accretor models, single stars of same
     post-RLOF total mass, and engineered models with varying CEB
-    steepness. Titles indicates the pre-RLOF and approximate post-RLOF
-    accretor masses. The vertical colored lines mark the outer edge of
-    the helium cores of the accretor and single star, that is the
-    outermost location where $Y>0.1$ and $X<0.01$ (solid lines), or
-    $X<0.1$ (dashed), or $X<0.2$ (dot-dashed). The
-    dotted gray lines mark
-    the total radius $R$ of these models.}
+    steepness \textcolor{blue}{(increasing CEB size from blue to
+      yellow, cf.~\Figref{fig:TAMS_profiles})}. Titles indicates the pre-RLOF and approximate
+    post-RLOF accretor masses. The vertical colored lines mark the
+    outer edge of the helium cores of the accretor and single star,
+    that is the outermost location where $Y>0.1$ and $X<0.01$ (solid
+    lines), or $X<0.1$ (dashed), or $X<0.2$ (dot-dashed). The dotted
+    gray lines mark the total radius $R$ of these models.}
   \label{fig:BE_profiles}
   \script{BE_profiles.py}
 \end{figure*}
@@ -856,7 +861,8 @@ constitute the extreme opposite comparison point.
     and He (bottom row, dashed lines) profiles for non-rotating single
     stars (red), accretors (orange), and ``engineered'' models of the
     same total mass as the ZAMS mass of the accretors. The overlapping
-    gray bands emphasize the CEB region.}
+    gray bands emphasize the CEB region, \textcolor{blue}{increasing
+      in size from blue to yellow in the engineered models}.}
   \label{fig:TAMS_profiles_same_initial_mass}
   \script{TAMS_profiles_same_initial_mass.py}
 \end{figure*}
@@ -886,10 +892,12 @@ in \Figref{fig:lambda_grid} the $\lambda_\mathrm{CE}$ profiles for our models.
   \caption{Profile of the binding energy parameter
     $\lambda_\mathrm{CE}$ as a function of mass coordinate for
     accretors (orange), single stars (red), and our engineered stars
-    (other colors) at selected total radii. The vertical lines
-    mark the outer edge of the helium cores of the accretor and single
+    (other colors) at selected total radii. The vertical lines mark
+    the outer edge of the helium cores of the accretor and single
     star, that is the outermost location where $Y>0.1$ and $X<0.01$
-    (solid lines), or $X<0.1$ (dashed), or $X<0.2$ (dot-dashed).}
+    (solid lines), or $X<0.1$ (dashed), or $X<0.2$
+    (dot-dashed). \textcolor{blue}{The CEB size of engineered models
+      increases from blue to yellow.}}
   \label{fig:lambda_grid}
   \script{lambda_grid.py}
 \end{figure*}
