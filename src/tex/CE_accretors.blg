@@ -4,56 +4,46 @@ The top-level auxiliary file: CE_accretors.aux
 The style file: aasjournal.bst
 Database file #1: ./CE_accretors.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-Warning--empty journal in blaauw:1993
-Warning--empty journal in blagorodnova:2021
-Warning--empty journal in hellings:1983
-Warning--empty journal in hellings:1984
-Warning--empty journal in klencki:2021
-Warning--empty journal in klencki:2020
-Warning--empty journal in marchant:2021
-Warning--empty journal in ogata:2021
-Warning--empty journal in patton:2021
-Warning--empty journal in paxton:2019
 Warning--empty journal in wang:2021a
-You've used 110 entries,
+You've used 108 entries,
             3168 wiz_defined-function locations,
-            1358 strings with 30952 characters,
-and the built_in function-call counts, 52451 in all, are:
-= -- 4328
-> -- 4077
-< -- 36
-+ -- 1371
-- -- 1493
-* -- 4794
-:= -- 9654
-add.period$ -- 128
-call.type$ -- 110
-change.case$ -- 660
-chr.to.int$ -- 107
-cite$ -- 121
-duplicate$ -- 1835
-empty$ -- 3059
-format.name$ -- 1624
-if$ -- 10529
-int.to.chr$ -- 4
+            1382 strings with 31278 characters,
+and the built_in function-call counts, 51398 in all, are:
+= -- 4227
+> -- 4010
+< -- 37
++ -- 1346
+- -- 1466
+* -- 4709
+:= -- 9476
+add.period$ -- 115
+call.type$ -- 108
+change.case$ -- 644
+chr.to.int$ -- 106
+cite$ -- 109
+duplicate$ -- 1819
+empty$ -- 3001
+format.name$ -- 1597
+if$ -- 10318
+int.to.chr$ -- 3
 int.to.str$ -- 0
-missing$ -- 108
-newline$ -- 356
-num.names$ -- 441
-pop$ -- 740
+missing$ -- 105
+newline$ -- 339
+num.names$ -- 434
+pop$ -- 698
 preamble$ -- 1
-purify$ -- 660
+purify$ -- 644
 quote$ -- 0
-skip$ -- 1577
+skip$ -- 1556
 stack$ -- 0
-substring$ -- 2030
-swap$ -- 11
-text.length$ -- 1
+substring$ -- 1955
+swap$ -- 17
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 987
-warning$ -- 11
-while$ -- 406
+type$ -- 969
+warning$ -- 1
+while$ -- 407
 width$ -- 0
-write$ -- 1192
-(There were 11 warnings)
+write$ -- 1179
+(There was 1 warning)
