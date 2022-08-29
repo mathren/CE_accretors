@@ -52,7 +52,7 @@ if __name__=="__main__":
 
 
     # these will all become sys.argv if needed
-    ROOT = "../../MESA_input/"
+    ROOT = "/mnt/home/mrenzo/Projects/CE_accretors_base/CE_accretors/src/data/MESA_input/"
     TEMPLATE = ROOT+"binaries/template_binary/"
     WHERE_TO_RUN = "/mnt/home/mrenzo/ceph/RUNS/accretors/mesa15140/binaries/no_rot/"
 
