@@ -158,7 +158,7 @@ additional plots of our model grids.
 \label{sec:methods}
 
 We use \mesa\ \citep[version 15140,][]{paxton:2011, paxton:2013,
-  paxton:2015, paxton:2018, paxton:2019} to compute the evolution of
+  paxton:2015, paxton:2018, paxton:2019, jermyn:2022} to compute the evolution of
 binaries which experience mass transfer after the end of the donor's
 main sequence, that is case B RLOF
 \citep[][]{kippenhahn:1967}. Our output files are compatible for
@@ -187,12 +187,12 @@ on the (total or core) mass of a star \citep[e.g.,][]{oconnor:11,
   farmer:16, patton:2020, zapartas:21b, patton:22}.
 
 \textcolor{blue}{During the binary evolution, we account for tidal
-  interactions assuming each stellar layer reacts on its own
-  timescale. At mass transfer,}  our \mesa\ models assume that the accretion efficiency
-is limited by rotationally-enhanced wind mass loss
-\citep[e.g.,][]{sravan:2019, wang:2020, renzo:2021zoph,
-  sen:2022}. However, this may lead to less conservative mass transfer
-than suggested by observations
+  interactions assuming each stellar layer reacts on its own timescale
+  (see \citealt{paxton:2015}). At mass transfer,} our \mesa\ models
+assume that the accretion efficiency is limited by
+rotationally-enhanced wind mass loss \citep[e.g.,][]{sravan:2019,
+  wang:2020, renzo:2021zoph, sen:2022}. However, this may lead to less
+conservative mass transfer than suggested by observations
 \citep[e.g.,][]{wang:2021a,renzo:2021zoph}.
 
 After the  donor detaches from the Roche lobe, our
@@ -373,7 +373,9 @@ Appendix~\ref{sec:eng_examples}).
       size from blue to yellow, see
     also} Appendix~\ref{sec:eng_examples}). Each panel shows the ratios
   at the first time the models reach the radius indicated on the right
-  and by the vertical dotted gray lines. For the binding energy
+  and by the vertical dotted gray lines. \textcolor{blue}{The vertical
+  gray bands mark the radial extent of the CEB in the accretors only, which
+  may differ in the other stars.} For the binding energy
   profiles in the numerator and denominator of the fractions plotted
   here see \Figref{fig:BE_profiles}.}
   \label{fig:grid_ratios}
@@ -566,12 +568,10 @@ imply easier to eject (post-RLOF, second) CE and wider post-CE separations.
 
 Before the onset of the dynamical instability in a CE event, a pre-CE
 thermal timescale phase of mass transfer may occur
-\citep[e.g.,][]{hjellming:1987, pejcha:17,
-  blagorodnova:2021}. \textcolor{blue}{During this brief phase, tidal
-  interactions may also be important.} This initial phase is usually
-neglected in hydrodynamical simulations and may impact the envelope
-structure of CE-donors whether they are RLOF-accretors (as in our
-models) or not.
+\citep[e.g.,][]{hjellming:1987, pejcha:17, blagorodnova:2021}. This
+initial phase is usually neglected in hydrodynamical simulations and
+may impact the envelope structure of CE-donors whether they are
+RLOF-accretors (as in our models) or not.
 
 A key uncertainty in CE outcome is the location of the separation
 between the (possibly) ejected envelope and the remaining core
@@ -638,7 +638,6 @@ phase (see also \Figref{fig:lambda_grid}).
 \bibliography{./CE_accretors.bib}
 
 \appendix
-
 \section{Impact of core-envelope boundary and rotation on the binding  energy profile}
 \label{sec:toy_models}
 
