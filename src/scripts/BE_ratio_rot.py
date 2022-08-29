@@ -48,7 +48,7 @@ if __name__ == "__main__":
             alpha_rot=0.0,
             c=colors[pfiles.index(pfile_rot)],
             ls="-",
-            lw=2,
+            lw=3,
             zorder=0,
             label=label
         )
