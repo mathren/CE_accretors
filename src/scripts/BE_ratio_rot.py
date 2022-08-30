@@ -10,16 +10,16 @@ import paths
 
 if __name__ == "__main__":
     rot_root = str(paths.data / "MESA_output/single_stars/Z_0.0019")
-    grid_folders = sorted(glob.glob(rot_root + "/30_rot0*"))
-    colors = plt.cm.viridis(np.linspace(0, 1, len(grid_folders)))
+    grid_folders = sorted(glob.glob(rot_root + "/18_rot0*"))
 
     fig = plt.figure() #figsize=(10,15))
     gs = gridspec.GridSpec(120, 100)
     ax = fig.add_subplot(gs[:,:])
 
     rot_root = str(paths.data / "MESA_output/single_stars/Z_0.0019")
-    pfile_nonrot = rot_root + "/30_rot0.0/LOGS/500Rsun.data"
-    pfiles = sorted(glob.glob(rot_root + "/30_rot0.[123456789]*/LOGS/500Rsun.data"))
+    pfile_nonrot = rot_root + "/18_rot0.0/LOGS/500Rsun.data"
+    pfiles = sorted(glob.glob(rot_root + "/18_rot0.[123456789]*/LOGS/500Rsun.data"))
+    print(pfiles)
     colors = plt.cm.plasma(np.linspace(0, 1, len(pfiles)))
 
 

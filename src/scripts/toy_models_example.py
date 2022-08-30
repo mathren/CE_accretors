@@ -12,13 +12,13 @@ ax = fig.add_subplot(gs[:, :])
 
 init_model = (
     paths.data
-    / "MESA_output/engineered_stars/TAMS_models/30_rot0_to_TAMS/LOGS/TAMS.data"
+    / "MESA_output/engineered_stars/TAMS_models/18_rot0_to_TAMS/LOGS/TAMS.data"
 )
 delta_M_bound, M_bound_min, M_bound_max = get_M_boundary(init_model, offset=0.05)
 
 
-nonrot30 = paths.data / "MESA_output/single_stars/Z_0.0019/30_rot0.0"
-pfile_normal = nonrot30 / "LOGS/500Rsun.data"
+nonrot18 = paths.data / "MESA_output/single_stars/Z_0.0019/18_rot0.0"
+pfile_normal = nonrot18 / "LOGS/500Rsun.data"
 plot_BE_r(
     pfile_normal, ax, alpha_th=0.0, top_axis=False, lw=3, ls="--", c="r", zorder=10
 )
@@ -35,7 +35,7 @@ plot_BE_r(
 )
 
 
-root_grid30 = str(paths.data / "MESA_output/engineered_stars/same_core/grid30/")
+root_grid30 = str(paths.data / "MESA_output/engineered_stars/same_core/grid18/")
 grid_folders = sorted(
     glob.glob(root_grid30 + "/*.*/LOGS/"), key=sorter_engineered_profiles
 )

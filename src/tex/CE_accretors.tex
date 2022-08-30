@@ -195,21 +195,21 @@ rotationally-enhanced wind mass loss \citep[e.g.,][]{sravan:2019,
 conservative mass transfer than suggested by observations
 \citep[e.g.,][]{wang:2021a,renzo:2021zoph}.
 
-After the  donor detaches from the Roche lobe, our
-simulations artificially  separate\footnote{We make
-  the routine to detach a \mesa\ binary on-the-fly publicly available
+After the donor detaches from the Roche lobe, our simulations
+artificially separate\footnote{We make the routine to detach a \mesa\
+  binary on-the-fly publicly available
   \url{https://github.com/MESAHub/mesa-contrib/}} the stars and
 continue the evolution of the accretor as a single star until it
 reaches carbon depletion (defined by central carbon mass fraction
 $X_\mathrm{c}(^{12}\mathrm{C})<2\times10^{-4} $). This reduces the
 computing time by avoiding to simulate the late evolutionary phases of
 the RLOF-donors, and implies that we neglect further possible -- but
-not expected in this regime -- mass transfer episodes (case BB RLOF,
-\citealt{delgado:81, laplace:2020}) and tidal interactions between the
-stars, which are expected to be negligible for wide
-  pre-CE binaries. We also neglect the impact of the supernova
-ejecta with the accretor \cite[which has a small and
-  short-lasting effect only on the outermost layers,
+not expected -- mass transfer episodes (case BB RLOF,
+\citealt{delgado:81, laplace:2020}) and \textcolor{blue}{post-mass-transfer}
+tidal interactions, which are expected to be
+negligible for wide pre-CE binaries. We also neglect the impact of the
+supernova ejecta with the accretor \cite[which has a small and
+short-lasting effect only on the outermost layers,
 e.g.,][]{hirai:2018, ogata:2021} and the orbital consequences of the
 RLOF-donor core-collapse \citep[e.g.,][]{brandt:1995, kalogera:1996,
   tauris:1998, renzo:2019walk}.

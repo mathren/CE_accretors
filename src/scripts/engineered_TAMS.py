@@ -19,13 +19,13 @@ bx = fig.add_subplot(gs[50:, :])
 # plot single star
 init_model = (
     paths.data
-    / "MESA_output/engineered_stars/TAMS_models/30_rot0_to_TAMS/LOGS/TAMS.data"
+    / "MESA_output/engineered_stars/TAMS_models/18_rot0_to_TAMS/LOGS/TAMS.data"
 )
 delta_M_bound, M_bound_min, M_bound_max = get_M_boundary(init_model, offset=0.05)
 plot_entropy(init_model, ax, lw=3, ls="-", color="r", zorder=10, label="$30\,M_\odot$")
 plot_XY(init_model, bx, lw=3, color="r", zorder=10)
 # plot engineered models
-root_grid30 = str(paths.data / "MESA_output/engineered_stars/same_core/grid30/")
+root_grid30 = str(paths.data / "MESA_output/engineered_stars/same_core/grid18/")
 grid_folders = sorted(
     glob.glob(root_grid30 + "/*.*/LOGS/"), key=sorter_engineered_profiles
 )
