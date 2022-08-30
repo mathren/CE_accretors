@@ -719,8 +719,6 @@ vice versa.
 
 \subsection{Rotation}
 \label{sec:rot_examples}
-\todo{update to 18Msun}
-
 
 Mass transfer through RLOF also spins up the accreting star, often to
 critical rotation\footnote{At critical rotation, the centrifugal force
@@ -729,7 +727,7 @@ critical rotation\footnote{At critical rotation, the centrifugal force
   $\omega_\mathrm{crit}=\sqrt{(1-L/L_\mathrm{Edd})GM/R^3}$, with
   $L_\mathrm{Edd}$ the Eddington luminosity, and $L$ the stellar
   luminosity.} \citep[e.g.,][]{lubow:1975, packet:1981,
-  cantiello:2007}. To illustrate the
+  cantiello:2007, renzo:2021zoph}. To illustrate the
   impact of rotation, it is worth considering the CEB
  region and envelope structure
  of single-star models rotating since
@@ -760,40 +758,54 @@ increases the total mass loss rate \citep[e.g.,][]{langer:1998,
   heger:2000} though this may not always be true throughout the
 evolution \citep[e.g.,][]{gagnier:2019}.
 
-\Figref{fig:rotation_models_example} shows the gravitational binding
-energy profile of the single $30\,M_\odot$ star of
-\Figref{fig:toy_models_example}, compared to single stars of the same
-mass and varying initial $\omega/\omega_{\rm crit}$.
-For $\omega/\omega_\mathrm{crit}\lesssim 0.5$, corresponding to a
-generous upper-bound for the typical birth rotation rate of single
-massive stars \citep[e.g.,][]{ramirez-agudelo:2015}, the effect is
-modest but non-negligible. For more extreme initial rotation rates
-(achievable during RLOF), the ratio of
-the He core mass to total mass is significantly changed by rotational
-mixing, which can result in larger binding energy differences than
-changing the CEB region at fixed core mass.
-
-\Figref{fig:accretors_rotators_single} shows the ratio of the binding energy
-(cf.~\Figref{fig:grid_ratios}) of the non-rotating model to the
-binding energy of the rotating models in
-\Figref{fig:rotation_models_example}, when they first reach
-photospheric radius $R=500\,R_\odot$. The impact of rotation is
-non-negligible, however, ratios of binding energy below 50\% are
-obtained only for initial rotation rates
-$\omega \gtrsim 0.7\omega_\mathrm{crit}$.
-
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
+  \centering
   \includegraphics[width=0.5\textwidth]{accretors_rotators_single.pdf}
-  \caption{Ratio of binding energy of a
-      non-rotating $30\,M_\odot$ model divided by the binding energy
-      of the rotating models of \Figref{fig:rotation_models_example}
-      when they first reach $R=500\,R_\odot$. The binding energy
-      includes the internal energy ($\alpha_\mathrm{th}=1$), and
-      differences in the outermost layers are driven by differences in
-      the density and temperature profiles of the models. \todo{update}}
+  \caption{\textcolor{blue}{Ratio of binding energy of a non-rotating
+      $18\,M_\odot$ model (left) or of our $15\rightarrow18\,M_\odot$
+      accretor (right) divided by the binding energy of the rotating
+      models of \Figref{fig:rotation_models_example}. The binding
+      energy includes the internal energy ($\alpha_\mathrm{th}=1$),
+      the gray bands highlight the CEB region of the models in the
+      numerator. Lighter colors indicate ratios to an initially
+      faster-rotating single star, which produces larger deviation
+      from one in the right column.}}
   \label{fig:accretors_rotators_single}
   \script{accretors_rotators_single.py}
 \end{figure}
+
+
+\Figref{fig:rotation_models_example} shows the gravitational binding
+energy profile of the single, non-rotating
+$\textcolor{blue}{18}\,M_\odot$ star, compared to single stars of the
+same mass and varying initial $\omega/\omega_{\rm crit}$.  For
+$\omega/\omega_\mathrm{crit}\lesssim 0.5$, corresponding to a generous
+upper-bound for the typical birth rotation rate of single massive
+stars \citep[e.g.,][]{ramirez-agudelo:2015}, the effect is modest but
+non-negligible. For more extreme initial rotation rates (achievable
+during RLOF), the ratio of the He core mass to total mass is
+significantly changed by rotational mixing, which can result in larger
+binding energy differences than changing the CEB region at fixed core
+mass.
+
+\textcolor{blue}{\Figref{fig:accretors_rotators_single} shows the
+  ratio of the binding energy (cf.~\Figref{fig:grid_ratios}) of a
+  reference model divided the binding energy of the rotating models of
+  \Figref{fig:rotation_models_example}. The left column uses as
+  reference model for the numerator the non-rotating single
+  $18\,M_\odot$, while the right column uses our
+  $15\rightarrow18\,M_\odot$ accretor. The ordering of colors shows
+  that the faster the initial rotation, the larger its structural
+  effect on the star. However, single star models, regardless of their
+  initial rotation rate, are more similar to each other than any
+  single rotating star is to the accretor: in each row, the
+  ratios in the left column are closer to one than the ration in the
+  right column.  Moreover, the binding energy profiles of
+  fast-rotating models (yellow) differ more than slow- and
+  non-rotating models (blue and cyan) when compared to our accretor
+  (i.e., their ratios are farther from one). Therefore, we do
+  \emph{not} recommend the use of fast-rotating single stars to mimic
+  the effect of mass accretion and rejuvenation.}
 
 For stars accreting through RLOF in a binary both
 effects illustrated in \Figref{fig:toy_models_example} and
