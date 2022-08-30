@@ -663,7 +663,7 @@ by accretion during the first RLOF.
 \end{figure}
 
 \Figref{fig:engineered_TAMS} shows an example grid of ``engineered
-stars'' of $30M_\odot$, similar to \Figref{fig:TAMS_profiles}.
+stars'' of $20\,M_\odot$, similar to \Figref{fig:TAMS_profiles}.
 Starting from a non-rotating single star at TAMS (e.g., red model in
 \Figref{fig:engineered_TAMS}), we modify the CEB specific entropy (s)
 which controls the thermal properties of the gas, and its H, and He
@@ -677,8 +677,6 @@ then recover gravothermal and hydrostatic equilibrium, and then evolve
 until either carbon depletion or when the photospheric radius of these
 models first exceeds
 $1000\,R_\odot$.
-
-
 
 \subsection{Steepness of the core-envelope boundary}
 \label{sec:eng_examples}
@@ -721,6 +719,8 @@ vice versa.
 
 \subsection{Rotation}
 \label{sec:rot_examples}
+\todo{update to 18Msun}
+
 
 Mass transfer through RLOF also spins up the accreting star, often to
 critical rotation\footnote{At critical rotation, the centrifugal force
@@ -773,7 +773,7 @@ the He core mass to total mass is significantly changed by rotational
 mixing, which can result in larger binding energy differences than
 changing the CEB region at fixed core mass.
 
-\Figref{fig:BE_ratio_rot} shows the ratio of the binding energy
+\Figref{fig:accretors_rotators_single} shows the ratio of the binding energy
 (cf.~\Figref{fig:grid_ratios}) of the non-rotating model to the
 binding energy of the rotating models in
 \Figref{fig:rotation_models_example}, when they first reach
@@ -783,7 +783,7 @@ obtained only for initial rotation rates
 $\omega \gtrsim 0.7\omega_\mathrm{crit}$.
 
 \begin{figure}[htbp]
-  \includegraphics[width=0.5\textwidth]{BE_ratio_rot.pdf}
+  \includegraphics[width=0.5\textwidth]{accretors_rotators_single.pdf}
   \caption{Ratio of binding energy of a
       non-rotating $30\,M_\odot$ model divided by the binding energy
       of the rotating models of \Figref{fig:rotation_models_example}
@@ -791,8 +791,8 @@ $\omega \gtrsim 0.7\omega_\mathrm{crit}$.
       includes the internal energy ($\alpha_\mathrm{th}=1$), and
       differences in the outermost layers are driven by differences in
       the density and temperature profiles of the models.}
-  \label{fig:BE_ratio_rot}
-  \script{BE_ratio_rot.py}
+  \label{fig:accretors_rotators_single}
+  \script{accretors_rotators_single.py}
 \end{figure}
 
 For stars accreting through RLOF in a binary both
