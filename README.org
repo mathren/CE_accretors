@@ -125,6 +125,5 @@
 
 * TODO
 
-  - [ ] update =src/data/README.org= with =tree= for MESA output
   - [ ] verify updated zenodo record, and update =showyourwork.yml=
   - [ ] update text appendix rotation
