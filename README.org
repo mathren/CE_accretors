@@ -127,4 +127,3 @@
 
   - [ ] verify updated zenodo record, and update =showyourwork.yml=
         accordingly
-  - [ ] update text appendix rotation
