@@ -8,7 +8,7 @@ import paths
 
 init_model = (
     paths.data
-    / "MESA_output/engineered_stars/TAMS_models/30_rot0_to_TAMS/LOGS/TAMS.data"
+    / "MESA_output/engineered_stars/TAMS_models/18_rot0_to_TAMS/LOGS/TAMS.data"
 )
 delta_M_bound, M_bound_min, M_bound_max = get_M_boundary(init_model)
 
