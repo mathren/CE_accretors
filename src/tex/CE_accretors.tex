@@ -193,35 +193,34 @@ assume that the accretion efficiency is limited by
 rotationally-enhanced wind mass loss \citep[e.g.,][]{sravan:2019,
   wang:2020, renzo:2021zoph, sen:2022}. However, this may lead to less
 conservative mass transfer than suggested by observations
-\citep[e.g.,][]{wang:2021a,renzo:2021zoph}.
+\citep[e.g.,][]{wang:2021a}.
 
 After the donor detaches from the Roche lobe, our simulations
-artificially separate\footnote{We make the routine to detach a \mesa\
-  binary on-the-fly publicly available
+artificially separate\footnote{We make the routine to separate a
+  \mesa\ binary on-the-fly publicly available
   \url{https://github.com/MESAHub/mesa-contrib/}} the stars and
 continue the evolution of the accretor as a single star until it
 reaches carbon depletion (defined by central carbon mass fraction
-$X_\mathrm{c}(^{12}\mathrm{C})<2\times10^{-4} $). This reduces the
-computing time by avoiding to simulate the late evolutionary phases of
-the RLOF-donors, and implies that we neglect further possible -- but
-not expected -- mass transfer episodes (case BB RLOF,
-\citealt{delgado:81, laplace:2020}) and \textcolor{blue}{post-mass-transfer}
-tidal interactions, which are expected to be
-negligible for wide pre-CE binaries. We also neglect the impact of the
-supernova ejecta with the accretor \cite[which has a small and
-short-lasting effect only on the outermost layers,
-e.g.,][]{hirai:2018, ogata:2021} and the orbital consequences of the
-RLOF-donor core-collapse \citep[e.g.,][]{brandt:1995, kalogera:1996,
-  tauris:1998, renzo:2019walk}.
-
-To illustrate the physical reason why the first RLOF may influence the
-envelope structure of the accretor much later on, we also compute
-comparison stars. For each mass, we compute non-rotating single stars
-with otherwise identical setup, and ``engineered'' stars which we
-modify at terminal age main sequence (TAMS, central hydrogen mass
-fraction $X_\mathrm{c}(^1\mathrm{H})<10^{-4}$) to mimic crudely the
-impact of rejuvenation of the accretors CEB (see
-Appendix~\ref{sec:toy_models}).
+$X_\mathrm{c}(^{12}\mathrm{C})<2\times10^{-4} $). \textcolor{blue}{Reducing
+  the complexity by not simulating the late evolutionary phases of the
+  RLOF-donors saves significant computing time at a small price in
+  accuracy of the RLOF-accretors. Separating the stars, we
+  neglect further possible, but not expected, mass-transfer episodes
+  (case BB RLOF, \citealt{delgado:81, laplace:2020}). We also neglect
+  post-RLOF tides, which are expected to be
+  negligible for wide pre-CE binaries}. We also neglect the impact of
+  the supernova ejecta with the accretor \cite[which has a small and
+  short-lasting effect only on the outermost layers,
+  e.g.,][]{hirai:2018, ogata:2021}} and the orbital consequences of the
+  RLOF-donor core-collapse \citep[e.g.,][]{brandt:1995, kalogera:1996,
+    tauris:1998, renzo:2019walk}. To illustrate the physical reason
+why the first RLOF may influence the envelope structure of the
+accretor much later on, we also compute comparison stars. For each
+mass, we compute non-rotating single stars with otherwise identical
+setup, and ``engineered'' stars which we modify at terminal age main
+sequence (TAMS, central hydrogen mass fraction
+$X_\mathrm{c}(^1\mathrm{H})<10^{-4}$) to mimic crudely the impact of
+rejuvenation of the accretors CEB (see Appendix~\ref{sec:toy_models}).
 
 At the onset of a CE event, the photospheric radius
 $R\equiv R_\mathrm{RL, donor}$ is the size of the Roche lobe of the
@@ -242,7 +241,7 @@ until our definition of detachment. The solid lines correspond to the
 full evolution of the accretors, from ZAMS, through RLOF, until carbon
 depletion. The yellow outline of the tracks highlight the RLOF mass
 transfer (see e.g., \citealt{renzo:2021zoph}). During this phase the
-accretor is progressively spun-up, and accretes CNO-processed material
+accretor progressively spins-up, and accretes CNO-processed material
 from the donor's inner layers which are mixed downwards in the
 envelope by meridional circulations and thermohaline mixing, and its
 core is rejuvenated because of the increased mass \citep[see
@@ -252,7 +251,12 @@ $M_2=15\rightarrow 18, 17\rightarrow 20, 30\rightarrow 36\,M_\odot$,
 respectively, corresponding to an overall mass transfer efficiency
 $\beta_\mathrm{RLOF}=|\Delta M_\mathrm{accretor}/\Delta M_\mathrm{donor}| = 0.29,\ 0.30,$\,and
 0.43, respectively \citep[see discussion in ][]{renzo:2021zoph}.
-
+\textcolor{blue}{The binaries started with an initial separation of
+  $\sim{}300\,R_\odot$ and widen to $\sim{}380\,R_\odot$ days by RLOF
+  detachment. We expect further widening caused by the wind mass loss
+  of both stars, allowing us to neglect tides in the remaining
+  evolution and the impact of the RLOF-donor collapse
+  \citep{hirai:2018, ogata:2021}.}
 \begin{figure}[tbp]
   \includegraphics[width=0.5\textwidth]{HRD.pdf}
   \caption{HR diagram of the binary systems. The thin dashed lines
@@ -758,6 +762,19 @@ increases the total mass loss rate \citep[e.g.,][]{langer:1998,
   heger:2000} though this may not always be true throughout the
 evolution \citep[e.g.,][]{gagnier:2019}.
 
+\Figref{fig:rotation_models_example} shows the gravitational binding
+energy profile of the single, non-rotating
+$\textcolor{blue}{18}\,M_\odot$ star, compared to single stars of the
+same mass and varying initial $\omega/\omega_{\rm crit}$.  For
+$\omega/\omega_\mathrm{crit}\lesssim 0.5$, corresponding to a generous
+upper-bound for the typical birth rotation rate of single massive
+stars \citep[e.g.,][]{ramirez-agudelo:2015}, the effect is modest but
+non-negligible. For more extreme initial rotation rates (achievable
+during RLOF), the ratio of the He core mass to total mass is
+significantly changed by rotational mixing, which can result in larger
+binding energy differences than changing the CEB region at fixed core
+mass.
+
 \begin{figure}[!htbp]
   \centering
   \includegraphics[width=0.5\textwidth]{accretors_rotators_single.pdf}
@@ -776,19 +793,6 @@ evolution \citep[e.g.,][]{gagnier:2019}.
 \end{figure}
 
 
-\Figref{fig:rotation_models_example} shows the gravitational binding
-energy profile of the single, non-rotating
-$\textcolor{blue}{18}\,M_\odot$ star, compared to single stars of the
-same mass and varying initial $\omega/\omega_{\rm crit}$.  For
-$\omega/\omega_\mathrm{crit}\lesssim 0.5$, corresponding to a generous
-upper-bound for the typical birth rotation rate of single massive
-stars \citep[e.g.,][]{ramirez-agudelo:2015}, the effect is modest but
-non-negligible. For more extreme initial rotation rates (achievable
-during RLOF), the ratio of the He core mass to total mass is
-significantly changed by rotational mixing, which can result in larger
-binding energy differences than changing the CEB region at fixed core
-mass.
-
 \textcolor{blue}{\Figref{fig:accretors_rotators_single} shows the
   ratio of the binding energy (cf.~\Figref{fig:grid_ratios}) of a
   reference model divided the binding energy of the rotating models of
@@ -799,21 +803,22 @@ mass.
   that the faster the initial rotation, the larger its structural
   effect on the star. However, single star models, regardless of their
   initial rotation rate, are more similar to each other than any
-  single rotating star is to the accretor: in each row, the
-  ratios in the left column are closer to one than the ration in the
-  right column.  Moreover, the binding energy profiles of
-  fast-rotating models (yellow) differ more than slow- and
-  non-rotating models (blue and cyan) when compared to our accretor
-  (i.e., their ratios are farther from one). Therefore, we do
-  \emph{not} recommend the use of fast-rotating single stars to mimic
-  the effect of mass accretion and rejuvenation.}
-
+  single rotating star is to the accretor: in each row, the ratios in
+  the left column are closer to one than the ration in the right
+  column.  Moreover, the binding energy profiles of fast-rotating
+  models (yellow) differ more than slow- and non-rotating models (blue
+  and cyan) when compared to our accretor (i.e., their ratios are
+  farther from one). Therefore, we do \emph{not} recommend the use of
+  fast-rotating single stars to mimic the effect of mass accretion and
+  rejuvenation.}
 For stars accreting through RLOF in a binary both
 effects illustrated in \Figref{fig:toy_models_example} and
 \Figref{fig:rotation_models_example} act simultaneously, although the
 timing and amplitude of the impact of mixing and rotation can be
 different than for single stars \citep[e.g.,][]{renzo:2021zoph}.
-
+\textcolor{blue}{Future work should investigate how to include the
+  effect in rapid population-synthesis, for example with
+  a prescription for $\lambda_{CE}$ (see Appendix~\ref{sec:pop_synth_app}).}
 
 \section{Binding energy profiles}
 \label{sec:BE}
