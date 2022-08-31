@@ -122,3 +122,8 @@
 
       Please refer to the [[https://docs.mesastar.org/en/r15140/][MESA documentation]] and [[https://lists.mesastar.org/mailman/listinfo][mailing list]] for
       support.
+
+* TODO
+
+  - [ ] verify updated zenodo record, and update =showyourwork.yml=
+        accordingly

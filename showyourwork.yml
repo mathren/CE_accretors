@@ -4,13 +4,13 @@ verbose: True
 
 ms_name: CE_accretors
 
-run_cache_rules_on_ci: True
+# run_cache_rules_on_ci: True
 
-datasets:
-  10.5281/zenodo.6600641:
-    destination: src/data/
-    contents:
-      MESA_output.tar.gz:
+# datasets:
+#   10.5281/zenodo.6600641:
+#     destination: src/data/
+#     contents:
+#       MESA_output.tar.gz:
 
 dependencies:
   src/scripts/convert_MESA_output.py:
@@ -75,7 +75,7 @@ dependencies:
     - src/scripts/MESAreader.py
     - src/data/MESA_output/
     - src/data/MESA_output.tar.gz
-  src/scripts/BE_ratio_rot.py:
+  src/scripts/accretors_rotators_single.py:
     - src/scripts/lib_plot_bin.py
     - src/scripts/MESAreader.py
     - src/data/MESA_output/
