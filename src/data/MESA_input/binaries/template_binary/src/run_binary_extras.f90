@@ -176,6 +176,7 @@ contains
     if (.not. restart) then
        b% lxtra(1) = .false. ! flag for end of donor's main sequence
        b% lxtra(2) = .false. ! flag for beginning RLOF
+       b% lxtra(3) = .false. ! flag for end of accretor's main sequence
        ! initialize some quantitites
        b% xtra(1) = -1d99      ! donor radius at TAMS
        ! extras are used to store the two tidal sychronization timescales (rad/conv) for each star.
@@ -343,16 +344,6 @@ contains
        call star_write_profile_info(b% star_ids(1), trim(b% s1% log_directory)//'/'//trim(fname), ierr)
     end if
 
-    ! find accretor TAMS if you are evolving it
-    if (b% point_mass_i /= 2) then
-       if (b% s2 % xa(b% s2% net_iso(ih1), b% s2% nz) < TAMS_h1_treshold) then
-          write(fname, fmt="(a17)") 'accretor_TAMS.mod'
-          call star_write_model(b% star_ids(2), fname, ierr)
-          write(fname, fmt="(a18)") 'accretor_TAMS.data'
-          call star_write_profile_info(b% star_ids(2), trim(b% s2% log_directory)//'/'//trim(fname), ierr)
-       end if
-    end if
-
     ! find beginning RLOF
     if (b% lxtra(2) .eqv. .false.) then
        ! RLOF has not started before
@@ -420,6 +411,20 @@ contains
           print *, "----------------------------------------"
        end if
     end if
+
+    ! find accretor TAMS if you are evolving it
+    if ((b% lxtra(3) .eqv. .false.) .and. & ! not accretor TAMS yet
+         (b% point_mass_i /= 2)) then       ! computing the accretor
+       if (b% s2 % xa(b% s2% net_iso(ih1), b% s2% nz) < TAMS_h1_treshold) then
+          write(fname, fmt="(a17)") 'accretor_TAMS.mod'
+          call star_write_model(b% star_ids(2), fname, ierr)
+          write(fname, fmt="(a18)") 'accretor_TAMS.data'
+          call star_write_profile_info(b% star_ids(2), trim(b% s2% log_directory)//'/'//trim(fname), ierr)
+          b% lxtra(3) = .true.
+       end if
+    end if
+
+
 
 
     if (b% point_mass_i == 0) then
