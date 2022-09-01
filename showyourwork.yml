@@ -7,7 +7,7 @@ ms_name: CE_accretors
 # run_cache_rules_on_ci: True
 
 datasets:
-  10.5281/zenodo.6600640: # should point to latest entry
+  10.5281/zenodo.6600641:
     destination: src/data/
     contents:
       MESA_output.tar.gz:
