@@ -8,7 +8,7 @@ import paths
 
 init_model = (
     paths.data
-    / "MESA_output/engineered_stars/TAMS_models/30_rot0_to_TAMS/LOGS/TAMS.data"
+    / "MESA_output/engineered_stars/TAMS_models/18_rot0_to_TAMS/LOGS/TAMS.data"
 )
 delta_M_bound, M_bound_min, M_bound_max = get_M_boundary(init_model)
 
@@ -18,7 +18,7 @@ gs = gridspec.GridSpec(100, 100)
 ax = fig.add_subplot(gs[:, :])
 
 rot_root = str(paths.data / "MESA_output/single_stars/Z_0.0019")
-grid_folders = sorted(glob.glob(rot_root + "/30_rot0*"))
+grid_folders = sorted(glob.glob(rot_root + "/18_rot0*"))
 colors = plt.cm.plasma(np.linspace(0, 1, len(grid_folders)))
 for f in grid_folders:
     label = f.split("/")[-1].split("_rot")[-1]
@@ -49,8 +49,8 @@ for f in grid_folders:
             label=label,
         )
 
-nonrot30 = paths.data / "MESA_output/single_stars/Z_0.0019/30_rot0.0/"
-pfile_normal = nonrot30 / "LOGS/500Rsun.data"
+nonrot18 = paths.data / "MESA_output/single_stars/Z_0.0019/18_rot0.0/"
+pfile_normal = nonrot18 / "LOGS/500Rsun.data"
 plot_BE_r(
     pfile_normal,
     ax,

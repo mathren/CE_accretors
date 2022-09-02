@@ -11,6 +11,7 @@ import tarfile
 
 
 def clean_data_from_tarball(member):
+    print("in clean_data_from_tarball")
     bin_fname = paths.data / str(member.name[:-4] + ".npy")
     if not os.path.isfile(bin_fname):
         # file does not exist, extract
