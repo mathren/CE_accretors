@@ -41,7 +41,7 @@
   higher CE survival rate and wider post-CE orbital sepatations.
 
   For more info, see [[shttps://github.com/mathren/CE_accretors/raw/main-pdf/CE_accretors.pdf][the article]] (submitted, [[http://arxiv.org/abs/2206.15338][arXiv:2206.15338]]). Our
-  [[https://zenodo.org/record/6600641][MESA simulations input and output are publicly available on zenodo]],
+  [[https://zenodo.org/record/7036016][MESA simulations input and output are publicly available on zenodo]],
   and processed data produced by the scripts are also publicly
   available as a =showyourwork=-managed [[https://zenodo.org/record/6788916][cache]] also on zenodo.
 
@@ -62,16 +62,16 @@
 #+END_SRC
 
   The first time this will download the data (1.7 Gb) and process them
-  -- unpacking up to 9.3 Gb of MESA output. Downloading, unpacking the
+  -- unpacking up to 8.3 Gb of MESA output. Downloading, unpacking the
   data, and pre-processing them may take long (~30min on my
-  workstation excluding the time to download):
+  workstation including the time to download the data):
 
 #+BEGIN_SRC bash
   time showyourwork
   [...]
-  real    30m13.209s
-  user    27m9.104s
-  sys     0m59.076s
+  showyourwork 1081s
+  user         27m9.104s
+  sys          0m59.076s
 #+END_SRC
 
   After the data exist cached on your machine, this will be much
@@ -123,8 +123,3 @@
 
       Please refer to the [[https://docs.mesastar.org/en/r15140/][MESA documentation]] and [[https://lists.mesastar.org/mailman/listinfo][mailing list]] for
       support.
-
-* TODO
-
-  - [ ] verify updated zenodo record, and update =showyourwork.yml=
-        accordingly
