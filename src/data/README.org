@@ -1,0 +1,3587 @@
+* =./MESA_input= structure
+
+  #+begin_src bash
+  tree -d MESA_input
+
+  MESA_input
+  ├── binaries
+  │   └── template_binary # MESA work directory
+  │       ├── make
+  │       └── src
+  ├── engineered_stars   # contains also notebook to generate input profiles
+  │   ├── input_profiles # input entropy and chemical profiles
+  │   └── template_engineered # MESA work directory
+  │       ├── make
+  │       └── src
+  ├── grid_management_scripts # useful scripts for grid setup and management
+  └── single_stars
+  └── template_single # MESA work directory
+  ├── make
+  └── src
+
+  14 directories
+
+  #+end_src bash
+
+* =./MESA_output= structure
+
+  This folder is omitted from the git repository, and only present on
+  =zenodo=. =showyourwork= will download and process it when needed if
+  you run it locally. It contains the following MESA output files
+  used by the scripts to make figures.
+
+  #+begin_src bash
+  tree MESA_output
+  MESA_output
+  ├── binaries
+  │   └── Z_0.0019
+  │       ├── m1_18.0000_m2_15.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1
+  │       │   ├── 100Rsun.mod
+  │       │   ├── 15accretor_final.mod
+  │       │   ├── 200Rsun.mod
+  │       │   ├── 300Rsun.mod
+  │       │   ├── 500Rsun.mod
+  │       │   ├── accretor_onset_RLOF.mod
+  │       │   ├── accretor_postRLOF.mod
+  │       │   ├── binary_history_columns.list
+  │       │   ├── binary_history.data
+  │       │   ├── donor_onset_RLOF.mod
+  │       │   ├── donor_postRLOF.mod
+  │       │   ├── donor_TAMS.mod
+  │       │   ├── history_columns.list
+  │       │   ├── initial_star1.mod
+  │       │   ├── initial_star2.mod
+  │       │   ├── inlist
+  │       │   ├── inlist1
+  │       │   ├── inlist2
+  │       │   ├── inlist_binary
+  │       │   ├── inlist_both
+  │       │   ├── inlist_extra
+  │       │   ├── inlist_pgstar
+  │       │   ├── LOGS1
+  │       │   │   └── history.data
+  │       │   ├── LOGS2
+  │       │   │   ├── 100Rsun.data
+  │       │   │   ├── 200Rsun.data
+  │       │   │   ├── 300Rsun.data
+  │       │   │   ├── 500Rsun.data
+  │       │   │   ├── history.data
+  │       │   │   └── recomputed_TAMS.data
+  │       │   ├── profile_columns.list
+  │       │   └── src
+  │       │       ├── binary_run.f90
+  │       │       ├── POSYDON_binaries.inc
+  │       │       ├── POSYDON_single_stars.inc
+  │       │       ├── run_binary_extras.f90
+  │       │       └── run_star_extras.f90
+  │       ├── m1_20.0000_m2_17.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1
+  │       │   ├── 100Rsun.mod
+  │       │   ├── 17accretor_final.mod
+  │       │   ├── 200Rsun.mod
+  │       │   ├── 300Rsun.mod
+  │       │   ├── 500Rsun.mod
+  │       │   ├── accretor_onset_RLOF.mod
+  │       │   ├── accretor_postRLOF.mod
+  │       │   ├── binary_history_columns.list
+  │       │   ├── binary_history.data
+  │       │   ├── donor_onset_RLOF.mod
+  │       │   ├── donor_postRLOF.mod
+  │       │   ├── donor_TAMS.mod
+  │       │   ├── history_columns.list
+  │       │   ├── initial_star1.mod
+  │       │   ├── initial_star2.mod
+  │       │   ├── inlist
+  │       │   ├── inlist1
+  │       │   ├── inlist2
+  │       │   ├── inlist_binary
+  │       │   ├── inlist_both
+  │       │   ├── inlist_extra
+  │       │   ├── inlist_pgstar
+  │       │   ├── LOGS1
+  │       │   │   └── history.data
+  │       │   ├── LOGS2
+  │       │   │   ├── 100Rsun.data
+  │       │   │   ├── 200Rsun.data
+  │       │   │   ├── 300Rsun.data
+  │       │   │   ├── 500Rsun.data
+  │       │   │   ├── history.data
+  │       │   │   └── recomputed_TAMS.data
+  │       │   ├── profile_columns.list
+  │       │   └── src
+  │       │       ├── binary_run.f90
+  │       │       ├── POSYDON_binaries.inc
+  │       │       ├── POSYDON_single_stars.inc
+  │       │       ├── run_binary_extras.f90
+  │       │       └── run_star_extras.f90
+  │       └── m1_38.0000_m2_30.0000_initial_z_0.0019_initial_period_in_days_1.0000e+02_grid_index_0_1
+  │           ├── 1000Rsun.mod
+  │           ├── 100Rsun.mod
+  │           ├── 200Rsun.mod
+  │           ├── 300Rsun.mod
+  │           ├── 30accretor_final.mod
+  │           ├── 500Rsun.mod
+  │           ├── accretor_onset_RLOF.mod
+  │           ├── accretor_postRLOF.mod
+  │           ├── binary_history_columns.list
+  │           ├── binary_history.data
+  │           ├── donor_onset_RLOF.mod
+  │           ├── donor_postRLOF.mod
+  │           ├── donor_TAMS.mod
+  │           ├── history_columns.list
+  │           ├── initial_star1.mod
+  │           ├── initial_star2.mod
+  │           ├── LOGS1
+  │           │   └── history.data
+  │           ├── LOGS2
+  │           │   ├── 1000Rsun.data
+  │           │   ├── 100Rsun.data
+  │           │   ├── 200Rsun.data
+  │           │   ├── 300Rsun.data
+  │           │   ├── 500Rsun.data
+  │           │   ├── history.data
+  │           │   └── recomputed_TAMS.data
+  │           ├── profile_columns.list
+  │           └── src
+  │               ├── binary_run.f90
+  │               ├── POSYDON_binaries.inc
+  │               ├── POSYDON_single_stars.inc
+  │               ├── run_binary_extras.f90
+  │               └── run_star_extras.f90
+  ├── engineered_stars
+  │   ├── same_core
+  │   │   ├── grid15
+  │   │   │   ├── 0.0
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -0.4
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 0.4
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -0.8
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 0.8
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -1.2
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 1.2
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -1.6
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 1.6
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -2.0
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 2.0
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -2.4
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 2.4
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -2.8
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 2.8
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 3.2
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 3.6
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   └── 4.0
+  │   │   │       ├── 100Rsun.mod
+  │   │   │       ├── 15_rot0_TAMS.mod
+  │   │   │       ├── 18_rot0_TAMS.mod
+  │   │   │       ├── 200Rsun.mod
+  │   │   │       ├── 20_rot0_TAMS.mod
+  │   │   │       ├── 300Rsun.mod
+  │   │   │       ├── 30_rot0_TAMS.mod
+  │   │   │       ├── 35_rot0_TAMS.mod
+  │   │   │       ├── 500Rsun.mod
+  │   │   │       ├── history_columns.list
+  │   │   │       ├── inlist
+  │   │   │       ├── inlist_pgstar
+  │   │   │       ├── inlist_simplified_profile
+  │   │   │       ├── LOGS
+  │   │   │       │   └── profile1.data
+  │   │   │       ├── profile_columns.list
+  │   │   │       └── src
+  │   │   │           ├── POSYDON_binaries.inc
+  │   │   │           ├── POSYDON_single_stars.inc
+  │   │   │           ├── run.f90
+  │   │   │           └── run_star_extras.f90
+  │   │   ├── grid17
+  │   │   │   ├── 0.0
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 17_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -0.4
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 17_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 0.4
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 17_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -0.8
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 17_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 0.8
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 17_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -1.2
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 17_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 1.2
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 17_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -1.6
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 17_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 1.6
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 17_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -2.0
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 17_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 2.0
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 17_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -2.4
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 17_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 2.4
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 17_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -2.8
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 17_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 2.8
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 17_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -3.2
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 17_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 3.2
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 17_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 3.6
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 17_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   └── 4.0
+  │   │   │       ├── 100Rsun.mod
+  │   │   │       ├── 15_rot0_TAMS.mod
+  │   │   │       ├── 17_rot0_TAMS.mod
+  │   │   │       ├── 18_rot0_TAMS.mod
+  │   │   │       ├── 200Rsun.mod
+  │   │   │       ├── 20_rot0_TAMS.mod
+  │   │   │       ├── 300Rsun.mod
+  │   │   │       ├── 30_rot0_TAMS.mod
+  │   │   │       ├── 35_rot0_TAMS.mod
+  │   │   │       ├── 500Rsun.mod
+  │   │   │       ├── history_columns.list
+  │   │   │       ├── inlist
+  │   │   │       ├── inlist_pgstar
+  │   │   │       ├── inlist_simplified_profile
+  │   │   │       ├── LOGS
+  │   │   │       │   └── profile1.data
+  │   │   │       ├── profile_columns.list
+  │   │   │       └── src
+  │   │   │           ├── POSYDON_binaries.inc
+  │   │   │           ├── POSYDON_single_stars.inc
+  │   │   │           ├── run.f90
+  │   │   │           └── run_star_extras.f90
+  │   │   ├── grid18
+  │   │   │   ├── 0.0
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -0.4
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 0.4
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -0.8
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 0.8
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -1.2
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 1.2
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -1.6
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 1.6
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -2.0
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 2.0
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -2.4
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 2.4
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -2.8
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 2.8
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -3.2
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 3.2
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -3.6
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 3.6
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   └── 4.0
+  │   │   │       ├── 100Rsun.mod
+  │   │   │       ├── 15_rot0_TAMS.mod
+  │   │   │       ├── 18_rot0_TAMS.mod
+  │   │   │       ├── 200Rsun.mod
+  │   │   │       ├── 20_rot0_TAMS.mod
+  │   │   │       ├── 300Rsun.mod
+  │   │   │       ├── 30_rot0_TAMS.mod
+  │   │   │       ├── 35_rot0_TAMS.mod
+  │   │   │       ├── 500Rsun.mod
+  │   │   │       ├── history_columns.list
+  │   │   │       ├── inlist
+  │   │   │       ├── inlist_pgstar
+  │   │   │       ├── inlist_simplified_profile
+  │   │   │       ├── LOGS
+  │   │   │       │   ├── 100Rsun.data
+  │   │   │       │   ├── 200Rsun.data
+  │   │   │       │   ├── 300Rsun.data
+  │   │   │       │   ├── 500Rsun.data
+  │   │   │       │   └── profile1.data
+  │   │   │       ├── profile_columns.list
+  │   │   │       └── src
+  │   │   │           ├── POSYDON_binaries.inc
+  │   │   │           ├── POSYDON_single_stars.inc
+  │   │   │           ├── run.f90
+  │   │   │           └── run_star_extras.f90
+  │   │   ├── grid20
+  │   │   │   ├── 0.0
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -0.4
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 0.4
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -0.8
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 0.8
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -1.2
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 1.2
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -1.6
+  │   │   │   │   ├── 1000Rsun.mod
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 1.6
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -2.0
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 2.0
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -2.4
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 2.4
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -2.8
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 2.8
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -3.2
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 3.2
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -3.6
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 3.6
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -4.0
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 100Rsun.data
+  │   │   │   │   │   ├── 200Rsun.data
+  │   │   │   │   │   ├── 300Rsun.data
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   └── 4.0
+  │   │   │       ├── 100Rsun.mod
+  │   │   │       ├── 15_rot0_TAMS.mod
+  │   │   │       ├── 18_rot0_TAMS.mod
+  │   │   │       ├── 200Rsun.mod
+  │   │   │       ├── 20_rot0_TAMS.mod
+  │   │   │       ├── 300Rsun.mod
+  │   │   │       ├── 30_rot0_TAMS.mod
+  │   │   │       ├── 35_rot0_TAMS.mod
+  │   │   │       ├── 500Rsun.mod
+  │   │   │       ├── history_columns.list
+  │   │   │       ├── inlist
+  │   │   │       ├── inlist_pgstar
+  │   │   │       ├── inlist_simplified_profile
+  │   │   │       ├── LOGS
+  │   │   │       │   ├── 100Rsun.data
+  │   │   │       │   ├── 200Rsun.data
+  │   │   │       │   ├── 300Rsun.data
+  │   │   │       │   ├── 500Rsun.data
+  │   │   │       │   └── profile1.data
+  │   │   │       ├── profile_columns.list
+  │   │   │       └── src
+  │   │   │           ├── POSYDON_binaries.inc
+  │   │   │           ├── POSYDON_single_stars.inc
+  │   │   │           ├── run.f90
+  │   │   │           └── run_star_extras.f90
+  │   │   ├── grid30
+  │   │   │   ├── 0.0
+  │   │   │   │   ├── 1000Rsun.mod
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -0.4
+  │   │   │   │   ├── 1000Rsun.mod
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 0.4
+  │   │   │   │   ├── 1000Rsun.mod
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -0.8
+  │   │   │   │   ├── 1000Rsun.mod
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 0.8
+  │   │   │   │   ├── 1000Rsun.mod
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -1.2
+  │   │   │   │   ├── 1000Rsun.mod
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 1.2
+  │   │   │   │   ├── 1000Rsun.mod
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -1.6
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 1.6
+  │   │   │   │   ├── 1000Rsun.mod
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -2.0
+  │   │   │   │   ├── 1000Rsun.mod
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 2.0
+  │   │   │   │   ├── 1000Rsun.mod
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -2.4
+  │   │   │   │   ├── 1000Rsun.mod
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 2.4
+  │   │   │   │   ├── 1000Rsun.mod
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -2.8
+  │   │   │   │   ├── 1000Rsun.mod
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 2.8
+  │   │   │   │   ├── 1000Rsun.mod
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -3.2
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 3.2
+  │   │   │   │   ├── 1000Rsun.mod
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -3.6
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── 3.6
+  │   │   │   │   ├── 1000Rsun.mod
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   ├── -4.0
+  │   │   │   │   ├── 1000Rsun.mod
+  │   │   │   │   ├── 100Rsun.mod
+  │   │   │   │   ├── 15_rot0_TAMS.mod
+  │   │   │   │   ├── 18_rot0_TAMS.mod
+  │   │   │   │   ├── 200Rsun.mod
+  │   │   │   │   ├── 20_rot0_TAMS.mod
+  │   │   │   │   ├── 300Rsun.mod
+  │   │   │   │   ├── 30_rot0_TAMS.mod
+  │   │   │   │   ├── 35_rot0_TAMS.mod
+  │   │   │   │   ├── 500Rsun.mod
+  │   │   │   │   ├── history_columns.list
+  │   │   │   │   ├── inlist
+  │   │   │   │   ├── inlist_pgstar
+  │   │   │   │   ├── inlist_simplified_profile
+  │   │   │   │   ├── LOGS
+  │   │   │   │   │   ├── 500Rsun.data
+  │   │   │   │   │   └── profile1.data
+  │   │   │   │   ├── profile_columns.list
+  │   │   │   │   └── src
+  │   │   │   │       ├── POSYDON_binaries.inc
+  │   │   │   │       ├── POSYDON_single_stars.inc
+  │   │   │   │       ├── run.f90
+  │   │   │   │       └── run_star_extras.f90
+  │   │   │   └── 4.0
+  │   │   │       ├── 1000Rsun.mod
+  │   │   │       ├── 100Rsun.mod
+  │   │   │       ├── 15_rot0_TAMS.mod
+  │   │   │       ├── 18_rot0_TAMS.mod
+  │   │   │       ├── 200Rsun.mod
+  │   │   │       ├── 20_rot0_TAMS.mod
+  │   │   │       ├── 300Rsun.mod
+  │   │   │       ├── 30_rot0_TAMS.mod
+  │   │   │       ├── 35_rot0_TAMS.mod
+  │   │   │       ├── 500Rsun.mod
+  │   │   │       ├── history_columns.list
+  │   │   │       ├── inlist
+  │   │   │       ├── inlist_pgstar
+  │   │   │       ├── inlist_simplified_profile
+  │   │   │       ├── LOGS
+  │   │   │       │   ├── 500Rsun.data
+  │   │   │       │   └── profile1.data
+  │   │   │       ├── profile_columns.list
+  │   │   │       └── src
+  │   │   │           ├── POSYDON_binaries.inc
+  │   │   │           ├── POSYDON_single_stars.inc
+  │   │   │           ├── run.f90
+  │   │   │           └── run_star_extras.f90
+  │   │   └── grid36
+  │   │       ├── 0.0
+  │   │       │   ├── 1000Rsun.mod
+  │   │       │   ├── 100Rsun.mod
+  │   │       │   ├── 15_rot0_TAMS.mod
+  │   │       │   ├── 17_rot0_TAMS.mod
+  │   │       │   ├── 18_rot0_TAMS.mod
+  │   │       │   ├── 200Rsun.mod
+  │   │       │   ├── 20_rot0_TAMS.mod
+  │   │       │   ├── 300Rsun.mod
+  │   │       │   ├── 30_rot0_TAMS.mod
+  │   │       │   ├── 35_rot0_TAMS.mod
+  │   │       │   ├── 500Rsun.mod
+  │   │       │   ├── history_columns.list
+  │   │       │   ├── inlist
+  │   │       │   ├── inlist_pgstar
+  │   │       │   ├── inlist_simplified_profile
+  │   │       │   ├── LOGS
+  │   │       │   │   ├── 1000Rsun.data
+  │   │       │   │   ├── 100Rsun.data
+  │   │       │   │   ├── 200Rsun.data
+  │   │       │   │   ├── 300Rsun.data
+  │   │       │   │   ├── 500Rsun.data
+  │   │       │   │   └── profile1.data
+  │   │       │   ├── profile_columns.list
+  │   │       │   └── src
+  │   │       │       ├── POSYDON_binaries.inc
+  │   │       │       ├── POSYDON_single_stars.inc
+  │   │       │       ├── run.f90
+  │   │       │       └── run_star_extras.f90
+  │   │       ├── -0.4
+  │   │       │   ├── 1000Rsun.mod
+  │   │       │   ├── 100Rsun.mod
+  │   │       │   ├── 15_rot0_TAMS.mod
+  │   │       │   ├── 17_rot0_TAMS.mod
+  │   │       │   ├── 18_rot0_TAMS.mod
+  │   │       │   ├── 200Rsun.mod
+  │   │       │   ├── 20_rot0_TAMS.mod
+  │   │       │   ├── 300Rsun.mod
+  │   │       │   ├── 30_rot0_TAMS.mod
+  │   │       │   ├── 35_rot0_TAMS.mod
+  │   │       │   ├── 500Rsun.mod
+  │   │       │   ├── history_columns.list
+  │   │       │   ├── inlist
+  │   │       │   ├── inlist_pgstar
+  │   │       │   ├── inlist_simplified_profile
+  │   │       │   ├── LOGS
+  │   │       │   │   ├── 1000Rsun.data
+  │   │       │   │   ├── 100Rsun.data
+  │   │       │   │   ├── 200Rsun.data
+  │   │       │   │   ├── 300Rsun.data
+  │   │       │   │   ├── 500Rsun.data
+  │   │       │   │   └── profile1.data
+  │   │       │   ├── profile_columns.list
+  │   │       │   └── src
+  │   │       │       ├── POSYDON_binaries.inc
+  │   │       │       ├── POSYDON_single_stars.inc
+  │   │       │       ├── run.f90
+  │   │       │       └── run_star_extras.f90
+  │   │       ├── 0.4
+  │   │       │   ├── 1000Rsun.mod
+  │   │       │   ├── 100Rsun.mod
+  │   │       │   ├── 15_rot0_TAMS.mod
+  │   │       │   ├── 17_rot0_TAMS.mod
+  │   │       │   ├── 18_rot0_TAMS.mod
+  │   │       │   ├── 200Rsun.mod
+  │   │       │   ├── 20_rot0_TAMS.mod
+  │   │       │   ├── 300Rsun.mod
+  │   │       │   ├── 30_rot0_TAMS.mod
+  │   │       │   ├── 35_rot0_TAMS.mod
+  │   │       │   ├── 500Rsun.mod
+  │   │       │   ├── history_columns.list
+  │   │       │   ├── inlist
+  │   │       │   ├── inlist_pgstar
+  │   │       │   ├── inlist_simplified_profile
+  │   │       │   ├── LOGS
+  │   │       │   │   ├── 1000Rsun.data
+  │   │       │   │   ├── 100Rsun.data
+  │   │       │   │   ├── 200Rsun.data
+  │   │       │   │   ├── 300Rsun.data
+  │   │       │   │   ├── 500Rsun.data
+  │   │       │   │   └── profile1.data
+  │   │       │   ├── profile_columns.list
+  │   │       │   └── src
+  │   │       │       ├── POSYDON_binaries.inc
+  │   │       │       ├── POSYDON_single_stars.inc
+  │   │       │       ├── run.f90
+  │   │       │       └── run_star_extras.f90
+  │   │       ├── -0.8
+  │   │       │   ├── 1000Rsun.mod
+  │   │       │   ├── 100Rsun.mod
+  │   │       │   ├── 15_rot0_TAMS.mod
+  │   │       │   ├── 17_rot0_TAMS.mod
+  │   │       │   ├── 18_rot0_TAMS.mod
+  │   │       │   ├── 200Rsun.mod
+  │   │       │   ├── 20_rot0_TAMS.mod
+  │   │       │   ├── 300Rsun.mod
+  │   │       │   ├── 30_rot0_TAMS.mod
+  │   │       │   ├── 35_rot0_TAMS.mod
+  │   │       │   ├── 500Rsun.mod
+  │   │       │   ├── history_columns.list
+  │   │       │   ├── inlist
+  │   │       │   ├── inlist_pgstar
+  │   │       │   ├── inlist_simplified_profile
+  │   │       │   ├── LOGS
+  │   │       │   │   ├── 1000Rsun.data
+  │   │       │   │   ├── 100Rsun.data
+  │   │       │   │   ├── 200Rsun.data
+  │   │       │   │   ├── 300Rsun.data
+  │   │       │   │   ├── 500Rsun.data
+  │   │       │   │   └── profile1.data
+  │   │       │   ├── profile_columns.list
+  │   │       │   └── src
+  │   │       │       ├── POSYDON_binaries.inc
+  │   │       │       ├── POSYDON_single_stars.inc
+  │   │       │       ├── run.f90
+  │   │       │       └── run_star_extras.f90
+  │   │       ├── 0.8
+  │   │       │   ├── 1000Rsun.mod
+  │   │       │   ├── 100Rsun.mod
+  │   │       │   ├── 15_rot0_TAMS.mod
+  │   │       │   ├── 17_rot0_TAMS.mod
+  │   │       │   ├── 18_rot0_TAMS.mod
+  │   │       │   ├── 200Rsun.mod
+  │   │       │   ├── 20_rot0_TAMS.mod
+  │   │       │   ├── 300Rsun.mod
+  │   │       │   ├── 30_rot0_TAMS.mod
+  │   │       │   ├── 35_rot0_TAMS.mod
+  │   │       │   ├── 500Rsun.mod
+  │   │       │   ├── history_columns.list
+  │   │       │   ├── inlist
+  │   │       │   ├── inlist_pgstar
+  │   │       │   ├── inlist_simplified_profile
+  │   │       │   ├── LOGS
+  │   │       │   │   ├── 1000Rsun.data
+  │   │       │   │   ├── 100Rsun.data
+  │   │       │   │   ├── 200Rsun.data
+  │   │       │   │   ├── 300Rsun.data
+  │   │       │   │   ├── 500Rsun.data
+  │   │       │   │   └── profile1.data
+  │   │       │   ├── profile_columns.list
+  │   │       │   └── src
+  │   │       │       ├── POSYDON_binaries.inc
+  │   │       │       ├── POSYDON_single_stars.inc
+  │   │       │       ├── run.f90
+  │   │       │       └── run_star_extras.f90
+  │   │       ├── -1.2
+  │   │       │   ├── 1000Rsun.mod
+  │   │       │   ├── 100Rsun.mod
+  │   │       │   ├── 15_rot0_TAMS.mod
+  │   │       │   ├── 17_rot0_TAMS.mod
+  │   │       │   ├── 18_rot0_TAMS.mod
+  │   │       │   ├── 200Rsun.mod
+  │   │       │   ├── 20_rot0_TAMS.mod
+  │   │       │   ├── 300Rsun.mod
+  │   │       │   ├── 30_rot0_TAMS.mod
+  │   │       │   ├── 35_rot0_TAMS.mod
+  │   │       │   ├── 500Rsun.mod
+  │   │       │   ├── history_columns.list
+  │   │       │   ├── inlist
+  │   │       │   ├── inlist_pgstar
+  │   │       │   ├── inlist_simplified_profile
+  │   │       │   ├── LOGS
+  │   │       │   │   ├── 1000Rsun.data
+  │   │       │   │   ├── 100Rsun.data
+  │   │       │   │   ├── 200Rsun.data
+  │   │       │   │   ├── 300Rsun.data
+  │   │       │   │   ├── 500Rsun.data
+  │   │       │   │   └── profile1.data
+  │   │       │   ├── profile_columns.list
+  │   │       │   └── src
+  │   │       │       ├── POSYDON_binaries.inc
+  │   │       │       ├── POSYDON_single_stars.inc
+  │   │       │       ├── run.f90
+  │   │       │       └── run_star_extras.f90
+  │   │       ├── 1.2
+  │   │       │   ├── 1000Rsun.mod
+  │   │       │   ├── 100Rsun.mod
+  │   │       │   ├── 15_rot0_TAMS.mod
+  │   │       │   ├── 17_rot0_TAMS.mod
+  │   │       │   ├── 18_rot0_TAMS.mod
+  │   │       │   ├── 200Rsun.mod
+  │   │       │   ├── 20_rot0_TAMS.mod
+  │   │       │   ├── 300Rsun.mod
+  │   │       │   ├── 30_rot0_TAMS.mod
+  │   │       │   ├── 35_rot0_TAMS.mod
+  │   │       │   ├── 500Rsun.mod
+  │   │       │   ├── history_columns.list
+  │   │       │   ├── inlist
+  │   │       │   ├── inlist_pgstar
+  │   │       │   ├── inlist_simplified_profile
+  │   │       │   ├── LOGS
+  │   │       │   │   ├── 1000Rsun.data
+  │   │       │   │   ├── 100Rsun.data
+  │   │       │   │   ├── 200Rsun.data
+  │   │       │   │   ├── 300Rsun.data
+  │   │       │   │   ├── 500Rsun.data
+  │   │       │   │   └── profile1.data
+  │   │       │   ├── profile_columns.list
+  │   │       │   └── src
+  │   │       │       ├── POSYDON_binaries.inc
+  │   │       │       ├── POSYDON_single_stars.inc
+  │   │       │       ├── run.f90
+  │   │       │       └── run_star_extras.f90
+  │   │       ├── -1.6
+  │   │       │   ├── 1000Rsun.mod
+  │   │       │   ├── 100Rsun.mod
+  │   │       │   ├── 15_rot0_TAMS.mod
+  │   │       │   ├── 17_rot0_TAMS.mod
+  │   │       │   ├── 18_rot0_TAMS.mod
+  │   │       │   ├── 200Rsun.mod
+  │   │       │   ├── 20_rot0_TAMS.mod
+  │   │       │   ├── 300Rsun.mod
+  │   │       │   ├── 30_rot0_TAMS.mod
+  │   │       │   ├── 35_rot0_TAMS.mod
+  │   │       │   ├── 500Rsun.mod
+  │   │       │   ├── history_columns.list
+  │   │       │   ├── inlist
+  │   │       │   ├── inlist_pgstar
+  │   │       │   ├── inlist_simplified_profile
+  │   │       │   ├── LOGS
+  │   │       │   │   ├── 1000Rsun.data
+  │   │       │   │   ├── 100Rsun.data
+  │   │       │   │   ├── 200Rsun.data
+  │   │       │   │   ├── 300Rsun.data
+  │   │       │   │   ├── 500Rsun.data
+  │   │       │   │   └── profile1.data
+  │   │       │   ├── profile_columns.list
+  │   │       │   └── src
+  │   │       │       ├── POSYDON_binaries.inc
+  │   │       │       ├── POSYDON_single_stars.inc
+  │   │       │       ├── run.f90
+  │   │       │       └── run_star_extras.f90
+  │   │       ├── 1.6
+  │   │       │   ├── 1000Rsun.mod
+  │   │       │   ├── 100Rsun.mod
+  │   │       │   ├── 15_rot0_TAMS.mod
+  │   │       │   ├── 17_rot0_TAMS.mod
+  │   │       │   ├── 18_rot0_TAMS.mod
+  │   │       │   ├── 200Rsun.mod
+  │   │       │   ├── 20_rot0_TAMS.mod
+  │   │       │   ├── 300Rsun.mod
+  │   │       │   ├── 30_rot0_TAMS.mod
+  │   │       │   ├── 35_rot0_TAMS.mod
+  │   │       │   ├── 500Rsun.mod
+  │   │       │   ├── history_columns.list
+  │   │       │   ├── inlist
+  │   │       │   ├── inlist_pgstar
+  │   │       │   ├── inlist_simplified_profile
+  │   │       │   ├── LOGS
+  │   │       │   │   ├── 1000Rsun.data
+  │   │       │   │   ├── 100Rsun.data
+  │   │       │   │   ├── 200Rsun.data
+  │   │       │   │   ├── 300Rsun.data
+  │   │       │   │   ├── 500Rsun.data
+  │   │       │   │   └── profile1.data
+  │   │       │   ├── profile_columns.list
+  │   │       │   └── src
+  │   │       │       ├── POSYDON_binaries.inc
+  │   │       │       ├── POSYDON_single_stars.inc
+  │   │       │       ├── run.f90
+  │   │       │       └── run_star_extras.f90
+  │   │       ├── -2.0
+  │   │       │   ├── 1000Rsun.mod
+  │   │       │   ├── 100Rsun.mod
+  │   │       │   ├── 15_rot0_TAMS.mod
+  │   │       │   ├── 17_rot0_TAMS.mod
+  │   │       │   ├── 18_rot0_TAMS.mod
+  │   │       │   ├── 200Rsun.mod
+  │   │       │   ├── 20_rot0_TAMS.mod
+  │   │       │   ├── 300Rsun.mod
+  │   │       │   ├── 30_rot0_TAMS.mod
+  │   │       │   ├── 35_rot0_TAMS.mod
+  │   │       │   ├── 500Rsun.mod
+  │   │       │   ├── history_columns.list
+  │   │       │   ├── inlist
+  │   │       │   ├── inlist_pgstar
+  │   │       │   ├── inlist_simplified_profile
+  │   │       │   ├── LOGS
+  │   │       │   │   ├── 1000Rsun.data
+  │   │       │   │   ├── 100Rsun.data
+  │   │       │   │   ├── 200Rsun.data
+  │   │       │   │   ├── 300Rsun.data
+  │   │       │   │   ├── 500Rsun.data
+  │   │       │   │   └── profile1.data
+  │   │       │   ├── profile_columns.list
+  │   │       │   └── src
+  │   │       │       ├── POSYDON_binaries.inc
+  │   │       │       ├── POSYDON_single_stars.inc
+  │   │       │       ├── run.f90
+  │   │       │       └── run_star_extras.f90
+  │   │       ├── 2.0
+  │   │       │   ├── 1000Rsun.mod
+  │   │       │   ├── 100Rsun.mod
+  │   │       │   ├── 15_rot0_TAMS.mod
+  │   │       │   ├── 17_rot0_TAMS.mod
+  │   │       │   ├── 18_rot0_TAMS.mod
+  │   │       │   ├── 200Rsun.mod
+  │   │       │   ├── 20_rot0_TAMS.mod
+  │   │       │   ├── 300Rsun.mod
+  │   │       │   ├── 30_rot0_TAMS.mod
+  │   │       │   ├── 35_rot0_TAMS.mod
+  │   │       │   ├── 500Rsun.mod
+  │   │       │   ├── history_columns.list
+  │   │       │   ├── inlist
+  │   │       │   ├── inlist_pgstar
+  │   │       │   ├── inlist_simplified_profile
+  │   │       │   ├── LOGS
+  │   │       │   │   ├── 1000Rsun.data
+  │   │       │   │   ├── 100Rsun.data
+  │   │       │   │   ├── 200Rsun.data
+  │   │       │   │   ├── 300Rsun.data
+  │   │       │   │   ├── 500Rsun.data
+  │   │       │   │   └── profile1.data
+  │   │       │   ├── profile_columns.list
+  │   │       │   └── src
+  │   │       │       ├── POSYDON_binaries.inc
+  │   │       │       ├── POSYDON_single_stars.inc
+  │   │       │       ├── run.f90
+  │   │       │       └── run_star_extras.f90
+  │   │       ├── -2.4
+  │   │       │   ├── 1000Rsun.mod
+  │   │       │   ├── 100Rsun.mod
+  │   │       │   ├── 15_rot0_TAMS.mod
+  │   │       │   ├── 17_rot0_TAMS.mod
+  │   │       │   ├── 18_rot0_TAMS.mod
+  │   │       │   ├── 200Rsun.mod
+  │   │       │   ├── 20_rot0_TAMS.mod
+  │   │       │   ├── 300Rsun.mod
+  │   │       │   ├── 30_rot0_TAMS.mod
+  │   │       │   ├── 35_rot0_TAMS.mod
+  │   │       │   ├── 500Rsun.mod
+  │   │       │   ├── history_columns.list
+  │   │       │   ├── inlist
+  │   │       │   ├── inlist_pgstar
+  │   │       │   ├── inlist_simplified_profile
+  │   │       │   ├── LOGS
+  │   │       │   │   ├── 1000Rsun.data
+  │   │       │   │   ├── 100Rsun.data
+  │   │       │   │   ├── 200Rsun.data
+  │   │       │   │   ├── 300Rsun.data
+  │   │       │   │   ├── 500Rsun.data
+  │   │       │   │   └── profile1.data
+  │   │       │   ├── profile_columns.list
+  │   │       │   └── src
+  │   │       │       ├── POSYDON_binaries.inc
+  │   │       │       ├── POSYDON_single_stars.inc
+  │   │       │       ├── run.f90
+  │   │       │       └── run_star_extras.f90
+  │   │       ├── 2.4
+  │   │       │   ├── 1000Rsun.mod
+  │   │       │   ├── 100Rsun.mod
+  │   │       │   ├── 15_rot0_TAMS.mod
+  │   │       │   ├── 17_rot0_TAMS.mod
+  │   │       │   ├── 18_rot0_TAMS.mod
+  │   │       │   ├── 200Rsun.mod
+  │   │       │   ├── 20_rot0_TAMS.mod
+  │   │       │   ├── 300Rsun.mod
+  │   │       │   ├── 30_rot0_TAMS.mod
+  │   │       │   ├── 35_rot0_TAMS.mod
+  │   │       │   ├── 500Rsun.mod
+  │   │       │   ├── history_columns.list
+  │   │       │   ├── inlist
+  │   │       │   ├── inlist_pgstar
+  │   │       │   ├── inlist_simplified_profile
+  │   │       │   ├── LOGS
+  │   │       │   │   ├── 1000Rsun.data
+  │   │       │   │   ├── 100Rsun.data
+  │   │       │   │   ├── 200Rsun.data
+  │   │       │   │   ├── 300Rsun.data
+  │   │       │   │   ├── 500Rsun.data
+  │   │       │   │   └── profile1.data
+  │   │       │   ├── profile_columns.list
+  │   │       │   └── src
+  │   │       │       ├── POSYDON_binaries.inc
+  │   │       │       ├── POSYDON_single_stars.inc
+  │   │       │       ├── run.f90
+  │   │       │       └── run_star_extras.f90
+  │   │       ├── -2.8
+  │   │       │   ├── 1000Rsun.mod
+  │   │       │   ├── 100Rsun.mod
+  │   │       │   ├── 15_rot0_TAMS.mod
+  │   │       │   ├── 17_rot0_TAMS.mod
+  │   │       │   ├── 18_rot0_TAMS.mod
+  │   │       │   ├── 200Rsun.mod
+  │   │       │   ├── 20_rot0_TAMS.mod
+  │   │       │   ├── 300Rsun.mod
+  │   │       │   ├── 30_rot0_TAMS.mod
+  │   │       │   ├── 35_rot0_TAMS.mod
+  │   │       │   ├── 500Rsun.mod
+  │   │       │   ├── history_columns.list
+  │   │       │   ├── inlist
+  │   │       │   ├── inlist_pgstar
+  │   │       │   ├── inlist_simplified_profile
+  │   │       │   ├── LOGS
+  │   │       │   │   ├── 1000Rsun.data
+  │   │       │   │   ├── 100Rsun.data
+  │   │       │   │   ├── 200Rsun.data
+  │   │       │   │   ├── 300Rsun.data
+  │   │       │   │   ├── 500Rsun.data
+  │   │       │   │   └── profile1.data
+  │   │       │   ├── profile_columns.list
+  │   │       │   └── src
+  │   │       │       ├── POSYDON_binaries.inc
+  │   │       │       ├── POSYDON_single_stars.inc
+  │   │       │       ├── run.f90
+  │   │       │       └── run_star_extras.f90
+  │   │       ├── 2.8
+  │   │       │   ├── 1000Rsun.mod
+  │   │       │   ├── 100Rsun.mod
+  │   │       │   ├── 15_rot0_TAMS.mod
+  │   │       │   ├── 17_rot0_TAMS.mod
+  │   │       │   ├── 18_rot0_TAMS.mod
+  │   │       │   ├── 200Rsun.mod
+  │   │       │   ├── 20_rot0_TAMS.mod
+  │   │       │   ├── 300Rsun.mod
+  │   │       │   ├── 30_rot0_TAMS.mod
+  │   │       │   ├── 35_rot0_TAMS.mod
+  │   │       │   ├── 500Rsun.mod
+  │   │       │   ├── history_columns.list
+  │   │       │   ├── inlist
+  │   │       │   ├── inlist_pgstar
+  │   │       │   ├── inlist_simplified_profile
+  │   │       │   ├── LOGS
+  │   │       │   │   ├── 1000Rsun.data
+  │   │       │   │   ├── 100Rsun.data
+  │   │       │   │   ├── 200Rsun.data
+  │   │       │   │   ├── 300Rsun.data
+  │   │       │   │   ├── 500Rsun.data
+  │   │       │   │   └── profile1.data
+  │   │       │   ├── profile_columns.list
+  │   │       │   └── src
+  │   │       │       ├── POSYDON_binaries.inc
+  │   │       │       ├── POSYDON_single_stars.inc
+  │   │       │       ├── run.f90
+  │   │       │       └── run_star_extras.f90
+  │   │       ├── -3.2
+  │   │       │   ├── 1000Rsun.mod
+  │   │       │   ├── 100Rsun.mod
+  │   │       │   ├── 15_rot0_TAMS.mod
+  │   │       │   ├── 17_rot0_TAMS.mod
+  │   │       │   ├── 18_rot0_TAMS.mod
+  │   │       │   ├── 200Rsun.mod
+  │   │       │   ├── 20_rot0_TAMS.mod
+  │   │       │   ├── 300Rsun.mod
+  │   │       │   ├── 30_rot0_TAMS.mod
+  │   │       │   ├── 35_rot0_TAMS.mod
+  │   │       │   ├── 500Rsun.mod
+  │   │       │   ├── history_columns.list
+  │   │       │   ├── inlist
+  │   │       │   ├── inlist_pgstar
+  │   │       │   ├── inlist_simplified_profile
+  │   │       │   ├── LOGS
+  │   │       │   │   ├── 1000Rsun.data
+  │   │       │   │   ├── 100Rsun.data
+  │   │       │   │   ├── 200Rsun.data
+  │   │       │   │   ├── 300Rsun.data
+  │   │       │   │   ├── 500Rsun.data
+  │   │       │   │   └── profile1.data
+  │   │       │   ├── profile_columns.list
+  │   │       │   └── src
+  │   │       │       ├── POSYDON_binaries.inc
+  │   │       │       ├── POSYDON_single_stars.inc
+  │   │       │       ├── run.f90
+  │   │       │       └── run_star_extras.f90
+  │   │       ├── 3.2
+  │   │       │   ├── 1000Rsun.mod
+  │   │       │   ├── 100Rsun.mod
+  │   │       │   ├── 15_rot0_TAMS.mod
+  │   │       │   ├── 17_rot0_TAMS.mod
+  │   │       │   ├── 18_rot0_TAMS.mod
+  │   │       │   ├── 200Rsun.mod
+  │   │       │   ├── 20_rot0_TAMS.mod
+  │   │       │   ├── 300Rsun.mod
+  │   │       │   ├── 30_rot0_TAMS.mod
+  │   │       │   ├── 35_rot0_TAMS.mod
+  │   │       │   ├── 500Rsun.mod
+  │   │       │   ├── history_columns.list
+  │   │       │   ├── inlist
+  │   │       │   ├── inlist_pgstar
+  │   │       │   ├── inlist_simplified_profile
+  │   │       │   ├── LOGS
+  │   │       │   │   ├── 1000Rsun.data
+  │   │       │   │   ├── 100Rsun.data
+  │   │       │   │   ├── 200Rsun.data
+  │   │       │   │   ├── 300Rsun.data
+  │   │       │   │   ├── 500Rsun.data
+  │   │       │   │   └── profile1.data
+  │   │       │   ├── profile_columns.list
+  │   │       │   └── src
+  │   │       │       ├── POSYDON_binaries.inc
+  │   │       │       ├── POSYDON_single_stars.inc
+  │   │       │       ├── run.f90
+  │   │       │       └── run_star_extras.f90
+  │   │       ├── -3.6
+  │   │       │   ├── 1000Rsun.mod
+  │   │       │   ├── 100Rsun.mod
+  │   │       │   ├── 15_rot0_TAMS.mod
+  │   │       │   ├── 17_rot0_TAMS.mod
+  │   │       │   ├── 18_rot0_TAMS.mod
+  │   │       │   ├── 200Rsun.mod
+  │   │       │   ├── 20_rot0_TAMS.mod
+  │   │       │   ├── 300Rsun.mod
+  │   │       │   ├── 30_rot0_TAMS.mod
+  │   │       │   ├── 35_rot0_TAMS.mod
+  │   │       │   ├── 500Rsun.mod
+  │   │       │   ├── history_columns.list
+  │   │       │   ├── inlist
+  │   │       │   ├── inlist_pgstar
+  │   │       │   ├── inlist_simplified_profile
+  │   │       │   ├── LOGS
+  │   │       │   │   ├── 1000Rsun.data
+  │   │       │   │   ├── 100Rsun.data
+  │   │       │   │   ├── 200Rsun.data
+  │   │       │   │   ├── 300Rsun.data
+  │   │       │   │   ├── 500Rsun.data
+  │   │       │   │   └── profile1.data
+  │   │       │   ├── profile_columns.list
+  │   │       │   └── src
+  │   │       │       ├── POSYDON_binaries.inc
+  │   │       │       ├── POSYDON_single_stars.inc
+  │   │       │       ├── run.f90
+  │   │       │       └── run_star_extras.f90
+  │   │       ├── 3.6
+  │   │       │   ├── 1000Rsun.mod
+  │   │       │   ├── 100Rsun.mod
+  │   │       │   ├── 15_rot0_TAMS.mod
+  │   │       │   ├── 17_rot0_TAMS.mod
+  │   │       │   ├── 18_rot0_TAMS.mod
+  │   │       │   ├── 200Rsun.mod
+  │   │       │   ├── 20_rot0_TAMS.mod
+  │   │       │   ├── 300Rsun.mod
+  │   │       │   ├── 30_rot0_TAMS.mod
+  │   │       │   ├── 35_rot0_TAMS.mod
+  │   │       │   ├── 500Rsun.mod
+  │   │       │   ├── history_columns.list
+  │   │       │   ├── inlist
+  │   │       │   ├── inlist_pgstar
+  │   │       │   ├── inlist_simplified_profile
+  │   │       │   ├── LOGS
+  │   │       │   │   ├── 1000Rsun.data
+  │   │       │   │   ├── 100Rsun.data
+  │   │       │   │   ├── 200Rsun.data
+  │   │       │   │   ├── 300Rsun.data
+  │   │       │   │   ├── 500Rsun.data
+  │   │       │   │   └── profile1.data
+  │   │       │   ├── profile_columns.list
+  │   │       │   └── src
+  │   │       │       ├── POSYDON_binaries.inc
+  │   │       │       ├── POSYDON_single_stars.inc
+  │   │       │       ├── run.f90
+  │   │       │       └── run_star_extras.f90
+  │   │       ├── -4.0
+  │   │       │   ├── 1000Rsun.mod
+  │   │       │   ├── 100Rsun.mod
+  │   │       │   ├── 15_rot0_TAMS.mod
+  │   │       │   ├── 17_rot0_TAMS.mod
+  │   │       │   ├── 18_rot0_TAMS.mod
+  │   │       │   ├── 200Rsun.mod
+  │   │       │   ├── 20_rot0_TAMS.mod
+  │   │       │   ├── 300Rsun.mod
+  │   │       │   ├── 30_rot0_TAMS.mod
+  │   │       │   ├── 35_rot0_TAMS.mod
+  │   │       │   ├── 500Rsun.mod
+  │   │       │   ├── history_columns.list
+  │   │       │   ├── inlist
+  │   │       │   ├── inlist_pgstar
+  │   │       │   ├── inlist_simplified_profile
+  │   │       │   ├── LOGS
+  │   │       │   │   ├── 1000Rsun.data
+  │   │       │   │   ├── 100Rsun.data
+  │   │       │   │   ├── 200Rsun.data
+  │   │       │   │   ├── 300Rsun.data
+  │   │       │   │   ├── 500Rsun.data
+  │   │       │   │   └── profile1.data
+  │   │       │   ├── profile_columns.list
+  │   │       │   └── src
+  │   │       │       ├── POSYDON_binaries.inc
+  │   │       │       ├── POSYDON_single_stars.inc
+  │   │       │       ├── run.f90
+  │   │       │       └── run_star_extras.f90
+  │   │       └── 4.0
+  │   │           ├── 1000Rsun.mod
+  │   │           ├── 100Rsun.mod
+  │   │           ├── 15_rot0_TAMS.mod
+  │   │           ├── 17_rot0_TAMS.mod
+  │   │           ├── 18_rot0_TAMS.mod
+  │   │           ├── 200Rsun.mod
+  │   │           ├── 20_rot0_TAMS.mod
+  │   │           ├── 300Rsun.mod
+  │   │           ├── 30_rot0_TAMS.mod
+  │   │           ├── 35_rot0_TAMS.mod
+  │   │           ├── 500Rsun.mod
+  │   │           ├── history_columns.list
+  │   │           ├── inlist
+  │   │           ├── inlist_pgstar
+  │   │           ├── inlist_simplified_profile
+  │   │           ├── LOGS
+  │   │           │   ├── 1000Rsun.data
+  │   │           │   ├── 100Rsun.data
+  │   │           │   ├── 200Rsun.data
+  │   │           │   ├── 300Rsun.data
+  │   │           │   ├── 500Rsun.data
+  │   │           │   └── profile1.data
+  │   │           ├── profile_columns.list
+  │   │           └── src
+  │   │               ├── POSYDON_binaries.inc
+  │   │               ├── POSYDON_single_stars.inc
+  │   │               ├── run.f90
+  │   │               └── run_star_extras.f90
+  │   └── TAMS_models
+  │       ├── 15_rot0_to_TAMS
+  │       │   ├── 15_rot0.0_single_final.mod
+  │       │   ├── history_columns.list
+  │       │   ├── inlist
+  │       │   ├── inlist_both
+  │       │   ├── inlist_extra
+  │       │   ├── inlist_pgstar
+  │       │   ├── LOGS
+  │       │   │   └── TAMS.data
+  │       │   ├── profile_columns.list
+  │       │   └── src
+  │       │       ├── POSYDON_binaries.inc
+  │       │       ├── POSYDON_single_stars.inc
+  │       │       ├── run.f90
+  │       │       └── run_star_extras.f90
+  │       ├── 17_rot0_to_TAMS
+  │       │   ├── 17_rot0.0_single_final.mod
+  │       │   ├── history_columns.list
+  │       │   ├── inlist
+  │       │   ├── inlist_both
+  │       │   ├── inlist_extra
+  │       │   ├── inlist_pgstar
+  │       │   ├── LOGS
+  │       │   │   └── TAMS.data
+  │       │   ├── profile_columns.list
+  │       │   └── src
+  │       │       ├── POSYDON_binaries.inc
+  │       │       ├── POSYDON_single_stars.inc
+  │       │       ├── run.f90
+  │       │       └── run_star_extras.f90
+  │       ├── 18_rot0_to_TAMS
+  │       │   ├── 18_rot0.0_single_final.mod
+  │       │   ├── history_columns.list
+  │       │   ├── inlist
+  │       │   ├── inlist_both
+  │       │   ├── inlist_extra
+  │       │   ├── inlist_pgstar
+  │       │   ├── LOGS
+  │       │   │   └── TAMS.data
+  │       │   ├── profile_columns.list
+  │       │   └── src
+  │       │       ├── POSYDON_binaries.inc
+  │       │       ├── POSYDON_single_stars.inc
+  │       │       ├── run.f90
+  │       │       └── run_star_extras.f90
+  │       ├── 20_rot0_to_TAMS
+  │       │   ├── 20_rot0.0_single_final.mod
+  │       │   ├── history_columns.list
+  │       │   ├── inlist
+  │       │   ├── inlist_both
+  │       │   ├── inlist_extra
+  │       │   ├── inlist_pgstar
+  │       │   ├── LOGS
+  │       │   │   └── TAMS.data
+  │       │   ├── profile_columns.list
+  │       │   └── src
+  │       │       ├── POSYDON_binaries.inc
+  │       │       ├── POSYDON_single_stars.inc
+  │       │       ├── run.f90
+  │       │       └── run_star_extras.f90
+  │       ├── 30_rot0_to_TAMS
+  │       │   ├── 30_rot0.0_single_final.mod
+  │       │   ├── history_columns.list
+  │       │   ├── inlist
+  │       │   ├── inlist_both
+  │       │   ├── inlist_extra
+  │       │   ├── inlist_pgstar
+  │       │   ├── LOGS
+  │       │   │   └── TAMS.data
+  │       │   ├── profile_columns.list
+  │       │   └── src
+  │       │       ├── POSYDON_binaries.inc
+  │       │       ├── POSYDON_single_stars.inc
+  │       │       ├── run.f90
+  │       │       └── run_star_extras.f90
+  │       └── 36_rot0_to_TAMS
+  │           ├── 35_rot0.0_single_final.mod
+  │           ├── 36_rot0.0_single_final.mod
+  │           ├── history_columns.list
+  │           ├── inlist
+  │           ├── inlist_both
+  │           ├── inlist_extra
+  │           ├── inlist_pgstar
+  │           ├── LOGS
+  │           │   └── TAMS.data
+  │           ├── profile_columns.list
+  │           └── src
+  │               ├── POSYDON_binaries.inc
+  │               ├── POSYDON_single_stars.inc
+  │               ├── run.f90
+  │               └── run_star_extras.f90
+  └── single_stars
+  └── Z_0.0019
+  ├── 18_rot0.0
+  │   ├── 100Rsun.mod
+  │   ├── 18_rot0.0_single_final.mod
+  │   ├── 200Rsun.mod
+  │   ├── 300Rsun.mod
+  │   ├── 500Rsun.mod
+  │   ├── history_columns.list
+  │   ├── inlist
+  │   ├── inlist_both
+  │   ├── inlist_extra
+  │   ├── inlist_pgstar
+  │   ├── LOGS
+  │   │   ├── 100Rsun.data
+  │   │   ├── 200Rsun.data
+  │   │   ├── 300Rsun.data
+  │   │   ├── 500Rsun.data
+  │   │   └── history.data
+  │   ├── profile_columns.list
+  │   └── src
+  │       ├── POSYDON_binaries.inc
+  │       ├── POSYDON_single_stars.inc
+  │       ├── run.f90
+  │       └── run_star_extras.f90
+  ├── 18_rot0.1
+  │   └── LOGS
+  │       ├── 100Rsun.data
+  │       ├── 200Rsun.data
+  │       ├── 300Rsun.data
+  │       └── 500Rsun.data
+  ├── 18_rot0.2
+  │   └── LOGS
+  │       ├── 100Rsun.data
+  │       ├── 200Rsun.data
+  │       ├── 300Rsun.data
+  │       └── 500Rsun.data
+  ├── 18_rot0.3
+  │   └── LOGS
+  │       ├── 100Rsun.data
+  │       ├── 200Rsun.data
+  │       ├── 300Rsun.data
+  │       └── 500Rsun.data
+  ├── 18_rot0.4
+  │   └── LOGS
+  │       ├── 100Rsun.data
+  │       ├── 200Rsun.data
+  │       ├── 300Rsun.data
+  │       └── 500Rsun.data
+  ├── 18_rot0.5
+  │   └── LOGS
+  │       ├── 100Rsun.data
+  │       ├── 200Rsun.data
+  │       ├── 300Rsun.data
+  │       └── 500Rsun.data
+  ├── 18_rot0.6
+  │   └── LOGS
+  │       ├── 100Rsun.data
+  │       ├── 200Rsun.data
+  │       ├── 300Rsun.data
+  │       └── 500Rsun.data
+  ├── 18_rot0.7
+  │   └── LOGS
+  │       ├── 100Rsun.data
+  │       ├── 200Rsun.data
+  │       ├── 300Rsun.data
+  │       └── 500Rsun.data
+  ├── 18_rot0.8
+  │   └── LOGS
+  │       ├── 100Rsun.data
+  │       ├── 200Rsun.data
+  │       ├── 300Rsun.data
+  │       └── 500Rsun.data
+  ├── 18_rot0.9
+  │   └── LOGS
+  │       ├── 100Rsun.data
+  │       ├── 200Rsun.data
+  │       ├── 300Rsun.data
+  │       └── 500Rsun.data
+  ├── 20_rot0.0
+  │   ├── 100Rsun.mod
+  │   ├── 200Rsun.mod
+  │   ├── 20_rot0.0_single_final.mod
+  │   ├── 300Rsun.mod
+  │   ├── 500Rsun.mod
+  │   ├── history_columns.list
+  │   ├── inlist
+  │   ├── inlist_both
+  │   ├── inlist_extra
+  │   ├── inlist_pgstar
+  │   ├── LOGS
+  │   │   ├── 100Rsun.data
+  │   │   ├── 200Rsun.data
+  │   │   ├── 300Rsun.data
+  │   │   ├── 500Rsun.data
+  │   │   └── history.data
+  │   ├── profile_columns.list
+  │   └── src
+  │       ├── POSYDON_binaries.inc
+  │       ├── POSYDON_single_stars.inc
+  │       ├── run.f90
+  │       └── run_star_extras.f90
+  ├── 30_rot0.0
+  │   ├── 1000Rsun.mod
+  │   ├── 100Rsun.mod
+  │   ├── 200Rsun.mod
+  │   ├── 300Rsun.mod
+  │   ├── 30_rot0.0_single_final.mod
+  │   ├── 500Rsun.mod
+  │   ├── history_columns.list
+  │   ├── inlist
+  │   ├── inlist_both
+  │   ├── inlist_extra
+  │   ├── inlist_pgstar
+  │   ├── LOGS
+  │   │   └── 500Rsun.data
+  │   ├── profile_columns.list
+  │   └── src
+  │       ├── POSYDON_binaries.inc
+  │       ├── POSYDON_single_stars.inc
+  │       ├── run.f90
+  │       └── run_star_extras.f90
+  ├── 30_rot0.1
+  │   ├── 1000Rsun.mod
+  │   ├── 100Rsun.mod
+  │   ├── 200Rsun.mod
+  │   ├── 300Rsun.mod
+  │   ├── 30_rot0.1_single_final.mod
+  │   ├── 500Rsun.mod
+  │   ├── history_columns.list
+  │   ├── inlist
+  │   ├── inlist_both
+  │   ├── inlist_extra
+  │   ├── inlist_pgstar
+  │   ├── LOGS
+  │   │   └── 500Rsun.data
+  │   ├── profile_columns.list
+  │   └── src
+  │       ├── POSYDON_binaries.inc
+  │       ├── POSYDON_single_stars.inc
+  │       ├── run.f90
+  │       └── run_star_extras.f90
+  ├── 30_rot0.2
+  │   ├── 1000Rsun.mod
+  │   ├── 100Rsun.mod
+  │   ├── 200Rsun.mod
+  │   ├── 300Rsun.mod
+  │   ├── 30_rot0.2_single_final.mod
+  │   ├── 500Rsun.mod
+  │   ├── history_columns.list
+  │   ├── inlist
+  │   ├── inlist_both
+  │   ├── inlist_extra
+  │   ├── inlist_pgstar
+  │   ├── LOGS
+  │   │   └── 500Rsun.data
+  │   ├── profile_columns.list
+  │   └── src
+  │       ├── POSYDON_binaries.inc
+  │       ├── POSYDON_single_stars.inc
+  │       ├── run.f90
+  │       └── run_star_extras.f90
+  ├── 30_rot0.3
+  │   ├── 1000Rsun.mod
+  │   ├── 100Rsun.mod
+  │   ├── 200Rsun.mod
+  │   ├── 300Rsun.mod
+  │   ├── 30_rot0.3_single_final.mod
+  │   ├── 500Rsun.mod
+  │   ├── history_columns.list
+  │   ├── inlist
+  │   ├── inlist_both
+  │   ├── inlist_extra
+  │   ├── inlist_pgstar
+  │   ├── LOGS
+  │   │   └── 500Rsun.data
+  │   ├── profile_columns.list
+  │   └── src
+  │       ├── POSYDON_binaries.inc
+  │       ├── POSYDON_single_stars.inc
+  │       ├── run.f90
+  │       └── run_star_extras.f90
+  ├── 30_rot0.4
+  │   ├── 1000Rsun.mod
+  │   ├── 100Rsun.mod
+  │   ├── 200Rsun.mod
+  │   ├── 300Rsun.mod
+  │   ├── 30_rot0.4_single_final.mod
+  │   ├── 500Rsun.mod
+  │   ├── history_columns.list
+  │   ├── inlist
+  │   ├── inlist_both
+  │   ├── inlist_extra
+  │   ├── inlist_pgstar
+  │   ├── LOGS
+  │   │   └── 500Rsun.data
+  │   ├── profile_columns.list
+  │   └── src
+  │       ├── POSYDON_binaries.inc
+  │       ├── POSYDON_single_stars.inc
+  │       ├── run.f90
+  │       └── run_star_extras.f90
+  ├── 30_rot0.5
+  │   ├── 1000Rsun.mod
+  │   ├── 100Rsun.mod
+  │   ├── 200Rsun.mod
+  │   ├── 300Rsun.mod
+  │   ├── 30_rot0.5_single_final.mod
+  │   ├── 500Rsun.mod
+  │   ├── history_columns.list
+  │   ├── inlist
+  │   ├── inlist_both
+  │   ├── inlist_extra
+  │   ├── inlist_pgstar
+  │   ├── LOGS
+  │   │   └── 500Rsun.data
+  │   ├── profile_columns.list
+  │   └── src
+  │       ├── POSYDON_binaries.inc
+  │       ├── POSYDON_single_stars.inc
+  │       ├── run.f90
+  │       └── run_star_extras.f90
+  ├── 30_rot0.6
+  │   ├── 1000Rsun.mod
+  │   ├── 100Rsun.mod
+  │   ├── 200Rsun.mod
+  │   ├── 300Rsun.mod
+  │   ├── 30_rot0.6_single_final.mod
+  │   ├── 500Rsun.mod
+  │   ├── history_columns.list
+  │   ├── inlist
+  │   ├── inlist_both
+  │   ├── inlist_extra
+  │   ├── inlist_pgstar
+  │   ├── LOGS
+  │   │   └── 500Rsun.data
+  │   ├── profile_columns.list
+  │   └── src
+  │       ├── POSYDON_binaries.inc
+  │       ├── POSYDON_single_stars.inc
+  │       ├── run.f90
+  │       └── run_star_extras.f90
+  ├── 30_rot0.7
+  │   ├── 1000Rsun.mod
+  │   ├── 100Rsun.mod
+  │   ├── 200Rsun.mod
+  │   ├── 300Rsun.mod
+  │   ├── 30_rot0.7_single_final.mod
+  │   ├── 500Rsun.mod
+  │   ├── history_columns.list
+  │   ├── inlist
+  │   ├── inlist_both
+  │   ├── inlist_extra
+  │   ├── inlist_pgstar
+  │   ├── LOGS
+  │   │   └── 500Rsun.data
+  │   ├── profile_columns.list
+  │   └── src
+  │       ├── POSYDON_binaries.inc
+  │       ├── POSYDON_single_stars.inc
+  │       ├── run.f90
+  │       └── run_star_extras.f90
+  ├── 30_rot0.8
+  │   ├── 100Rsun.mod
+  │   ├── 200Rsun.mod
+  │   ├── 300Rsun.mod
+  │   ├── 30_rot0.8_single_final.mod
+  │   ├── 500Rsun.mod
+  │   ├── history_columns.list
+  │   ├── inlist
+  │   ├── inlist_both
+  │   ├── inlist_extra
+  │   ├── inlist_pgstar
+  │   ├── LOGS
+  │   │   └── 500Rsun.data
+  │   ├── profile_columns.list
+  │   └── src
+  │       ├── POSYDON_binaries.inc
+  │       ├── POSYDON_single_stars.inc
+  │       ├── run.f90
+  │       └── run_star_extras.f90
+  ├── 30_rot0.9
+  │   ├── 100Rsun.mod
+  │   ├── 200Rsun.mod
+  │   ├── 300Rsun.mod
+  │   ├── 30_rot0.9_single_final.mod
+  │   ├── 500Rsun.mod
+  │   ├── history_columns.list
+  │   ├── inlist
+  │   ├── inlist_both
+  │   ├── inlist_extra
+  │   ├── inlist_pgstar
+  │   ├── LOGS
+  │   │   └── 500Rsun.data
+  │   ├── profile_columns.list
+  │   └── src
+  │       ├── POSYDON_binaries.inc
+  │       ├── POSYDON_single_stars.inc
+  │       ├── run.f90
+  │       └── run_star_extras.f90
+  └── 36_rot0.0
+  ├── 1000Rsun.mod
+  ├── 100Rsun.mod
+  ├── 200Rsun.mod
+  ├── 300Rsun.mod
+  ├── 36_rot0.0_single_final.mod
+  ├── 500Rsun.mod
+  ├── history_columns.list
+  ├── inlist
+  ├── inlist_both
+  ├── inlist_extra
+  ├── inlist_pgstar
+  ├── LOGS
+  │   ├── 1000Rsun.data
+  │   ├── 100Rsun.data
+  │   ├── 200Rsun.data
+  │   ├── 300Rsun.data
+  │   ├── 500Rsun.data
+  │   └── history.data
+  ├── profile_columns.list
+  └── src
+  ├── POSYDON_binaries.inc
+  ├── POSYDON_single_stars.inc
+  ├── run.f90
+  └── run_star_extras.f90
+
+460 directories, 3096 files
+  #+end_src
