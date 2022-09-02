@@ -19,7 +19,7 @@ ax = fig.add_subplot(gs[:, :])
 
 rot_root = str(paths.data / "MESA_output/single_stars/Z_0.0019")
 grid_folders = sorted(glob.glob(rot_root + "/30_rot0*"))
-colors = plt.cm.viridis(np.linspace(0, 1, len(grid_folders)))
+colors = plt.cm.plasma(np.linspace(0, 1, len(grid_folders)))
 for f in grid_folders:
     label = f.split("/")[-1].split("_rot")[-1]
     if float(label) == 0:
@@ -57,7 +57,7 @@ plot_BE_r(
     alpha_th=0.0,
     top_axis=False,
     lw=3,
-    c="r",
+    c="c",
     zorder=10,
     ls="--",
 )
@@ -67,7 +67,7 @@ plot_BE_r(
     alpha_th=1.0,
     top_axis=False,
     lw=3,
-    c="r",
+    c="c",
     zorder=10,
     ls="-",
     label=str(init_model).split("/")[-3].split("_rot")[0]
