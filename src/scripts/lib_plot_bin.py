@@ -46,6 +46,35 @@ except:
 
 from scipy.interpolate import interp1d
 
+def get_masses(f):
+    """returns the initial masses of a MESA run reading them from the folder name
+    It assumes the folder names follow the POSYDON convention
+
+    f: string with the absolute path of the working directory
+    output: m1, m2 (or m1, nan for a single star) as floats
+    """
+    if f[-1] == "/":
+        folder = f.split("/")[-2]
+    elif f[-1] != "/":
+        folder = f.split("/")[-1]
+    # print(folder)
+    try:
+        m = re.findall("[+-]?\d+\.\d+", folder)
+        # print(m)
+        if len(m) == 1:
+            # print("single star!")
+            m1 = float(m[0])
+            m2 = np.nan
+        else:
+            # print("binary!")
+            m1 = float(m[0])
+            m2 = float(m[1])
+    except:
+        # read from src assuming single star
+        src, col = getSrcCol(f + 'LOGS/history.data', False, False)
+        m1 = src[0, col.index("star_mass")]
+        ms = np.nan
+    return m1, m2
 
 # -------------------------------------------------------------------
 # HRD
