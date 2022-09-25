@@ -186,9 +186,9 @@ BH formation, with explosion or not), cannot be decided solely based
 on the (total or core) mass of a star \citep[e.g.,][]{oconnor:11,
   farmer:16, patton:2020, zapartas:21b, patton:22}.
 
-\textcolor{blue}{During the binary evolution, we account for tidal
+During the binary evolution, we account for tidal
   interactions assuming each stellar layer reacts on its own timescale
-  (see \citealt{paxton:2015}). At mass transfer,} our \mesa\ models
+  (see \citealt{paxton:2015}). At mass transfer, our \mesa\ models
 assume that the accretion efficiency is limited by
 rotationally-enhanced wind mass loss \citep[e.g.,][]{sravan:2019,
   wang:2020, renzo:2021zoph, sen:2022}. However, this may lead to less
@@ -201,17 +201,17 @@ artificially separate\footnote{We make the routine to separate a
   \url{https://github.com/MESAHub/mesa-contrib/}} the stars and
 continue the evolution of the accretor as a single star until it
 reaches carbon depletion (defined by central carbon mass fraction
-$X_\mathrm{c}(^{12}\mathrm{C})<2\times10^{-4} $). \textcolor{blue}{Reducing
+$X_\mathrm{c}(^{12}\mathrm{C})<2\times10^{-4} $). ducing
   the complexity by not simulating the late evolutionary phases of the
   RLOF-donors saves significant computing time at a small price in
   accuracy of the RLOF-accretors. Separating the stars, we
   neglect further possible, but not expected, mass-transfer episodes
   (case BB RLOF, \citealt{delgado:81, laplace:2020}). We also neglect
   post-RLOF tides, which are expected to be
-  negligible for wide pre-CE binaries. Finally, we ignore} the impact of
+  negligible for wide pre-CE binaries. Finally, we ignore the impact of
   the donor's supernova ejecta with the accretor \cite[which has a small and
   short-lasting effect only on the outermost layers,
-  e.g.,][\textcolor{blue}{Hirai~R., private communication}]{hirai:2018, ogata:2021} and the orbital consequences of the
+  e.g.,][Hirai~R., private communication]{hirai:2018, ogata:2021} and the orbital consequences of the
 core-collapse \citep[e.g.,][]{brandt:1995, kalogera:1996,
     tauris:1998, renzo:2019walk}. To illustrate the physical reason
 why the first RLOF may influence the envelope structure of the
@@ -251,12 +251,12 @@ $M_2=15\rightarrow 18, 17\rightarrow 20, 30\rightarrow 36\,M_\odot$,
 respectively, corresponding to an overall mass transfer efficiency
 $\beta_\mathrm{RLOF}=|\Delta M_\mathrm{accretor}/\Delta M_\mathrm{donor}| = 0.29,\ 0.30,$\,and
 0.43, respectively \citep[see discussion in ][]{renzo:2021zoph}.
-\textcolor{blue}{The binaries started with an initial separation of
+The binaries started with an initial separation of
   $\sim{}300\,R_\odot$ and widen to $\sim{}380\,R_\odot$ days by RLOF
   detachment. We expect further widening caused by the wind mass loss
   of both stars, allowing us to neglect tides in the remaining
   evolution and the impact of the RLOF-donor collapse
-  \citep{hirai:2018, ogata:2021}.}
+  \citep{hirai:2018, ogata:2021}.
 \begin{figure}[tbp]
   \includegraphics[width=0.5\textwidth]{HRD.pdf}
   \caption{HR diagram of the binary systems. The thin dashed lines
@@ -318,8 +318,8 @@ limited.
     overlapping gray bands emphasize the CEB region,
     $X_\mathrm{c}(^1\mathrm{H})+0.01<X(^1\mathrm{H})<X_\mathrm{surf}(^1\mathrm{H})-0.01$,
     with $X_c$ and $X_\mathrm{surf}$ the central and surface value of
-    the hydrogen mass fraction. \textcolor{blue}{The CEB size of the engineered models
-    increases from blue to yellow.}}
+    the hydrogen mass fraction. The CEB size of the engineered models
+    increases from blue to yellow.}
   \label{fig:TAMS_profiles}
   \script{TAMS_profiles.py}
 \end{figure*}
@@ -373,13 +373,13 @@ Appendix~\ref{sec:eng_examples}).
     itself as a check on the models interpolation, red solid lines
     show the ratio of the accretor to a non-rotating single star,
     while the other colors show the ratio to ``engineered'' stars
-    (see~\Figref{fig:TAMS_profiles}, \textcolor{blue}{increasing CEB
+    (see~\Figref{fig:TAMS_profiles}, increasing CEB
       size from blue to yellow, see
-    also} Appendix~\ref{sec:eng_examples}). Each panel shows the ratios
+    also Appendix~\ref{sec:eng_examples}). Each panel shows the ratios
   at the first time the models reach the radius indicated on the right
-  and by the vertical dotted gray lines. \textcolor{blue}{The vertical
+  and by the vertical dotted gray lines. The vertical
   gray bands mark the radial extent of the CEB in the accretors only, which
-  may differ in the other stars.} For the binding energy
+  may differ in the other stars. For the binding energy
   profiles in the numerator and denominator of the fractions plotted
   here see \Figref{fig:BE_profiles}.}
   \label{fig:grid_ratios}
@@ -573,9 +573,13 @@ imply easier to eject (post-RLOF, second) CE and wider post-CE separations.
 Before the onset of the dynamical instability in a CE event, a pre-CE
 thermal timescale phase of mass transfer may occur
 \citep[e.g.,][]{hjellming:1987, pejcha:17, blagorodnova:2021}. This
-initial phase is usually neglected in hydrodynamical simulations and
-may impact the envelope structure of CE-donors whether they are
-RLOF-accretors (as in our models) or not.
+phase may impact the envelope structure of CE-donors
+\textcolor{red}{(through tidal interactions -- indirectly, and mass
+  loss -- directly)} whether they are
+RLOF-accretors (as in our models) or not. \textcolor{red}{The combined
+effect of rejuvenation, rotation, tides, and the impact of the
+companion's
+supernova shock on accretor stars remain to be studied further.}
 
 A key uncertainty in CE outcome is the location of the separation
 between the (possibly) ejected envelope and the remaining core
@@ -593,13 +597,12 @@ at all or avoid unstable mass transfer \citep[e.g.,][]{vanson:2021,
   marchant:2021}. Since their main-sequence lifetimes are roughly
 independent of mass ($\sim{}2.5-3$\,Myr), at the first RLOF, accretors
 this massive may already have a deep core/envelope chemical gradient
-to prevent rejuvenation.
-However,
-more massive stars are generally easier to mix \citep[including
-reaching rotationally-induced chemically homogeneous evolution,
-e.g.,][]{yoon:2005, demink:2016}. Shorter initial periods (i.e.,
-earlier mass transfer) and more equal mass ratios can also result in
-the accretor avoiding the red supergiant phase even at lower masses
+to prevent rejuvenation. However, more massive stars are generally
+easier to mix \citep[including reaching rotationally-induced
+chemically homogeneous evolution, e.g.,][]{yoon:2005, demink:2016}.
+Shorter initial periods (i.e., earlier mass transfer)
+\textcolor{red}{and smaller radii during the binary interactions can
+  prevent} the red supergiant phase even at lower masses
 \citep{cantiello:2007}.
 
 We have focused on accretor models for progenitors of NS and BH. However,
@@ -626,7 +629,7 @@ phase (see also \Figref{fig:lambda_grid}).
     paxton:2019}, pyMESA \citep{pymesa}, \code{POSYDON} \citep{fragos:2022},
   compare\_workdir\_MESA\footnote{\url{https://github.com/mathren/compare_workdir_MESA/releases/tag/2.0}},
   Ipython \citep{ipython}, numpy
-  \citep{numpy}, scipy \citep{scipy}, matplotlib \citep{matplotlib}, showyourwork
+  \citep{numpy}, scipy \citep{scipy}, matplotlib \citep{matplotlib}, \showyourwork
   \citep{showyourwork}.}
 
 % \vspace*{-40pt}
@@ -658,10 +661,9 @@ by accretion during the first RLOF.
   \caption{TAMS entropy profile of a single 30\,$M_\odot$ star (red)
     and engineered models where we artificially modify the CEB region
     (gray shaded area partially overlapping for multiple models,
-    \textcolor{blue}{increasing CEB size from blue to yellow}). The
-    CEB for a single $30\,M_\odot$ star has a mass thickness of
-    $5.81\,M_\odot$ at TAMS, while the engineered models span the
-    range $\sim3-9.4\,M_\odot$.}
+    increasing CEB size from blue to yellow). The CEB for a single
+  $30\,M_\odot$ star has a mass thickness of $5.81\,M_\odot$ at TAMS,
+  while the engineered models span the range $\sim3-9.4\,M_\odot$.}
   \label{fig:engineered_TAMS}
   \script{engineered_TAMS.py}
 \end{figure}
@@ -696,7 +698,7 @@ $1000\,R_\odot$.
     the internal energy. The red lines show a $30\,M_\odot$,
     non-rotating, $Z=0.0019$ model compared to ``engineered'' models
     of the same mass (see \Figref{fig:engineered_TAMS},
-    \textcolor{blue}{increasing CEB size from blue to yellow}), but
+    increasing CEB size from blue to yellow), but
     artificially imposed profile at TAMS (other colors, see text). The
     top (bottom) axis indicates mass coordinate (radius). We compare
     the models when they first reach $500\,R_\odot$.}
@@ -778,7 +780,7 @@ mass.
 \begin{figure}[!htbp]
   \centering
   \includegraphics[width=0.5\textwidth]{accretors_rotators_single.pdf}
-  \caption{\textcolor{blue}{Ratio of binding energy of a non-rotating
+  \caption{Ratio of binding energy of a non-rotating
       $18\,M_\odot$ model (left) or of our $15\rightarrow18\,M_\odot$
       accretor (right) divided by the binding energy of the rotating
       models of \Figref{fig:rotation_models_example}. The binding
@@ -786,13 +788,13 @@ mass.
       the gray bands highlight the CEB region of the models in the
       numerator. Lighter colors indicate ratios to an initially
       faster-rotating single star, see also legend in
-      \Figref{fig:rotation_models_example}.}}
+      \Figref{fig:rotation_models_example}.}
   \label{fig:accretors_rotators_single}
   \script{accretors_rotators_single.py}
 \end{figure}
 
 
-\textcolor{blue}{\Figref{fig:accretors_rotators_single} shows the
+\Figref{fig:accretors_rotators_single} shows the
   ratio of the binding energy (cf.~\Figref{fig:grid_ratios}) of a
   reference model divided the binding energy of the rotating models of
   \Figref{fig:rotation_models_example}. The left column uses as
@@ -809,15 +811,15 @@ mass.
   and cyan) when compared to our accretor (i.e., their ratios are
   farther from one). Therefore, we do \emph{not} recommend the use of
   fast-rotating single stars to mimic the effect of mass accretion and
-  rejuvenation.}
+  rejuvenation.
 For stars accreting through RLOF in a binary both
 effects illustrated in \Figref{fig:toy_models_example} and
 \Figref{fig:rotation_models_example} act simultaneously, although the
 timing and amplitude of the impact of mixing and rotation can be
 different than for single stars \citep[e.g.,][]{renzo:2021zoph}.
-\textcolor{blue}{Future work should investigate how to include the
+Future work should investigate how to include the
   effect in rapid population-synthesis, for example with
-  a prescription for $\lambda_{CE}$ (see Appendix~\ref{sec:pop_synth_app}).}
+  a prescription for $\lambda_{CE}$ (see Appendix~\ref{sec:pop_synth_app}).
 
 \section{Binding energy profiles}
 \label{sec:BE}
@@ -846,8 +848,8 @@ local deviations from this trend can occur for some $r$.
     the internal energy content of the star. Orange, red, and other
     colors show respectively the accretor models, single stars of same
     post-RLOF total mass, and engineered models with varying CEB
-    steepness \textcolor{blue}{(increasing CEB size from blue to
-      yellow, cf.~\Figref{fig:TAMS_profiles})}. Titles indicates the pre-RLOF and approximate
+    steepness (increasing CEB size from blue to
+      yellow, cf.~\Figref{fig:TAMS_profiles}). Titles indicates the pre-RLOF and approximate
     post-RLOF accretor masses. The vertical colored lines mark the
     outer edge of the helium cores of the accretor and single star,
     that is the outermost location where $Y>0.1$ and $X<0.01$ (solid
@@ -882,8 +884,8 @@ constitute the extreme opposite comparison point.
     and He (bottom row, dashed lines) profiles for non-rotating single
     stars (red), accretors (orange), and ``engineered'' models of the
     same total mass as the ZAMS mass of the accretors. The overlapping
-    gray bands emphasize the CEB region, \textcolor{blue}{increasing
-      in size from blue to yellow in the engineered models}.}
+    gray bands emphasize the CEB region, increasing
+      in size from blue to yellow in the engineered models.}
   \label{fig:TAMS_profiles_same_initial_mass}
   \script{TAMS_profiles_same_initial_mass.py}
 \end{figure*}
@@ -917,8 +919,8 @@ in \Figref{fig:lambda_grid} the $\lambda_\mathrm{CE}$ profiles for our models.
     the outer edge of the helium cores of the accretor and single
     star, that is the outermost location where $Y>0.1$ and $X<0.01$
     (solid lines), or $X<0.1$ (dashed), or $X<0.2$
-    (dot-dashed). \textcolor{blue}{The CEB size of engineered models
-      increases from blue to yellow.}}
+    (dot-dashed). The CEB size of engineered models
+      increases from blue to yellow.}
   \label{fig:lambda_grid}
   \script{lambda_grid.py}
 \end{figure*}
