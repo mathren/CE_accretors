@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.2.25)  29 AUG 2022 12:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.2.25)  16 OCT 2022 11:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -725,200 +725,203 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 78.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (10.88353pt too wide) in paragraph at lines 198--198
+Overfull \hbox (10.88353pt too wide) in paragraph at lines 201--201
 [][]| [] [][][]| 
  []
 
 [2]
-<./figures/HRD.pdf, id=312, 561.89923pt x 531.53078pt>
+<./figures/HRD.pdf, id=320, 561.89923pt x 531.53078pt>
 File: ./figures/HRD.pdf Graphic file (type pdf)
 <use ./figures/HRD.pdf>
-Package pdftex.def Info: ./figures/HRD.pdf  used on input line 254.
+Package pdftex.def Info: ./figures/HRD.pdf  used on input line 261.
 (pdftex.def)             Requested size: 256.55872pt x 242.69847pt.
 
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 254--255
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 261--262
 [][] 
  []
 
-<./figures/TAMS_profiles.pdf, id=322, 1218.95403pt x 642.82658pt>
+[3 <./figures/HRD.pdf>]
+<./figures/TAMS_profiles.pdf, id=385, 1218.95403pt x 642.82658pt>
 File: ./figures/TAMS_profiles.pdf Graphic file (type pdf)
 <use ./figures/TAMS_profiles.pdf>
-Package pdftex.def Info: ./figures/TAMS_profiles.pdf  used on input line 306.
+Package pdftex.def Info: ./figures/TAMS_profiles.pdf  used on input line 313.
 (pdftex.def)             Requested size: 513.11743pt x 270.59346pt.
-[3 <./figures/HRD.pdf>]
-<./figures/grid_ratios.pdf, id=398, 1012.98451pt x 1227.10104pt>
+<./figures/grid_ratios.pdf, id=403, 1012.98451pt x 1227.10104pt>
 File: ./figures/grid_ratios.pdf Graphic file (type pdf)
 <use ./figures/grid_ratios.pdf>
-Package pdftex.def Info: ./figures/grid_ratios.pdf  used on input line 361.
+Package pdftex.def Info: ./figures/grid_ratios.pdf  used on input line 368.
 (pdftex.def)             Requested size: 513.11743pt x 621.60036pt.
 
 
-LaTeX Warning: Float too large for page by 41.03146pt on input line 378.
+LaTeX Warning: Float too large for page by 52.03146pt on input line 387.
 
-[4 <./figures/TAMS_profiles.pdf>] [5 <./figures/grid_ratios.pdf>]
-<./figures/BE_env_R.pdf, id=545, 562.90298pt x 865.4182pt>
+[4]
+<./figures/BE_env_R.pdf, id=469, 562.90298pt x 865.4182pt>
 File: ./figures/BE_env_R.pdf Graphic file (type pdf)
 <use ./figures/BE_env_R.pdf>
-Package pdftex.def Info: ./figures/BE_env_R.pdf  used on input line 463.
+Package pdftex.def Info: ./figures/BE_env_R.pdf  used on input line 472.
 (pdftex.def)             Requested size: 256.55872pt x 394.45258pt.
 
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 463--464
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 472--473
  [][] 
  []
 
-[6]
+[5 <./figures/TAMS_profiles.pdf>] [6 <./figures/grid_ratios.pdf>]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 518.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 527.
 
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 518.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 527.
 
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
 [7 <./figures/BE_env_R.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 621--621
+Underfull \hbox (badness 10000) in paragraph at lines 632--632
 [][][]$\OT1/cmr/m/n/8 https : / / github . com / mathren / compare[]workdir[]ME
 SA / releases /
  []
 
 
-Overfull \hbox (10.88353pt too wide) in paragraph at lines 621--621
+Overfull \hbox (10.88353pt too wide) in paragraph at lines 632--632
 [][]| [] [][][]| 
  []
 
 
-Underfull \hbox (badness 1383) in paragraph at lines 621--622
+Underfull \hbox (badness 1383) in paragraph at lines 632--633
 \foo gos et al.[][] [][]2022[][]), com-pare[]workdir[]MESA[][][][][], Ipython
  []
 
-(./CE_accretors.bbl [8]
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 2
-98.
- (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+(./CE_accretors.bbl [8] [9]
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 3
+06.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 298.
- [9]) [10]
-<./figures/engineered_TAMS.pdf, id=841, 548.33041pt x 531.53078pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 306.
+ [10]) [11]
+<./figures/engineered_TAMS.pdf, id=851, 548.33041pt x 531.53078pt>
 File: ./figures/engineered_TAMS.pdf Graphic file (type pdf)
 <use ./figures/engineered_TAMS.pdf>
-Package pdftex.def Info: ./figures/engineered_TAMS.pdf  used on input line 649.
+Package pdftex.def Info: ./figures/engineered_TAMS.pdf  used on input line 659.
 
 (pdftex.def)             Requested size: 256.55872pt x 248.70024pt.
 
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 649--650
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 659--660
 [][] 
  []
 
-<./figures/toy_models_example.pdf, id=847, 577.95924pt x 531.53078pt>
+<./figures/toy_models_example.pdf, id=857, 577.95924pt x 531.53078pt>
 File: ./figures/toy_models_example.pdf Graphic file (type pdf)
 <use ./figures/toy_models_example.pdf>
 Package pdftex.def Info: ./figures/toy_models_example.pdf  used on input line 6
-85.
+92.
 (pdftex.def)             Requested size: 256.55872pt x 235.95055pt.
 
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 685--686
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 692--693
  [][] 
  []
 
 
-Overfull \hbox (10.88353pt too wide) in paragraph at lines 727--727
+Overfull \hbox (10.88353pt too wide) in paragraph at lines 734--734
 [][]| [] [][][]| 
  []
 
-[11 <./figures/engineered_TAMS.pdf> <./figures/toy_models_example.pdf>]
-<./figures/rotation_models_example.pdf, id=940, 577.95924pt x 531.53078pt>
+[12 <./figures/engineered_TAMS.pdf> <./figures/toy_models_example.pdf>]
+<./figures/rotation_models_example.pdf, id=952, 577.95924pt x 531.53078pt>
 File: ./figures/rotation_models_example.pdf Graphic file (type pdf)
 <use ./figures/rotation_models_example.pdf>
 Package pdftex.def Info: ./figures/rotation_models_example.pdf  used on input l
-ine 738.
+ine 745.
 (pdftex.def)             Requested size: 256.55872pt x 235.95055pt.
 
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 738--739
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 745--746
  [][] 
  []
 
-<./figures/BE_ratio_rot.pdf, id=969, 561.89923pt x 541.97604pt>
-File: ./figures/BE_ratio_rot.pdf Graphic file (type pdf)
-<use ./figures/BE_ratio_rot.pdf>
-Package pdftex.def Info: ./figures/BE_ratio_rot.pdf  used on input line 782.
-(pdftex.def)             Requested size: 256.55872pt x 247.46782pt.
+<./figures/accretors_rotators_single.pdf, id=977, 788.9475pt x 1171.48163pt>
+File: ./figures/accretors_rotators_single.pdf Graphic file (type pdf)
+<use ./figures/accretors_rotators_single.pdf>
+Package pdftex.def Info: ./figures/accretors_rotators_single.pdf  used on input
+ line 781.
+(pdftex.def)             Requested size: 256.55872pt x 380.94153pt.
 
-Overfull \hbox (14.29219pt too wide) in paragraph at lines 782--783
-[][] 
+Overfull \hbox (14.29219pt too wide) in paragraph at lines 781--782
+ [][] 
  []
 
-[12 <./figures/rotation_models_example.pdf> <./figures/BE_ratio_rot.pdf>]
-<./figures/BE_profiles.pdf, id=1073, 1053.13445pt x 1227.10104pt>
+[13 <./figures/rotation_models_example.pdf> <./figures/accretors_rotators_singl
+e.pdf>]
+<./figures/BE_profiles.pdf, id=1098, 1053.13445pt x 1227.10104pt>
 File: ./figures/BE_profiles.pdf Graphic file (type pdf)
 <use ./figures/BE_profiles.pdf>
-Package pdftex.def Info: ./figures/BE_profiles.pdf  used on input line 821.
+Package pdftex.def Info: ./figures/BE_profiles.pdf  used on input line 843.
 (pdftex.def)             Requested size: 513.11743pt x 597.877pt.
 
 
-LaTeX Warning: Float too large for page by 26.5581pt on input line 837.
+LaTeX Warning: Float too large for page by 26.5581pt on input line 859.
 
-<./figures/TAMS_profiles_same_initial_mass.pdf, id=1088, 1218.95403pt x 642.826
+<./figures/TAMS_profiles_same_initial_mass.pdf, id=1113, 1218.95403pt x 642.826
 58pt>
 File: ./figures/TAMS_profiles_same_initial_mass.pdf Graphic file (type pdf)
 <use ./figures/TAMS_profiles_same_initial_mass.pdf>
 Package pdftex.def Info: ./figures/TAMS_profiles_same_initial_mass.pdf  used on
- input line 859.
+ input line 881.
 (pdftex.def)             Requested size: 513.11743pt x 270.59346pt.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 870.
+(hyperref)                removing `math shift' on input line 892.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\lambda' on input line 870.
+(hyperref)                removing `\lambda' on input line 892.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 870.
+(hyperref)                removing `subscript' on input line 892.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 870.
+(hyperref)                removing `math shift' on input line 892.
 
-<./figures/lambda_grid.pdf, id=1098, 1049.11945pt x 1227.10104pt>
+<./figures/lambda_grid.pdf, id=1123, 1049.11945pt x 1227.10104pt>
 File: ./figures/lambda_grid.pdf Graphic file (type pdf)
 <use ./figures/lambda_grid.pdf>
-Package pdftex.def Info: ./figures/lambda_grid.pdf  used on input line 891.
+Package pdftex.def Info: ./figures/lambda_grid.pdf  used on input line 913.
 (pdftex.def)             Requested size: 513.11743pt x 600.18005pt.
 
 Class revtex4-1 Warning: Environment acknowledgements is obsolete;
 Use acknowledgments instead.
 
-[13] [14 <./figures/BE_profiles.pdf>]
+[14] [15 <./figures/BE_profiles.pdf>]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 905.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 927.
 
-[15 <./figures/TAMS_profiles_same_initial_mass.pdf>]
+[16 <./figures/TAMS_profiles_same_initial_mass.pdf>]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 905.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 927.
 
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
-[16 <./figures/lambda_grid.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 905.
+[17 <./figures/lambda_grid.pdf>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 927.
  (./CE_accretors.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 905.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 905.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 927.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 927.
 Package rerunfilecheck Info: File `CE_accretors.out' has not changed.
 (rerunfilecheck)             Checksum: C823E33981BF52C67762C929B85B03E5;690.
  ) 
 Here is how much of TeX's memory you used:
- 11295 strings out of 481239
- 156253 string characters out of 5920377
- 530990 words of memory out of 5000000
- 26176 multiletter control sequences out of 15000+600000
+ 11300 strings out of 481239
+ 156408 string characters out of 5920377
+ 494006 words of memory out of 5000000
+ 26179 multiletter control sequences out of 15000+600000
  543728 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,9n,41p,445b,623s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,9n,41p,445b,701s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texliv
@@ -944,10 +947,10 @@ i12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on CE_accretors.pdf (16 pages, 4173339 bytes).
+Output written on CE_accretors.pdf (17 pages, 4644250 bytes).
 PDF statistics:
- 1371 PDF objects out of 1440 (max. 8388607)
- 952 compressed objects within 10 object streams
- 153 named destinations out of 1000 (max. 500000)
+ 1395 PDF objects out of 1440 (max. 8388607)
+ 970 compressed objects within 10 object streams
+ 155 named destinations out of 1000 (max. 500000)
  136 words of extra memory for PDF output out of 10000 (max. 10000000)
 
