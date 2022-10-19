@@ -400,8 +400,10 @@ is to assume energy conservation
 e.g.,][]{webbink:1984, dekool:1990, demarco:11} to determine CE
 ejection and final separation. Here we focus on the
 RLOF-accretor/CE-donor binding energy profile as an indication for the
-ease of CE ejection. Even if imperfect, we adopt this quantity as a
-proxy for the physical processes which determine the CE outcome. We
+ease of CE ejection. Even if imperfect, \textcolor{red}{following
+  common practice,} we adopt this quantity as a
+proxy for the physical processes which determine the CE outcome
+\textcolor{red}{and that allows us to compare models to each other}. We
 calculate the cumulative binding energy outside mass coordinate $m$ as
 \citep[e.g.,][]{dekool:1990, dewi:2000, lau:2022}:
 \begin{equation}
@@ -423,7 +425,7 @@ evolutionary stages. For $\alpha_\mathrm{th}=0$, \Eqref{eq:BE} give
 the gravitational binding energy (dashed lines in
 \Figref{fig:toy_models_example}-\ref{fig:rotation_models_example}),
 while $\alpha_{\mathrm{th}}=1$ assumes perfectly fine-tuned use of all
-the internal energy \citep[solid lines,][]{klencki:2020}. These two
+the internal energy \citep[solid lines, see also][]{klencki:2020}. These two
 cases bracket the range of possible use of internal energy to eject
 the CE. The additional inclusion of a rotational-energy term
 $0.5 \mathcal{I} \omega^2$ (with $\mathcal{I}=2r^2/3$ the specific
@@ -470,22 +472,22 @@ representing engineered models with steeper CEB profiles.
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.5\textwidth]{BE_env_R.pdf}
-  \caption{Evolution as a function of the photospheric radius $R$ of
+  \caption{\textcolor{red}{Evolution as a function of the photospheric radius $R$ of
     the binding energy (including the thermal energy,
     $\alpha_\mathrm{th}=1$) of the accretors and single stars of the
-    same (post-RLOF) total mass. The solid (dashed) lines show the
-    accretors (single stars). The bottom panels show the ratio, which
-    is always smaller than 1 the first time a certain radius $R$ is
-    reached, indicating that the accretors might have envelopes easier
-    to unbind in a CE event. Excursions
-      above 1 of the ratio occur only during phases of radius decrease
-      which could not initiate a CE. See \Figref{fig:BE_profiles} for
-    the radial binding energy profile at given outer radii $R$.}
+    same (post-RLOF) total mass. The solid and dotted lines show the
+    accretors and single stars, respectively, and they are thin when
+    previously the models reached larger radii. The bottom panels show
+    the ratio of the binding energies, which is always smaller than 1
+    the first time a certain radius $R$ is reached (thick lines),
+    indicating that the accretors might have envelopes easier to
+    unbind in at the start of a CE event. Excursions above 1 of the
+    ratio occur only during phases of radius decrease (thin lines)
+    which could not initiate a CE. See \Figref{fig:BE_profiles} for
+    the radial binding energy profile at given outer radii $R$.}}
   \label{fig:BE_env_R}
   \script{BE_env_R.py}
 \end{figure}
-
-
 
 The minimum ratio of binding energies occur roughly at the inner edge
 of the CEB layer in \Figref{fig:grid_ratios}. Considering the
@@ -511,19 +513,19 @@ an integrated binding energy for the envelope:
 \Figref{fig:BE_env_R} shows the evolution of this integrated envelope
 binding energy as a function of the outer radius. Each panel shows one
 of our binaries, from top to bottom: 36+30\,$M_\odot$,
-20+17\,$M_\odot$, 18+15\,$M_\odot$.  For each binary, the
-lower panel shows the ratios of the envelope binding energy of the
-accretor divided by the binding energy of the comparison single star
-(i.e., the ratio of the solid lines to the dashed lines in the panel
-above). To compute these ratios, we interpolate our accretor models
-on the time-grid of the single stars using the central temperature
-$\log_{10}(T_c/[\mathrm{K}])$ as independent coordinate. In each of
-the lower panels the ratios are lower than one (marked by the gray
-dashed lines) suggesting that post-RLOF
-accretor stars have envelopes that require less energy to be
-ejected in a CE event. The only times the binding energy of the
-accretor is higher than the corresponding single stars is during the
-blue-ward evolution discussed earlier, which would not trigger a CE.
+20+17\,$M_\odot$, 18+15\,$M_\odot$. For each binary, the lower panel
+shows the ratios of the envelope binding energy of the accretor
+divided by the binding energy of the comparison single star (i.e., the
+ratio of the solid lines to the \textcolor{red}{dotted} lines in the
+panel above). To compute these ratios, we interpolate our accretor
+models on the time-grid of the single stars using the central
+temperature $\log_{10}(T_c/[\mathrm{K}])$ as independent coordinate.
+In each of the lower panels the ratios are lower than one (marked by
+the gray dashed lines) suggesting that post-RLOF accretor stars have
+envelopes that require less energy to be ejected in a CE event. The
+only times the binding energy of the accretor is higher than the
+corresponding single stars is during the blue-ward evolution discussed
+earlier, which would not trigger a CE.
 
 \section{Discussion \& Conclusions}
 \label{sec:conclusions}
@@ -572,7 +574,7 @@ imply easier to eject (post-RLOF, second) CE and wider post-CE separations.
 
 Before the onset of the dynamical instability in a CE event, a pre-CE
 thermal timescale phase of mass transfer may occur
-\citep[e.g.,][]{hjellming:1987, pejcha:17, blagorodnova:2021}. This
+\citep[e.g.,][]{hjellming:1987, nandez:14, pejcha:17, blagorodnova:2021}. This
 phase may impact the envelope structure of CE-donors
 \textcolor{red}{(through tidal interactions and mass loss)} whether
 they are RLOF-accretors (as in our models) or not.
