@@ -5,45 +5,45 @@ The style file: aasjournal.bst
 Database file #1: ./CE_accretors.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Warning--empty journal in wang:2021a
-You've used 108 entries,
+You've used 110 entries,
             3168 wiz_defined-function locations,
-            1382 strings with 31278 characters,
-and the built_in function-call counts, 51398 in all, are:
-= -- 4227
-> -- 4010
+            1394 strings with 32107 characters,
+and the built_in function-call counts, 52637 in all, are:
+= -- 4316
+> -- 4123
 < -- 37
-+ -- 1346
-- -- 1466
-* -- 4709
-:= -- 9476
-add.period$ -- 115
-call.type$ -- 108
-change.case$ -- 644
-chr.to.int$ -- 106
-cite$ -- 109
-duplicate$ -- 1819
-empty$ -- 3001
-format.name$ -- 1597
-if$ -- 10318
++ -- 1383
+- -- 1506
+* -- 4834
+:= -- 9701
+add.period$ -- 118
+call.type$ -- 110
+change.case$ -- 654
+chr.to.int$ -- 108
+cite$ -- 111
+duplicate$ -- 1853
+empty$ -- 3069
+format.name$ -- 1639
+if$ -- 10570
 int.to.chr$ -- 3
 int.to.str$ -- 0
-missing$ -- 105
-newline$ -- 339
-num.names$ -- 434
-pop$ -- 698
+missing$ -- 107
+newline$ -- 346
+num.names$ -- 442
+pop$ -- 710
 preamble$ -- 1
-purify$ -- 644
+purify$ -- 654
 quote$ -- 0
-skip$ -- 1556
+skip$ -- 1595
 stack$ -- 0
-substring$ -- 1955
+substring$ -- 2025
 swap$ -- 17
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 969
+type$ -- 987
 warning$ -- 1
-while$ -- 407
+while$ -- 414
 width$ -- 0
-write$ -- 1179
+write$ -- 1201
 (There was 1 warning)

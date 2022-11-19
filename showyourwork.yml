@@ -2,6 +2,9 @@ version: cadb4086dd2a46cb68e6acffa73c2f7976e6d64d
 
 verbose: True
 
+stamp:
+  enabled: false
+
 ms_name: CE_accretors
 
 run_cache_rules_on_ci: True
