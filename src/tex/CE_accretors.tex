@@ -153,6 +153,8 @@ proof-of-principle numerical experiment illustrating the effect of
 changing the CEB region and rotation on the envelope binding energy,
 and Appendixes~\ref{sec:BE}--\ref{sec:pop_synth_app} present
 additional plots of our model grids.
+Appendix~\ref{sec:reproducibility} explains how to reproduce our
+results.
 
 \section{Pre-common envelope evolution}
 \label{sec:methods}
@@ -925,6 +927,26 @@ in \Figref{fig:lambda_grid} the $\lambda_\mathrm{CE}$ profiles for our models.
   \label{fig:lambda_grid}
   \script{lambda_grid.py}
 \end{figure*}
+
+
+\section{Reproducibility}
+\label{sec:reproducibility}
+
+This study was carried out using the reproducibility software
+\href{https://github.com/showyourwork/showyourwork}{\showyourwork}
+\cite{showyourwork}, which leverages continuous integration to
+programmatically download the data from \href{zenodo.org}{zenodo.org},
+create the figures, and compile the manuscript. Each figure caption
+contains two links, one to the zenodo dataset used in the figure, and
+the other to the script used to make the figure at the git commit
+corresponding to the current build of the manuscript. The git
+repository associated to this paper is
+\url{https://github.com/mathren/CE_accretors}, and the release v.2.1
+allows anyone to re-build the entire manuscript. The datasets are
+stored at \url{https://zenodo.org/record/7036016}, including the
+template MESA setup to recreate the original datasets.
+
+
 
 \end{document}
 
