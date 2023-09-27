@@ -465,7 +465,7 @@ def three_panel_plot_s_h_he(
     plot_s_h_he(init_model3, grid_folders3, accretor3, ax3, bx3)
 
     bx1.set_ylabel(r"$X_i$")
-    ax1.set_ylabel(r"$s \ [k_{B}N_{A}]}$")
+    ax1.set_ylabel("s \ [k_{B}N_{A}]}")
     ax2.set_yticklabels([])
     bx2.set_yticklabels([])
     ax3.set_yticklabels([])
